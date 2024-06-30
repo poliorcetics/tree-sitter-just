@@ -17,6 +17,7 @@ module.exports = grammar({
             'set',
             choice(
                 seq('allow-duplicate-recipes', optional(seq(':=', $.boolean))),
+                seq('allow-duplicate-variables', optional(seq(':=', $.boolean))),
             )
         ),
         boolean: $ => choice('true', 'false'),

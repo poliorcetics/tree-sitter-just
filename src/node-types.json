@@ -47,6 +47,10 @@
     "named": false
   },
   {
+    "type": "allow-duplicate-variables",
+    "named": false
+  },
+  {
     "type": "comment",
     "named": true
   },

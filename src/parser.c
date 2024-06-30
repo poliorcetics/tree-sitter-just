@@ -7,9 +7,9 @@
 #define LANGUAGE_VERSION 14
 #define STATE_COUNT 10
 #define LARGE_STATE_COUNT 2
-#define SYMBOL_COUNT 12
+#define SYMBOL_COUNT 13
 #define ALIAS_COUNT 0
-#define TOKEN_COUNT 8
+#define TOKEN_COUNT 9
 #define EXTERNAL_TOKEN_COUNT 0
 #define FIELD_COUNT 0
 #define MAX_ALIAS_SEQUENCE_LENGTH 4
@@ -20,13 +20,14 @@ enum ts_symbol_identifiers {
   anon_sym_set = 2,
   anon_sym_allow_DASHduplicate_DASHrecipes = 3,
   anon_sym_COLON_EQ = 4,
-  anon_sym_true = 5,
-  anon_sym_false = 6,
-  sym_comment = 7,
-  sym_file = 8,
-  sym_setting = 9,
-  sym_boolean = 10,
-  aux_sym_file_repeat1 = 11,
+  anon_sym_allow_DASHduplicate_DASHvariables = 5,
+  anon_sym_true = 6,
+  anon_sym_false = 7,
+  sym_comment = 8,
+  sym_file = 9,
+  sym_setting = 10,
+  sym_boolean = 11,
+  aux_sym_file_repeat1 = 12,
 };
 
 static const char * const ts_symbol_names[] = {
@@ -35,6 +36,7 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_set] = "set",
   [anon_sym_allow_DASHduplicate_DASHrecipes] = "allow-duplicate-recipes",
   [anon_sym_COLON_EQ] = ":=",
+  [anon_sym_allow_DASHduplicate_DASHvariables] = "allow-duplicate-variables",
   [anon_sym_true] = "true",
   [anon_sym_false] = "false",
   [sym_comment] = "comment",
@@ -50,6 +52,7 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_set] = anon_sym_set,
   [anon_sym_allow_DASHduplicate_DASHrecipes] = anon_sym_allow_DASHduplicate_DASHrecipes,
   [anon_sym_COLON_EQ] = anon_sym_COLON_EQ,
+  [anon_sym_allow_DASHduplicate_DASHvariables] = anon_sym_allow_DASHduplicate_DASHvariables,
   [anon_sym_true] = anon_sym_true,
   [anon_sym_false] = anon_sym_false,
   [sym_comment] = sym_comment,
@@ -77,6 +80,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = false,
   },
   [anon_sym_COLON_EQ] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_allow_DASHduplicate_DASHvariables] = {
     .visible = true,
     .named = false,
   },
@@ -267,27 +274,55 @@ static bool ts_lex_keywords(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 28:
       if (lookahead == 'r') ADVANCE(29);
+      if (lookahead == 'v') ADVANCE(30);
       END_STATE();
     case 29:
-      if (lookahead == 'e') ADVANCE(30);
+      if (lookahead == 'e') ADVANCE(31);
       END_STATE();
     case 30:
-      if (lookahead == 'c') ADVANCE(31);
+      if (lookahead == 'a') ADVANCE(32);
       END_STATE();
     case 31:
-      if (lookahead == 'i') ADVANCE(32);
+      if (lookahead == 'c') ADVANCE(33);
       END_STATE();
     case 32:
-      if (lookahead == 'p') ADVANCE(33);
+      if (lookahead == 'r') ADVANCE(34);
       END_STATE();
     case 33:
-      if (lookahead == 'e') ADVANCE(34);
+      if (lookahead == 'i') ADVANCE(35);
       END_STATE();
     case 34:
-      if (lookahead == 's') ADVANCE(35);
+      if (lookahead == 'i') ADVANCE(36);
       END_STATE();
     case 35:
+      if (lookahead == 'p') ADVANCE(37);
+      END_STATE();
+    case 36:
+      if (lookahead == 'a') ADVANCE(38);
+      END_STATE();
+    case 37:
+      if (lookahead == 'e') ADVANCE(39);
+      END_STATE();
+    case 38:
+      if (lookahead == 'b') ADVANCE(40);
+      END_STATE();
+    case 39:
+      if (lookahead == 's') ADVANCE(41);
+      END_STATE();
+    case 40:
+      if (lookahead == 'l') ADVANCE(42);
+      END_STATE();
+    case 41:
       ACCEPT_TOKEN(anon_sym_allow_DASHduplicate_DASHrecipes);
+      END_STATE();
+    case 42:
+      if (lookahead == 'e') ADVANCE(43);
+      END_STATE();
+    case 43:
+      if (lookahead == 's') ADVANCE(44);
+      END_STATE();
+    case 44:
+      ACCEPT_TOKEN(anon_sym_allow_DASHduplicate_DASHvariables);
       END_STATE();
     default:
       return false;
@@ -314,6 +349,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_set] = ACTIONS(1),
     [anon_sym_allow_DASHduplicate_DASHrecipes] = ACTIONS(1),
     [anon_sym_COLON_EQ] = ACTIONS(1),
+    [anon_sym_allow_DASHduplicate_DASHvariables] = ACTIONS(1),
     [anon_sym_true] = ACTIONS(1),
     [anon_sym_false] = ACTIONS(1),
     [sym_comment] = ACTIONS(3),
@@ -391,9 +427,10 @@ static const uint16_t ts_small_parse_table[] = {
   [81] = 2,
     ACTIONS(3), 1,
       sym_comment,
-    ACTIONS(39), 1,
+    ACTIONS(39), 2,
       anon_sym_allow_DASHduplicate_DASHrecipes,
-  [88] = 2,
+      anon_sym_allow_DASHduplicate_DASHvariables,
+  [89] = 2,
     ACTIONS(3), 1,
       sym_comment,
     ACTIONS(41), 1,
@@ -408,7 +445,7 @@ static const uint32_t ts_small_parse_table_map[] = {
   [SMALL_STATE(6)] = 59,
   [SMALL_STATE(7)] = 70,
   [SMALL_STATE(8)] = 81,
-  [SMALL_STATE(9)] = 88,
+  [SMALL_STATE(9)] = 89,
 };
 
 static const TSParseActionEntry ts_parse_actions[] = {

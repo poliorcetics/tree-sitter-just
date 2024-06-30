@@ -42,3 +42,20 @@ set allow-duplicate-recipes := false
     (boolean))
   (setting
     (boolean)))
+
+===
+Settings: allow-duplicate-variables
+===
+
+set allow-duplicate-variables
+set allow-duplicate-variables := true
+set allow-duplicate-variables := false
+
+---
+
+(file
+  (setting)
+  (setting
+    (boolean))
+  (setting
+    (boolean)))

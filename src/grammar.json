@@ -57,6 +57,36 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "allow-duplicate-variables"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": ":="
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "boolean"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
