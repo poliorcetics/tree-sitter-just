@@ -1,9 +1,44 @@
-=====
+===
 Comment
-=====
+===
 
 # This is a comment
 
------
+---
 
-(comment)
+(file
+  (comment))
+
+===
+Identifier
+===
+
+this-is_ident-01
+
+IDenT_11-toTO
+
+_Ident
+
+---
+
+(file
+  (identifier)
+  (identifier)
+  (identifier))
+
+===
+Settings: allow-duplicate-recipes
+===
+
+set allow-duplicate-recipes
+set allow-duplicate-recipes := true
+set allow-duplicate-recipes := false
+
+---
+
+(file
+  (setting)
+  (setting
+    (boolean))
+  (setting
+    (boolean)))

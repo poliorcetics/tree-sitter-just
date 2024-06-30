@@ -1,7 +1,69 @@
 [
   {
-    "type": "comment",
+    "type": "boolean",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "setting",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "setting",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": ":=",
+    "named": false
+  },
+  {
+    "type": "allow-duplicate-recipes",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "set",
+    "named": false
+  },
+  {
+    "type": "true",
+    "named": false
   }
 ]
