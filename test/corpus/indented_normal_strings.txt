@@ -1,0 +1,51 @@
+===
+Indented normal string: empty
+===
+
+""""""
+
+---
+
+(file
+  (string
+    (indented_normal_string)))
+
+===
+Indented normal string: with basic content
+===
+
+"""normal string 🦀"""
+
+---
+
+(file
+  (string
+    (indented_normal_string)))
+
+===
+Indented normal string: with line breaks
+===
+
+"""
+  a line break
+  or more"""
+
+---
+
+(file
+  (string
+    (indented_normal_string)))
+
+===
+Indented normal string: with " inside
+===
+
+"""
+  a line "break"
+  or more"""
+
+---
+
+(file
+  (string
+    (indented_normal_string)))

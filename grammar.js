@@ -22,7 +22,15 @@ module.exports = grammar({
             )
         ),
         string: $ => choice(
+            $.indented_normal_string,
             $.normal_string,
+        ),
+        indented_normal_string: $ => seq(
+            '"""',
+            repeat(choice(
+                /.[^"]?/,
+            )),
+            '"""'
         ),
         normal_string: $ => seq(
             '"',

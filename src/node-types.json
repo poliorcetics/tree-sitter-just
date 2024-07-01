@@ -38,6 +38,11 @@
     }
   },
   {
+    "type": "indented_normal_string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "normal_string",
     "named": true,
     "fields": {},
@@ -76,6 +81,10 @@
       "required": true,
       "types": [
         {
+          "type": "indented_normal_string",
+          "named": true
+        },
+        {
           "type": "normal_string",
           "named": true
         }
@@ -84,6 +93,10 @@
   },
   {
     "type": "\"",
+    "named": false
+  },
+  {
+    "type": "\"\"\"",
     "named": false
   },
   {
