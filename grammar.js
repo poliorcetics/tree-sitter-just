@@ -4,8 +4,6 @@ module.exports = grammar({
         /\s/,
         $.comment,
     ],
-    conflicts: $ => [
-    ],
     // Required by tree-sitter, the order and variant count here must match that of `src/scanner.c:TokenType`.
     // externals: $ => [],
     // Recommended by tree-sitter's documentation to improve performances and compile times.
