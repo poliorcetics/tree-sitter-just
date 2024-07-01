@@ -118,6 +118,10 @@
             "type": "CHOICE",
             "members": [
               {
+                "type": "SYMBOL",
+                "name": "escape_sequence"
+              },
+              {
                 "type": "PATTERN",
                 "value": "[^\"]"
               }
@@ -127,6 +131,31 @@
         {
           "type": "STRING",
           "value": "\""
+        }
+      ]
+    },
+    "escape_sequence": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\\n"
+        },
+        {
+          "type": "STRING",
+          "value": "\\r"
+        },
+        {
+          "type": "STRING",
+          "value": "\\t"
+        },
+        {
+          "type": "STRING",
+          "value": "\\\""
+        },
+        {
+          "type": "STRING",
+          "value": "\\\\"
         }
       ]
     },

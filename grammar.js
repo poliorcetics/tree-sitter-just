@@ -27,9 +27,18 @@ module.exports = grammar({
         normal_string: $ => seq(
             '"',
             repeat(choice(
+                // TODO: interpolation
+                $.escape_sequence,
                 /[^"]/,
             )),
             '"',
+        ),
+        escape_sequence: $ => choice(
+            '\\n',
+            '\\r',
+            '\\t',
+            '\\"',
+            '\\\\',
         ),
         boolean: $ => choice('true', 'false'),
         // Identifiers in Just are always ASCII.

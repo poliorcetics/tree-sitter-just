@@ -35,3 +35,20 @@ Normal string: with line breaks
 (file
   (string
     (normal_string)))
+
+===
+Normal string: with escape sequences
+===
+
+"normal \t \n \r \\ \" string"
+
+---
+
+(file
+  (string
+    (normal_string
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence))))
