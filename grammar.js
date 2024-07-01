@@ -25,6 +25,6 @@ module.exports = grammar({
         identifier: $ => /[a-zA-Z_][a-zA-Z0-9_-]*/,
         // Comments must be the last rule to match, so that anything that also matches `#.*` in some
         // way comes first in the list.
-        comment: $ => token(seq('#', /.*/)),
+        comment: $ => prec(-1, token(seq('#', /.*/))),
     }
 });

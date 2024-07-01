@@ -5,6 +5,11 @@
     "fields": {}
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "file",
     "named": true,
     "fields": {},
@@ -49,10 +54,6 @@
   {
     "type": "allow-duplicate-variables",
     "named": false
-  },
-  {
-    "type": "comment",
-    "named": true
   },
   {
     "type": "false",
