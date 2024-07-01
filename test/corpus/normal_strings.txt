@@ -1,0 +1,37 @@
+===
+Normal string: empty
+===
+
+""
+
+---
+
+(file
+  (string
+    (normal_string)))
+
+===
+Normal string: with basic content
+===
+
+"normal string 🦀"
+
+---
+
+(file
+  (string
+    (normal_string)))
+
+===
+Normal string: with line breaks
+===
+
+"
+  a line break
+  or more"
+
+---
+
+(file
+  (string
+    (normal_string)))

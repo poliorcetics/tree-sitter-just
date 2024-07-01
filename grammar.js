@@ -10,6 +10,7 @@ module.exports = grammar({
     word: $ => $.identifier,
     rules: {
         file: $ => repeat(choice(
+            $.string,
             $.setting,
             $.identifier,
         )),
@@ -19,6 +20,16 @@ module.exports = grammar({
                 seq('allow-duplicate-recipes', optional(seq(':=', $.boolean))),
                 seq('allow-duplicate-variables', optional(seq(':=', $.boolean))),
             )
+        ),
+        string: $ => choice(
+            $.normal_string,
+        ),
+        normal_string: $ => seq(
+            '"',
+            repeat(choice(
+                /[^"]/,
+            )),
+            '"',
         ),
         boolean: $ => choice('true', 'false'),
         // Identifiers in Just are always ASCII.

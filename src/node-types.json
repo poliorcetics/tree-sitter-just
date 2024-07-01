@@ -24,9 +24,18 @@
         {
           "type": "setting",
           "named": true
+        },
+        {
+          "type": "string",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "normal_string",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "setting",
@@ -42,6 +51,25 @@
         }
       ]
     }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "normal_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
   },
   {
     "type": ":=",
