@@ -28,6 +28,9 @@ module.exports = grammar({
         indented_normal_string: $ => seq(
             '"""',
             repeat(choice(
+                $.escape_sequence,
+                // Necessary to ensure escapes sequences are not eaten and that `<anything>"` does
+                // not eat the `"` when it could be part of the end of the string.
                 /.[^"]?/,
             )),
             '"""'

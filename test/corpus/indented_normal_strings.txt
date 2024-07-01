@@ -49,3 +49,20 @@ Indented normal string: with " inside
 (file
   (string
     (indented_normal_string)))
+
+===
+Indented normal string: with escape sequences
+===
+
+"""normal \t \n \r \\ \" string"""
+
+---
+
+(file
+  (string
+    (indented_normal_string
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence))))

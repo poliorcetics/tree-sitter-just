@@ -40,7 +40,17 @@
   {
     "type": "indented_normal_string",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "normal_string",
