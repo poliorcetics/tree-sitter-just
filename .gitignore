@@ -38,3 +38,6 @@ dist/
 *.wasm
 *.obj
 *.o
+
+# Ignore generated file
+.clangd
