@@ -107,6 +107,10 @@
         {
           "type": "boolean",
           "named": true
+        },
+        {
+          "type": "string",
+          "named": true
         }
       ]
     }
@@ -188,6 +192,10 @@
   },
   {
     "type": "allow-duplicate-variables",
+    "named": false
+  },
+  {
+    "type": "dotenv-filename",
     "named": false
   },
   {

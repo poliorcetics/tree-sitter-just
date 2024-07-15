@@ -31,3 +31,20 @@ set allow-duplicate-variables := false
     (boolean))
   (setting
     (boolean)))
+
+===
+dotenv-filename
+===
+
+set dotenv-filename := ".my-custom-env"
+set dotenv-filename := '.my-custom-env'
+
+---
+
+(file
+  (setting
+    (string
+      (normal_string)))
+  (setting
+    (string
+      (raw_string))))
