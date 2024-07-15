@@ -65,3 +65,20 @@ set dotenv-load := false
     (boolean))
   (setting
     (boolean)))
+
+===
+dotenv-path
+===
+
+set dotenv-path := ".my-custom-env"
+set dotenv-path := '.my-custom-env'
+
+---
+
+(file
+  (setting
+    (string
+      (normal_string)))
+  (setting
+    (string
+      (raw_string))))

@@ -22,6 +22,7 @@ module.exports = grammar({
                 seq('allow-duplicate-variables', optional(seq(':=', $.boolean))),
                 seq('dotenv-filename', ':=', $.string),
                 seq('dotenv-load', optional(seq(':=', $.boolean))),
+                seq('dotenv-path', ':=', $.string),
             )
         ),
         alias: $ => seq(

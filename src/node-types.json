@@ -203,6 +203,10 @@
     "named": false
   },
   {
+    "type": "dotenv-path",
+    "named": false
+  },
+  {
     "type": "false",
     "named": false
   },
