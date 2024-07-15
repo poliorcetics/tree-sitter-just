@@ -21,6 +21,11 @@ module.exports = grammar({
                 seq('allow-duplicate-variables', optional(seq(':=', $.boolean))),
             )
         ),
+        // TODO: interpolation
+        //
+        // - Interpolation is only active **within** recipes
+        // - In recipe parameters, in settings: **inactive**
+        // - In backticks (`, ```): **inactive**
         string: $ => choice(
             $.indented_normal_string,
             $.normal_string,
@@ -40,7 +45,6 @@ module.exports = grammar({
         normal_string: $ => seq(
             '"',
             repeat(choice(
-                // TODO: interpolation
                 $.escape_sequence,
                 /[^"]/,
             )),
