@@ -1,0 +1,25 @@
+===
+Alias: to same name
+===
+
+alias a := a
+
+---
+
+(file
+  (alias
+    (identifier)
+    (identifier)))
+
+===
+Alias: to different name
+===
+
+alias a := b
+
+---
+
+(file
+  (alias
+    (identifier)
+    (identifier)))

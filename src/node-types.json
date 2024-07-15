@@ -1,5 +1,20 @@
 [
   {
+    "type": "alias",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "boolean",
     "named": true,
     "fields": {}
@@ -22,6 +37,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "alias",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
@@ -157,6 +176,10 @@
   },
   {
     "type": "\\t",
+    "named": false
+  },
+  {
+    "type": "alias",
     "named": false
   },
   {

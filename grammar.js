@@ -10,6 +10,7 @@ module.exports = grammar({
     word: $ => $.identifier,
     rules: {
         file: $ => repeat(choice(
+            $.alias,
             $.string,
             $.setting,
             $.identifier,
@@ -20,6 +21,12 @@ module.exports = grammar({
                 seq('allow-duplicate-recipes', optional(seq(':=', $.boolean))),
                 seq('allow-duplicate-variables', optional(seq(':=', $.boolean))),
             )
+        ),
+        alias: $ => seq(
+            'alias',
+            $.identifier,
+            ':=',
+            $.identifier,
         ),
         // TODO: interpolation
         //
