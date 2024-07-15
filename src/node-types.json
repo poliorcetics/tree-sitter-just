@@ -255,6 +255,10 @@
     "named": false
   },
   {
+    "type": "tempdir",
+    "named": false
+  },
+  {
     "type": "true",
     "named": false
   }

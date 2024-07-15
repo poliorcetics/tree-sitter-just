@@ -29,6 +29,7 @@ module.exports = grammar({
                 seq('ignore-comments', optional(seq(':=', $.boolean))),
                 seq('positional-arguments', optional(seq(':=', $.boolean))),
                 seq('shell', ':=', '[', $.string, repeat(seq(',', $.string)), optional(','), ']'),
+                seq('tempdir', ':=', $.string),
             )
         ),
         alias: $ => seq(

@@ -198,3 +198,20 @@ set shell := [ "bash", '-c', "echo", ]
       (raw_string))
     (string
       (normal_string))))
+
+===
+tempdir
+===
+
+set tempdir := "/tmp/toto"
+set tempdir := './target'
+
+---
+
+(file
+  (setting
+    (string
+      (normal_string)))
+  (setting
+    (string
+      (raw_string))))
