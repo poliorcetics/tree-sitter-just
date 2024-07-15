@@ -13,11 +13,11 @@
           },
           {
             "type": "SYMBOL",
-            "name": "string"
+            "name": "setting"
           },
           {
             "type": "SYMBOL",
-            "name": "setting"
+            "name": "string"
           },
           {
             "type": "SYMBOL",
@@ -25,6 +25,27 @@
           }
         ]
       }
+    },
+    "alias": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "alias"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "STRING",
+          "value": ":="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        }
+      ]
     },
     "setting": {
       "type": "SEQ",
@@ -421,27 +442,6 @@
         {
           "type": "STRING",
           "value": "]"
-        }
-      ]
-    },
-    "alias": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "alias"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
-          "type": "STRING",
-          "value": ":="
-        },
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
         }
       ]
     },

@@ -11,10 +11,24 @@ module.exports = grammar({
     rules: {
         file: $ => repeat(choice(
             $.alias,
-            $.string,
             $.setting,
+            $.string,
             $.identifier,
         )),
+
+        // ========================================================================================
+        // Aliases
+
+        alias: $ => seq(
+            'alias',
+            $.identifier,
+            ':=',
+            $.identifier,
+        ),
+
+        // ========================================================================================
+        // Settings
+
         setting: $ => seq(
             'set',
             choice(
@@ -45,12 +59,10 @@ module.exports = grammar({
         _setting_boolean: $ => seq(':=', $.boolean),
         _setting_string: $ => seq(':=', $.string),
         _setting_list: $ => seq(':=', '[', $.string, repeat(seq(',', $.string)), optional(','), ']'),
-        alias: $ => seq(
-            'alias',
-            $.identifier,
-            ':=',
-            $.identifier,
-        ),
+
+        // ========================================================================================
+        // Strings
+
         // TODO: interpolation
         //
         // - Interpolation is only active **within** recipes
@@ -98,9 +110,15 @@ module.exports = grammar({
             '\\"',
             '\\\\',
         ),
+
+        // ========================================================================================
+        // Misc.
+
         boolean: $ => choice('true', 'false'),
+
         // Identifiers in Just are always ASCII.
         identifier: $ => /[a-zA-Z_][a-zA-Z0-9_-]*/,
+
         // Comments must be the last rule to match, so that anything that also matches `#.*` in some
         // way comes first in the list.
         comment: $ => prec(-1, token(seq('#', /.*/))),
