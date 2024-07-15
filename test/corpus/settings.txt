@@ -133,3 +133,20 @@ set fallback := false
     (boolean))
   (setting
     (boolean)))
+
+===
+ignore-comments
+===
+
+set ignore-comments
+set ignore-comments := true
+set ignore-comments := false
+
+---
+
+(file
+  (setting)
+  (setting
+    (boolean))
+  (setting
+    (boolean)))

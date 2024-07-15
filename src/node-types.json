@@ -227,6 +227,10 @@
     "named": true
   },
   {
+    "type": "ignore-comments",
+    "named": false
+  },
+  {
     "type": "set",
     "named": false
   },
