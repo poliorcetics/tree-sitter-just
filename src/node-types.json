@@ -68,6 +68,11 @@
     }
   },
   {
+    "type": "raw_string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "setting",
     "named": true,
     "fields": {},
@@ -97,6 +102,10 @@
         {
           "type": "normal_string",
           "named": true
+        },
+        {
+          "type": "raw_string",
+          "named": true
         }
       ]
     }
@@ -107,6 +116,10 @@
   },
   {
     "type": "\"\"\"",
+    "named": false
+  },
+  {
+    "type": "'",
     "named": false
   },
   {

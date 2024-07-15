@@ -106,6 +106,10 @@
         {
           "type": "SYMBOL",
           "name": "normal_string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "raw_string"
         }
       ]
     },
@@ -164,6 +168,23 @@
         {
           "type": "STRING",
           "value": "\""
+        }
+      ]
+    },
+    "raw_string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "'"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^']*"
+        },
+        {
+          "type": "STRING",
+          "value": "'"
         }
       ]
     },

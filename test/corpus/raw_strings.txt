@@ -1,0 +1,63 @@
+===
+Raw string: empty
+===
+
+''
+
+---
+
+(file
+  (string
+    (raw_string)))
+
+===
+Raw string: with basic content
+===
+
+'raw string 🦀'
+
+---
+
+(file
+  (string
+    (raw_string)))
+
+===
+Raw string: with line breaks
+===
+
+'
+  a line break
+  or more'
+
+---
+
+(file
+  (string
+    (raw_string)))
+
+===
+Raw string: with " inside
+===
+
+'
+  a line "break"
+  or more'
+
+---
+
+(file
+  (string
+    (raw_string)))
+
+===
+Raw string: with escape sequences
+===
+
+'raw \t \n \r \\ \" string'
+
+---
+
+(file
+  (string
+    (raw_string)))

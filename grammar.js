@@ -24,6 +24,7 @@ module.exports = grammar({
         string: $ => choice(
             $.indented_normal_string,
             $.normal_string,
+            $.raw_string,
         ),
         indented_normal_string: $ => seq(
             '"""',
@@ -43,6 +44,11 @@ module.exports = grammar({
                 /[^"]/,
             )),
             '"',
+        ),
+        raw_string: $ => seq(
+            "'",
+            /[^']*/,
+            "'",
         ),
         escape_sequence: $ => choice(
             '\\n',
