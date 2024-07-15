@@ -265,5 +265,9 @@
   {
     "type": "unstable",
     "named": false
+  },
+  {
+    "type": "windows-powershell",
+    "named": false
   }
 ]

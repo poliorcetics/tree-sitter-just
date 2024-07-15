@@ -31,6 +31,7 @@ module.exports = grammar({
                 seq('shell', ':=', '[', $.string, repeat(seq(',', $.string)), optional(','), ']'),
                 seq('tempdir', ':=', $.string),
                 seq('unstable', optional(seq(':=', $.boolean))),
+                seq('windows-powershell', optional(seq(':=', $.boolean))),
             )
         ),
         alias: $ => seq(
