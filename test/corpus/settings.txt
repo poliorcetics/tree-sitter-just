@@ -249,3 +249,34 @@ set windows-powershell := false
     (boolean))
   (setting
     (boolean)))
+
+===
+windows-shell
+===
+
+set windows-shell := [ 'bash' ]
+set windows-shell := [ "bash", ]
+set windows-shell := [ "bash", '-c' ]
+set windows-shell := [ "bash", '-c', "echo", ]
+
+---
+
+(file
+  (setting
+    (string
+      (raw_string)))
+  (setting
+    (string
+      (normal_string)))
+  (setting
+    (string
+      (normal_string))
+    (string
+      (raw_string)))
+  (setting
+    (string
+      (normal_string))
+    (string
+      (raw_string))
+    (string
+      (normal_string))))

@@ -269,5 +269,9 @@
   {
     "type": "windows-powershell",
     "named": false
+  },
+  {
+    "type": "windows-shell",
+    "named": false
   }
 ]
