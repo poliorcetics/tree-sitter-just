@@ -116,3 +116,20 @@ set export := false
     (boolean))
   (setting
     (boolean)))
+
+===
+fallback
+===
+
+set fallback
+set fallback := true
+set fallback := false
+
+---
+
+(file
+  (setting)
+  (setting
+    (boolean))
+  (setting
+    (boolean)))
