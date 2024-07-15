@@ -53,6 +53,11 @@
     }
   },
   {
+    "type": "indented_raw_string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "normal_string",
     "named": true,
     "fields": {},
@@ -100,6 +105,10 @@
           "named": true
         },
         {
+          "type": "indented_raw_string",
+          "named": true
+        },
+        {
           "type": "normal_string",
           "named": true
         },
@@ -120,6 +129,10 @@
   },
   {
     "type": "'",
+    "named": false
+  },
+  {
+    "type": "'''",
     "named": false
   },
   {

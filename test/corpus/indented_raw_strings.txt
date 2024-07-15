@@ -1,0 +1,77 @@
+===
+Indented raw string: empty
+===
+
+''''''
+
+---
+
+(file
+  (string
+    (indented_raw_string)))
+
+===
+Indented raw string: with basic content
+===
+
+'''raw string 🦀'''
+
+---
+
+(file
+  (string
+    (indented_raw_string)))
+
+===
+Indented raw string: with line breaks
+===
+
+'''
+  a line break
+  or more'''
+
+---
+
+(file
+  (string
+    (indented_raw_string)))
+
+===
+Indented raw string: with " inside
+===
+
+'''
+  a line "break"
+  or more'''
+
+---
+
+(file
+  (string
+    (indented_raw_string)))
+
+===
+Indented raw string: with ' inside
+===
+
+'''
+  a line 'break'
+  or more'''
+
+---
+
+(file
+  (string
+    (indented_raw_string)))
+
+===
+Indented raw string: with escape sequences
+===
+
+'''raw \t \n \r \\ \" string'''
+
+---
+
+(file
+  (string
+    (indented_raw_string)))
