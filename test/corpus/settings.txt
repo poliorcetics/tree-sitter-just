@@ -215,3 +215,20 @@ set tempdir := './target'
   (setting
     (string
       (raw_string))))
+
+===
+unstable
+===
+
+set unstable
+set unstable := true
+set unstable := false
+
+---
+
+(file
+  (setting)
+  (setting
+    (boolean))
+  (setting
+    (boolean)))

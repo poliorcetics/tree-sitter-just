@@ -30,6 +30,7 @@ module.exports = grammar({
                 seq('positional-arguments', optional(seq(':=', $.boolean))),
                 seq('shell', ':=', '[', $.string, repeat(seq(',', $.string)), optional(','), ']'),
                 seq('tempdir', ':=', $.string),
+                seq('unstable', optional(seq(':=', $.boolean))),
             )
         ),
         alias: $ => seq(
