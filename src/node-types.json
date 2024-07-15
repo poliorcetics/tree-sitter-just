@@ -211,6 +211,10 @@
     "named": false
   },
   {
+    "type": "export",
+    "named": false
+  },
+  {
     "type": "false",
     "named": false
   },
