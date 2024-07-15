@@ -150,3 +150,20 @@ set ignore-comments := false
     (boolean))
   (setting
     (boolean)))
+
+===
+positional-arguments
+===
+
+set positional-arguments
+set positional-arguments := true
+set positional-arguments := false
+
+---
+
+(file
+  (setting)
+  (setting
+    (boolean))
+  (setting
+    (boolean)))

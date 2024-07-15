@@ -231,6 +231,10 @@
     "named": false
   },
   {
+    "type": "positional-arguments",
+    "named": false
+  },
+  {
     "type": "set",
     "named": false
   },

@@ -27,6 +27,7 @@ module.exports = grammar({
                 seq('export', optional(seq(':=', $.boolean))),
                 seq('fallback', optional(seq(':=', $.boolean))),
                 seq('ignore-comments', optional(seq(':=', $.boolean))),
+                seq('positional-arguments', optional(seq(':=', $.boolean))),
             )
         ),
         alias: $ => seq(
