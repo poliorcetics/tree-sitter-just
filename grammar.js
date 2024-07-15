@@ -18,6 +18,7 @@ module.exports = grammar({
         setting: $ => seq(
             'set',
             choice(
+                // <https://just.systems/man/en/chapter_27.html?highlight=dotenv-filename#table-of-settings>
                 seq('allow-duplicate-recipes',   optional($._setting_boolean)),
                 seq('allow-duplicate-variables', optional($._setting_boolean)),
                 seq('dotenv-filename',           $._setting_string),
@@ -33,7 +34,13 @@ module.exports = grammar({
                 seq('unstable',                  optional($._setting_boolean)),
                 seq('windows-powershell',        optional($._setting_boolean)),
                 seq('windows-shell',             $._setting_list),
-            )
+                // To handle future settings before they're added formally to the grammar
+                seq($.identifier,                choice(
+                    optional($._setting_boolean),
+                    $._setting_string,
+                    $._setting_list,
+                )),
+            ),
         ),
         _setting_boolean: $ => seq(':=', $.boolean),
         _setting_string: $ => seq(':=', $.string),

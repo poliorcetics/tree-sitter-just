@@ -310,6 +310,40 @@
                   "name": "_setting_list"
                 }
               ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "_setting_boolean"
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "_setting_string"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "_setting_list"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

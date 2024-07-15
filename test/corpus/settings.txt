@@ -280,3 +280,61 @@ set windows-shell := [ "bash", '-c', "echo", ]
       (raw_string))
     (string
       (normal_string))))
+
+===
+Unknown settings
+===
+
+set new-setting
+set new-setting := true
+set new-setting := false
+
+set new-setting := "some string"
+set new-setting := 'some other string'
+
+set new-setting := [ 'bash' ]
+set new-setting := [ "bash", ]
+set new-setting := [ "bash", '-c' ]
+set new-setting := [ "bash", '-c', "echo", ]
+
+---
+
+(file
+  (setting
+    (identifier))
+  (setting
+    (identifier)
+    (boolean))
+  (setting
+    (identifier)
+    (boolean))
+  (setting
+    (identifier)
+    (string
+      (normal_string)))
+  (setting
+    (identifier)
+    (string
+      (raw_string)))
+  (setting
+    (identifier)
+    (string
+      (raw_string)))
+  (setting
+    (identifier)
+    (string
+      (normal_string)))
+  (setting
+    (identifier)
+    (string
+      (normal_string))
+    (string
+      (raw_string)))
+  (setting
+    (identifier)
+    (string
+      (normal_string))
+    (string
+      (raw_string))
+    (string
+      (normal_string))))
