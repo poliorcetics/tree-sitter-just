@@ -199,6 +199,10 @@
     "named": false
   },
   {
+    "type": "dotenv-load",
+    "named": false
+  },
+  {
     "type": "false",
     "named": false
   },

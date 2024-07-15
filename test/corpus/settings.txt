@@ -48,3 +48,20 @@ set dotenv-filename := '.my-custom-env'
   (setting
     (string
       (raw_string))))
+
+===
+dotenv-load
+===
+
+set dotenv-load
+set dotenv-load := true
+set dotenv-load := false
+
+---
+
+(file
+  (setting)
+  (setting
+    (boolean))
+  (setting
+    (boolean)))

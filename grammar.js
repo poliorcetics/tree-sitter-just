@@ -21,6 +21,7 @@ module.exports = grammar({
                 seq('allow-duplicate-recipes', optional(seq(':=', $.boolean))),
                 seq('allow-duplicate-variables', optional(seq(':=', $.boolean))),
                 seq('dotenv-filename', ':=', $.string),
+                seq('dotenv-load', optional(seq(':=', $.boolean))),
             )
         ),
         alias: $ => seq(
