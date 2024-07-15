@@ -82,3 +82,20 @@ set dotenv-path := '.my-custom-env'
   (setting
     (string
       (raw_string))))
+
+===
+dotenv-required
+===
+
+set dotenv-required
+set dotenv-required := true
+set dotenv-required := false
+
+---
+
+(file
+  (setting)
+  (setting
+    (boolean))
+  (setting
+    (boolean)))

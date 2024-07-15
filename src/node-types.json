@@ -207,6 +207,10 @@
     "named": false
   },
   {
+    "type": "dotenv-required",
+    "named": false
+  },
+  {
     "type": "false",
     "named": false
   },

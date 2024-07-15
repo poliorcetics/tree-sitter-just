@@ -23,6 +23,7 @@ module.exports = grammar({
                 seq('dotenv-filename', ':=', $.string),
                 seq('dotenv-load', optional(seq(':=', $.boolean))),
                 seq('dotenv-path', ':=', $.string),
+                seq('dotenv-required', optional(seq(':=', $.boolean))),
             )
         ),
         alias: $ => seq(
