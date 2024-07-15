@@ -28,6 +28,7 @@ module.exports = grammar({
                 seq('fallback', optional(seq(':=', $.boolean))),
                 seq('ignore-comments', optional(seq(':=', $.boolean))),
                 seq('positional-arguments', optional(seq(':=', $.boolean))),
+                seq('shell', ':=', '[', $.string, repeat(seq(',', $.string)), optional(','), ']'),
             )
         ),
         alias: $ => seq(

@@ -101,7 +101,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
@@ -159,7 +159,15 @@
     "named": false
   },
   {
+    "type": ",",
+    "named": false
+  },
+  {
     "type": ":=",
+    "named": false
+  },
+  {
+    "type": "[",
     "named": false
   },
   {
@@ -180,6 +188,10 @@
   },
   {
     "type": "\\t",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {
@@ -236,6 +248,10 @@
   },
   {
     "type": "set",
+    "named": false
+  },
+  {
+    "type": "shell",
     "named": false
   },
   {

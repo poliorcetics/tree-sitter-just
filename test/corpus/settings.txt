@@ -167,3 +167,34 @@ set positional-arguments := false
     (boolean))
   (setting
     (boolean)))
+
+===
+shell
+===
+
+set shell := [ 'bash' ]
+set shell := [ "bash", ]
+set shell := [ "bash", '-c' ]
+set shell := [ "bash", '-c', "echo", ]
+
+---
+
+(file
+  (setting
+    (string
+      (raw_string)))
+  (setting
+    (string
+      (normal_string)))
+  (setting
+    (string
+      (normal_string))
+    (string
+      (raw_string)))
+  (setting
+    (string
+      (normal_string))
+    (string
+      (raw_string))
+    (string
+      (normal_string))))
