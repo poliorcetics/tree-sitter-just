@@ -22,6 +22,12 @@ _Ident
 ---
 
 (file
-  (identifier)
-  (identifier)
-  (identifier))
+  (expression
+    (value
+      (identifier)))
+  (expression
+    (value
+      (identifier)))
+  (expression
+    (value
+      (identifier))))

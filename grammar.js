@@ -16,10 +16,7 @@ module.exports = grammar({
             $.setting,
             // NOTE: in practice those will not be accepted raw by Just, only the items above are accepted.
             //       We keep those here to make testing, highlighting and error recovery easier.
-            //
-            //       The order here is important since it determines the priority.
             $.expression,
-            $.identifier,
         )),
 
         // ========================================================================================
@@ -79,6 +76,7 @@ module.exports = grammar({
             $.backtick,
             $.indented_backtick,
             $.string,
+            $.identifier,
         ),
 
         builtin_function_call: $ => choice(
