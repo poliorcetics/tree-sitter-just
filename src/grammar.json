@@ -17,6 +17,10 @@
           },
           {
             "type": "SYMBOL",
+            "name": "mod"
+          },
+          {
+            "type": "SYMBOL",
             "name": "setting"
           },
           {
@@ -63,6 +67,35 @@
           "name": "string"
         }
       ]
+    },
+    "mod": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "mod\\??"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "string"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
     },
     "setting": {
       "type": "SEQ",

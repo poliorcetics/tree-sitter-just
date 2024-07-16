@@ -1,0 +1,51 @@
+===
+Module: just a name
+===
+
+mod a
+
+---
+
+(file
+  (mod
+    (identifier)))
+
+===
+Module: just a name, optional
+===
+
+mod? a
+
+---
+
+(file
+  (mod
+    (identifier)))
+
+===
+Module: name and path
+===
+
+mod a 'b/c.just'
+
+---
+
+(file
+  (mod
+    (identifier)
+    (string
+      (raw_string))))
+
+===
+Module: name and path, optional
+===
+
+mod? a "b/c.just"
+
+---
+
+(file
+  (mod
+    (identifier)
+    (string
+      (normal_string))))

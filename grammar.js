@@ -12,6 +12,7 @@ module.exports = grammar({
         file: $ => repeat(choice(
             $.alias,
             $.import,
+            $.mod,
             $.setting,
             $.string,
             $.identifier,
@@ -28,12 +29,18 @@ module.exports = grammar({
         ),
 
         // ========================================================================================
-        // Imports
+        // Imports and modules
 
         import: $ => seq(
             /import\??/,
             $.string,
         ),
+
+        mod: $ => prec.right(seq(
+            /mod\??/,
+            $.identifier,
+            optional($.string),
+        )),
 
         // ========================================================================================
         // Settings
