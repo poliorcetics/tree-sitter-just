@@ -29,15 +29,15 @@
           },
           {
             "type": "SYMBOL",
-            "name": "identifier"
-          },
-          {
-            "type": "SYMBOL",
             "name": "indented_backtick"
           },
           {
             "type": "SYMBOL",
             "name": "string"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "identifier"
           }
         ]
       }

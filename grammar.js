@@ -16,10 +16,12 @@ module.exports = grammar({
             $.setting,
             // NOTE: in practice those will not be accepted raw by Just, only the items above are accepted.
             //       We keep those here to make testing, highlighting and error recovery easier.
+            //
+            //       The order here is important since it determines the priority.
             $.backtick,
-            $.identifier,
             $.indented_backtick,
             $.string,
+            $.identifier,
         )),
 
         // ========================================================================================
