@@ -102,10 +102,6 @@
           "named": true
         },
         {
-          "type": "indented_backtick",
-          "named": true
-        },
-        {
           "type": "mod",
           "named": true
         },
@@ -259,6 +255,10 @@
         },
         {
           "type": "builtin_function_call",
+          "named": true
+        },
+        {
+          "type": "indented_backtick",
           "named": true
         },
         {
