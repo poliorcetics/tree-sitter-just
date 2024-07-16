@@ -21,6 +21,7 @@ module.exports = grammar({
             $.backtick,
             $.indented_backtick,
             $.string,
+            $.expression,
             $.identifier,
         )),
 
@@ -71,6 +72,22 @@ module.exports = grammar({
         //
         // sequence   : expression ',' sequence
         //            | expression ','?
+
+        expression: $ => choice(
+            $.value,
+        ),
+
+        value: $ => choice(
+            $.builtin_function_call,
+        ),
+
+        builtin_function_call: $ => choice(
+            // <https://just.systems/man/en/chapter_32.html?highlight=functions#system-information>
+            seq(field('function_name', 'arch'),      '(', ')'),
+            seq(field('function_name', 'num_cpus'),  '(', ')'),
+            seq(field('function_name', 'os'),        '(', ')'),
+            seq(field('function_name', 'os_family'), '(', ')'),
+        ),
 
         // ========================================================================================
         // Settings

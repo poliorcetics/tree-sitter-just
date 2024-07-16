@@ -37,6 +37,10 @@
           },
           {
             "type": "SYMBOL",
+            "name": "expression"
+          },
+          {
+            "type": "SYMBOL",
             "name": "identifier"
           }
         ]
@@ -104,6 +108,113 @@
           }
         ]
       }
+    },
+    "expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "value"
+        }
+      ]
+    },
+    "value": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "builtin_function_call"
+        }
+      ]
+    },
+    "builtin_function_call": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "arch"
+              }
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "num_cpus"
+              }
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "os"
+              }
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "os_family"
+              }
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        }
+      ]
     },
     "setting": {
       "type": "SEQ",
