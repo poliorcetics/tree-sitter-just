@@ -47,6 +47,30 @@ module.exports = grammar({
         )),
 
         // ========================================================================================
+        // Expression
+
+        // TODO:
+        //
+        // expression : 'if' condition '{' expression '}' 'else' '{' expression '}'
+        //            | 'assert' '(' condition ',' expression ')'
+        //            | value '/' expression
+        //            | value '+' expression
+        //            | value
+        // 
+        // condition  : expression '==' expression
+        //            | expression '!=' expression
+        // 
+        // value      : NAME '(' sequence? ')'
+        //            | BACKTICK
+        //            | INDENTED_BACKTICK
+        //            | NAME
+        //            | string
+        //            | '(' expression ')'
+        //
+        // sequence   : expression ',' sequence
+        //            | expression ','?
+
+        // ========================================================================================
         // Settings
 
         setting: $ => seq(
