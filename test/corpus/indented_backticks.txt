@@ -1,0 +1,57 @@
+===
+Indented backtick: empty
+===
+
+``````
+
+---
+
+(file
+  (indented_backtick))
+
+===
+Indented backtick: with basic content
+===
+
+```raw string 🦀```
+
+---
+
+(file
+  (indented_backtick))
+
+===
+Indented backtick: with ` inside
+===
+
+```raw string with ` inside```
+
+---
+
+(file
+  (indented_backtick))
+
+===
+Indented backtick: with line breaks
+===
+
+```
+  a line break
+  or more```
+
+---
+
+(file
+  (indented_backtick))
+
+===
+Indented backtick: with escape sequences
+===
+
+```raw \t \n \r \\ \" string```
+
+---
+
+(file
+  (indented_backtick))
+

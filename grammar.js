@@ -18,6 +18,7 @@ module.exports = grammar({
             //       We keep those here to make testing, highlighting and error recovery easier.
             $.backtick,
             $.identifier,
+            $.indented_backtick,
             $.string,
         )),
 
@@ -86,6 +87,13 @@ module.exports = grammar({
             "`",
             /[^`]*/,
             "`",
+        ),
+
+        indented_backtick: $ => seq(
+            "```",
+            // See `indented_normal_string`.
+            repeat(/.[^`]?/),
+            "```",
         ),
 
         // ========================================================================================

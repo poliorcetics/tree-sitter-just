@@ -59,6 +59,10 @@
           "named": true
         },
         {
+          "type": "indented_backtick",
+          "named": true
+        },
+        {
           "type": "mod",
           "named": true
         },
@@ -87,6 +91,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "indented_backtick",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "indented_normal_string",
@@ -251,6 +260,10 @@
   },
   {
     "type": "`",
+    "named": false
+  },
+  {
+    "type": "```",
     "named": false
   },
   {
