@@ -25,10 +25,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "backtick"
-          },
-          {
-            "type": "SYMBOL",
             "name": "indented_backtick"
           },
           {
@@ -120,6 +116,10 @@
         {
           "type": "SYMBOL",
           "name": "builtin_function_call"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "backtick"
         },
         {
           "type": "SYMBOL",

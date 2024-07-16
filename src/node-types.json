@@ -90,10 +90,6 @@
           "named": true
         },
         {
-          "type": "backtick",
-          "named": true
-        },
-        {
           "type": "expression",
           "named": true
         },
@@ -257,6 +253,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "backtick",
+          "named": true
+        },
         {
           "type": "builtin_function_call",
           "named": true

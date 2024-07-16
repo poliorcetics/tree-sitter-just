@@ -7,7 +7,9 @@ Backtick: empty
 ---
 
 (file
-  (backtick))
+  (expression
+    (value
+      (backtick))))
 
 ===
 Backtick: with basic content
@@ -18,7 +20,9 @@ Backtick: with basic content
 ---
 
 (file
-  (backtick))
+  (expression
+    (value
+      (backtick))))
 
 ===
 Backtick: with line breaks
@@ -31,7 +35,9 @@ Backtick: with line breaks
 ---
 
 (file
-  (backtick))
+  (expression
+    (value
+      (backtick))))
 
 ===
 Backtick: with escape sequences
@@ -42,4 +48,6 @@ Backtick: with escape sequences
 ---
 
 (file
-  (backtick))
+  (expression
+    (value
+      (backtick))))
