@@ -25,11 +25,11 @@
           },
           {
             "type": "SYMBOL",
-            "name": "string"
+            "name": "identifier"
           },
           {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "string"
           }
         ]
       }
