@@ -15,6 +15,11 @@
     }
   },
   {
+    "type": "backtick",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "boolean",
     "named": true,
     "fields": {}
@@ -39,6 +44,10 @@
       "types": [
         {
           "type": "alias",
+          "named": true
+        },
+        {
+          "type": "backtick",
           "named": true
         },
         {
@@ -238,6 +247,10 @@
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "`",
     "named": false
   },
   {

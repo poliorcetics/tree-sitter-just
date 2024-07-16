@@ -16,6 +16,7 @@ module.exports = grammar({
             $.setting,
             // NOTE: in practice those will not be accepted raw by Just, only the items above are accepted.
             //       We keep those here to make testing, highlighting and error recovery easier.
+            $.backtick,
             $.identifier,
             $.string,
         )),
@@ -77,6 +78,15 @@ module.exports = grammar({
         _setting_boolean: $ => seq(':=', $.boolean),
         _setting_string: $ => seq(':=', $.string),
         _setting_list: $ => seq(':=', '[', $.string, repeat(seq(',', $.string)), optional(','), ']'),
+
+        // ========================================================================================
+        // Backticks
+
+        backtick: $ => seq(
+            "`",
+            /[^`]*/,
+            "`",
+        ),
 
         // ========================================================================================
         // Strings
