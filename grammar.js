@@ -14,6 +14,8 @@ module.exports = grammar({
             $.import,
             $.mod,
             $.setting,
+            // NOTE: in practice those will not be accepted raw by Just, only the items above are accepted.
+            //       We keep those here to make testing, highlighting and error recovery easier.
             $.string,
             $.identifier,
         )),
