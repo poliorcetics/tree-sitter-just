@@ -85,7 +85,11 @@ module.exports = grammar({
             seq(field('function_name', 'num_cpus'),  '(', ')'),
             seq(field('function_name', 'os'),        '(', ')'),
             seq(field('function_name', 'os_family'), '(', ')'),
+            // <https://just.systems/man/en/chapter_32.html?highlight=functions#external-commands>
+            seq(field('function_name', 'shell'), '(', $.function_parameters, ')'),
         ),
+
+        function_parameters: $ => seq($.expression, repeat(seq(',', $.expression)), optional(',')),
 
         // ========================================================================================
         // Settings

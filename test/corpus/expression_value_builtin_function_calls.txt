@@ -1,0 +1,92 @@
+===
+Expression: Values: Builtin function call: System information
+===
+
+arch()
+
+num_cpus()
+
+os()
+
+os_family()
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call))))
+
+===
+Expression: Values: Builtin function call: External commands
+===
+
+shell('powershell')
+
+shell("bash", "-c")
+
+shell(
+  `bash`,
+  "-c",
+  subcommand_ident,
+)
+
+shell("bash", arch())
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (string
+                (raw_string))))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (string
+                (normal_string))))
+          (expression
+            (value
+              (string
+                (normal_string))))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (backtick)))
+          (expression
+            (value
+              (string
+                (normal_string))))
+          (expression
+            (value
+              (identifier)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (string
+                (normal_string))))
+          (expression
+            (value
+              (builtin_function_call))))))))
