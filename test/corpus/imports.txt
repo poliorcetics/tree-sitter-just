@@ -1,0 +1,45 @@
+===
+Import: required
+===
+
+import "a/b/justfile"
+
+import "/ab/cd/just"
+
+import '~/just'
+
+---
+
+(file
+  (import
+    (string
+      (normal_string)))
+  (import
+    (string
+      (normal_string)))
+  (import
+    (string
+      (raw_string))))
+
+===
+Import: optional
+===
+
+import? "a/b/justfile"
+
+import? "/ab/cd/just"
+
+import? '~/just'
+
+---
+
+(file
+  (import
+    (string
+      (normal_string)))
+  (import
+    (string
+      (normal_string)))
+  (import
+    (string
+      (raw_string))))
