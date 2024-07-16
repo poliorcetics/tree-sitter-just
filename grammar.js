@@ -20,7 +20,6 @@ module.exports = grammar({
             //       The order here is important since it determines the priority.
             $.backtick,
             $.indented_backtick,
-            $.string,
             $.expression,
             $.identifier,
         )),
@@ -79,6 +78,7 @@ module.exports = grammar({
 
         value: $ => choice(
             $.builtin_function_call,
+            $.string,
         ),
 
         builtin_function_call: $ => choice(
