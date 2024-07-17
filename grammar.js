@@ -73,6 +73,7 @@ module.exports = grammar({
 
         value: $ => choice(
             $.builtin_function_call,
+            seq('(', $.expression, ')'),
             $.backtick,
             $.indented_backtick,
             $.string,

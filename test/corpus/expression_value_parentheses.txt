@@ -1,0 +1,78 @@
+===
+Expression: Parentheses
+===
+
+( identifier )
+
+( `backtick` )
+
+( ```indented backtick``` )
+
+( 'raw string' )
+
+( '''indented raw string''' )
+
+( "normal string" )
+
+( """indented normal string""" )
+
+( arch() )
+
+( shell(`python3 --help`) )
+
+---
+
+(file
+  (expression
+    (value
+      (expression
+        (value
+          (identifier)))))
+  (expression
+    (value
+      (expression
+        (value
+          (backtick)))))
+  (expression
+    (value
+      (expression
+        (value
+          (indented_backtick)))))
+  (expression
+    (value
+      (expression
+        (value
+          (string
+            (raw_string))))))
+  (expression
+    (value
+      (expression
+        (value
+          (string
+            (indented_raw_string))))))
+  (expression
+    (value
+      (expression
+        (value
+          (string
+            (normal_string))))))
+  (expression
+    (value
+      (expression
+        (value
+          (string
+            (indented_normal_string))))))
+  (expression
+    (value
+      (expression
+        (value
+          (builtin_function_call)))))
+  (expression
+    (value
+      (expression
+        (value
+          (builtin_function_call
+            (function_parameters
+              (expression
+                (value
+                  (backtick))))))))))
