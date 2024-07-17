@@ -73,11 +73,12 @@ module.exports = grammar({
 
         value: $ => choice(
             $.builtin_function_call,
+            $.function_call,
             seq('(', $.expression, ')'),
             $.backtick,
             $.indented_backtick,
             $.string,
-            $.identifier,
+            prec(-1, $.identifier),
         ),
 
         builtin_function_call: $ => choice(
@@ -89,6 +90,8 @@ module.exports = grammar({
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#external-commands>
             seq(field('function_name', 'shell'), '(', $.function_parameters, ')'),
         ),
+
+        function_call: $ => seq(field('function_name', $.identifier), '(', optional($.function_parameters), ')'),
 
         function_parameters: $ => seq($.expression, repeat(seq(',', $.expression)), optional(',')),
 

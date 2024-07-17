@@ -20,6 +20,14 @@ Expression: Parentheses
 
 ( shell(`python3 --help`) )
 
+(
+  function_call(
+    "some",
+    params,
+    'here',
+  )
+)
+
 ---
 
 (file
@@ -75,4 +83,22 @@ Expression: Parentheses
             (function_parameters
               (expression
                 (value
-                  (backtick))))))))))
+                  (backtick)))))))))
+  (expression
+    (value
+      (expression
+        (value
+          (function_call
+            (identifier)
+            (function_parameters
+              (expression
+                (value
+                  (string
+                    (normal_string))))
+              (expression
+                (value
+                  (identifier)))
+              (expression
+                (value
+                  (string
+                    (raw_string)))))))))))
