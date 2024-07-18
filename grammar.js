@@ -83,13 +83,15 @@ module.exports = grammar({
 
         builtin_function_call: $ => choice(
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#system-information>
-            seq(field('function_name', 'arch'),      '(', ')'),
-            seq(field('function_name', 'num_cpus'),  '(', ')'),
-            seq(field('function_name', 'os'),        '(', ')'),
-            seq(field('function_name', 'os_family'), '(', ')'),
+            seq(field('function_name', 'arch'),      $._p0),
+            seq(field('function_name', 'num_cpus'),  $._p0),
+            seq(field('function_name', 'os'),        $._p0),
+            seq(field('function_name', 'os_family'), $._p0),
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#external-commands>
             seq(field('function_name', 'shell'), '(', $.function_parameters, ')'),
         ),
+
+        _p0: $ => seq('(', ')'),
 
         function_call: $ => seq(field('function_name', $.identifier), '(', optional($.function_parameters), ')'),
 
