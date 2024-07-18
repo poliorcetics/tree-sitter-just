@@ -153,3 +153,55 @@ env_var_or_default(
         (expression
           (value
             (builtin_function_call)))))))
+
+===
+Expression: Values: Builtin function call: Environment variables: `env`
+===
+
+env("HOME")
+
+env("HOME",)
+
+env("HOME", "default")
+
+env("HOME", "default",)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (string
+              (normal_string)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (string
+              (normal_string)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (string
+              (normal_string))))
+        (expression
+          (value
+            (string
+              (normal_string)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (string
+              (normal_string))))
+        (expression
+          (value
+            (string
+              (normal_string))))))))

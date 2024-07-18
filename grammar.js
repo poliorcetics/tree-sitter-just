@@ -92,6 +92,7 @@ module.exports = grammar({
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#environment-variables>
             seq(fname('env_var'),            $._p1),
             seq(fname('env_var_or_default'), $._p2),
+            seq(fname('env'),                choice($._p1, $._p2)),
         ),
 
         _p0: $ => seq('(', ')'),

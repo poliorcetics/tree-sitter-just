@@ -281,6 +281,32 @@
               "name": "_p2"
             }
           ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "env"
+              }
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_p1"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_p2"
+                }
+              ]
+            }
+          ]
         }
       ]
     },

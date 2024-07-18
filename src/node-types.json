@@ -37,6 +37,10 @@
             "named": false
           },
           {
+            "type": "env",
+            "named": false
+          },
+          {
             "type": "env_var",
             "named": false
           },
@@ -441,6 +445,10 @@
   },
   {
     "type": "dotenv-required",
+    "named": false
+  },
+  {
+    "type": "env",
     "named": false
   },
   {
