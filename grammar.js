@@ -83,17 +83,17 @@ module.exports = grammar({
 
         builtin_function_call: $ => choice(
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#system-information>
-            seq(field('function_name', 'arch'),      $._p0),
-            seq(field('function_name', 'num_cpus'),  $._p0),
-            seq(field('function_name', 'os'),        $._p0),
-            seq(field('function_name', 'os_family'), $._p0),
+            seq(fname('arch'),      $._p0),
+            seq(fname('num_cpus'),  $._p0),
+            seq(fname('os'),        $._p0),
+            seq(fname('os_family'), $._p0),
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#external-commands>
-            seq(field('function_name', 'shell'), '(', $.function_parameters, ')'),
+            seq(fname('shell'), '(', $.function_parameters, ')'),
         ),
 
         _p0: $ => seq('(', ')'),
 
-        function_call: $ => seq(field('function_name', $.identifier), '(', optional($.function_parameters), ')'),
+        function_call: $ => seq(fname($.identifier), '(', optional($.function_parameters), ')'),
 
         function_parameters: $ => seq($.expression, repeat(seq(',', $.expression)), optional(',')),
 
@@ -211,3 +211,7 @@ module.exports = grammar({
         comment: $ => prec(-1, token(seq('#', /.*/))),
     }
 });
+
+function fname(name) {
+    return field('function_name', name);
+}
