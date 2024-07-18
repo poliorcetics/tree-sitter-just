@@ -90,3 +90,30 @@ shell("bash", arch())
           (expression
             (value
               (builtin_function_call))))))))
+
+===
+Expression: Values: Builtin function call: Environment variables: `env_var`
+===
+
+env_var("HOME")
+
+env_var(
+  os(),
+)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (string
+              (normal_string)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (builtin_function_call)))))))

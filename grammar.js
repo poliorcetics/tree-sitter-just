@@ -89,9 +89,12 @@ module.exports = grammar({
             seq(fname('os_family'), $._p0),
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#external-commands>
             seq(fname('shell'), '(', $.function_parameters, ')'),
+            // <https://just.systems/man/en/chapter_32.html?highlight=functions#environment-variables>
+            seq(fname('env_var'), $._p1),
         ),
 
         _p0: $ => seq('(', ')'),
+        _p1: $ => seq('(', $.expression, optional(','), ')'),
 
         function_call: $ => seq(fname($.identifier), '(', optional($.function_parameters), ')'),
 
