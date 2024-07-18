@@ -41,6 +41,10 @@
             "named": false
           },
           {
+            "type": "env_var_or_default",
+            "named": false
+          },
+          {
             "type": "num_cpus",
             "named": false
           },
@@ -60,7 +64,7 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
@@ -441,6 +445,10 @@
   },
   {
     "type": "env_var",
+    "named": false
+  },
+  {
+    "type": "env_var_or_default",
     "named": false
   },
   {
