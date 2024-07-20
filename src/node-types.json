@@ -45,6 +45,14 @@
             "named": false
           },
           {
+            "type": "blake3",
+            "named": false
+          },
+          {
+            "type": "blake3_file",
+            "named": false
+          },
+          {
             "type": "canonicalize",
             "named": false
           },
@@ -181,6 +189,14 @@
             "named": false
           },
           {
+            "type": "sha256",
+            "named": false
+          },
+          {
+            "type": "sha256_file",
+            "named": false
+          },
+          {
             "type": "shell",
             "named": false
           },
@@ -246,6 +262,10 @@
           },
           {
             "type": "uppercase",
+            "named": false
+          },
+          {
+            "type": "uuid",
             "named": false
           },
           {
@@ -628,6 +648,14 @@
     "named": false
   },
   {
+    "type": "blake3",
+    "named": false
+  },
+  {
+    "type": "blake3_file",
+    "named": false
+  },
+  {
     "type": "canonicalize",
     "named": false
   },
@@ -808,6 +836,14 @@
     "named": false
   },
   {
+    "type": "sha256",
+    "named": false
+  },
+  {
+    "type": "sha256_file",
+    "named": false
+  },
+  {
     "type": "shell",
     "named": false
   },
@@ -885,6 +921,10 @@
   },
   {
     "type": "uppercase",
+    "named": false
+  },
+  {
+    "type": "uuid",
     "named": false
   },
   {

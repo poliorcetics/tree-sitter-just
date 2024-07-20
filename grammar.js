@@ -153,6 +153,12 @@ module.exports = grammar({
             builtin('path_exists', $._p1),
             // <https://just.systems/man/en/chapter_32.html#error-reporting>
             builtin('error', $._p1),
+            // <https://just.systems/man/en/chapter_32.html#uuid-and-hash-generation>
+            builtin('blake3',      $._p1),
+            builtin('blake3_file', $._p1),
+            builtin('sha256',      $._p1),
+            builtin('sha256_file', $._p1),
+            builtin('uuid',        $._p0),
         ),
 
         _p0: $ => seq('(', ')'),

@@ -839,3 +839,48 @@ error(p)
         (expression
           (value
             (identifier)))))))
+
+===
+Expression: Values: Builtin function call: UUID and Hash generation
+===
+
+blake3(s)
+
+blake3_file(f)
+
+sha256(s)
+
+sha256(f)
+
+uuid()
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call))))
