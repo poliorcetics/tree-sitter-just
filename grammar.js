@@ -25,7 +25,7 @@ module.exports = grammar({
 
         alias: $ => seq(
             'alias',
-            $.identifier,
+            field('alias_name', $.identifier),
             ':=',
             $.identifier,
         ),
@@ -49,7 +49,7 @@ module.exports = grammar({
 
         mod: $ => prec.right(seq(
             /mod\??/,
-            $.identifier,
+            field('mod_name', $.identifier),
             optional($.string),
         )),
 
