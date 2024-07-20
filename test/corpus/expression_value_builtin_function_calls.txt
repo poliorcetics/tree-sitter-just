@@ -269,3 +269,26 @@ justfile_directory()
   (expression
     (value
       (builtin_function_call))))
+
+===
+Expression: Values: Builtin function call: Source
+===
+
+source_dir()
+
+source_directory()
+
+source_file()
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call))))

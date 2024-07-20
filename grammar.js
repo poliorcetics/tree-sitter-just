@@ -104,6 +104,10 @@ module.exports = grammar({
             builtin('justfile',           $._p0),
             builtin('justfile_dir',       $._p0),
             builtin('justfile_directory', $._p0),
+            // <https://just.systems/man/en/chapter_32.html?highlight=functions#source-and-source-directory>
+            builtin('source_dir',       $._p0),
+            builtin('source_directory', $._p0),
+            builtin('source_file',      $._p0),
         ),
 
         _p0: $ => seq('(', ')'),

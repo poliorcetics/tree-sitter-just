@@ -95,6 +95,18 @@
           {
             "type": "shell",
             "named": false
+          },
+          {
+            "type": "source_dir",
+            "named": false
+          },
+          {
+            "type": "source_directory",
+            "named": false
+          },
+          {
+            "type": "source_file",
+            "named": false
           }
         ]
       }
@@ -565,6 +577,18 @@
   },
   {
     "type": "shell",
+    "named": false
+  },
+  {
+    "type": "source_dir",
+    "named": false
+  },
+  {
+    "type": "source_directory",
+    "named": false
+  },
+  {
+    "type": "source_file",
     "named": false
   },
   {
