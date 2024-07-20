@@ -67,7 +67,7 @@ module.exports = grammar({
 
         condition: $ => seq(
             $.expression,
-            choice('==', '!='),
+            choice('==', '!=', '=~'),
             $.expression,
         ),
 
