@@ -88,7 +88,7 @@ module.exports = grammar({
             builtin('os',        $._p0),
             builtin('os_family', $._p0),
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#external-commands>
-            builtin('shell', seq('(', $.function_parameters, ')')),
+            builtin('shell', $._pN),
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#environment-variables>
             builtin('env_var',            $._p1),
             builtin('env_var_or_default', $._p2),
@@ -146,6 +146,9 @@ module.exports = grammar({
             builtin('file_stem',         $._p1),
             builtin('parent_directory',  $._p1),
             builtin('without_extension', $._p1),
+            // -- Infallible
+            builtin('clean', $._p1),
+            builtin('join',  $._pN),
         ),
 
         _p0: $ => seq('(', ')'),
@@ -155,6 +158,7 @@ module.exports = grammar({
         _p1: $ => seq('(', $.expression, optional(','), ')'),
         _p2: $ => seq('(', $.expression, ',', $.expression, optional(','), ')'),
         _p3: $ => seq('(', $.expression, ',', $.expression, ',', $.expression, optional(','), ')'),
+        _pN: $ => seq('(', $.function_parameters, ')'),
 
         function_call: $ => seq(fname($.identifier), '(', optional($.function_parameters), ')'),
 

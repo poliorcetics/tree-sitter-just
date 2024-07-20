@@ -53,6 +53,10 @@
             "named": false
           },
           {
+            "type": "clean",
+            "named": false
+          },
+          {
             "type": "encode_uri_component",
             "named": false
           },
@@ -98,6 +102,10 @@
           },
           {
             "type": "is_dependency",
+            "named": false
+          },
+          {
+            "type": "join",
             "named": false
           },
           {
@@ -620,6 +628,10 @@
     "named": false
   },
   {
+    "type": "clean",
+    "named": false
+  },
+  {
     "type": "dotenv-filename",
     "named": false
   },
@@ -701,6 +713,10 @@
   },
   {
     "type": "is_dependency",
+    "named": false
+  },
+  {
+    "type": "join",
     "named": false
   },
   {

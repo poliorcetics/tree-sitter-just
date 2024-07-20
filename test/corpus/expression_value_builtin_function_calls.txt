@@ -639,3 +639,171 @@ without_extension(s)
         (expression
           (value
             (identifier)))))))
+
+===
+Expression: Values: Builtin function call: Path manipulation: infallible
+===
+
+clean(s)
+
+join(a)
+join(a,)
+
+join(a, b)
+join(a, b,)
+
+join(a, b, c)
+join(a, arch(), c,)
+
+join(a, b, c, d)
+join(a, clean(a), c, os(),)
+
+join(a, b, c, 'd', e)
+join(a, b, c, (d), "e",)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (identifier)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (identifier)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (builtin_function_call)))
+          (expression
+            (value
+              (identifier)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (builtin_function_call
+                (expression
+                  (value
+                    (identifier))))))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (builtin_function_call)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (string
+                (raw_string))))
+          (expression
+            (value
+              (identifier)))))))
+  (expression
+    (value
+      (builtin_function_call
+        (function_parameters
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (expression
+                (value
+                  (identifier)))))
+          (expression
+            (value
+              (string
+                (normal_string)))))))))
