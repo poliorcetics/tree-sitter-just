@@ -205,6 +205,10 @@
             "named": false
           },
           {
+            "type": "semver_matches",
+            "named": false
+          },
+          {
             "type": "sha256",
             "named": false
           },
@@ -861,6 +865,10 @@
   },
   {
     "type": "replace_regex",
+    "named": false
+  },
+  {
+    "type": "semver_matches",
     "named": false
   },
   {

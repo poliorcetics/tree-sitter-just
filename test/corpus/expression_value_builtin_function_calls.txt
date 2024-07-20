@@ -935,3 +935,22 @@ datetime_utc(fmt)
         (expression
           (value
             (identifier)))))))
+
+===
+Expression: Values: Builtin function call: Semantic versions
+===
+
+semver_matches(version, requirement)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier)))))))

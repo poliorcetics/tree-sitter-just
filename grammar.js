@@ -165,6 +165,8 @@ module.exports = grammar({
             // <https://just.systems/man/en/chapter_32.html#datetime>
             builtin('datetime',     $._p1),
             builtin('datetime_utc', $._p1),
+            // <https://just.systems/man/en/chapter_32.html#semantic-versions>
+            builtin('semver_matches', $._p2),
         ),
 
         _p0: $ => seq('(', ')'),

@@ -1251,6 +1251,23 @@
               "name": "_p1"
             }
           ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "semver_matches"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p2"
+            }
+          ]
         }
       ]
     },
