@@ -312,6 +312,23 @@
               ]
             }
           ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "is_dependency"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
         }
       ]
     },

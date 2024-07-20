@@ -93,6 +93,8 @@ module.exports = grammar({
             builtin('env_var',            $._p1),
             builtin('env_var_or_default', $._p2),
             builtin('env',                choice($._p1, $._p2)),
+            // <https://just.systems/man/en/chapter_32.html?highlight=functions#invocation-information>
+            builtin('is_dependency', $._p0),
         ),
 
         _p0: $ => seq('(', ')'),

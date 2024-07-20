@@ -49,6 +49,10 @@
             "named": false
           },
           {
+            "type": "is_dependency",
+            "named": false
+          },
+          {
             "type": "num_cpus",
             "named": false
           },
@@ -477,6 +481,10 @@
   },
   {
     "type": "ignore-comments",
+    "named": false
+  },
+  {
+    "type": "is_dependency",
     "named": false
   },
   {

@@ -205,3 +205,16 @@ env("HOME", "default",)
           (value
             (string
               (normal_string))))))))
+
+===
+Expression: Values: Builtin function call: Invocation information
+===
+
+is_dependency()
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call))))
