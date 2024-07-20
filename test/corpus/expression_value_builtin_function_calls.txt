@@ -318,3 +318,145 @@ just_pid()
   (expression
     (value
       (builtin_function_call))))
+
+===
+Expression: Values: Builtin function call: String manipulation
+===
+
+append(suffix, s)
+
+prepend(prefix, s)
+
+encode_uri_component(s)
+
+quote(s)
+
+replace(s, from, to)
+
+replace_regex(s, regex, replacement)
+
+trim(s)
+
+trim_end(s)
+
+trim_end_match(s, pat)
+
+trim_end_matches(s, pat)
+
+trim_start(s)
+
+trim_start_match(s, pat)
+
+trim_start_matches(s, pat)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier)))))))

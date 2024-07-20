@@ -112,11 +112,29 @@ module.exports = grammar({
             builtin('just_executable', $._p0),
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#just-pid>
             builtin('just_pid', $._p0),
+            // <https://just.systems/man/en/chapter_32.html?highlight=functions#string-manipulation>
+            builtin('append',               $._p2),
+            builtin('prepend',              $._p2),
+            builtin('encode_uri_component', $._p1),
+            builtin('quote',                $._p1),
+            builtin('replace',              $._p3),
+            builtin('replace_regex',        $._p3),
+            builtin('trim',                 $._p1),
+            builtin('trim_end',             $._p1),
+            builtin('trim_end_match',       $._p2),
+            builtin('trim_end_matches',     $._p2),
+            builtin('trim_start',           $._p1),
+            builtin('trim_start_match',     $._p2),
+            builtin('trim_start_matches',   $._p2),
         ),
 
         _p0: $ => seq('(', ')'),
+        // Multiple params elements are only fully tested once the first time they're seen in
+        // `builtin_function_calls`, afterwards we'll just do the minimum, there is no need to
+        // test again the exact same expressions that already worked.
         _p1: $ => seq('(', $.expression, optional(','), ')'),
         _p2: $ => seq('(', $.expression, ',', $.expression, optional(','), ')'),
+        _p3: $ => seq('(', $.expression, ',', $.expression, ',', $.expression, optional(','), ')'),
 
         function_call: $ => seq(fname($.identifier), '(', optional($.function_parameters), ')'),
 

@@ -33,7 +33,15 @@
         "required": true,
         "types": [
           {
+            "type": "append",
+            "named": false
+          },
+          {
             "type": "arch",
+            "named": false
+          },
+          {
+            "type": "encode_uri_component",
             "named": false
           },
           {
@@ -101,6 +109,22 @@
             "named": false
           },
           {
+            "type": "prepend",
+            "named": false
+          },
+          {
+            "type": "quote",
+            "named": false
+          },
+          {
+            "type": "replace",
+            "named": false
+          },
+          {
+            "type": "replace_regex",
+            "named": false
+          },
+          {
             "type": "shell",
             "named": false
           },
@@ -114,6 +138,34 @@
           },
           {
             "type": "source_file",
+            "named": false
+          },
+          {
+            "type": "trim",
+            "named": false
+          },
+          {
+            "type": "trim_end",
+            "named": false
+          },
+          {
+            "type": "trim_end_match",
+            "named": false
+          },
+          {
+            "type": "trim_end_matches",
+            "named": false
+          },
+          {
+            "type": "trim_start",
+            "named": false
+          },
+          {
+            "type": "trim_start_match",
+            "named": false
+          },
+          {
+            "type": "trim_start_matches",
             "named": false
           }
         ]
@@ -480,6 +532,10 @@
     "named": false
   },
   {
+    "type": "append",
+    "named": false
+  },
+  {
     "type": "arch",
     "named": false
   },
@@ -497,6 +553,10 @@
   },
   {
     "type": "dotenv-required",
+    "named": false
+  },
+  {
+    "type": "encode_uri_component",
     "named": false
   },
   {
@@ -588,6 +648,22 @@
     "named": false
   },
   {
+    "type": "prepend",
+    "named": false
+  },
+  {
+    "type": "quote",
+    "named": false
+  },
+  {
+    "type": "replace",
+    "named": false
+  },
+  {
+    "type": "replace_regex",
+    "named": false
+  },
+  {
     "type": "set",
     "named": false
   },
@@ -609,6 +685,34 @@
   },
   {
     "type": "tempdir",
+    "named": false
+  },
+  {
+    "type": "trim",
+    "named": false
+  },
+  {
+    "type": "trim_end",
+    "named": false
+  },
+  {
+    "type": "trim_end_match",
+    "named": false
+  },
+  {
+    "type": "trim_end_matches",
+    "named": false
+  },
+  {
+    "type": "trim_start",
+    "named": false
+  },
+  {
+    "type": "trim_start_match",
+    "named": false
+  },
+  {
+    "type": "trim_start_matches",
     "named": false
   },
   {
