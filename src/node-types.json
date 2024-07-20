@@ -73,6 +73,10 @@
             "named": false
           },
           {
+            "type": "error",
+            "named": false
+          },
+          {
             "type": "extension",
             "named": false
           },
@@ -665,6 +669,10 @@
   },
   {
     "type": "env_var_or_default",
+    "named": false
+  },
+  {
+    "type": "error",
     "named": false
   },
   {

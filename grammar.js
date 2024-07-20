@@ -151,6 +151,8 @@ module.exports = grammar({
             builtin('join',  $._pN),
             // <https://just.systems/man/en/chapter_32.html#filesystem-access>
             builtin('path_exists', $._p1),
+            // <https://just.systems/man/en/chapter_32.html#error-reporting>
+            builtin('error', $._p1),
         ),
 
         _p0: $ => seq('(', ')'),

@@ -823,3 +823,19 @@ path_exists(p)
         (expression
           (value
             (identifier)))))))
+
+===
+Expression: Values: Builtin function call: Error reporting
+===
+
+error(p)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))))))
