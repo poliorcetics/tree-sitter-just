@@ -73,6 +73,10 @@
             "named": false
           },
           {
+            "type": "just_pid",
+            "named": false
+          },
+          {
             "type": "justfile",
             "named": false
           },
@@ -549,6 +553,10 @@
   },
   {
     "type": "just_executable",
+    "named": false
+  },
+  {
+    "type": "just_pid",
     "named": false
   },
   {

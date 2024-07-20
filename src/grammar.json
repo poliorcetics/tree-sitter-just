@@ -516,6 +516,23 @@
               "name": "_p0"
             }
           ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "just_pid"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
         }
       ]
     },

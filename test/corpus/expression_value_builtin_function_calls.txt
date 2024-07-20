@@ -305,3 +305,16 @@ just_executable()
   (expression
     (value
       (builtin_function_call))))
+
+===
+Expression: Values: Builtin function call: Just pid
+===
+
+just_pid()
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call))))
