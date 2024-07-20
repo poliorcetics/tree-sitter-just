@@ -460,3 +460,91 @@ trim_start_matches(s, pat)
         (expression
           (value
             (identifier)))))))
+
+===
+Expression: Values: Builtin function call: Case conversion
+===
+
+capitalize(s)
+
+kebabcase(s)
+
+lowercamelcase(s)
+
+lowercase(s)
+
+shoutykebabcase(s)
+
+shoutysnakecase(s)
+
+snakecase(s)
+
+titlecase(s)
+
+uppercamelcase(s)
+
+uppercase(s)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))))))

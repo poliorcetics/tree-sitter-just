@@ -41,6 +41,10 @@
             "named": false
           },
           {
+            "type": "capitalize",
+            "named": false
+          },
+          {
             "type": "encode_uri_component",
             "named": false
           },
@@ -97,6 +101,18 @@
             "named": false
           },
           {
+            "type": "kebabcase",
+            "named": false
+          },
+          {
+            "type": "lowercamelcase",
+            "named": false
+          },
+          {
+            "type": "lowercase",
+            "named": false
+          },
+          {
             "type": "num_cpus",
             "named": false
           },
@@ -129,6 +145,18 @@
             "named": false
           },
           {
+            "type": "shoutykebabcase",
+            "named": false
+          },
+          {
+            "type": "shoutysnakecase",
+            "named": false
+          },
+          {
+            "type": "snakecase",
+            "named": false
+          },
+          {
             "type": "source_dir",
             "named": false
           },
@@ -138,6 +166,10 @@
           },
           {
             "type": "source_file",
+            "named": false
+          },
+          {
+            "type": "titlecase",
             "named": false
           },
           {
@@ -166,6 +198,14 @@
           },
           {
             "type": "trim_start_matches",
+            "named": false
+          },
+          {
+            "type": "uppercamelcase",
+            "named": false
+          },
+          {
+            "type": "uppercase",
             "named": false
           }
         ]
@@ -540,6 +580,10 @@
     "named": false
   },
   {
+    "type": "capitalize",
+    "named": false
+  },
+  {
     "type": "dotenv-filename",
     "named": false
   },
@@ -632,6 +676,18 @@
     "named": false
   },
   {
+    "type": "kebabcase",
+    "named": false
+  },
+  {
+    "type": "lowercamelcase",
+    "named": false
+  },
+  {
+    "type": "lowercase",
+    "named": false
+  },
+  {
     "type": "num_cpus",
     "named": false
   },
@@ -672,6 +728,18 @@
     "named": false
   },
   {
+    "type": "shoutykebabcase",
+    "named": false
+  },
+  {
+    "type": "shoutysnakecase",
+    "named": false
+  },
+  {
+    "type": "snakecase",
+    "named": false
+  },
+  {
     "type": "source_dir",
     "named": false
   },
@@ -685,6 +753,10 @@
   },
   {
     "type": "tempdir",
+    "named": false
+  },
+  {
+    "type": "titlecase",
     "named": false
   },
   {
@@ -721,6 +793,14 @@
   },
   {
     "type": "unstable",
+    "named": false
+  },
+  {
+    "type": "uppercamelcase",
+    "named": false
+  },
+  {
+    "type": "uppercase",
     "named": false
   },
   {

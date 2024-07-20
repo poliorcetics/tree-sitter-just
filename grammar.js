@@ -126,6 +126,17 @@ module.exports = grammar({
             builtin('trim_start',           $._p1),
             builtin('trim_start_match',     $._p2),
             builtin('trim_start_matches',   $._p2),
+            // <https://just.systems/man/en/chapter_32.html#case-conversion>
+            builtin('capitalize',      $._p1),
+            builtin('kebabcase',       $._p1),
+            builtin('lowercamelcase',  $._p1),
+            builtin('lowercase',       $._p1),
+            builtin('shoutykebabcase', $._p1),
+            builtin('shoutysnakecase', $._p1),
+            builtin('snakecase',       $._p1),
+            builtin('titlecase',       $._p1),
+            builtin('uppercamelcase',  $._p1),
+            builtin('uppercase',       $._p1),
         ),
 
         _p0: $ => seq('(', ')'),
