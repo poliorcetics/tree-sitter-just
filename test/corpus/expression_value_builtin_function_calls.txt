@@ -349,6 +349,14 @@ trim_start_match(s, pat)
 
 trim_start_matches(s, pat)
 
+# Properly test 3 args builtins
+
+replace(
+  "s",
+  'from',
+  trim_start("some string"),
+)
+
 ---
 
 (file
@@ -459,7 +467,26 @@ trim_start_matches(s, pat)
             (identifier)))
         (expression
           (value
-            (identifier)))))))
+            (identifier))))))
+  (comment)
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (string
+              (normal_string))))
+        (expression
+          (value
+            (string
+              (raw_string))))
+        (expression
+          (value
+            (builtin_function_call
+              (expression
+                (value
+                  (string
+                    (normal_string)))))))))))
 
 ===
 Expression: Values: Builtin function call: Case conversion
