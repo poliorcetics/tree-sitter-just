@@ -924,6 +924,125 @@
               "name": "_p1"
             }
           ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "absolute_path"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p1"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "canonicalize"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p1"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "extension"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p1"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "file_name"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p1"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "file_stem"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p1"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "parent_directory"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p1"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "without_extension"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p1"
+            }
+          ]
         }
       ]
     },

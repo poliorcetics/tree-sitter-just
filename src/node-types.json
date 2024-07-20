@@ -33,11 +33,19 @@
         "required": true,
         "types": [
           {
+            "type": "absolute_path",
+            "named": false
+          },
+          {
             "type": "append",
             "named": false
           },
           {
             "type": "arch",
+            "named": false
+          },
+          {
+            "type": "canonicalize",
             "named": false
           },
           {
@@ -58,6 +66,18 @@
           },
           {
             "type": "env_var_or_default",
+            "named": false
+          },
+          {
+            "type": "extension",
+            "named": false
+          },
+          {
+            "type": "file_name",
+            "named": false
+          },
+          {
+            "type": "file_stem",
             "named": false
           },
           {
@@ -122,6 +142,10 @@
           },
           {
             "type": "os_family",
+            "named": false
+          },
+          {
+            "type": "parent_directory",
             "named": false
           },
           {
@@ -206,6 +230,10 @@
           },
           {
             "type": "uppercase",
+            "named": false
+          },
+          {
+            "type": "without_extension",
             "named": false
           }
         ]
@@ -560,6 +588,10 @@
     "named": false
   },
   {
+    "type": "absolute_path",
+    "named": false
+  },
+  {
     "type": "alias",
     "named": false
   },
@@ -577,6 +609,10 @@
   },
   {
     "type": "arch",
+    "named": false
+  },
+  {
+    "type": "canonicalize",
     "named": false
   },
   {
@@ -620,11 +656,23 @@
     "named": false
   },
   {
+    "type": "extension",
+    "named": false
+  },
+  {
     "type": "fallback",
     "named": false
   },
   {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "file_name",
+    "named": false
+  },
+  {
+    "type": "file_stem",
     "named": false
   },
   {
@@ -697,6 +745,10 @@
   },
   {
     "type": "os_family",
+    "named": false
+  },
+  {
+    "type": "parent_directory",
     "named": false
   },
   {
@@ -809,6 +861,10 @@
   },
   {
     "type": "windows-shell",
+    "named": false
+  },
+  {
+    "type": "without_extension",
     "named": false
   }
 ]

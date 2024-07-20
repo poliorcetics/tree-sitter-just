@@ -575,3 +575,67 @@ uppercase(s)
         (expression
           (value
             (identifier)))))))
+
+===
+Expression: Values: Builtin function call: Path manipulation: fallible
+===
+
+absolute_path(s)
+
+canonicalize(s)
+
+extension(s)
+
+file_name(s)
+
+file_stem(s)
+
+parent_directory(s)
+
+without_extension(s)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))))))

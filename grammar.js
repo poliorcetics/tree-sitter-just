@@ -137,6 +137,15 @@ module.exports = grammar({
             builtin('titlecase',       $._p1),
             builtin('uppercamelcase',  $._p1),
             builtin('uppercase',       $._p1),
+            // <https://just.systems/man/en/chapter_32.html#path-manipulation>
+            // -- Fallible
+            builtin('absolute_path',     $._p1),
+            builtin('canonicalize',      $._p1),
+            builtin('extension',         $._p1),
+            builtin('file_name',         $._p1),
+            builtin('file_stem',         $._p1),
+            builtin('parent_directory',  $._p1),
+            builtin('without_extension', $._p1),
         ),
 
         _p0: $ => seq('(', ')'),
