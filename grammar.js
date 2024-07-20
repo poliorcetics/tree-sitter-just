@@ -100,6 +100,10 @@ module.exports = grammar({
             builtin('invocation_dir_native',       $._p0),
             builtin('invocation_directory',        $._p0),
             builtin('invocation_directory_native', $._p0),
+            // <https://just.systems/man/en/chapter_32.html?highlight=functions#justfile-and-justfile-directory>
+            builtin('justfile',           $._p0),
+            builtin('justfile_dir',       $._p0),
+            builtin('justfile_directory', $._p0),
         ),
 
         _p0: $ => seq('(', ')'),

@@ -397,6 +397,57 @@
               "name": "_p0"
             }
           ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "justfile"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "justfile_dir"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "justfile_directory"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
         }
       ]
     },

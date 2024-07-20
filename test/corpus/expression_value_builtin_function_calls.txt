@@ -246,3 +246,26 @@ invocation_dir_native()
   (expression
     (value
       (builtin_function_call))))
+
+===
+Expression: Values: Builtin function call: Justfile
+===
+
+justfile()
+
+justfile_dir()
+
+justfile_directory()
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call))))

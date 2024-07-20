@@ -69,6 +69,18 @@
             "named": false
           },
           {
+            "type": "justfile",
+            "named": false
+          },
+          {
+            "type": "justfile_dir",
+            "named": false
+          },
+          {
+            "type": "justfile_directory",
+            "named": false
+          },
+          {
             "type": "num_cpus",
             "named": false
           },
@@ -517,6 +529,18 @@
   },
   {
     "type": "is_dependency",
+    "named": false
+  },
+  {
+    "type": "justfile",
+    "named": false
+  },
+  {
+    "type": "justfile_dir",
+    "named": false
+  },
+  {
+    "type": "justfile_directory",
     "named": false
   },
   {
