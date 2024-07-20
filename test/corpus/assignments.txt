@@ -120,3 +120,126 @@ a := if a == b { c } else { d }
       (expression
         (value
           (identifier))))))
+
+===
+Exported assignement: value
+===
+
+export a := "a"
+
+export a := b
+
+export a := os()
+
+export a := `echo toto`
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (normal_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (identifier))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (backtick)))))
+
+===
+Exported assignement: Slash join
+===
+
+export a := os() / arch()
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))
+      (expression
+        (value
+          (builtin_function_call))))))
+
+===
+Exported assignement: Plus join
+===
+
+export a := os() + arch()
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))
+      (expression
+        (value
+          (builtin_function_call))))))
+
+===
+Exported assignement: assert
+===
+
+export a := assert(os() != arch(), "is ok")
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (condition
+        (expression
+          (value
+            (builtin_function_call)))
+        (expression
+          (value
+            (builtin_function_call))))
+      (expression
+        (value
+          (string
+            (normal_string)))))))
+
+===
+Exported assignement: if-else
+===
+
+export a := if a == b { c } else { d }
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (condition
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))
+      (expression
+        (value
+          (identifier)))
+      (expression
+        (value
+          (identifier))))))

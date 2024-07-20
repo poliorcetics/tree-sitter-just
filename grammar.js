@@ -31,9 +31,10 @@ module.exports = grammar({
         ),
 
         // ========================================================================================
-        // Assignments
+        // Assignments && Exports
 
         assignment: $ => seq(
+            optional('export'),
             field('variable_name', $.identifier),
             ':=',
             $.expression,
