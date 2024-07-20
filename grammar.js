@@ -160,6 +160,8 @@ module.exports = grammar({
             builtin('sha256',      $._p1),
             builtin('sha256_file', $._p1),
             builtin('uuid',        $._p0),
+            // <https://just.systems/man/en/chapter_32.html#random>
+            builtin('choose', $._p2),
         ),
 
         _p0: $ => seq('(', ')'),

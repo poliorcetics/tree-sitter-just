@@ -892,3 +892,22 @@ uuid()
   (expression
     (value
       (builtin_function_call))))
+
+===
+Expression: Values: Builtin function call: Random
+===
+
+choose(n, alphabet)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier)))))))

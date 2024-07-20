@@ -61,6 +61,10 @@
             "named": false
           },
           {
+            "type": "choose",
+            "named": false
+          },
+          {
             "type": "clean",
             "named": false
           },
@@ -665,6 +669,10 @@
   },
   {
     "type": "capitalize",
+    "named": false
+  },
+  {
+    "type": "choose",
     "named": false
   },
   {

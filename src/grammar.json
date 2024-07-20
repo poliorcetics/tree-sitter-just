@@ -1200,6 +1200,23 @@
               "name": "_p0"
             }
           ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "choose"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p2"
+            }
+          ]
         }
       ]
     },
