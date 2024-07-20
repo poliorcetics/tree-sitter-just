@@ -1,0 +1,143 @@
+===
+Expression: Assert: Equal: simple
+===
+
+assert("a" == "b", "c")
+
+---
+
+(file
+  (expression
+    (condition
+      (expression
+        (value
+          (string
+            (normal_string))))
+      (expression
+        (value
+          (string
+            (normal_string)))))
+    (expression
+      (value
+        (string
+          (normal_string))))))
+
+===
+Expression: Assert: Equal: nested
+===
+
+assert(("a" / os()) == "true", arch() + shell("bash", "-c", "echo", "toto"))
+
+---
+
+(file
+  (expression
+    (condition
+      (expression
+        (value
+          (expression
+            (value
+              (string
+                (normal_string)))
+            (expression
+              (value
+                (builtin_function_call))))))
+      (expression
+        (value
+          (string
+            (normal_string)))))
+    (expression
+      (value
+        (builtin_function_call))
+      (expression
+        (value
+          (builtin_function_call
+            (function_parameters
+              (expression
+                (value
+                  (string
+                    (normal_string))))
+              (expression
+                (value
+                  (string
+                    (normal_string))))
+              (expression
+                (value
+                  (string
+                    (normal_string))))
+              (expression
+                (value
+                  (string
+                    (normal_string)))))))))))
+
+===
+Expression: Assert: Not equal: simple
+===
+
+assert("a" != "b", "c")
+
+---
+
+(file
+  (expression
+    (condition
+      (expression
+        (value
+          (string
+            (normal_string))))
+      (expression
+        (value
+          (string
+            (normal_string)))))
+    (expression
+      (value
+        (string
+          (normal_string))))))
+
+===
+Expression: Assert: Not equal: nested
+===
+
+assert(("a" / os()) != "true", arch() + shell("bash", "-c", "echo", "toto"))
+
+---
+
+(file
+  (expression
+    (condition
+      (expression
+        (value
+          (expression
+            (value
+              (string
+                (normal_string)))
+            (expression
+              (value
+                (builtin_function_call))))))
+      (expression
+        (value
+          (string
+            (normal_string)))))
+    (expression
+      (value
+        (builtin_function_call))
+      (expression
+        (value
+          (builtin_function_call
+            (function_parameters
+              (expression
+                (value
+                  (string
+                    (normal_string))))
+              (expression
+                (value
+                  (string
+                    (normal_string))))
+              (expression
+                (value
+                  (string
+                    (normal_string))))
+              (expression
+                (value
+                  (string
+                    (normal_string)))))))))))
