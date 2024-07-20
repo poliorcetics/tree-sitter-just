@@ -1,0 +1,122 @@
+===
+Assignement: value
+===
+
+a := "a"
+
+a := b
+
+a := os()
+
+a := `echo toto`
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (normal_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (identifier))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (backtick)))))
+
+===
+Assignement: Slash join
+===
+
+a := os() / arch()
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))
+      (expression
+        (value
+          (builtin_function_call))))))
+
+===
+Assignement: Plus join
+===
+
+a := os() + arch()
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))
+      (expression
+        (value
+          (builtin_function_call))))))
+
+===
+Assignement: assert
+===
+
+a := assert(os() != arch(), "is ok")
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (condition
+        (expression
+          (value
+            (builtin_function_call)))
+        (expression
+          (value
+            (builtin_function_call))))
+      (expression
+        (value
+          (string
+            (normal_string)))))))
+
+===
+Assignement: if-else
+===
+
+a := if a == b { c } else { d }
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (condition
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))
+      (expression
+        (value
+          (identifier)))
+      (expression
+        (value
+          (identifier))))))

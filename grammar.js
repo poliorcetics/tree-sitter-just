@@ -11,6 +11,7 @@ module.exports = grammar({
     rules: {
         file: $ => repeat(choice(
             $.alias,
+            $.assignment,
             $.import,
             $.mod,
             $.setting,
@@ -27,6 +28,15 @@ module.exports = grammar({
             $.identifier,
             ':=',
             $.identifier,
+        ),
+
+        // ========================================================================================
+        // Assignments
+
+        assignment: $ => seq(
+            field('variable_name', $.identifier),
+            ':=',
+            $.expression,
         ),
 
         // ========================================================================================

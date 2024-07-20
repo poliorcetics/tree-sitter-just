@@ -15,6 +15,32 @@
     }
   },
   {
+    "type": "assignment",
+    "named": true,
+    "fields": {
+      "variable_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "backtick",
     "named": true,
     "fields": {}
@@ -424,6 +450,10 @@
       "types": [
         {
           "type": "alias",
+          "named": true
+        },
+        {
+          "type": "assignment",
           "named": true
         },
         {
