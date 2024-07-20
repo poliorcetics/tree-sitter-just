@@ -69,6 +69,14 @@
             "named": false
           },
           {
+            "type": "datetime",
+            "named": false
+          },
+          {
+            "type": "datetime_utc",
+            "named": false
+          },
+          {
             "type": "encode_uri_component",
             "named": false
           },
@@ -677,6 +685,14 @@
   },
   {
     "type": "clean",
+    "named": false
+  },
+  {
+    "type": "datetime",
+    "named": false
+  },
+  {
+    "type": "datetime_utc",
     "named": false
   },
   {

@@ -162,6 +162,9 @@ module.exports = grammar({
             builtin('uuid',        $._p0),
             // <https://just.systems/man/en/chapter_32.html#random>
             builtin('choose', $._p2),
+            // <https://just.systems/man/en/chapter_32.html#datetime>
+            builtin('datetime',     $._p1),
+            builtin('datetime_utc', $._p1),
         ),
 
         _p0: $ => seq('(', ')'),

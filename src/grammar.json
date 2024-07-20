@@ -1217,6 +1217,40 @@
               "name": "_p2"
             }
           ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "datetime"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p1"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "datetime_utc"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p1"
+            }
+          ]
         }
       ]
     },

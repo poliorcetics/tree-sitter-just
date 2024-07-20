@@ -911,3 +911,27 @@ choose(n, alphabet)
         (expression
           (value
             (identifier)))))))
+
+===
+Expression: Values: Builtin function call: Datetime
+===
+
+datetime(fmt)
+
+datetime_utc(fmt)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))))))
