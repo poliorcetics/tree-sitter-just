@@ -69,6 +69,10 @@
             "named": false
           },
           {
+            "type": "just_executable",
+            "named": false
+          },
+          {
             "type": "justfile",
             "named": false
           },
@@ -541,6 +545,10 @@
   },
   {
     "type": "is_dependency",
+    "named": false
+  },
+  {
+    "type": "just_executable",
     "named": false
   },
   {

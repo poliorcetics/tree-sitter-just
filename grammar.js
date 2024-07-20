@@ -108,6 +108,8 @@ module.exports = grammar({
             builtin('source_dir',       $._p0),
             builtin('source_directory', $._p0),
             builtin('source_file',      $._p0),
+            // <https://just.systems/man/en/chapter_32.html?highlight=functions#just-executable>
+            builtin('just_executable', $._p0),
         ),
 
         _p0: $ => seq('(', ')'),

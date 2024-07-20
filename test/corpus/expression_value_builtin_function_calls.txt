@@ -292,3 +292,16 @@ source_file()
   (expression
     (value
       (builtin_function_call))))
+
+===
+Expression: Values: Builtin function call: Just executable
+===
+
+just_executable()
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call))))
