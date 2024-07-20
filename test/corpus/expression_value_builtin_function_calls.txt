@@ -807,3 +807,19 @@ join(a, b, c, (d), "e",)
             (value
               (string
                 (normal_string)))))))))
+
+===
+Expression: Values: Builtin function call: Filesystem access
+===
+
+path_exists(p)
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier)))))))

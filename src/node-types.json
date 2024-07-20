@@ -157,6 +157,10 @@
             "named": false
           },
           {
+            "type": "path_exists",
+            "named": false
+          },
+          {
             "type": "prepend",
             "named": false
           },
@@ -765,6 +769,10 @@
   },
   {
     "type": "parent_directory",
+    "named": false
+  },
+  {
+    "type": "path_exists",
     "named": false
   },
   {
