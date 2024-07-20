@@ -922,6 +922,10 @@
     "named": false
   },
   {
+    "type": "else",
+    "named": false
+  },
+  {
     "type": "encode_uri_component",
     "named": false
   },
@@ -984,6 +988,10 @@
   {
     "type": "identifier",
     "named": true
+  },
+  {
+    "type": "if",
+    "named": false
   },
   {
     "type": "ignore-comments",
@@ -1199,6 +1207,14 @@
   },
   {
     "type": "without_extension",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   }
 ]

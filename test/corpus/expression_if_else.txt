@@ -1,0 +1,120 @@
+===
+Expression: If-Else: simple
+===
+
+if a == b { c } else { d }
+
+---
+
+(file
+  (expression
+    (condition
+      (expression
+        (value
+          (identifier)))
+      (expression
+        (value
+          (identifier))))
+    (expression
+      (value
+        (identifier)))
+    (expression
+      (value
+        (identifier)))))
+
+===
+Expression: If-Else: nested
+===
+
+if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
+    os_family() + if "4" == num_cpus() {
+        invocation_dir() / just_pid()
+    } else {
+        append(capitalize("abc"), "zvc")
+    }
+} else {
+    uuid() + blake3_file(justfile())
+}
+
+---
+
+(file
+  (expression
+    (condition
+      (expression
+        (value
+          (string
+            (normal_string)))
+        (expression
+          (value
+            (builtin_function_call))))
+      (expression
+        (value
+          (expression
+            (value
+              (builtin_function_call))
+            (expression
+              (value
+                (builtin_function_call
+                  (function_parameters
+                    (expression
+                      (value
+                        (string
+                          (normal_string))))
+                    (expression
+                      (value
+                        (string
+                          (normal_string))))
+                    (expression
+                      (value
+                        (string
+                          (raw_string))))
+                    (expression
+                      (value
+                        (string
+                          (normal_string)))
+                      (expression
+                        (value
+                          (string
+                            (normal_string)))))))))))))
+    (expression
+      (value
+        (builtin_function_call))
+      (expression
+        (condition
+          (expression
+            (value
+              (string
+                (normal_string))))
+          (expression
+            (value
+              (builtin_function_call))))
+        (expression
+          (value
+            (builtin_function_call))
+          (expression
+            (value
+              (builtin_function_call))))
+        (expression
+          (value
+            (builtin_function_call
+              (expression
+                (value
+                  (builtin_function_call
+                    (expression
+                      (value
+                        (string
+                          (normal_string)))))))
+              (expression
+                (value
+                  (string
+                    (normal_string)))))))))
+    (expression
+      (value
+        (builtin_function_call))
+      (expression
+        (value
+          (builtin_function_call
+            (expression
+              (value
+                (builtin_function_call)))))))))

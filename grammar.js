@@ -68,6 +68,7 @@ module.exports = grammar({
         //            | expression ','?
 
         expression: $ => choice(
+            seq('if', $.condition, '{', $.expression, '}', 'else', '{', $.expression, '}'),
             seq('assert', '(', $.condition, ',', $.expression, ')'),
             seq($.value, choice('/', '+'), $.expression),
             $.value,
