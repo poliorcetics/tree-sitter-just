@@ -381,9 +381,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "expression",
+          "named": true
+        },
         {
           "type": "value",
           "named": true
@@ -723,7 +727,15 @@
     "named": false
   },
   {
+    "type": "+",
+    "named": false
+  },
+  {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": "/",
     "named": false
   },
   {

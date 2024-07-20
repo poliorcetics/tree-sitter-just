@@ -1,0 +1,91 @@
+===
+Expression: Slash join
+===
+
+"a" / "b"
+
+os() / arch()
+
+env("HOME") / env("SUBPATH_CONFIG", 'default')
+
+---
+
+(file
+  (expression
+    (value
+      (string
+        (normal_string)))
+    (expression
+      (value
+        (string
+          (normal_string)))))
+  (expression
+    (value
+      (builtin_function_call))
+    (expression
+      (value
+        (builtin_function_call))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (string
+              (normal_string))))))
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (string
+                (normal_string))))
+          (expression
+            (value
+              (string
+                (raw_string)))))))))
+
+===
+Expression: Plus join
+===
+
+"a" + "b"
+
+os() + arch()
+
+env("HOME") + env("SUBPATH_CONFIG", 'default')
+
+---
+
+(file
+  (expression
+    (value
+      (string
+        (normal_string)))
+    (expression
+      (value
+        (string
+          (normal_string)))))
+  (expression
+    (value
+      (builtin_function_call))
+    (expression
+      (value
+        (builtin_function_call))))
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (string
+              (normal_string))))))
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (string
+                (normal_string))))
+          (expression
+            (value
+              (string
+                (raw_string)))))))))
