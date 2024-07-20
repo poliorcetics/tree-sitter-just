@@ -165,6 +165,10 @@
             "named": false
           },
           {
+            "type": "parent_dir",
+            "named": false
+          },
+          {
             "type": "parent_directory",
             "named": false
           },
@@ -801,6 +805,10 @@
   },
   {
     "type": "os_family",
+    "named": false
+  },
+  {
+    "type": "parent_dir",
     "named": false
   },
   {

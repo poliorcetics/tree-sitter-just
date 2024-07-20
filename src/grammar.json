@@ -1005,6 +1005,23 @@
               "name": "function_name",
               "content": {
                 "type": "STRING",
+                "value": "parent_dir"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p1"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
                 "value": "parent_directory"
               }
             },

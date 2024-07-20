@@ -590,6 +590,8 @@ file_name(s)
 
 file_stem(s)
 
+parent_dir(s)
+
 parent_directory(s)
 
 without_extension(s)
@@ -597,6 +599,12 @@ without_extension(s)
 ---
 
 (file
+  (expression
+    (value
+      (builtin_function_call
+        (expression
+          (value
+            (identifier))))))
   (expression
     (value
       (builtin_function_call

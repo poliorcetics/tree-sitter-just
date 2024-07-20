@@ -144,6 +144,7 @@ module.exports = grammar({
             builtin('extension',         $._p1),
             builtin('file_name',         $._p1),
             builtin('file_stem',         $._p1),
+            builtin('parent_dir',        $._p1),
             builtin('parent_directory',  $._p1),
             builtin('without_extension', $._p1),
             // -- Infallible
