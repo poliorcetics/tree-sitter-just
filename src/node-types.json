@@ -49,6 +49,22 @@
             "named": false
           },
           {
+            "type": "invocation_dir",
+            "named": false
+          },
+          {
+            "type": "invocation_dir_native",
+            "named": false
+          },
+          {
+            "type": "invocation_directory",
+            "named": false
+          },
+          {
+            "type": "invocation_directory_native",
+            "named": false
+          },
+          {
             "type": "is_dependency",
             "named": false
           },
@@ -481,6 +497,22 @@
   },
   {
     "type": "ignore-comments",
+    "named": false
+  },
+  {
+    "type": "invocation_dir",
+    "named": false
+  },
+  {
+    "type": "invocation_dir_native",
+    "named": false
+  },
+  {
+    "type": "invocation_directory",
+    "named": false
+  },
+  {
+    "type": "invocation_directory_native",
     "named": false
   },
   {

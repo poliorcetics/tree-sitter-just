@@ -95,6 +95,11 @@ module.exports = grammar({
             builtin('env',                choice($._p1, $._p2)),
             // <https://just.systems/man/en/chapter_32.html?highlight=functions#invocation-information>
             builtin('is_dependency', $._p0),
+            // <https://just.systems/man/en/chapter_32.html?highlight=functions#invocation-directory>
+            builtin('invocation_dir',              $._p0),
+            builtin('invocation_dir_native',       $._p0),
+            builtin('invocation_directory',        $._p0),
+            builtin('invocation_directory_native', $._p0),
         ),
 
         _p0: $ => seq('(', ')'),

@@ -218,3 +218,31 @@ is_dependency()
   (expression
     (value
       (builtin_function_call))))
+
+===
+Expression: Values: Builtin function call: Invocation directory
+===
+
+invocation_directory()
+
+invocation_dir()
+
+invocation_directory_native()
+
+invocation_dir_native()
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call))))
