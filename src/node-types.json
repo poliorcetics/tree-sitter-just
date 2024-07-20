@@ -53,6 +53,14 @@
             "named": false
           },
           {
+            "type": "cache_dir",
+            "named": false
+          },
+          {
+            "type": "cache_directory",
+            "named": false
+          },
+          {
             "type": "canonicalize",
             "named": false
           },
@@ -66,6 +74,38 @@
           },
           {
             "type": "clean",
+            "named": false
+          },
+          {
+            "type": "config_dir",
+            "named": false
+          },
+          {
+            "type": "config_directory",
+            "named": false
+          },
+          {
+            "type": "config_local_dir",
+            "named": false
+          },
+          {
+            "type": "config_local_directory",
+            "named": false
+          },
+          {
+            "type": "data_dir",
+            "named": false
+          },
+          {
+            "type": "data_directory",
+            "named": false
+          },
+          {
+            "type": "data_local_dir",
+            "named": false
+          },
+          {
+            "type": "data_local_directory",
             "named": false
           },
           {
@@ -97,6 +137,14 @@
             "named": false
           },
           {
+            "type": "executable_dir",
+            "named": false
+          },
+          {
+            "type": "executable_directory",
+            "named": false
+          },
+          {
             "type": "extension",
             "named": false
           },
@@ -106,6 +154,14 @@
           },
           {
             "type": "file_stem",
+            "named": false
+          },
+          {
+            "type": "home_dir",
+            "named": false
+          },
+          {
+            "type": "home_directory",
             "named": false
           },
           {
@@ -676,6 +732,14 @@
     "named": false
   },
   {
+    "type": "cache_dir",
+    "named": false
+  },
+  {
+    "type": "cache_directory",
+    "named": false
+  },
+  {
     "type": "canonicalize",
     "named": false
   },
@@ -689,6 +753,38 @@
   },
   {
     "type": "clean",
+    "named": false
+  },
+  {
+    "type": "config_dir",
+    "named": false
+  },
+  {
+    "type": "config_directory",
+    "named": false
+  },
+  {
+    "type": "config_local_dir",
+    "named": false
+  },
+  {
+    "type": "config_local_directory",
+    "named": false
+  },
+  {
+    "type": "data_dir",
+    "named": false
+  },
+  {
+    "type": "data_directory",
+    "named": false
+  },
+  {
+    "type": "data_local_dir",
+    "named": false
+  },
+  {
+    "type": "data_local_directory",
     "named": false
   },
   {
@@ -736,6 +832,14 @@
     "named": false
   },
   {
+    "type": "executable_dir",
+    "named": false
+  },
+  {
+    "type": "executable_directory",
+    "named": false
+  },
+  {
     "type": "export",
     "named": false
   },
@@ -757,6 +861,14 @@
   },
   {
     "type": "file_stem",
+    "named": false
+  },
+  {
+    "type": "home_dir",
+    "named": false
+  },
+  {
+    "type": "home_directory",
     "named": false
   },
   {

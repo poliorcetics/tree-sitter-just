@@ -167,6 +167,21 @@ module.exports = grammar({
             builtin('datetime_utc', $._p1),
             // <https://just.systems/man/en/chapter_32.html#semantic-versions>
             builtin('semver_matches', $._p2),
+            // <https://just.systems/man/en/chapter_32.html#xdg-directories1230>
+            builtin('cache_dir',              $._p0),
+            builtin('cache_directory',        $._p0),
+            builtin('config_dir',             $._p0),
+            builtin('config_directory',       $._p0),
+            builtin('config_local_dir',       $._p0),
+            builtin('config_local_directory', $._p0),
+            builtin('data_dir',               $._p0),
+            builtin('data_directory',         $._p0),
+            builtin('data_local_dir',         $._p0),
+            builtin('data_local_directory',   $._p0),
+            builtin('executable_dir',         $._p0),
+            builtin('executable_directory',   $._p0),
+            builtin('home_dir',               $._p0),
+            builtin('home_directory',         $._p0),
         ),
 
         _p0: $ => seq('(', ')'),

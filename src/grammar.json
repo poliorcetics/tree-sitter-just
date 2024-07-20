@@ -1268,6 +1268,244 @@
               "name": "_p2"
             }
           ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "cache_dir"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "cache_directory"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "config_dir"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "config_directory"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "config_local_dir"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "config_local_directory"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "data_dir"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "data_directory"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "data_local_dir"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "data_local_directory"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "executable_dir"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "executable_directory"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "home_dir"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function_name",
+              "content": {
+                "type": "STRING",
+                "value": "home_directory"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_p0"
+            }
+          ]
         }
       ]
     },

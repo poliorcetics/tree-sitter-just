@@ -954,3 +954,81 @@ semver_matches(version, requirement)
         (expression
           (value
             (identifier)))))))
+
+===
+Expression: Values: Builtin function call: XDG Directories
+===
+
+cache_dir()
+
+cache_directory()
+
+config_dir()
+
+config_directory()
+
+config_local_dir()
+
+config_local_directory()
+
+data_dir()
+
+data_directory()
+
+data_local_dir()
+
+data_local_directory()
+
+executable_dir()
+
+executable_directory()
+
+home_dir()
+
+home_directory()
+
+---
+
+(file
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call)))
+  (expression
+    (value
+      (builtin_function_call))))
