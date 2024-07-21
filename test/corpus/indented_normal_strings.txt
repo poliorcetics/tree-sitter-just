@@ -2,77 +2,87 @@
 Indented normal string: empty
 ===
 
-""""""
+a := """"""
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_normal_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_normal_string))))))
 
 ===
 Indented normal string: with basic content
 ===
 
-"""normal string 🦀"""
+a := """normal string 🦀"""
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_normal_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_normal_string))))))
 
 ===
 Indented normal string: with line breaks
 ===
 
-"""
+a := """
   a line break
   or more"""
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_normal_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_normal_string))))))
 
 ===
 Indented normal string: with " inside
 ===
 
-"""
+a := """
   a line "break"
   or more"""
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_normal_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_normal_string))))))
 
 ===
 Indented normal string: with escape sequences
 ===
 
-"""normal \t \n \r \\ \" string"""
+a := """normal \t \n \r \\ \" string"""
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_normal_string
-          (escape_sequence)
-          (escape_sequence)
-          (escape_sequence)
-          (escape_sequence)
-          (escape_sequence))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_normal_string
+            (escape_sequence)
+            (escape_sequence)
+            (escape_sequence)
+            (escape_sequence)
+            (escape_sequence)))))))

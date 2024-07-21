@@ -2,52 +2,60 @@
 Backtick: empty
 ===
 
-``
+a := ``
 
 ---
 
 (file
-  (expression
-    (value
-      (backtick))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (backtick)))))
 
 ===
 Backtick: with basic content
 ===
 
-`raw string 🦀`
+a := `raw string 🦀`
 
 ---
 
 (file
-  (expression
-    (value
-      (backtick))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (backtick)))))
 
 ===
 Backtick: with line breaks
 ===
 
-`
+a := `
   a line break
   or more`
 
 ---
 
 (file
-  (expression
-    (value
-      (backtick))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (backtick)))))
 
 ===
 Backtick: with escape sequences
 ===
 
-`raw \t \n \r \\ \" string`
+a := `raw \t \n \r \\ \" string`
 
 ---
 
 (file
-  (expression
-    (value
-      (backtick))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (backtick)))))

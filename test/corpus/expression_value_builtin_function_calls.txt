@@ -2,61 +2,161 @@
 Expression: Values: Builtin function call: System information
 ===
 
-arch()
+a := arch()
 
-num_cpus()
+a := num_cpus()
 
-os()
+a := os()
 
-os_family()
+a := os_family()
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call)))))
 
 ===
 Expression: Values: Builtin function call: External commands
 ===
 
-shell('powershell')
+a := shell('powershell')
 
-shell("bash", "-c")
+a := shell("bash", "-c")
 
-shell(
+a := shell(
   `bash`,
   "-c",
   subcommand_ident,
 )
 
-shell("bash", arch())
+a := shell("bash", arch())
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (string
+                  (raw_string)))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (string
+                  (normal_string))))
+            (expression
+              (value
+                (string
+                  (normal_string)))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (backtick)))
+            (expression
+              (value
+                (string
+                  (normal_string))))
+            (expression
+              (value
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (string
+                  (normal_string))))
+            (expression
+              (value
+                (builtin_function_call)))))))))
+
+===
+Expression: Values: Builtin function call: Environment variables: `env_var`
+===
+
+a := env_var("HOME")
+
+a := env_var(
+  os(),
+)
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
           (expression
             (value
               (string
-                (raw_string))))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
+                (normal_string))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (builtin_function_call))))))))
+
+===
+Expression: Values: Builtin function call: Environment variables: `env_var_or_default`
+===
+
+a := env_var_or_default("HOME", "default")
+
+a := env_var_or_default(
+  "HOME",
+  os(),
+)
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
           (expression
             (value
               (string
@@ -65,24 +165,11 @@ shell("bash", arch())
             (value
               (string
                 (normal_string))))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
-          (expression
-            (value
-              (backtick)))
-          (expression
-            (value
-              (string
-                (normal_string))))
-          (expression
-            (value
-              (identifier)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
           (expression
             (value
               (string
@@ -92,266 +179,237 @@ shell("bash", arch())
               (builtin_function_call))))))))
 
 ===
-Expression: Values: Builtin function call: Environment variables: `env_var`
-===
-
-env_var("HOME")
-
-env_var(
-  os(),
-)
-
----
-
-(file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (string
-              (normal_string)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (builtin_function_call)))))))
-
-===
-Expression: Values: Builtin function call: Environment variables: `env_var_or_default`
-===
-
-env_var_or_default("HOME", "default")
-
-env_var_or_default(
-  "HOME",
-  os(),
-)
-
----
-
-(file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (string
-              (normal_string))))
-        (expression
-          (value
-            (string
-              (normal_string)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (string
-              (normal_string))))
-        (expression
-          (value
-            (builtin_function_call)))))))
-
-===
 Expression: Values: Builtin function call: Environment variables: `env`
 ===
 
-env("HOME")
+a := env("HOME")
 
-env("HOME",)
+a := env("HOME",)
 
-env("HOME", "default")
+a := env("HOME", "default")
 
-env("HOME", "default",)
+a := env("HOME", "default",)
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (string
-              (normal_string)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (string
-              (normal_string)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (string
-              (normal_string))))
-        (expression
-          (value
-            (string
-              (normal_string)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (string
-              (normal_string))))
-        (expression
-          (value
-            (string
-              (normal_string))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (string
+                (normal_string))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (string
+                (normal_string))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (string
+                (normal_string))))
+          (expression
+            (value
+              (string
+                (normal_string))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (string
+                (normal_string))))
+          (expression
+            (value
+              (string
+                (normal_string)))))))))
 
 ===
 Expression: Values: Builtin function call: Invocation information
 ===
 
-is_dependency()
+a := is_dependency()
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call)))))
 
 ===
 Expression: Values: Builtin function call: Invocation directory
 ===
 
-invocation_directory()
+a := invocation_directory()
 
-invocation_dir()
+a := invocation_dir()
 
-invocation_directory_native()
+a := invocation_directory_native()
 
-invocation_dir_native()
+a := invocation_dir_native()
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call)))))
 
 ===
 Expression: Values: Builtin function call: Justfile
 ===
 
-justfile()
+a := justfile()
 
-justfile_dir()
+a := justfile_dir()
 
-justfile_directory()
+a := justfile_directory()
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call)))))
 
 ===
 Expression: Values: Builtin function call: Source
 ===
 
-source_dir()
+a := source_dir()
 
-source_directory()
+a := source_directory()
 
-source_file()
+a := source_file()
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call)))))
 
 ===
 Expression: Values: Builtin function call: Just executable
 ===
 
-just_executable()
+a := just_executable()
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call)))))
 
 ===
 Expression: Values: Builtin function call: Just pid
 ===
 
-just_pid()
+a := just_pid()
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call)))))
 
 ===
 Expression: Values: Builtin function call: String manipulation
 ===
 
-append(suffix, s)
+a := append(suffix, s)
 
-prepend(prefix, s)
+a := prepend(prefix, s)
 
-encode_uri_component(s)
+a := encode_uri_component(s)
 
-quote(s)
+a := quote(s)
 
-replace(s, from, to)
+a := replace(s, from, to)
 
-replace_regex(s, regex, replacement)
+a := replace_regex(s, regex, replacement)
 
-trim(s)
+a := trim(s)
 
-trim_end(s)
+a := trim_end(s)
 
-trim_end_match(s, pat)
+a := trim_end_match(s, pat)
 
-trim_end_matches(s, pat)
+a := trim_end_matches(s, pat)
 
-trim_start(s)
+a := trim_start(s)
 
-trim_start_match(s, pat)
+a := trim_start_match(s, pat)
 
-trim_start_matches(s, pat)
+a := trim_start_matches(s, pat)
 
 # Properly test 3 args builtins
 
-replace(
+a := replace(
   "s",
   'from',
   trim_start("some string"),
@@ -360,675 +418,811 @@ replace(
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier)))))))
   (comment)
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (string
-              (normal_string))))
-        (expression
-          (value
-            (string
-              (raw_string))))
-        (expression
-          (value
-            (builtin_function_call
-              (expression
-                (value
-                  (string
-                    (normal_string)))))))))))
-
-===
-Expression: Values: Builtin function call: Case conversion
-===
-
-capitalize(s)
-
-kebabcase(s)
-
-lowercamelcase(s)
-
-lowercase(s)
-
-shoutykebabcase(s)
-
-shoutysnakecase(s)
-
-snakecase(s)
-
-titlecase(s)
-
-uppercamelcase(s)
-
-uppercase(s)
-
----
-
-(file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))))))
-
-===
-Expression: Values: Builtin function call: Path manipulation: fallible
-===
-
-absolute_path(s)
-
-canonicalize(s)
-
-extension(s)
-
-file_name(s)
-
-file_stem(s)
-
-parent_dir(s)
-
-parent_directory(s)
-
-without_extension(s)
-
----
-
-(file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))))))
-
-===
-Expression: Values: Builtin function call: Path manipulation: infallible
-===
-
-clean(s)
-
-join(a)
-join(a,)
-
-join(a, b)
-join(a, b,)
-
-join(a, b, c)
-join(a, arch(), c,)
-
-join(a, b, c, d)
-join(a, clean(a), c, os(),)
-
-join(a, b, c, 'd', e)
-join(a, b, c, (d), "e",)
-
----
-
-(file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
           (expression
             (value
-              (identifier)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
-          (expression
-            (value
-              (identifier)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (builtin_function_call)))
-          (expression
-            (value
-              (identifier)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (builtin_function_call
-                (expression
-                  (value
-                    (identifier))))))
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (builtin_function_call)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier)))
+              (string
+                (normal_string))))
           (expression
             (value
               (string
                 (raw_string))))
           (expression
             (value
+              (builtin_function_call
+                (expression
+                  (value
+                    (string
+                      (normal_string))))))))))))
+
+===
+Expression: Values: Builtin function call: Case conversion
+===
+
+a := capitalize(s)
+
+a := kebabcase(s)
+
+a := lowercamelcase(s)
+
+a := lowercase(s)
+
+a := shoutykebabcase(s)
+
+a := shoutysnakecase(s)
+
+a := snakecase(s)
+
+a := titlecase(s)
+
+a := uppercamelcase(s)
+
+a := uppercase(s)
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
               (identifier)))))))
-  (expression
-    (value
-      (builtin_function_call
-        (function_parameters
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
           (expression
             (value
-              (identifier)))
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
           (expression
             (value
-              (identifier)))
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
           (expression
             (value
-              (identifier)))
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
           (expression
             (value
-              (expression
-                (value
-                  (identifier)))))
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string)))))))))
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier))))))))
+
+===
+Expression: Values: Builtin function call: Path manipulation: fallible
+===
+
+a := absolute_path(s)
+
+a := canonicalize(s)
+
+a := extension(s)
+
+a := file_name(s)
+
+a := file_stem(s)
+
+a := parent_dir(s)
+
+a := parent_directory(s)
+
+a := without_extension(s)
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier))))))))
+
+===
+Expression: Values: Builtin function call: Path manipulation: infallible
+===
+
+a := clean(s)
+
+a := join(a)
+a := join(a,)
+
+a := join(a, b)
+a := join(a, b,)
+
+a := join(a, b, c)
+a := join(a, arch(), c,)
+
+a := join(a, b, c, d)
+a := join(a, clean(a), c, os(),)
+
+a := join(a, b, c, 'd', e)
+a := join(a, b, c, (d), "e",)
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (builtin_function_call)))
+            (expression
+              (value
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (builtin_function_call
+                  (expression
+                    (value
+                      (identifier))))))
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (builtin_function_call))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (string
+                  (raw_string))))
+            (expression
+              (value
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (function_parameters
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (expression
+                  (value
+                    (identifier)))))
+            (expression
+              (value
+                (string
+                  (normal_string))))))))))
 
 ===
 Expression: Values: Builtin function call: Filesystem access
 ===
 
-path_exists(p)
+a := path_exists(p)
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier))))))))
 
 ===
 Expression: Values: Builtin function call: Error reporting
 ===
 
-error(p)
+a := error(p)
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier))))))))
 
 ===
 Expression: Values: Builtin function call: UUID and Hash generation
 ===
 
-blake3(s)
+a := blake3(s)
 
-blake3_file(f)
+a := blake3_file(f)
 
-sha256(s)
+a := sha256(s)
 
-sha256(f)
+a := sha256(f)
 
-uuid()
+a := uuid()
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call)))))
 
 ===
 Expression: Values: Builtin function call: Random
 ===
 
-choose(n, alphabet)
+a := choose(n, alphabet)
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))))))
 
 ===
 Expression: Values: Builtin function call: Datetime
 ===
 
-datetime(fmt)
+a := datetime(fmt)
 
-datetime_utc(fmt)
+a := datetime_utc(fmt)
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier))))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier))))))))
 
 ===
 Expression: Values: Builtin function call: Semantic versions
 ===
 
-semver_matches(version, requirement)
+a := semver_matches(version, requirement)
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (identifier)))
-        (expression
-          (value
-            (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))))))
 
 ===
 Expression: Values: Builtin function call: XDG Directories
 ===
 
-cache_dir()
+a := cache_dir()
 
-cache_directory()
+a := cache_directory()
 
-config_dir()
+a := config_dir()
 
-config_directory()
+a := config_directory()
 
-config_local_dir()
+a := config_local_dir()
 
-config_local_directory()
+a := config_local_directory()
 
-data_dir()
+a := data_dir()
 
-data_directory()
+a := data_directory()
 
-data_local_dir()
+a := data_local_dir()
 
-data_local_directory()
+a := data_local_directory()
 
-executable_dir()
+a := executable_dir()
 
-executable_directory()
+a := executable_directory()
 
-home_dir()
+a := home_dir()
 
-home_directory()
+a := home_directory()
 
 ---
 
 (file
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call)))
-  (expression
-    (value
-      (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (builtin_function_call)))))

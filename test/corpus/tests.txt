@@ -13,21 +13,27 @@ Comment
 Identifier
 ===
 
-this-is_ident-01
+a := this-is_ident-01
 
-IDenT_11-toTO
+a := IDenT_11-toTO
 
-_Ident
+a := _Ident
 
 ---
 
 (file
-  (expression
-    (value
-      (identifier)))
-  (expression
-    (value
-      (identifier)))
-  (expression
-    (value
-      (identifier))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (identifier))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (identifier))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (identifier)))))

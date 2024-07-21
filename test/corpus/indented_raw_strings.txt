@@ -2,88 +2,100 @@
 Indented raw string: empty
 ===
 
-''''''
+a := ''''''
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_raw_string))))))
 
 ===
 Indented raw string: with basic content
 ===
 
-'''raw string 🦀'''
+a := '''raw string 🦀'''
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_raw_string))))))
 
 ===
 Indented raw string: with line breaks
 ===
 
-'''
+a := '''
   a line break
   or more'''
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_raw_string))))))
 
 ===
 Indented raw string: with " inside
 ===
 
-'''
+a := '''
   a line "break"
   or more'''
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_raw_string))))))
 
 ===
 Indented raw string: with ' inside
 ===
 
-'''
+a := '''
   a line 'break'
   or more'''
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_raw_string))))))
 
 ===
 Indented raw string: with escape sequences
 ===
 
-'''raw \t \n \r \\ \" string'''
+a := '''raw \t \n \r \\ \" string'''
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (indented_raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (indented_raw_string))))))

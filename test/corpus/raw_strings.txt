@@ -2,72 +2,82 @@
 Raw string: empty
 ===
 
-''
+a := ''
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (raw_string))))))
 
 ===
 Raw string: with basic content
 ===
 
-'raw string 🦀'
+a := 'raw string 🦀'
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (raw_string))))))
 
 ===
 Raw string: with line breaks
 ===
 
-'
+a := '
   a line break
   or more'
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (raw_string))))))
 
 ===
 Raw string: with " inside
 ===
 
-'
+a := '
   a line "break"
   or more'
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (raw_string))))))
 
 ===
 Raw string: with escape sequences
 ===
 
-'raw \t \n \r \\ \" string'
+a := 'raw \t \n \r \\ \" string'
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (raw_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (raw_string))))))

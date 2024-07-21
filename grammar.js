@@ -16,9 +16,6 @@ module.exports = grammar({
             $.mod,
             // TODO: only top-level item left is `recipe`, to insert here
             $.setting,
-            // NOTE: in practice those will not be accepted raw by Just, only the items above are accepted.
-            //       We keep those here to make testing, highlighting and error recovery easier.
-            $.expression,
         )),
 
         // ========================================================================================

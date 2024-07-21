@@ -2,90 +2,102 @@
 Expression: Slash join
 ===
 
-"a" / "b"
+a := "a" / "b"
 
-os() / arch()
+a := os() / arch()
 
-env("HOME") / env("SUBPATH_CONFIG", 'default')
+a := env("HOME") / env("SUBPATH_CONFIG", 'default')
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (normal_string)))
+  (assignment
+    (identifier)
     (expression
       (value
         (string
-          (normal_string)))))
-  (expression
-    (value
-      (builtin_function_call))
+          (normal_string)))
+      (expression
+        (value
+          (string
+            (normal_string))))))
+  (assignment
+    (identifier)
     (expression
       (value
-        (builtin_function_call))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (string
-              (normal_string))))))
+        (builtin_function_call))
+      (expression
+        (value
+          (builtin_function_call)))))
+  (assignment
+    (identifier)
     (expression
       (value
         (builtin_function_call
           (expression
             (value
               (string
-                (normal_string))))
-          (expression
-            (value
-              (string
-                (raw_string)))))))))
+                (normal_string))))))
+      (expression
+        (value
+          (builtin_function_call
+            (expression
+              (value
+                (string
+                  (normal_string))))
+            (expression
+              (value
+                (string
+                  (raw_string))))))))))
 
 ===
 Expression: Plus join
 ===
 
-"a" + "b"
+a := "a" + "b"
 
-os() + arch()
+a := os() + arch()
 
-env("HOME") + env("SUBPATH_CONFIG", 'default')
+a := env("HOME") + env("SUBPATH_CONFIG", 'default')
 
 ---
 
 (file
-  (expression
-    (value
-      (string
-        (normal_string)))
+  (assignment
+    (identifier)
     (expression
       (value
         (string
-          (normal_string)))))
-  (expression
-    (value
-      (builtin_function_call))
+          (normal_string)))
+      (expression
+        (value
+          (string
+            (normal_string))))))
+  (assignment
+    (identifier)
     (expression
       (value
-        (builtin_function_call))))
-  (expression
-    (value
-      (builtin_function_call
-        (expression
-          (value
-            (string
-              (normal_string))))))
+        (builtin_function_call))
+      (expression
+        (value
+          (builtin_function_call)))))
+  (assignment
+    (identifier)
     (expression
       (value
         (builtin_function_call
           (expression
             (value
               (string
-                (normal_string))))
-          (expression
-            (value
-              (string
-                (raw_string)))))))))
+                (normal_string))))))
+      (expression
+        (value
+          (builtin_function_call
+            (expression
+              (value
+                (string
+                  (normal_string))))
+            (expression
+              (value
+                (string
+                  (raw_string))))))))))

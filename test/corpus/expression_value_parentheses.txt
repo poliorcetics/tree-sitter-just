@@ -2,25 +2,25 @@
 Expression: Parentheses
 ===
 
-( identifier )
+a := ( identifier )
 
-( `backtick` )
+a := ( `backtick` )
 
-( ```indented backtick``` )
+a := ( ```indented backtick``` )
 
-( 'raw string' )
+a := ( 'raw string' )
 
-( '''indented raw string''' )
+a := ( '''indented raw string''' )
 
-( "normal string" )
+a := ( "normal string" )
 
-( """indented normal string""" )
+a := ( """indented normal string""" )
 
-( arch() )
+a := ( arch() )
 
-( shell(`python3 --help`) )
+a := ( shell(`python3 --help`) )
 
-(
+a := (
   function_call(
     "some",
     params,
@@ -31,74 +31,94 @@ Expression: Parentheses
 ---
 
 (file
-  (expression
-    (value
-      (expression
-        (value
-          (identifier)))))
-  (expression
-    (value
-      (expression
-        (value
-          (backtick)))))
-  (expression
-    (value
-      (expression
-        (value
-          (indented_backtick)))))
-  (expression
-    (value
-      (expression
-        (value
-          (string
-            (raw_string))))))
-  (expression
-    (value
-      (expression
-        (value
-          (string
-            (indented_raw_string))))))
-  (expression
-    (value
-      (expression
-        (value
-          (string
-            (normal_string))))))
-  (expression
-    (value
-      (expression
-        (value
-          (string
-            (indented_normal_string))))))
-  (expression
-    (value
-      (expression
-        (value
-          (builtin_function_call)))))
-  (expression
-    (value
-      (expression
-        (value
-          (builtin_function_call
-            (function_parameters
-              (expression
-                (value
-                  (backtick)))))))))
-  (expression
-    (value
-      (expression
-        (value
-          (function_call
-            (identifier)
-            (function_parameters
-              (expression
-                (value
-                  (string
-                    (normal_string))))
-              (expression
-                (value
-                  (identifier)))
-              (expression
-                (value
-                  (string
-                    (raw_string)))))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (expression
+          (value
+            (identifier))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (expression
+          (value
+            (backtick))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (expression
+          (value
+            (indented_backtick))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (expression
+          (value
+            (string
+              (raw_string)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (expression
+          (value
+            (string
+              (indented_raw_string)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (expression
+          (value
+            (string
+              (normal_string)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (expression
+          (value
+            (string
+              (indented_normal_string)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (expression
+          (value
+            (builtin_function_call))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (expression
+          (value
+            (builtin_function_call
+              (function_parameters
+                (expression
+                  (value
+                    (backtick))))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (expression
+          (value
+            (function_call
+              (identifier)
+              (function_parameters
+                (expression
+                  (value
+                    (string
+                      (normal_string))))
+                (expression
+                  (value
+                    (identifier)))
+                (expression
+                  (value
+                    (string
+                      (raw_string))))))))))))

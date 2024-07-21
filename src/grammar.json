@@ -26,10 +26,6 @@
           {
             "type": "SYMBOL",
             "name": "setting"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "expression"
           }
         ]
       }

@@ -2,182 +2,210 @@
 Expression: Value: Function Call: Empty
 ===
 
-function_call_no_param()
+a := function_call_no_param()
 
-function_call_no_param ()
+a := function_call_no_param ()
 
-function_call_no_param ( )
+a := function_call_no_param ( )
 
 ---
 
 (file
-  (expression
-    (value
-      (function_call
-        (identifier))))
-  (expression
-    (value
-      (function_call
-        (identifier))))
-  (expression
-    (value
-      (function_call
-        (identifier)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier))))))
 
 ===
 Expression: Value: Function Call: One param
 ===
 
 
-function_call(identifier)
+a := function_call(identifier)
 
-function_call(`backtick`)
+a := function_call(`backtick`)
 
-function_call(```indented backtick```)
+a := function_call(```indented backtick```)
 
-function_call('raw string')
+a := function_call('raw string')
 
-function_call('''indented raw string''')
+a := function_call('''indented raw string''')
 
-function_call("normal string")
+a := function_call("normal string")
 
-function_call("""indented normal string""")
+a := function_call("""indented normal string""")
 
-function_call(arch())
+a := function_call(arch())
 
-function_call(shell(`python3 --help`))
+a := function_call(shell(`python3 --help`))
 
 ---
 
 (file
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (identifier)))))))
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (backtick)))))))
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (indented_backtick)))))))
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (string
-                (raw_string))))))))
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (string
-                (indented_raw_string))))))))
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (string
-                (normal_string))))))))
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (string
-                (indented_normal_string))))))))
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (builtin_function_call)))))))
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (builtin_function_call
-                (function_parameters
-                  (expression
-                    (value
-                      (backtick))))))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (backtick))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (indented_backtick))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (string
+                  (raw_string)))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (string
+                  (indented_raw_string)))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (string
+                  (normal_string)))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (string
+                  (indented_normal_string)))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (builtin_function_call))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (builtin_function_call
+                  (function_parameters
+                    (expression
+                      (value
+                        (backtick)))))))))))))
 
 ===
 Expression: Value: Function Call: One param, trailing comma
 ===
 
-function_call(`python3 --help`,)
+a := function_call(`python3 --help`,)
 
 ---
 
 (file
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (backtick))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (backtick)))))))))
 
 ===
 Expression: Value: Function Call: Multiple params
 ===
 
-function_call(`python3 --help`, (other_function_call_in_parentheses()))
+a := function_call(`python3 --help`, (other_function_call_in_parentheses()))
 
 ---
 
 (file
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (backtick)))
-          (expression
-            (value
-              (expression
-                (value
-                  (function_call
-                    (identifier)))))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (backtick)))
+            (expression
+              (value
+                (expression
+                  (value
+                    (function_call
+                      (identifier))))))))))))
 
 ===
 Expression: Value: Function Call: Multiple params, trailing comma
 ===
 
-function_call(
+a := function_call(
   `python3 --help`,
   "abc",
 )
@@ -185,15 +213,17 @@ function_call(
 ---
 
 (file
-  (expression
-    (value
-      (function_call
-        (identifier)
-        (function_parameters
-          (expression
-            (value
-              (backtick)))
-          (expression
-            (value
-              (string
-                (normal_string)))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (backtick)))
+            (expression
+              (value
+                (string
+                  (normal_string))))))))))
