@@ -1,0 +1,185 @@
+===
+Recipes: Parameters: Single
+===
+
+r param:
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_parameter
+      (identifier))))
+
+===
+Recipes: Parameters: Single, with default
+===
+
+r param = (if a == b { c } else { d }):
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_parameter
+      (identifier)
+      (value
+        (expression
+          (condition
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier))))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))))))
+
+===
+Recipes: Parameters: Multiple
+===
+
+r a b:
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_parameter
+      (identifier))
+    (recipe_parameter
+      (identifier))))
+
+===
+Recipes: Parameters: Multiple, with default
+===
+
+r a = "some string" param = (if a == b { c } else { d }):
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_parameter
+      (identifier)
+      (value
+        (string
+          (normal_string))))
+    (recipe_parameter
+      (identifier)
+      (value
+        (expression
+          (condition
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier))))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))))))
+
+===
+Recipes: Parameters: Single, with $
+===
+
+r $param:
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_parameter
+      (identifier))))
+
+===
+Recipes: Parameters: Single, with defaulti, with $
+===
+
+r $param = (if a == b { c } else { d }):
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_parameter
+      (identifier)
+      (value
+        (expression
+          (condition
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier))))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))))))
+
+===
+Recipes: Parameters: Multiple, with $
+===
+
+r $a $b:
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_parameter
+      (identifier))
+    (recipe_parameter
+      (identifier))))
+
+===
+Recipes: Parameters: Multiple, with default
+===
+
+r $a = "some string" $param = (if a == b { c } else { d }):
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_parameter
+      (identifier)
+      (value
+        (string
+          (normal_string))))
+    (recipe_parameter
+      (identifier)
+      (value
+        (expression
+          (condition
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (identifier))))
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))))))

@@ -743,6 +743,36 @@
         {
           "type": "builtin_attribute",
           "named": true
+        },
+        {
+          "type": "recipe_parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "recipe_parameter",
+    "named": true,
+    "fields": {
+      "parameter_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "value",
+          "named": true
         }
       ]
     }
@@ -916,6 +946,10 @@
     "named": false
   },
   {
+    "type": "$",
+    "named": false
+  },
+  {
     "type": "'",
     "named": false
   },
@@ -949,6 +983,10 @@
   },
   {
     "type": ":=",
+    "named": false
+  },
+  {
+    "type": "=",
     "named": false
   },
   {

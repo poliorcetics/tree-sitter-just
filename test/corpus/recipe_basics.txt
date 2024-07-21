@@ -23,7 +23,7 @@ Recipe: everything at once
 [another_attr("with param")]
 [linux]
 [group("grouped recipe")]
-@quiet_recipe:
+@quiet_recipe a $b c=value $d="value":
 
 ---
 
@@ -49,4 +49,17 @@ Recipe: everything at once
     (builtin_attribute
       (string
         (normal_string)))
-    (identifier)))
+    (identifier)
+    (recipe_parameter
+      (identifier))
+    (recipe_parameter
+      (identifier))
+    (recipe_parameter
+      (identifier)
+      (value
+        (identifier)))
+    (recipe_parameter
+      (identifier)
+      (value
+        (string
+          (normal_string))))))
