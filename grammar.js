@@ -57,7 +57,7 @@ module.exports = grammar({
 
         recipe: $ => seq(
             repeat($._attribute_list),
-            // optional('@'),
+            optional('@'),
             field('recipe_name', $.identifier),
             // repeat($.recipe_parameter),
             // optional($.variadic_parameter),

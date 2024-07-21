@@ -1,0 +1,52 @@
+===
+Recipes: quiet or not
+===
+
+@r:
+
+r:
+
+---
+
+(file
+  (recipe
+    (identifier))
+  (recipe
+    (identifier)))
+
+===
+Recipe: everything at once
+===
+
+[an_attr, or_two("with param"), prompt("a builtin attr")]
+[another_attr]
+[another_attr("with param")]
+[linux]
+[group("grouped recipe")]
+@quiet_recipe:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
+      (string
+        (normal_string)))
+    (attribute
+      (identifier)
+      (string
+        (normal_string)))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
+      (string
+        (normal_string)))
+    (builtin_attribute)
+    (builtin_attribute
+      (string
+        (normal_string)))
+    (identifier)))
