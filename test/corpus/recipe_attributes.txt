@@ -1,0 +1,229 @@
+===
+Recipes: Attributes: Single one
+===
+
+[unknow_attr]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier))
+    (identifier)))
+
+===
+Recipes: Attributes: Comma separated
+===
+
+[attr1, attr2, attr3]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (identifier)))
+
+===
+Recipes: Attributes: Multiples
+===
+
+[attr1]
+[attr2]
+[attr3]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (identifier)))
+
+===
+Recipes: Attributes: Single one, with param
+===
+
+[unknow_attr("param string")]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier)
+      (string
+        (normal_string)))
+    (identifier)))
+
+===
+Recipes: Attributes: Comma separated, with param
+===
+
+[attr1, attr2('param string'), attr3]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
+      (string
+        (raw_string)))
+    (attribute
+      (identifier))
+    (identifier)))
+
+===
+Recipes: Attributes: Multiples, with param
+===
+
+[attr1]
+[attr2]
+[attr3("""param string""")]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
+      (string
+        (indented_normal_string)))
+    (identifier)))
+
+===
+Recipes: Attributes: Builtins, separated
+===
+
+[confirm]
+[confirm("prompt")]
+[doc]
+[doc("doc")]
+[extension('.ext')]
+[group('recipe group')]
+[linux]
+[macos]
+[no-cd]
+[no-exit-message]
+[no-quiet]
+[positional-arguments]
+[private]
+[script]
+[script("bash -c")]
+[unix]
+[windows]
+r:
+
+---
+
+(file
+  (recipe
+    (builtin_attribute)
+    (builtin_attribute
+      (string
+        (normal_string)))
+    (builtin_attribute)
+    (builtin_attribute
+      (string
+        (normal_string)))
+    (builtin_attribute
+      (string
+        (raw_string)))
+    (builtin_attribute
+      (string
+        (raw_string)))
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute
+      (string
+        (normal_string)))
+    (builtin_attribute)
+    (builtin_attribute)
+    (identifier)))
+
+===
+Recipes: Attributes: Builtins, all at once
+===
+
+[
+  confirm,
+  confirm("prompt"),
+  doc,
+  doc("doc"),
+  extension('.ext'),
+  group('recipe group'),
+  linux,
+  macos,
+  no-cd,
+  no-exit-message,
+  no-quiet,
+  positional-arguments,
+  private,
+  script,
+  script("bash -c"),
+  unix,
+  windows
+]
+r:
+
+---
+
+(file
+  (recipe
+    (builtin_attribute)
+    (builtin_attribute
+      (string
+        (normal_string)))
+    (builtin_attribute)
+    (builtin_attribute
+      (string
+        (normal_string)))
+    (builtin_attribute
+      (string
+        (raw_string)))
+    (builtin_attribute
+      (string
+        (raw_string)))
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute)
+    (builtin_attribute
+      (string
+        (normal_string)))
+    (builtin_attribute)
+    (builtin_attribute)
+    (identifier)))

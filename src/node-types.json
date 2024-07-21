@@ -52,6 +52,32 @@
     }
   },
   {
+    "type": "attribute",
+    "named": true,
+    "fields": {
+      "attribute_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "backtick",
     "named": true,
     "fields": {}
@@ -60,6 +86,84 @@
     "type": "boolean",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "builtin_attribute",
+    "named": true,
+    "fields": {
+      "attribute_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "confirm",
+            "named": false
+          },
+          {
+            "type": "doc",
+            "named": false
+          },
+          {
+            "type": "extension",
+            "named": false
+          },
+          {
+            "type": "group",
+            "named": false
+          },
+          {
+            "type": "linux",
+            "named": false
+          },
+          {
+            "type": "macos",
+            "named": false
+          },
+          {
+            "type": "no-cd",
+            "named": false
+          },
+          {
+            "type": "no-exit-message",
+            "named": false
+          },
+          {
+            "type": "no-quiet",
+            "named": false
+          },
+          {
+            "type": "positional-arguments",
+            "named": false
+          },
+          {
+            "type": "private",
+            "named": false
+          },
+          {
+            "type": "script",
+            "named": false
+          },
+          {
+            "type": "unix",
+            "named": false
+          },
+          {
+            "type": "windows",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "builtin_function_call",
@@ -476,6 +580,10 @@
           "named": true
         },
         {
+          "type": "recipe",
+          "named": true
+        },
+        {
           "type": "setting",
           "named": true
         }
@@ -608,6 +716,36 @@
     "type": "raw_string",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "recipe",
+    "named": true,
+    "fields": {
+      "recipe_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "builtin_attribute",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "setting",
@@ -806,6 +944,10 @@
     "named": false
   },
   {
+    "type": ":",
+    "named": false
+  },
+  {
     "type": ":=",
     "named": false
   },
@@ -930,6 +1072,10 @@
     "named": false
   },
   {
+    "type": "confirm",
+    "named": false
+  },
+  {
     "type": "data_dir",
     "named": false
   },
@@ -951,6 +1097,10 @@
   },
   {
     "type": "datetime_utc",
+    "named": false
+  },
+  {
+    "type": "doc",
     "named": false
   },
   {
@@ -1026,6 +1176,10 @@
     "named": false
   },
   {
+    "type": "group",
+    "named": false
+  },
+  {
     "type": "home_dir",
     "named": false
   },
@@ -1094,11 +1248,31 @@
     "named": false
   },
   {
+    "type": "linux",
+    "named": false
+  },
+  {
     "type": "lowercamelcase",
     "named": false
   },
   {
     "type": "lowercase",
+    "named": false
+  },
+  {
+    "type": "macos",
+    "named": false
+  },
+  {
+    "type": "no-cd",
+    "named": false
+  },
+  {
+    "type": "no-exit-message",
+    "named": false
+  },
+  {
+    "type": "no-quiet",
     "named": false
   },
   {
@@ -1134,6 +1308,10 @@
     "named": false
   },
   {
+    "type": "private",
+    "named": false
+  },
+  {
     "type": "quote",
     "named": false
   },
@@ -1143,6 +1321,10 @@
   },
   {
     "type": "replace_regex",
+    "named": false
+  },
+  {
+    "type": "script",
     "named": false
   },
   {
@@ -1230,6 +1412,10 @@
     "named": false
   },
   {
+    "type": "unix",
+    "named": false
+  },
+  {
     "type": "unstable",
     "named": false
   },
@@ -1243,6 +1429,10 @@
   },
   {
     "type": "uuid",
+    "named": false
+  },
+  {
+    "type": "windows",
     "named": false
   },
   {

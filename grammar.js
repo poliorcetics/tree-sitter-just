@@ -14,7 +14,7 @@ module.exports = grammar({
             $.assignment,
             $.import,
             $.mod,
-            // TODO: only top-level item left is `recipe`, to insert here
+            $.recipe,
             $.setting,
         )),
 
@@ -51,6 +51,56 @@ module.exports = grammar({
             field('mod_name', $.identifier),
             optional($.string),
         )),
+
+        // ========================================================================================
+        // Recipes
+
+        recipe: $ => seq(
+            repeat($._attribute_list),
+            // optional('@'),
+            field('recipe_name', $.identifier),
+            // repeat($.recipe_parameter),
+            // optional($.variadic_parameter),
+            ':',
+            // repeat($.recipe_dependency),
+            // TODO: recipe body
+            // optional($.recipe_body),
+        ),
+
+        _attribute_list: $ => seq(
+            '[',
+            $._attribute,
+            repeat(seq(',', $._attribute)),
+            ']',
+            /\r?\n/,
+        ),
+
+        // <https://just.systems/man/en/chapter_34.html?highlight=attribute#recipe-attributes>
+        _attribute: $ => choice(
+            $.builtin_attribute,
+            $.attribute,
+        ),
+
+        builtin_attribute: $ => choice(
+            seq(attr('confirm'),   optional($._a1)),
+            seq(attr('doc'),       optional($._a1)),
+            seq(attr('extension'),          $._a1),
+            seq(attr('group'),              $._a1),
+                attr('linux'),
+                attr('macos'),
+                attr('no-cd'),
+                attr('no-exit-message'),
+                attr('no-quiet'),
+                attr('positional-arguments'),
+                attr('private'),
+            seq(attr('script'),    optional($._a1)),
+                attr('unix'),
+                attr('windows'),
+        ),
+
+        attribute: $ => seq(attr($.identifier), optional($._a1)),
+
+        _a1: $ => seq('(', $.string, ')'),
 
         // ========================================================================================
         // Settings
@@ -308,6 +358,10 @@ module.exports = grammar({
         comment: $ => prec(-1, token(seq('#', /.*/))),
     }
 });
+
+function attr(name) {
+    return field('attribute_name', name);
+}
 
 function builtin(name, params) {
     return seq(fname(name), params);
