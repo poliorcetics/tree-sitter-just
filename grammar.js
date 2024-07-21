@@ -28,6 +28,9 @@ module.exports = grammar({
         // Aliases
 
         alias: $ => seq(
+            // Not all builtin attributes are supported in practice for aliases but that's not
+            // the responsibility of Tree-Sitter
+            repeat($._attribute_list),
             'alias',
             field('alias_name', $.identifier),
             ':=',

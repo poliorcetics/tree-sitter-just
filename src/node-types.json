@@ -15,9 +15,17 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "builtin_attribute",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
