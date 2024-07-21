@@ -62,9 +62,10 @@ module.exports = grammar({
             repeat($.recipe_parameter),
             optional($.variadic_parameter),
             ':',
-            // repeat($.recipe_dependency),
+            repeat($.recipe_dependency),
             // TODO: recipe body
             // optional($.recipe_body),
+            /\r?\n/,
         ),
 
         _attribute_list: $ => seq(
@@ -112,6 +113,13 @@ module.exports = grammar({
             choice('+', '*'),
             $.recipe_parameter,
         ),
+
+        recipe_dependency: $ => choice(
+            $._recipe_dependency,
+            seq('(', $._recipe_dependency, repeat($.expression), ')'),
+        ),
+
+        _recipe_dependency: $ => field('dependency_name', $.identifier),
 
         // ========================================================================================
         // Settings

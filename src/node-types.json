@@ -745,11 +745,41 @@
           "named": true
         },
         {
+          "type": "recipe_dependency",
+          "named": true
+        },
+        {
           "type": "recipe_parameter",
           "named": true
         },
         {
           "type": "variadic_parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "recipe_dependency",
+    "named": true,
+    "fields": {
+      "dependency_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "expression",
           "named": true
         }
       ]

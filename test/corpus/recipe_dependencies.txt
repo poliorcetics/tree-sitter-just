@@ -1,0 +1,110 @@
+===
+Recipes: Dependencies: Single, simple
+===
+
+r: dep
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier))))
+
+===
+Recipes: Dependencies: Multiple, simple
+===
+
+r: d1 d2
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier))
+    (recipe_dependency
+      (identifier))))
+
+===
+Recipes: Dependencies: Single, expressions
+===
+
+r: (d if a == b { d } else { d } "some other param")
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier)
+      (expression
+        (condition
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))
+      (expression
+        (value
+          (string
+            (normal_string)))))))
+
+===
+Recipes: Dependencies: Multiple, expressions
+===
+
+r: (d if a == b { d } else { d } "some other param") (d2 os() shell(abc() + "de"))
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier)
+      (expression
+        (condition
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))
+      (expression
+        (value
+          (string
+            (normal_string)))))
+    (recipe_dependency
+      (identifier)
+      (expression
+        (value
+          (builtin_function_call)))
+      (expression
+        (value
+          (builtin_function_call
+            (function_parameters
+              (expression
+                (value
+                  (function_call
+                    (identifier)))
+                (expression
+                  (value
+                    (string
+                      (normal_string))))))))))))
