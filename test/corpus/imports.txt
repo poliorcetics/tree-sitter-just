@@ -12,14 +12,11 @@ import '~/just'
 
 (file
   (import
-    (string
-      (normal_string)))
+    (string))
   (import
-    (string
-      (normal_string)))
+    (string))
   (import
-    (string
-      (raw_string))))
+    (string)))
 
 ===
 Import: optional
@@ -35,11 +32,8 @@ import? '~/just'
 
 (file
   (import
-    (string
-      (normal_string)))
+    (string))
   (import
-    (string
-      (normal_string)))
+    (string))
   (import
-    (string
-      (raw_string))))
+    (string)))

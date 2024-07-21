@@ -17,8 +17,7 @@ a := `echo toto`
     (identifier)
     (expression
       (value
-        (string
-          (normal_string)))))
+        (string))))
   (assignment
     (identifier)
     (expression
@@ -92,8 +91,7 @@ a := assert(os() != arch(), "is ok")
             (builtin_function_call))))
       (expression
         (value
-          (string
-            (normal_string)))))))
+          (string))))))
 
 ===
 Assignement: if-else
@@ -140,8 +138,7 @@ export a := `echo toto`
     (identifier)
     (expression
       (value
-        (string
-          (normal_string)))))
+        (string))))
   (assignment
     (identifier)
     (expression
@@ -215,8 +212,7 @@ export a := assert(os() != arch(), "is ok")
             (builtin_function_call))))
       (expression
         (value
-          (string
-            (normal_string)))))))
+          (string))))))
 
 ===
 Exported assignement: if-else

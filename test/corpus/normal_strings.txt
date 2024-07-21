@@ -11,8 +11,7 @@ a := ""
     (identifier)
     (expression
       (value
-        (string
-          (normal_string))))))
+        (string)))))
 
 ===
 Normal string: with basic content
@@ -27,8 +26,7 @@ a := "normal string 🦀"
     (identifier)
     (expression
       (value
-        (string
-          (normal_string))))))
+        (string)))))
 
 ===
 Normal string: with line breaks
@@ -45,8 +43,7 @@ a := "
     (identifier)
     (expression
       (value
-        (string
-          (normal_string))))))
+        (string)))))
 
 ===
 Normal string: with escape sequences
@@ -62,9 +59,8 @@ a := "normal \t \n \r \\ \" string"
     (expression
       (value
         (string
-          (normal_string
-            (escape_sequence)
-            (escape_sequence)
-            (escape_sequence)
-            (escape_sequence)
-            (escape_sequence)))))))
+          (escape_sequence)
+          (escape_sequence)
+          (escape_sequence)
+          (escape_sequence)
+          (escape_sequence))))))

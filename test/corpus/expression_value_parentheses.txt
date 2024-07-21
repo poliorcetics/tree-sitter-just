@@ -58,32 +58,28 @@ a := (
       (value
         (expression
           (value
-            (string
-              (raw_string)))))))
+            (string))))))
   (assignment
     (identifier)
     (expression
       (value
         (expression
           (value
-            (string
-              (indented_raw_string)))))))
+            (string))))))
   (assignment
     (identifier)
     (expression
       (value
         (expression
           (value
-            (string
-              (normal_string)))))))
+            (string))))))
   (assignment
     (identifier)
     (expression
       (value
         (expression
           (value
-            (string
-              (indented_normal_string)))))))
+            (string))))))
   (assignment
     (identifier)
     (expression
@@ -113,12 +109,10 @@ a := (
               (function_parameters
                 (expression
                   (value
-                    (string
-                      (normal_string))))
+                    (string)))
                 (expression
                   (value
                     (identifier)))
                 (expression
                   (value
-                    (string
-                      (raw_string))))))))))))
+                    (string)))))))))))

@@ -986,8 +986,17 @@
           "value": ":="
         },
         {
-          "type": "SYMBOL",
-          "name": "boolean"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "true"
+            },
+            {
+              "type": "STRING",
+              "value": "false"
+            }
+          ]
         }
       ]
     },
@@ -2848,23 +2857,23 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "indented_normal_string"
+          "name": "_indented_normal_string"
         },
         {
           "type": "SYMBOL",
-          "name": "normal_string"
+          "name": "_normal_string"
         },
         {
           "type": "SYMBOL",
-          "name": "indented_raw_string"
+          "name": "_indented_raw_string"
         },
         {
           "type": "SYMBOL",
-          "name": "raw_string"
+          "name": "_raw_string"
         }
       ]
     },
-    "indented_normal_string": {
+    "_indented_normal_string": {
       "type": "SEQ",
       "members": [
         {
@@ -2893,7 +2902,7 @@
         }
       ]
     },
-    "normal_string": {
+    "_normal_string": {
       "type": "SEQ",
       "members": [
         {
@@ -2922,7 +2931,7 @@
         }
       ]
     },
-    "indented_raw_string": {
+    "_indented_raw_string": {
       "type": "SEQ",
       "members": [
         {
@@ -2942,7 +2951,7 @@
         }
       ]
     },
-    "raw_string": {
+    "_raw_string": {
       "type": "SEQ",
       "members": [
         {
@@ -2984,19 +2993,6 @@
         }
       ]
     },
-    "boolean": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "true"
-        },
-        {
-          "type": "STRING",
-          "value": "false"
-        }
-      ]
-    },
     "identifier": {
       "type": "PATTERN",
       "value": "[a-zA-Z_][a-zA-Z0-9_-]*"
@@ -3035,6 +3031,11 @@
   "conflicts": [],
   "precedences": [],
   "externals": [],
-  "inline": [],
+  "inline": [
+    "_indented_normal_string",
+    "_normal_string",
+    "_indented_raw_string",
+    "_raw_string"
+  ],
   "supertypes": []
 }

@@ -61,8 +61,7 @@ a := shell("bash", arch())
           (function_parameters
             (expression
               (value
-                (string
-                  (raw_string)))))))))
+                (string))))))))
   (assignment
     (identifier)
     (expression
@@ -71,12 +70,10 @@ a := shell("bash", arch())
           (function_parameters
             (expression
               (value
-                (string
-                  (normal_string))))
+                (string)))
             (expression
               (value
-                (string
-                  (normal_string)))))))))
+                (string))))))))
   (assignment
     (identifier)
     (expression
@@ -88,8 +85,7 @@ a := shell("bash", arch())
                 (backtick)))
             (expression
               (value
-                (string
-                  (normal_string))))
+                (string)))
             (expression
               (value
                 (identifier))))))))
@@ -101,8 +97,7 @@ a := shell("bash", arch())
           (function_parameters
             (expression
               (value
-                (string
-                  (normal_string))))
+                (string)))
             (expression
               (value
                 (builtin_function_call)))))))))
@@ -127,8 +122,7 @@ a := env_var(
         (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string))))))))
+              (string)))))))
   (assignment
     (identifier)
     (expression
@@ -159,12 +153,10 @@ a := env_var_or_default(
         (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string))))
+              (string)))
           (expression
             (value
-              (string
-                (normal_string))))))))
+              (string)))))))
   (assignment
     (identifier)
     (expression
@@ -172,8 +164,7 @@ a := env_var_or_default(
         (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string))))
+              (string)))
           (expression
             (value
               (builtin_function_call))))))))
@@ -200,8 +191,7 @@ a := env("HOME", "default",)
         (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string))))))))
+              (string)))))))
   (assignment
     (identifier)
     (expression
@@ -209,8 +199,7 @@ a := env("HOME", "default",)
         (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string))))))))
+              (string)))))))
   (assignment
     (identifier)
     (expression
@@ -218,12 +207,10 @@ a := env("HOME", "default",)
         (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string))))
+              (string)))
           (expression
             (value
-              (string
-                (normal_string))))))))
+              (string)))))))
   (assignment
     (identifier)
     (expression
@@ -231,12 +218,10 @@ a := env("HOME", "default",)
         (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string))))
+              (string)))
           (expression
             (value
-              (string
-                (normal_string)))))))))
+              (string))))))))
 
 ===
 Expression: Values: Builtin function call: Invocation information
@@ -560,19 +545,16 @@ a := replace(
         (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string))))
+              (string)))
           (expression
             (value
-              (string
-                (raw_string))))
+              (string)))
           (expression
             (value
               (builtin_function_call
                 (expression
                   (value
-                    (string
-                      (normal_string))))))))))))
+                    (string)))))))))))
 
 ===
 Expression: Values: Builtin function call: Case conversion
@@ -930,8 +912,7 @@ a := join(a, b, c, (d), "e",)
                 (identifier)))
             (expression
               (value
-                (string
-                  (raw_string))))
+                (string)))
             (expression
               (value
                 (identifier))))))))
@@ -957,8 +938,7 @@ a := join(a, b, c, (d), "e",)
                     (identifier)))))
             (expression
               (value
-                (string
-                  (normal_string))))))))))
+                (string)))))))))
 
 ===
 Expression: Values: Builtin function call: Filesystem access

@@ -33,8 +33,7 @@ mod a 'b/c.just'
 (file
   (mod
     (identifier)
-    (string
-      (raw_string))))
+    (string)))
 
 ===
 Module: name and path, optional
@@ -47,5 +46,4 @@ mod? a "b/c.just"
 (file
   (mod
     (identifier)
-    (string
-      (normal_string))))
+    (string)))

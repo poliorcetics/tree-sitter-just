@@ -11,8 +11,7 @@ a := """"""
     (identifier)
     (expression
       (value
-        (string
-          (indented_normal_string))))))
+        (string)))))
 
 ===
 Indented normal string: with basic content
@@ -27,8 +26,7 @@ a := """normal string 🦀"""
     (identifier)
     (expression
       (value
-        (string
-          (indented_normal_string))))))
+        (string)))))
 
 ===
 Indented normal string: with line breaks
@@ -45,8 +43,7 @@ a := """
     (identifier)
     (expression
       (value
-        (string
-          (indented_normal_string))))))
+        (string)))))
 
 ===
 Indented normal string: with " inside
@@ -63,8 +60,7 @@ a := """
     (identifier)
     (expression
       (value
-        (string
-          (indented_normal_string))))))
+        (string)))))
 
 ===
 Indented normal string: with escape sequences
@@ -80,9 +76,8 @@ a := """normal \t \n \r \\ \" string"""
     (expression
       (value
         (string
-          (indented_normal_string
-            (escape_sequence)
-            (escape_sequence)
-            (escape_sequence)
-            (escape_sequence)
-            (escape_sequence)))))))
+          (escape_sequence)
+          (escape_sequence)
+          (escape_sequence)
+          (escape_sequence)
+          (escape_sequence))))))

@@ -6,6 +6,12 @@ module.exports = grammar({
     ],
     // Required by tree-sitter, the order and variant count here must match that of `src/scanner.c:TokenType`.
     // externals: $ => [],
+    inline: $ => [
+        $._indented_normal_string,
+        $._normal_string,
+        $._indented_raw_string,
+        $._raw_string,
+    ],
     // Recommended by tree-sitter's documentation to improve performances and compile times.
     word: $ => $.identifier,
     rules: {
@@ -151,7 +157,7 @@ module.exports = grammar({
                 )),
             ),
         ),
-        _setting_boolean: $ => seq(':=', $.boolean),
+        _setting_boolean: $ => seq(':=', choice('true', 'false')),
         _setting_string: $ => seq(':=', $.string),
         _setting_list: $ => seq(':=', '[', $.string, repeat(seq(',', $.string)), optional(','), ']'),
 
@@ -322,12 +328,13 @@ module.exports = grammar({
         // - In recipe parameters, in settings: **inactive**
         // - In backticks (`, ```): **inactive**
         string: $ => choice(
-            $.indented_normal_string,
-            $.normal_string,
-            $.indented_raw_string,
-            $.raw_string,
+            $._indented_normal_string,
+            $._normal_string,
+            $._indented_raw_string,
+            $._raw_string,
         ),
-        indented_normal_string: $ => seq(
+
+        _indented_normal_string: $ => seq(
             '"""',
             repeat(choice(
                 $.escape_sequence,
@@ -337,7 +344,8 @@ module.exports = grammar({
             )),
             '"""'
         ),
-        normal_string: $ => seq(
+
+        _normal_string: $ => seq(
             '"',
             repeat(choice(
                 $.escape_sequence,
@@ -345,17 +353,20 @@ module.exports = grammar({
             )),
             '"',
         ),
-        indented_raw_string: $ => seq(
+
+        _indented_raw_string: $ => seq(
             "'''",
             // See `indented_normal_string`.
             repeat(/.[^']?/),
             "'''",
         ),
-        raw_string: $ => seq(
+
+        _raw_string: $ => seq(
             "'",
             /[^']*/,
             "'",
         ),
+
         escape_sequence: $ => choice(
             '\\n',
             '\\r',
@@ -366,8 +377,6 @@ module.exports = grammar({
 
         // ========================================================================================
         // Misc.
-
-        boolean: $ => choice('true', 'false'),
 
         // Identifiers in Just are always ASCII.
         identifier: $ => /[a-zA-Z_][a-zA-Z0-9_-]*/,

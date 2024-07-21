@@ -47,8 +47,7 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
       (condition
         (expression
           (value
-            (string
-              (normal_string)))
+            (string))
           (expression
             (value
               (builtin_function_call))))
@@ -63,24 +62,19 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
                     (function_parameters
                       (expression
                         (value
-                          (string
-                            (normal_string))))
+                          (string)))
                       (expression
                         (value
-                          (string
-                            (normal_string))))
+                          (string)))
                       (expression
                         (value
-                          (string
-                            (raw_string))))
+                          (string)))
                       (expression
                         (value
-                          (string
-                            (normal_string)))
+                          (string))
                         (expression
                           (value
-                            (string
-                              (normal_string)))))))))))))
+                            (string))))))))))))
       (expression
         (value
           (builtin_function_call))
@@ -88,8 +82,7 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
           (condition
             (expression
               (value
-                (string
-                  (normal_string))))
+                (string)))
             (expression
               (value
                 (builtin_function_call))))
@@ -107,12 +100,10 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
                     (builtin_function_call
                       (expression
                         (value
-                          (string
-                            (normal_string)))))))
+                          (string))))))
                 (expression
                   (value
-                    (string
-                      (normal_string)))))))))
+                    (string))))))))
       (expression
         (value
           (builtin_function_call))

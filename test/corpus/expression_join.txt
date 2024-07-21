@@ -15,12 +15,10 @@ a := env("HOME") / env("SUBPATH_CONFIG", 'default')
     (identifier)
     (expression
       (value
-        (string
-          (normal_string)))
+        (string))
       (expression
         (value
-          (string
-            (normal_string))))))
+          (string)))))
   (assignment
     (identifier)
     (expression
@@ -36,19 +34,16 @@ a := env("HOME") / env("SUBPATH_CONFIG", 'default')
         (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string))))))
+              (string)))))
       (expression
         (value
           (builtin_function_call
             (expression
               (value
-                (string
-                  (normal_string))))
+                (string)))
             (expression
               (value
-                (string
-                  (raw_string))))))))))
+                (string)))))))))
 
 ===
 Expression: Plus join
@@ -67,12 +62,10 @@ a := env("HOME") + env("SUBPATH_CONFIG", 'default')
     (identifier)
     (expression
       (value
-        (string
-          (normal_string)))
+        (string))
       (expression
         (value
-          (string
-            (normal_string))))))
+          (string)))))
   (assignment
     (identifier)
     (expression
@@ -88,16 +81,13 @@ a := env("HOME") + env("SUBPATH_CONFIG", 'default')
         (builtin_function_call
           (expression
             (value
-              (string
-                (normal_string))))))
+              (string)))))
       (expression
         (value
           (builtin_function_call
             (expression
               (value
-                (string
-                  (normal_string))))
+                (string)))
             (expression
               (value
-                (string
-                  (raw_string))))))))))
+                (string)))))))))

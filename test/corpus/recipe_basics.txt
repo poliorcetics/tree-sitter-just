@@ -33,22 +33,18 @@ Recipe: everything at once
       (identifier))
     (attribute
       (identifier)
-      (string
-        (normal_string)))
+      (string))
     (attribute
       (identifier)
-      (string
-        (normal_string)))
+      (string))
     (attribute
       (identifier))
     (attribute
       (identifier)
-      (string
-        (normal_string)))
+      (string))
     (builtin_attribute)
     (builtin_attribute
-      (string
-        (normal_string)))
+      (string))
     (identifier)
     (recipe_parameter
       (identifier))
@@ -61,22 +57,19 @@ Recipe: everything at once
     (recipe_parameter
       (identifier)
       (value
-        (string
-          (normal_string))))
+        (string)))
     (variadic_parameter
       (recipe_parameter
         (identifier)
         (value
-          (string
-            (normal_string)))))
+          (string))))
     (recipe_dependency
       (identifier))
     (recipe_dependency
       (identifier)
       (expression
         (value
-          (string
-            (normal_string))))
+          (string)))
       (expression
         (value
           (builtin_function_call))

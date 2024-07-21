@@ -71,8 +71,7 @@ r a = "some string" param = (if a == b { c } else { d }):
     (recipe_parameter
       (identifier)
       (value
-        (string
-          (normal_string))))
+        (string)))
     (recipe_parameter
       (identifier)
       (value
@@ -164,8 +163,7 @@ r $a = "some string" $param = (if a == b { c } else { d }):
     (recipe_parameter
       (identifier)
       (value
-        (string
-          (normal_string))))
+        (string)))
     (recipe_parameter
       (identifier)
       (value

@@ -10,10 +10,8 @@ set allow-duplicate-recipes := false
 
 (file
   (setting)
-  (setting
-    (boolean))
-  (setting
-    (boolean)))
+  (setting)
+  (setting))
 
 ===
 allow-duplicate-variables
@@ -27,10 +25,8 @@ set allow-duplicate-variables := false
 
 (file
   (setting)
-  (setting
-    (boolean))
-  (setting
-    (boolean)))
+  (setting)
+  (setting))
 
 ===
 dotenv-filename
@@ -43,11 +39,9 @@ set dotenv-filename := '.my-custom-env'
 
 (file
   (setting
-    (string
-      (normal_string)))
+    (string))
   (setting
-    (string
-      (raw_string))))
+    (string)))
 
 ===
 dotenv-load
@@ -61,10 +55,8 @@ set dotenv-load := false
 
 (file
   (setting)
-  (setting
-    (boolean))
-  (setting
-    (boolean)))
+  (setting)
+  (setting))
 
 ===
 dotenv-path
@@ -77,11 +69,9 @@ set dotenv-path := '.my-custom-env'
 
 (file
   (setting
-    (string
-      (normal_string)))
+    (string))
   (setting
-    (string
-      (raw_string))))
+    (string)))
 
 ===
 dotenv-required
@@ -95,10 +85,8 @@ set dotenv-required := false
 
 (file
   (setting)
-  (setting
-    (boolean))
-  (setting
-    (boolean)))
+  (setting)
+  (setting))
 
 ===
 export
@@ -112,10 +100,8 @@ set export := false
 
 (file
   (setting)
-  (setting
-    (boolean))
-  (setting
-    (boolean)))
+  (setting)
+  (setting))
 
 ===
 fallback
@@ -129,10 +115,8 @@ set fallback := false
 
 (file
   (setting)
-  (setting
-    (boolean))
-  (setting
-    (boolean)))
+  (setting)
+  (setting))
 
 ===
 ignore-comments
@@ -146,10 +130,8 @@ set ignore-comments := false
 
 (file
   (setting)
-  (setting
-    (boolean))
-  (setting
-    (boolean)))
+  (setting)
+  (setting))
 
 ===
 positional-arguments
@@ -163,10 +145,8 @@ set positional-arguments := false
 
 (file
   (setting)
-  (setting
-    (boolean))
-  (setting
-    (boolean)))
+  (setting)
+  (setting))
 
 ===
 shell
@@ -181,23 +161,16 @@ set shell := [ "bash", '-c', "echo", ]
 
 (file
   (setting
-    (string
-      (raw_string)))
+    (string))
   (setting
-    (string
-      (normal_string)))
+    (string))
   (setting
-    (string
-      (normal_string))
-    (string
-      (raw_string)))
+    (string)
+    (string))
   (setting
-    (string
-      (normal_string))
-    (string
-      (raw_string))
-    (string
-      (normal_string))))
+    (string)
+    (string)
+    (string)))
 
 ===
 tempdir
@@ -210,11 +183,9 @@ set tempdir := './target'
 
 (file
   (setting
-    (string
-      (normal_string)))
+    (string))
   (setting
-    (string
-      (raw_string))))
+    (string)))
 
 ===
 unstable
@@ -228,10 +199,8 @@ set unstable := false
 
 (file
   (setting)
-  (setting
-    (boolean))
-  (setting
-    (boolean)))
+  (setting)
+  (setting))
 
 ===
 windows-powershell
@@ -245,10 +214,8 @@ set windows-powershell := false
 
 (file
   (setting)
-  (setting
-    (boolean))
-  (setting
-    (boolean)))
+  (setting)
+  (setting))
 
 ===
 windows-shell
@@ -263,23 +230,16 @@ set windows-shell := [ "bash", '-c', "echo", ]
 
 (file
   (setting
-    (string
-      (raw_string)))
+    (string))
   (setting
-    (string
-      (normal_string)))
+    (string))
   (setting
-    (string
-      (normal_string))
-    (string
-      (raw_string)))
+    (string)
+    (string))
   (setting
-    (string
-      (normal_string))
-    (string
-      (raw_string))
-    (string
-      (normal_string))))
+    (string)
+    (string)
+    (string)))
 
 ===
 Unknown settings
@@ -303,38 +263,27 @@ set new-setting := [ "bash", '-c', "echo", ]
   (setting
     (identifier))
   (setting
-    (identifier)
-    (boolean))
+    (identifier))
+  (setting
+    (identifier))
   (setting
     (identifier)
-    (boolean))
+    (string))
   (setting
     (identifier)
-    (string
-      (normal_string)))
+    (string))
   (setting
     (identifier)
-    (string
-      (raw_string)))
+    (string))
   (setting
     (identifier)
-    (string
-      (raw_string)))
+    (string))
   (setting
     (identifier)
-    (string
-      (normal_string)))
+    (string)
+    (string))
   (setting
     (identifier)
-    (string
-      (normal_string))
-    (string
-      (raw_string)))
-  (setting
-    (identifier)
-    (string
-      (normal_string))
-    (string
-      (raw_string))
-    (string
-      (normal_string))))
+    (string)
+    (string)
+    (string)))

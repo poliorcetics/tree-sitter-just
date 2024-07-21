@@ -66,8 +66,7 @@ r:
   (recipe
     (attribute
       (identifier)
-      (string
-        (normal_string)))
+      (string))
     (identifier)))
 
 ===
@@ -85,8 +84,7 @@ r:
       (identifier))
     (attribute
       (identifier)
-      (string
-        (raw_string)))
+      (string))
     (attribute
       (identifier))
     (identifier)))
@@ -110,8 +108,7 @@ r:
       (identifier))
     (attribute
       (identifier)
-      (string
-        (indented_normal_string)))
+      (string))
     (identifier)))
 
 ===
@@ -143,18 +140,14 @@ r:
   (recipe
     (builtin_attribute)
     (builtin_attribute
-      (string
-        (normal_string)))
+      (string))
     (builtin_attribute)
     (builtin_attribute
-      (string
-        (normal_string)))
+      (string))
     (builtin_attribute
-      (string
-        (raw_string)))
+      (string))
     (builtin_attribute
-      (string
-        (raw_string)))
+      (string))
     (builtin_attribute)
     (builtin_attribute)
     (builtin_attribute)
@@ -164,8 +157,7 @@ r:
     (builtin_attribute)
     (builtin_attribute)
     (builtin_attribute
-      (string
-        (normal_string)))
+      (string))
     (builtin_attribute)
     (builtin_attribute)
     (identifier)))
@@ -201,18 +193,14 @@ r:
   (recipe
     (builtin_attribute)
     (builtin_attribute
-      (string
-        (normal_string)))
+      (string))
     (builtin_attribute)
     (builtin_attribute
-      (string
-        (normal_string)))
+      (string))
     (builtin_attribute
-      (string
-        (raw_string)))
+      (string))
     (builtin_attribute
-      (string
-        (raw_string)))
+      (string))
     (builtin_attribute)
     (builtin_attribute)
     (builtin_attribute)
@@ -222,8 +210,7 @@ r:
     (builtin_attribute)
     (builtin_attribute)
     (builtin_attribute
-      (string
-        (normal_string)))
+      (string))
     (builtin_attribute)
     (builtin_attribute)
     (identifier)))

@@ -11,8 +11,7 @@ a := ''
     (identifier)
     (expression
       (value
-        (string
-          (raw_string))))))
+        (string)))))
 
 ===
 Raw string: with basic content
@@ -27,8 +26,7 @@ a := 'raw string 🦀'
     (identifier)
     (expression
       (value
-        (string
-          (raw_string))))))
+        (string)))))
 
 ===
 Raw string: with line breaks
@@ -45,8 +43,7 @@ a := '
     (identifier)
     (expression
       (value
-        (string
-          (raw_string))))))
+        (string)))))
 
 ===
 Raw string: with " inside
@@ -63,8 +60,7 @@ a := '
     (identifier)
     (expression
       (value
-        (string
-          (raw_string))))))
+        (string)))))
 
 ===
 Raw string: with escape sequences
@@ -79,5 +75,4 @@ a := 'raw \t \n \r \\ \" string'
     (identifier)
     (expression
       (value
-        (string
-          (raw_string))))))
+        (string)))))

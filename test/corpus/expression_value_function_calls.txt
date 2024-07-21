@@ -95,8 +95,7 @@ a := function_call(shell(`python3 --help`))
           (function_parameters
             (expression
               (value
-                (string
-                  (raw_string)))))))))
+                (string))))))))
   (assignment
     (identifier)
     (expression
@@ -106,8 +105,7 @@ a := function_call(shell(`python3 --help`))
           (function_parameters
             (expression
               (value
-                (string
-                  (indented_raw_string)))))))))
+                (string))))))))
   (assignment
     (identifier)
     (expression
@@ -117,8 +115,7 @@ a := function_call(shell(`python3 --help`))
           (function_parameters
             (expression
               (value
-                (string
-                  (normal_string)))))))))
+                (string))))))))
   (assignment
     (identifier)
     (expression
@@ -128,8 +125,7 @@ a := function_call(shell(`python3 --help`))
           (function_parameters
             (expression
               (value
-                (string
-                  (indented_normal_string)))))))))
+                (string))))))))
   (assignment
     (identifier)
     (expression
@@ -225,5 +221,4 @@ a := function_call(
                 (backtick)))
             (expression
               (value
-                (string
-                  (normal_string))))))))))
+                (string)))))))))

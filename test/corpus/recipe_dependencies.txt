@@ -57,8 +57,7 @@ r: (d if a == b { d } else { d } "some other param")
             (identifier))))
       (expression
         (value
-          (string
-            (normal_string)))))))
+          (string))))))
 
 ===
 Recipes: Dependencies: Multiple, expressions
@@ -89,8 +88,7 @@ r: (d if a == b { d } else { d } "some other param") (d2 os() shell(abc() + "de"
             (identifier))))
       (expression
         (value
-          (string
-            (normal_string)))))
+          (string))))
     (recipe_dependency
       (identifier)
       (expression
@@ -106,5 +104,4 @@ r: (d if a == b { d } else { d } "some other param") (d2 os() shell(abc() + "de"
                     (identifier)))
                 (expression
                   (value
-                    (string
-                      (normal_string))))))))))))
+                    (string)))))))))))

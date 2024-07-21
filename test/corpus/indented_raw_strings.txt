@@ -11,8 +11,7 @@ a := ''''''
     (identifier)
     (expression
       (value
-        (string
-          (indented_raw_string))))))
+        (string)))))
 
 ===
 Indented raw string: with basic content
@@ -27,8 +26,7 @@ a := '''raw string 🦀'''
     (identifier)
     (expression
       (value
-        (string
-          (indented_raw_string))))))
+        (string)))))
 
 ===
 Indented raw string: with line breaks
@@ -45,8 +43,7 @@ a := '''
     (identifier)
     (expression
       (value
-        (string
-          (indented_raw_string))))))
+        (string)))))
 
 ===
 Indented raw string: with " inside
@@ -63,8 +60,7 @@ a := '''
     (identifier)
     (expression
       (value
-        (string
-          (indented_raw_string))))))
+        (string)))))
 
 ===
 Indented raw string: with ' inside
@@ -81,8 +77,7 @@ a := '''
     (identifier)
     (expression
       (value
-        (string
-          (indented_raw_string))))))
+        (string)))))
 
 ===
 Indented raw string: with escape sequences
@@ -97,5 +92,4 @@ a := '''raw \t \n \r \\ \" string'''
     (identifier)
     (expression
       (value
-        (string
-          (indented_raw_string))))))
+        (string)))))

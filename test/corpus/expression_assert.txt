@@ -13,16 +13,13 @@ a := assert("a" == "b", "c")
       (condition
         (expression
           (value
-            (string
-              (normal_string))))
+            (string)))
         (expression
           (value
-            (string
-              (normal_string)))))
+            (string))))
       (expression
         (value
-          (string
-            (normal_string)))))))
+          (string))))))
 
 ===
 Expression: Assert: Equal: nested
@@ -41,15 +38,13 @@ a := assert(("a" / os()) == "true", arch() + shell("bash", "-c", "echo", "toto")
           (value
             (expression
               (value
-                (string
-                  (normal_string)))
+                (string))
               (expression
                 (value
                   (builtin_function_call))))))
         (expression
           (value
-            (string
-              (normal_string)))))
+            (string))))
       (expression
         (value
           (builtin_function_call))
@@ -59,20 +54,16 @@ a := assert(("a" / os()) == "true", arch() + shell("bash", "-c", "echo", "toto")
               (function_parameters
                 (expression
                   (value
-                    (string
-                      (normal_string))))
+                    (string)))
                 (expression
                   (value
-                    (string
-                      (normal_string))))
+                    (string)))
                 (expression
                   (value
-                    (string
-                      (normal_string))))
+                    (string)))
                 (expression
                   (value
-                    (string
-                      (normal_string))))))))))))
+                    (string)))))))))))
 
 ===
 Expression: Assert: Not equal: simple
@@ -89,16 +80,13 @@ a := assert("a" != "b", "c")
       (condition
         (expression
           (value
-            (string
-              (normal_string))))
+            (string)))
         (expression
           (value
-            (string
-              (normal_string)))))
+            (string))))
       (expression
         (value
-          (string
-            (normal_string)))))))
+          (string))))))
 
 ===
 Expression: Assert: Not equal: nested
@@ -117,15 +105,13 @@ a := assert(("a" / os()) != "true", arch() + shell("bash", "-c", "echo", "toto")
           (value
             (expression
               (value
-                (string
-                  (normal_string)))
+                (string))
               (expression
                 (value
                   (builtin_function_call))))))
         (expression
           (value
-            (string
-              (normal_string)))))
+            (string))))
       (expression
         (value
           (builtin_function_call))
@@ -135,20 +121,16 @@ a := assert(("a" / os()) != "true", arch() + shell("bash", "-c", "echo", "toto")
               (function_parameters
                 (expression
                   (value
-                    (string
-                      (normal_string))))
+                    (string)))
                 (expression
                   (value
-                    (string
-                      (normal_string))))
+                    (string)))
                 (expression
                   (value
-                    (string
-                      (normal_string))))
+                    (string)))
                 (expression
                   (value
-                    (string
-                      (normal_string))))))))))))
+                    (string)))))))))))
 
 ===
 Expression: Assert: Not equal: simple
@@ -165,16 +147,13 @@ a := assert("a" =~ "b", "c")
       (condition
         (expression
           (value
-            (string
-              (normal_string))))
+            (string)))
         (expression
           (value
-            (string
-              (normal_string)))))
+            (string))))
       (expression
         (value
-          (string
-            (normal_string)))))))
+          (string))))))
 
 ===
 Expression: Assert: Not equal: nested
@@ -193,15 +172,13 @@ a := assert(("a" / os()) =~ "true", arch() + shell("bash", "-c", "echo", "toto")
           (value
             (expression
               (value
-                (string
-                  (normal_string)))
+                (string))
               (expression
                 (value
                   (builtin_function_call))))))
         (expression
           (value
-            (string
-              (normal_string)))))
+            (string))))
       (expression
         (value
           (builtin_function_call))
@@ -211,17 +188,13 @@ a := assert(("a" / os()) =~ "true", arch() + shell("bash", "-c", "echo", "toto")
               (function_parameters
                 (expression
                   (value
-                    (string
-                      (normal_string))))
+                    (string)))
                 (expression
                   (value
-                    (string
-                      (normal_string))))
+                    (string)))
                 (expression
                   (value
-                    (string
-                      (normal_string))))
+                    (string)))
                 (expression
                   (value
-                    (string
-                      (normal_string))))))))))))
+                    (string)))))))))))
