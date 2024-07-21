@@ -183,3 +183,75 @@ r $a = "some string" $param = (if a == b { c } else { d }):
           (expression
             (value
               (identifier))))))))
+
+===
+Recipes: Parameters: variadics
+===
+
+r *a:
+
+r *$a:
+
+r +a:
+
+r +$a:
+
+r *a=value:
+
+r *$a=value:
+
+r +a=value:
+
+r +$a=value:
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (variadic_parameter
+      (recipe_parameter
+        (identifier))))
+  (recipe
+    (identifier)
+    (variadic_parameter
+      (recipe_parameter
+        (identifier))))
+  (recipe
+    (identifier)
+    (variadic_parameter
+      (recipe_parameter
+        (identifier))))
+  (recipe
+    (identifier)
+    (variadic_parameter
+      (recipe_parameter
+        (identifier))))
+  (recipe
+    (identifier)
+    (variadic_parameter
+      (recipe_parameter
+        (identifier)
+        (value
+          (identifier)))))
+  (recipe
+    (identifier)
+    (variadic_parameter
+      (recipe_parameter
+        (identifier)
+        (value
+          (identifier)))))
+  (recipe
+    (identifier)
+    (variadic_parameter
+      (recipe_parameter
+        (identifier)
+        (value
+          (identifier)))))
+  (recipe
+    (identifier)
+    (variadic_parameter
+      (recipe_parameter
+        (identifier)
+        (value
+          (identifier))))))

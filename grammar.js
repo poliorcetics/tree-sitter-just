@@ -60,7 +60,7 @@ module.exports = grammar({
             optional('@'),
             field('recipe_name', $.identifier),
             repeat($.recipe_parameter),
-            // optional($.variadic_parameter),
+            optional($.variadic_parameter),
             ':',
             // repeat($.recipe_dependency),
             // TODO: recipe body
@@ -106,6 +106,11 @@ module.exports = grammar({
             optional('$'),
             field('parameter_name', $.identifier),
             optional(seq('=', $.value)),
+        ),
+
+        variadic_parameter: $ => seq(
+            choice('+', '*'),
+            $.recipe_parameter,
         ),
 
         // ========================================================================================

@@ -23,7 +23,7 @@ Recipe: everything at once
 [another_attr("with param")]
 [linux]
 [group("grouped recipe")]
-@quiet_recipe a $b c=value $d="value":
+@quiet_recipe a $b c=value $d="value" *variadic_param="some default value":
 
 ---
 
@@ -62,4 +62,10 @@ Recipe: everything at once
       (identifier)
       (value
         (string
-          (normal_string))))))
+          (normal_string))))
+    (variadic_parameter
+      (recipe_parameter
+        (identifier)
+        (value
+          (string
+            (normal_string)))))))
