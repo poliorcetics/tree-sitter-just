@@ -662,9 +662,17 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "builtin_attribute",
+          "named": true
+        },
         {
           "type": "string",
           "named": true

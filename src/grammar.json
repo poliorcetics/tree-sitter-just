@@ -112,6 +112,13 @@
         "type": "SEQ",
         "members": [
           {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_attribute_list"
+            }
+          },
+          {
             "type": "PATTERN",
             "value": "mod\\??"
           },

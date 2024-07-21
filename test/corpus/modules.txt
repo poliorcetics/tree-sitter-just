@@ -47,3 +47,24 @@ mod? a "b/c.just"
   (mod
     (identifier)
     (string)))
+
+===
+Module: with doc attribute
+===
+
+[doc]
+mod a
+
+[doc("some documentation")]
+mod b
+
+---
+
+(file
+  (mod
+    (builtin_attribute)
+    (identifier))
+  (mod
+    (builtin_attribute
+      (string))
+    (identifier)))

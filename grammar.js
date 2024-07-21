@@ -53,6 +53,8 @@ module.exports = grammar({
         ),
 
         mod: $ => prec.right(seq(
+            // Technically only `doc` is a valid attribute on modules at the moment but that's okay
+            repeat($._attribute_list),
             /mod\??/,
             field('mod_name', $.identifier),
             optional($.string),
