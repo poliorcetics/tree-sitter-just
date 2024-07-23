@@ -1,0 +1,75 @@
+===
+Recipes: Empty body
+===
+
+r:
+
+---
+
+(file
+  (recipe
+    (identifier)))
+
+===
+Recipes: single line body
+===
+
+r:
+    echo
+
+r:
+	echo
+
+r:
+  echo
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_line))
+  (recipe
+    (identifier)
+    (recipe_line))
+  (recipe
+    (identifier)
+    (recipe_line)))
+
+===
+Recipes: multiline
+===
+
+r:
+	echo
+  echo
+    echo
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_line)
+    (recipe_line)
+    (recipe_line)))
+
+===
+Recipes: prefixed
+===
+
+r:
+    @echo
+    -echo
+    @-echo
+    -@echo
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_line)
+    (recipe_line)
+    (recipe_line)
+    (recipe_line)))

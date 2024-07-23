@@ -24,6 +24,10 @@ Recipe: everything at once
 [linux]
 [group("grouped recipe")]
 @quiet_recipe a $b c=value $d="value" *variadic_param="some default value": d1 (d2 "abc" os() + arch())
+  @-echo line 1
+  -@echo line 2
+  @echo line 42
+  -echo line with a dash
 
 ---
 
@@ -75,4 +79,8 @@ Recipe: everything at once
           (builtin_function_call))
         (expression
           (value
-            (builtin_function_call)))))))
+            (builtin_function_call)))))
+    (recipe_line)
+    (recipe_line)
+    (recipe_line)
+    (recipe_line)))

@@ -74,7 +74,8 @@ module.exports = grammar({
             optional($.variadic_parameter),
             ':',
             repeat($.recipe_dependency),
-            $._recipe_body,
+            $._eol,
+            optional($._recipe_body),
         ),
 
         _attribute_list: $ => seq(
@@ -82,7 +83,7 @@ module.exports = grammar({
             $._attribute,
             repeat(seq(',', $._attribute)),
             ']',
-            /\r?\n/,
+            $._eol,
         ),
 
         // <https://just.systems/man/en/chapter_34.html?highlight=attribute#recipe-attributes>
@@ -130,10 +131,21 @@ module.exports = grammar({
 
         _recipe_dependency: $ => field('dependency_name', $.identifier),
 
-        _recipe_body: $ => repeat1(choice(
-            /\r?\n/,
-        )),
+        _recipe_body: $ => seq(
+            repeat($.recipe_line),
+            $._eol,
+        ),
 
+        recipe_line: $ => seq(
+            // This is not exactly correct in that the first line defines the indentation length
+            // and all following lines in the recipe must use the same.
+            // In practice, it's better to reset on every line for better highlighting of the rest.
+            /( |\t)+/,
+            optional(choice('@-', '-@', '@', '-')),
+            // TODO: interpolation
+            // Interpolation escape is `{{{{`
+            field('recipe_line_content', /.+/),
+        ),
         // ========================================================================================
         // Settings
 
@@ -329,11 +341,6 @@ module.exports = grammar({
         // ========================================================================================
         // Strings
 
-        // TODO: interpolation
-        //
-        // - Interpolation is only active **within** recipes
-        // - In recipe parameters, in settings: **inactive**
-        // - In backticks (`, ```): **inactive**
         string: $ => choice(
             $._indented_normal_string,
             $._normal_string,
@@ -391,6 +398,8 @@ module.exports = grammar({
         // Comments must be the last rule to match, so that anything that also matches `#.*` in some
         // way comes first in the list.
         comment: $ => prec(-1, token(seq('#', /.*/))),
+
+        _eol: $ => /\r?\n/,
     }
 });
 

@@ -214,7 +214,19 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_recipe_body"
+          "name": "_eol"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_recipe_body"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -250,8 +262,8 @@
           "value": "]"
         },
         {
-          "type": "PATTERN",
-          "value": "\\r?\\n"
+          "type": "SYMBOL",
+          "name": "_eol"
         }
       ]
     },
@@ -606,16 +618,66 @@
       }
     },
     "_recipe_body": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "PATTERN",
-            "value": "\\r?\\n"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "recipe_line"
           }
-        ]
-      }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_eol"
+        }
+      ]
+    },
+    "recipe_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "( |\\t)+"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "@-"
+                },
+                {
+                  "type": "STRING",
+                  "value": "-@"
+                },
+                {
+                  "type": "STRING",
+                  "value": "@"
+                },
+                {
+                  "type": "STRING",
+                  "value": "-"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "recipe_line_content",
+          "content": {
+            "type": "PATTERN",
+            "value": ".+"
+          }
+        }
+      ]
     },
     "setting": {
       "type": "SEQ",
@@ -3042,6 +3104,10 @@
           ]
         }
       }
+    },
+    "_eol": {
+      "type": "PATTERN",
+      "value": "\\r?\\n"
     }
   },
   "extras": [
