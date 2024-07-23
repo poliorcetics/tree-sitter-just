@@ -28,13 +28,13 @@ r:
 (file
   (recipe
     (identifier)
-    (recipe_line))
+    (recipe_body))
   (recipe
     (identifier)
-    (recipe_line))
+    (recipe_body))
   (recipe
     (identifier)
-    (recipe_line)))
+    (recipe_body)))
 
 ===
 Recipes: multiline
@@ -50,9 +50,7 @@ r:
 (file
   (recipe
     (identifier)
-    (recipe_line)
-    (recipe_line)
-    (recipe_line)))
+    (recipe_body)))
 
 ===
 Recipes: prefixed
@@ -69,7 +67,44 @@ r:
 (file
   (recipe
     (identifier)
-    (recipe_line)
-    (recipe_line)
-    (recipe_line)
-    (recipe_line)))
+    (recipe_body)))
+
+===
+Recipes: interpolation
+===
+
+r:
+  exec {{ command }} --static-arg {{ args + other_args }} --end-arg
+
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body
+      (interpolation
+        (expression
+          (value
+            (identifier))))
+      (interpolation
+        (expression
+          (value
+            (identifier))
+          (expression
+            (value
+              (identifier))))))))
+
+===
+Recipes: espace interpolation
+===
+
+r:
+  echo {{{{ hello }}
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body)))

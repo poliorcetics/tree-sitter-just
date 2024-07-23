@@ -75,7 +75,7 @@ module.exports = grammar({
             ':',
             repeat($.recipe_dependency),
             $._eol,
-            optional($._recipe_body),
+            optional($.recipe_body),
         ),
 
         _attribute_list: $ => seq(
@@ -131,21 +131,26 @@ module.exports = grammar({
 
         _recipe_dependency: $ => field('dependency_name', $.identifier),
 
-        _recipe_body: $ => seq(
-            repeat($.recipe_line),
-            $._eol,
-        ),
-
-        recipe_line: $ => seq(
+        recipe_body: $ => seq(
             // This is not exactly correct in that the first line defines the indentation length
             // and all following lines in the recipe must use the same.
             // In practice, it's better to reset on every line for better highlighting of the rest.
             /( |\t)+/,
             optional(choice('@-', '-@', '@', '-')),
-            // TODO: interpolation
-            // Interpolation escape is `{{{{`
-            field('recipe_line_content', /.+/),
+            repeat1(choice(
+                field('recipe_content', '{{{{'),
+                $.interpolation,
+                field('recipe_content', /[^\n][^{]?/),
+            )),
+            $._eol,
         ),
+
+        interpolation: $ => seq(
+            field('interpolation_marker', '{{'),
+            $.expression,
+            field('interpolation_marker', '}}'),
+        ),
+
         // ========================================================================================
         // Settings
 

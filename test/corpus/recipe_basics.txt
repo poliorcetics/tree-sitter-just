@@ -15,7 +15,7 @@ r:
     (identifier)))
 
 ===
-Recipe: everything at once
+Recipes: everything at once
 ===
 
 [an_attr, or_two("with param"), prompt("a builtin attr")]
@@ -28,6 +28,8 @@ Recipe: everything at once
   -@echo line 2
   @echo line 42
   -echo line with a dash
+  echo {{ a }} with more {{ inter / polation + if os() == toto() { a } else { b } }} content
+
 
 ---
 
@@ -80,7 +82,30 @@ Recipe: everything at once
         (expression
           (value
             (builtin_function_call)))))
-    (recipe_line)
-    (recipe_line)
-    (recipe_line)
-    (recipe_line)))
+    (recipe_body
+      (interpolation
+        (expression
+          (value
+            (identifier))))
+      (interpolation
+        (expression
+          (value
+            (identifier))
+          (expression
+            (value
+              (identifier))
+            (expression
+              (condition
+                (expression
+                  (value
+                    (builtin_function_call)))
+                (expression
+                  (value
+                    (function_call
+                      (identifier)))))
+              (expression
+                (value
+                  (identifier)))
+              (expression
+                (value
+                  (identifier))))))))))

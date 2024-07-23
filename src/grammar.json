@@ -221,7 +221,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "_recipe_body"
+              "name": "recipe_body"
             },
             {
               "type": "BLANK"
@@ -617,23 +617,7 @@
         "name": "identifier"
       }
     },
-    "_recipe_body": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "recipe_line"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_eol"
-        }
-      ]
-    },
-    "recipe_line": {
+    "recipe_body": {
       "type": "SEQ",
       "members": [
         {
@@ -670,11 +654,60 @@
           ]
         },
         {
-          "type": "FIELD",
-          "name": "recipe_line_content",
+          "type": "REPEAT1",
           "content": {
-            "type": "PATTERN",
-            "value": ".+"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "FIELD",
+                "name": "recipe_content",
+                "content": {
+                  "type": "STRING",
+                  "value": "{{{{"
+                }
+              },
+              {
+                "type": "SYMBOL",
+                "name": "interpolation"
+              },
+              {
+                "type": "FIELD",
+                "name": "recipe_content",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "[^\\n][^{]?"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_eol"
+        }
+      ]
+    },
+    "interpolation": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "interpolation_marker",
+          "content": {
+            "type": "STRING",
+            "value": "{{"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "expression"
+        },
+        {
+          "type": "FIELD",
+          "name": "interpolation_marker",
+          "content": {
+            "type": "STRING",
+            "value": "}}"
           }
         }
       ]

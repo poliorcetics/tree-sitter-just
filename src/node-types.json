@@ -655,6 +655,36 @@
     "fields": {}
   },
   {
+    "type": "interpolation",
+    "named": true,
+    "fields": {
+      "interpolation_marker": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "{{",
+            "named": false
+          },
+          {
+            "type": "}}",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "mod",
     "named": true,
     "fields": {
@@ -716,11 +746,11 @@
           "named": true
         },
         {
-          "type": "recipe_dependency",
+          "type": "recipe_body",
           "named": true
         },
         {
-          "type": "recipe_line",
+          "type": "recipe_dependency",
           "named": true
         },
         {
@@ -729,6 +759,32 @@
         },
         {
           "type": "variadic_parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "recipe_body",
+    "named": true,
+    "fields": {
+      "recipe_content": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "{{{{",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "interpolation",
           "named": true
         }
       ]
@@ -759,11 +815,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "recipe_line",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "recipe_parameter",
@@ -1523,7 +1574,19 @@
     "named": false
   },
   {
+    "type": "{{",
+    "named": false
+  },
+  {
+    "type": "{{{{",
+    "named": false
+  },
+  {
     "type": "}",
+    "named": false
+  },
+  {
+    "type": "}}",
     "named": false
   }
 ]
