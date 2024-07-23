@@ -213,8 +213,8 @@
           }
         },
         {
-          "type": "PATTERN",
-          "value": "\\r?\\n"
+          "type": "SYMBOL",
+          "name": "_recipe_body"
         }
       ]
     },
@@ -603,6 +603,18 @@
       "content": {
         "type": "SYMBOL",
         "name": "identifier"
+      }
+    },
+    "_recipe_body": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "\\r?\\n"
+          }
+        ]
       }
     },
     "setting": {

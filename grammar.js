@@ -74,9 +74,7 @@ module.exports = grammar({
             optional($.variadic_parameter),
             ':',
             repeat($.recipe_dependency),
-            // TODO: recipe body
-            // optional($.recipe_body),
-            /\r?\n/,
+            $._recipe_body,
         ),
 
         _attribute_list: $ => seq(
@@ -131,6 +129,10 @@ module.exports = grammar({
         ),
 
         _recipe_dependency: $ => field('dependency_name', $.identifier),
+
+        _recipe_body: $ => repeat1(choice(
+            /\r?\n/,
+        )),
 
         // ========================================================================================
         // Settings
