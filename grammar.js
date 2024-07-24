@@ -128,6 +128,7 @@ module.exports = grammar({
             repeat1(choice(
                 field('recipe_content', '{{{{'),
                 $.interpolation,
+                // Same trick as the indented normal string
                 field('recipe_content', /.[^\{\r\n]?/),
             )),
             $._eol,
