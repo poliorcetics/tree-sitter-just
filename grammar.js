@@ -134,32 +134,14 @@ module.exports = grammar({
         // ========================================================================================
         // Settings
 
+        // <https://just.systems/man/en/chapter_27.html?highlight=dotenv-filename#table-of-settings>
         setting: $ => seq(
             'set',
-            choice(
-                // <https://just.systems/man/en/chapter_27.html?highlight=dotenv-filename#table-of-settings>
-                setting('allow-duplicate-recipes',   optional($._setting_boolean)),
-                setting('allow-duplicate-variables', optional($._setting_boolean)),
-                setting('dotenv-filename',           $._setting_string),
-                setting('dotenv-load',               optional($._setting_boolean)),
-                setting('dotenv-path',               $._setting_string),
-                setting('dotenv-required',           optional($._setting_boolean)),
-                setting('export',                    optional($._setting_boolean)),
-                setting('fallback',                  optional($._setting_boolean)),
-                setting('ignore-comments',           optional($._setting_boolean)),
-                setting('positional-arguments',      optional($._setting_boolean)),
-                setting('shell',                     $._setting_list),
-                setting('tempdir',                   $._setting_string),
-                setting('unstable',                  optional($._setting_boolean)),
-                setting('windows-powershell',        optional($._setting_boolean)),
-                setting('windows-shell',             $._setting_list),
-                // To handle future settings before they're added formally to the grammar
-                setting($.identifier,                choice(
-                    optional($._setting_boolean),
-                    $._setting_string,
-                    $._setting_list,
-                )),
-            ),
+            setting($.identifier, choice(
+                optional($._setting_boolean),
+                $._setting_string,
+                $._setting_list,
+            )),
             $._ceol,
         ),
         _setting_boolean: $ => seq(':=', choice('true', 'false')),

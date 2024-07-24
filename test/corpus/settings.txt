@@ -1,256 +1,41 @@
 ===
-allow-duplicate-recipes
-===
-
-set allow-duplicate-recipes
-set allow-duplicate-recipes := true
-set allow-duplicate-recipes := false
-
----
-
-(file
-  (setting)
-  (setting)
-  (setting))
-
-===
-allow-duplicate-variables
-===
-
-set allow-duplicate-variables
-set allow-duplicate-variables := true
-set allow-duplicate-variables := false
-
----
-
-(file
-  (setting)
-  (setting)
-  (setting))
-
-===
-dotenv-filename
-===
-
-set dotenv-filename := ".my-custom-env"
-set dotenv-filename := '.my-custom-env'
-
----
-
-(file
-  (setting
-    (string))
-  (setting
-    (string)))
-
-===
-dotenv-load
-===
-
-set dotenv-load
-set dotenv-load := true
-set dotenv-load := false
-
----
-
-(file
-  (setting)
-  (setting)
-  (setting))
-
-===
-dotenv-path
-===
-
-set dotenv-path := ".my-custom-env"
-set dotenv-path := '.my-custom-env'
-
----
-
-(file
-  (setting
-    (string))
-  (setting
-    (string)))
-
-===
-dotenv-required
-===
-
-set dotenv-required
-set dotenv-required := true
-set dotenv-required := false
-
----
-
-(file
-  (setting)
-  (setting)
-  (setting))
-
-===
-export
-===
-
-set export
-set export := true
-set export := false
-
----
-
-(file
-  (setting)
-  (setting)
-  (setting))
-
-===
-fallback
-===
-
-set fallback
-set fallback := true
-set fallback := false
-
----
-
-(file
-  (setting)
-  (setting)
-  (setting))
-
-===
-ignore-comments
-===
-
-set ignore-comments
-set ignore-comments := true
-set ignore-comments := false
-
----
-
-(file
-  (setting)
-  (setting)
-  (setting))
-
-===
-positional-arguments
-===
-
-set positional-arguments
-set positional-arguments := true
-set positional-arguments := false
-
----
-
-(file
-  (setting)
-  (setting)
-  (setting))
-
-===
-shell
-===
-
-set shell := [ 'bash' ]
-set shell := [ "bash", ]
-set shell := [ "bash", '-c' ]
-set shell := [ "bash", '-c', "echo", ]
-
----
-
-(file
-  (setting
-    (string))
-  (setting
-    (string))
-  (setting
-    (string)
-    (string))
-  (setting
-    (string)
-    (string)
-    (string)))
-
-===
-tempdir
-===
-
-set tempdir := "/tmp/toto"
-set tempdir := './target'
-
----
-
-(file
-  (setting
-    (string))
-  (setting
-    (string)))
-
-===
-unstable
-===
-
-set unstable
-set unstable := true
-set unstable := false
-
----
-
-(file
-  (setting)
-  (setting)
-  (setting))
-
-===
-windows-powershell
-===
-
-set windows-powershell
-set windows-powershell := true
-set windows-powershell := false
-
----
-
-(file
-  (setting)
-  (setting)
-  (setting))
-
-===
-windows-shell
-===
-
-set windows-shell := [ 'bash' ]
-set windows-shell := [ "bash", ]
-set windows-shell := [ "bash", '-c' ]
-set windows-shell := [ "bash", '-c', "echo", ]
-
----
-
-(file
-  (setting
-    (string))
-  (setting
-    (string))
-  (setting
-    (string)
-    (string))
-  (setting
-    (string)
-    (string)
-    (string)))
-
-===
-Unknown settings
+Setting: Boolean
 ===
 
 set new-setting
 set new-setting := true
 set new-setting := false
 
+---
+
+(file
+  (setting
+    (identifier))
+  (setting
+    (identifier))
+  (setting
+    (identifier)))
+
+===
+Setting: String
+===
+
 set new-setting := "some string"
 set new-setting := 'some other string'
+
+---
+
+(file
+  (setting
+    (identifier)
+    (string))
+  (setting
+    (identifier)
+    (string)))
+
+===
+Setting: List
+===
 
 set new-setting := [ 'bash' ]
 set new-setting := [ "bash", ]
@@ -260,18 +45,6 @@ set new-setting := [ "bash", '-c', "echo", ]
 ---
 
 (file
-  (setting
-    (identifier))
-  (setting
-    (identifier))
-  (setting
-    (identifier))
-  (setting
-    (identifier)
-    (string))
-  (setting
-    (identifier)
-    (string))
   (setting
     (identifier)
     (string))
