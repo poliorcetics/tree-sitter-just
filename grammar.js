@@ -2,7 +2,6 @@ module.exports = grammar({
     name: 'just',
     extras: $ => [
         /\s/,
-        $.comment,
     ],
     // Required by tree-sitter, the order and variant count here must match that of `src/scanner.c:TokenType`.
     // externals: $ => [],
@@ -18,6 +17,7 @@ module.exports = grammar({
         file: $ => repeat(choice(
             $.alias,
             $.assignment,
+            $.comment,
             $.import,
             $.mod,
             $.recipe,
@@ -35,6 +35,7 @@ module.exports = grammar({
             field('alias_name', $.identifier),
             ':=',
             $.identifier,
+            $._ceol,
         ),
 
         // ========================================================================================
@@ -45,6 +46,7 @@ module.exports = grammar({
             field('variable_name', $.identifier),
             ':=',
             $.expression,
+            $._ceol,
         ),
 
         // ========================================================================================
@@ -53,6 +55,7 @@ module.exports = grammar({
         import: $ => seq(
             /import\??/,
             $.string,
+            $._ceol,
         ),
 
         mod: $ => prec.right(seq(
@@ -61,6 +64,7 @@ module.exports = grammar({
             /mod\??/,
             field('mod_name', $.identifier),
             optional($.string),
+            $._ceol,
         )),
 
         // ========================================================================================
@@ -74,7 +78,7 @@ module.exports = grammar({
             optional($.variadic_parameter),
             ':',
             repeat($.recipe_dependency),
-            $._eol,
+            $._ceol,
             optional($.recipe_body),
         ),
 
@@ -83,7 +87,7 @@ module.exports = grammar({
             $._attribute,
             repeat(seq(',', $._attribute)),
             ']',
-            $._eol,
+            $._ceol,
         ),
 
         // <https://just.systems/man/en/chapter_34.html?highlight=attribute#recipe-attributes>
@@ -180,6 +184,7 @@ module.exports = grammar({
                     $._setting_list,
                 )),
             ),
+            $._ceol,
         ),
         _setting_boolean: $ => seq(':=', choice('true', 'false')),
         _setting_string: $ => seq(':=', $.string),
@@ -405,6 +410,7 @@ module.exports = grammar({
         comment: $ => prec(-1, token(seq('#', /.*/))),
 
         _eol: $ => /\r?\n/,
+        _ceol: $ => seq(optional($.comment), $._eol),
     }
 });
 

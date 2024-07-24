@@ -1,0 +1,188 @@
+===
+Comments: Unattached
+===
+
+# Comment
+
+---
+
+(file
+  (comment))
+
+===
+Comments: After alias
+===
+
+alias a := b # comment
+
+---
+
+(file
+  (alias
+    (identifier)
+    (identifier)
+    (comment)))
+
+===
+Comments: After assignment
+===
+
+a := b # comment
+
+export c := "string" # comment
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (identifier)))
+    (comment))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string)))
+    (comment)))
+
+===
+Comments: After import
+===
+
+import "a/b" # comment
+
+---
+
+(file
+  (import
+    (string)
+    (comment)))
+
+===
+Comments: After mod
+===
+
+mod a # comment
+
+mod a "b.c.d" # comment
+
+[doc] # comment
+mod a # comment
+
+[doc] # comment
+[doc] # comment
+mod a # comment
+
+---
+
+(file
+  (mod
+    (identifier)
+    (comment))
+  (mod
+    (identifier)
+    (string)
+    (comment))
+  (mod
+    (builtin_attribute)
+    (comment)
+    (identifier)
+    (comment))
+  (mod
+    (builtin_attribute)
+    (comment)
+    (builtin_attribute)
+    (comment)
+    (identifier)
+    (comment)))
+
+===
+Comments: After recipe
+===
+
+r: # comment
+
+[doc] # comment
+r: # comment
+
+r: dep (dep a) # comment
+
+[doc] # comment
+r: dep (dep a) # comment
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (comment))
+  (recipe
+    (builtin_attribute)
+    (comment)
+    (identifier)
+    (comment))
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier))
+    (recipe_dependency
+      (identifier)
+      (expression
+        (value
+          (identifier))))
+    (comment))
+  (recipe
+    (builtin_attribute)
+    (comment)
+    (identifier)
+    (recipe_dependency
+      (identifier))
+    (recipe_dependency
+      (identifier)
+      (expression
+        (value
+          (identifier))))
+    (comment)))
+
+===
+Comments: After setting
+===
+
+set a # comment
+
+set a := true # comment
+
+set a := "string" # comment
+
+set a := ["shell", "command"] # comment
+
+set a := [
+	"shell",
+	"command"
+] # comment
+
+---
+
+(file
+  (setting
+    (identifier)
+    (comment))
+  (setting
+    (identifier)
+    (comment))
+  (setting
+    (identifier)
+    (string)
+    (comment))
+  (setting
+    (identifier)
+    (string)
+    (string)
+    (comment))
+  (setting
+    (identifier)
+    (string)
+    (string)
+    (comment)))

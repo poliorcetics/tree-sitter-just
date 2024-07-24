@@ -27,6 +27,10 @@
           "named": true
         },
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         }
@@ -49,9 +53,13 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
         {
           "type": "expression",
           "named": true
@@ -575,6 +583,10 @@
           "named": true
         },
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "import",
           "named": true
         },
@@ -639,9 +651,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
         {
           "type": "string",
           "named": true
@@ -712,6 +728,10 @@
           "named": true
         },
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         }
@@ -743,6 +763,10 @@
         },
         {
           "type": "builtin_attribute",
+          "named": true
+        },
+        {
+          "type": "comment",
           "named": true
         },
         {
@@ -921,6 +945,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
         {
           "type": "string",
           "named": true

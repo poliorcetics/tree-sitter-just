@@ -17,6 +17,10 @@
           },
           {
             "type": "SYMBOL",
+            "name": "comment"
+          },
+          {
+            "type": "SYMBOL",
             "name": "import"
           },
           {
@@ -63,6 +67,10 @@
         {
           "type": "SYMBOL",
           "name": "identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ceol"
         }
       ]
     },
@@ -96,6 +104,10 @@
         {
           "type": "SYMBOL",
           "name": "expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ceol"
         }
       ]
     },
@@ -109,6 +121,10 @@
         {
           "type": "SYMBOL",
           "name": "string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ceol"
         }
       ]
     },
@@ -148,6 +164,10 @@
                 "type": "BLANK"
               }
             ]
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_ceol"
           }
         ]
       }
@@ -214,7 +234,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_eol"
+          "name": "_ceol"
         },
         {
           "type": "CHOICE",
@@ -263,7 +283,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_eol"
+          "name": "_ceol"
         }
       ]
     },
@@ -1096,6 +1116,10 @@
               ]
             }
           ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ceol"
         }
       ]
     },
@@ -3141,16 +3165,33 @@
     "_eol": {
       "type": "PATTERN",
       "value": "\\r?\\n"
+    },
+    "_ceol": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "comment"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_eol"
+        }
+      ]
     }
   },
   "extras": [
     {
       "type": "PATTERN",
       "value": "\\s"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "comment"
     }
   ],
   "conflicts": [],
