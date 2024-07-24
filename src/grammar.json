@@ -435,6 +435,13 @@
       }
     },
     "recipe_body": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "recipe_line"
+      }
+    },
+    "recipe_line": {
       "type": "SEQ",
       "members": [
         {
@@ -492,7 +499,7 @@
                 "name": "recipe_content",
                 "content": {
                   "type": "PATTERN",
-                  "value": "[^\\n][^{]?"
+                  "value": ".[^\\{\\r\\n]?"
                 }
               }
             ]
@@ -1141,7 +1148,15 @@
   "extras": [
     {
       "type": "PATTERN",
-      "value": "\\s"
+      "value": " "
+    },
+    {
+      "type": "PATTERN",
+      "value": "\\t"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_eol"
     }
   ],
   "conflicts": [],

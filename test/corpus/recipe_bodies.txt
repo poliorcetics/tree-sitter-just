@@ -28,13 +28,16 @@ r:
 (file
   (recipe
     (identifier)
-    (recipe_body))
+    (recipe_body
+      (recipe_line)))
   (recipe
     (identifier)
-    (recipe_body))
+    (recipe_body
+      (recipe_line)))
   (recipe
     (identifier)
-    (recipe_body)))
+    (recipe_body
+      (recipe_line))))
 
 ===
 Recipes: multiline
@@ -50,7 +53,10 @@ r:
 (file
   (recipe
     (identifier)
-    (recipe_body)))
+    (recipe_body
+      (recipe_line)
+      (recipe_line)
+      (recipe_line))))
 
 ===
 Recipes: prefixed
@@ -67,7 +73,11 @@ r:
 (file
   (recipe
     (identifier)
-    (recipe_body)))
+    (recipe_body
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line))))
 
 ===
 Recipes: interpolation
@@ -83,17 +93,18 @@ r:
   (recipe
     (identifier)
     (recipe_body
-      (interpolation
-        (expression
-          (value
-            (identifier))))
-      (interpolation
-        (expression
-          (value
-            (identifier))
+      (recipe_line
+        (interpolation
           (expression
             (value
-              (identifier))))))))
+              (identifier))))
+        (interpolation
+          (expression
+            (value
+              (identifier))
+            (expression
+              (value
+                (identifier)))))))))
 
 ===
 Recipes: espace interpolation
@@ -107,4 +118,34 @@ r:
 (file
   (recipe
     (identifier)
-    (recipe_body)))
+    (recipe_body
+      (recipe_line))))
+
+===
+Recipes: with backslash-continuation
+===
+
+r:
+  line \
+    --with args \
+    over \
+    multiple lines
+  and another \
+    command \
+    that does \
+    --the same
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line))))

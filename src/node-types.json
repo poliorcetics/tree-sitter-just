@@ -359,24 +359,13 @@
   {
     "type": "recipe_body",
     "named": true,
-    "fields": {
-      "recipe_content": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "{{{{",
-            "named": false
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "interpolation",
+          "type": "recipe_line",
           "named": true
         }
       ]
@@ -403,6 +392,32 @@
       "types": [
         {
           "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "recipe_line",
+    "named": true,
+    "fields": {
+      "recipe_content": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "{{{{",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "interpolation",
           "named": true
         }
       ]

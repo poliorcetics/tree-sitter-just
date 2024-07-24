@@ -1,7 +1,9 @@
 module.exports = grammar({
     name: 'just',
     extras: $ => [
-        /\s/,
+        / /,
+        /\t/,
+        $._eol,
     ],
     // Required by tree-sitter, the order and variant count here must match that of `src/scanner.c:TokenType`.
     // externals: $ => [],
@@ -114,16 +116,19 @@ module.exports = grammar({
 
         _recipe_dependency: $ => field('dependency_name', $.identifier),
 
-        recipe_body: $ => seq(
+        recipe_body: $ => repeat1($.recipe_line),
+
+        recipe_line: $ => seq(
             // This is not exactly correct in that the first line defines the indentation length
             // and all following lines in the recipe must use the same.
-            // In practice, it's better to reset on every line for better highlighting of the rest.
+            // In practice, it's better to reset on every line for better highlighting of the rest,
+            // It allows easy handling of backslash-continuated lines that may be indented more.
             /( |\t)+/,
             optional(choice('@-', '-@', '@', '-')),
             repeat1(choice(
                 field('recipe_content', '{{{{'),
                 $.interpolation,
-                field('recipe_content', /[^\n][^{]?/),
+                field('recipe_content', /.[^\{\r\n]?/),
             )),
             $._eol,
         ),

@@ -87,30 +87,35 @@ Recipes: everything at once
             (function_call
               (identifier))))))
     (recipe_body
-      (interpolation
-        (expression
-          (value
-            (identifier))))
-      (interpolation
-        (expression
-          (value
-            (identifier))
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line
+        (interpolation
+          (expression
+            (value
+              (identifier))))
+        (interpolation
           (expression
             (value
               (identifier))
             (expression
-              (condition
+              (value
+                (identifier))
+              (expression
+                (condition
+                  (expression
+                    (value
+                      (function_call
+                        (identifier))))
+                  (expression
+                    (value
+                      (function_call
+                        (identifier)))))
                 (expression
                   (value
-                    (function_call
-                      (identifier))))
+                    (identifier)))
                 (expression
                   (value
-                    (function_call
-                      (identifier)))))
-              (expression
-                (value
-                  (identifier)))
-              (expression
-                (value
-                  (identifier))))))))))
+                    (identifier)))))))))))
