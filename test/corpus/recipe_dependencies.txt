@@ -93,10 +93,12 @@ r: (d if a == b { d } else { d } "some other param") (d2 os() shell(abc() + "de"
       (identifier)
       (expression
         (value
-          (builtin_function_call)))
+          (function_call
+            (identifier))))
       (expression
         (value
-          (builtin_function_call
+          (function_call
+            (identifier)
             (function_parameters
               (expression
                 (value

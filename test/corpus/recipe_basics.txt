@@ -80,10 +80,12 @@ Recipes: everything at once
           (string)))
       (expression
         (value
-          (builtin_function_call))
+          (function_call
+            (identifier)))
         (expression
           (value
-            (builtin_function_call)))))
+            (function_call
+              (identifier))))))
     (recipe_body
       (interpolation
         (expression
@@ -100,7 +102,8 @@ Recipes: everything at once
               (condition
                 (expression
                   (value
-                    (builtin_function_call)))
+                    (function_call
+                      (identifier))))
                 (expression
                   (value
                     (function_call

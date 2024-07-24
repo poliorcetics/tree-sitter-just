@@ -135,7 +135,8 @@ a := function_call(shell(`python3 --help`))
           (function_parameters
             (expression
               (value
-                (builtin_function_call))))))))
+                (function_call
+                  (identifier)))))))))
   (assignment
     (identifier)
     (expression
@@ -145,7 +146,8 @@ a := function_call(shell(`python3 --help`))
           (function_parameters
             (expression
               (value
-                (builtin_function_call
+                (function_call
+                  (identifier)
                   (function_parameters
                     (expression
                       (value

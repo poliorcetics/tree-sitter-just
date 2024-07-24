@@ -165,7 +165,6 @@ module.exports = grammar({
         ),
 
         value: $ => choice(
-            $.builtin_function_call,
             $.function_call,
             seq('(', $.expression, ')'),
             $.backtick,
@@ -174,118 +173,7 @@ module.exports = grammar({
             prec(-1, $.identifier),
         ),
 
-        builtin_function_call: $ => choice(
-            // <https://just.systems/man/en/chapter_32.html?highlight=functions#system-information>
-            builtin('arch',      $._p0),
-            builtin('num_cpus',  $._p0),
-            builtin('os',        $._p0),
-            builtin('os_family', $._p0),
-            // <https://just.systems/man/en/chapter_32.html?highlight=functions#external-commands>
-            builtin('shell', $._pN),
-            // <https://just.systems/man/en/chapter_32.html?highlight=functions#environment-variables>
-            builtin('env_var',            $._p1),
-            builtin('env_var_or_default', $._p2),
-            builtin('env',                choice($._p1, $._p2)),
-            // <https://just.systems/man/en/chapter_32.html?highlight=functions#invocation-information>
-            builtin('is_dependency', $._p0),
-            // <https://just.systems/man/en/chapter_32.html?highlight=functions#invocation-directory>
-            builtin('invocation_dir',              $._p0),
-            builtin('invocation_dir_native',       $._p0),
-            builtin('invocation_directory',        $._p0),
-            builtin('invocation_directory_native', $._p0),
-            // <https://just.systems/man/en/chapter_32.html?highlight=functions#justfile-and-justfile-directory>
-            builtin('justfile',           $._p0),
-            builtin('justfile_dir',       $._p0),
-            builtin('justfile_directory', $._p0),
-            // <https://just.systems/man/en/chapter_32.html?highlight=functions#source-and-source-directory>
-            builtin('source_dir',       $._p0),
-            builtin('source_directory', $._p0),
-            builtin('source_file',      $._p0),
-            // <https://just.systems/man/en/chapter_32.html?highlight=functions#just-executable>
-            builtin('just_executable', $._p0),
-            // <https://just.systems/man/en/chapter_32.html?highlight=functions#just-pid>
-            builtin('just_pid', $._p0),
-            // <https://just.systems/man/en/chapter_32.html?highlight=functions#string-manipulation>
-            builtin('append',               $._p2),
-            builtin('prepend',              $._p2),
-            builtin('encode_uri_component', $._p1),
-            builtin('quote',                $._p1),
-            builtin('replace',              $._p3),
-            builtin('replace_regex',        $._p3),
-            builtin('trim',                 $._p1),
-            builtin('trim_end',             $._p1),
-            builtin('trim_end_match',       $._p2),
-            builtin('trim_end_matches',     $._p2),
-            builtin('trim_start',           $._p1),
-            builtin('trim_start_match',     $._p2),
-            builtin('trim_start_matches',   $._p2),
-            // <https://just.systems/man/en/chapter_32.html#case-conversion>
-            builtin('capitalize',      $._p1),
-            builtin('kebabcase',       $._p1),
-            builtin('lowercamelcase',  $._p1),
-            builtin('lowercase',       $._p1),
-            builtin('shoutykebabcase', $._p1),
-            builtin('shoutysnakecase', $._p1),
-            builtin('snakecase',       $._p1),
-            builtin('titlecase',       $._p1),
-            builtin('uppercamelcase',  $._p1),
-            builtin('uppercase',       $._p1),
-            // <https://just.systems/man/en/chapter_32.html#path-manipulation>
-            // -- Fallible
-            builtin('absolute_path',     $._p1),
-            builtin('canonicalize',      $._p1),
-            builtin('extension',         $._p1),
-            builtin('file_name',         $._p1),
-            builtin('file_stem',         $._p1),
-            builtin('parent_dir',        $._p1),
-            builtin('parent_directory',  $._p1),
-            builtin('without_extension', $._p1),
-            // -- Infallible
-            builtin('clean', $._p1),
-            builtin('join',  $._pN),
-            // <https://just.systems/man/en/chapter_32.html#filesystem-access>
-            builtin('path_exists', $._p1),
-            // <https://just.systems/man/en/chapter_32.html#error-reporting>
-            builtin('error', $._p1),
-            // <https://just.systems/man/en/chapter_32.html#uuid-and-hash-generation>
-            builtin('blake3',      $._p1),
-            builtin('blake3_file', $._p1),
-            builtin('sha256',      $._p1),
-            builtin('sha256_file', $._p1),
-            builtin('uuid',        $._p0),
-            // <https://just.systems/man/en/chapter_32.html#random>
-            builtin('choose', $._p2),
-            // <https://just.systems/man/en/chapter_32.html#datetime>
-            builtin('datetime',     $._p1),
-            builtin('datetime_utc', $._p1),
-            // <https://just.systems/man/en/chapter_32.html#semantic-versions>
-            builtin('semver_matches', $._p2),
-            // <https://just.systems/man/en/chapter_32.html#xdg-directories1230>
-            builtin('cache_dir',              $._p0),
-            builtin('cache_directory',        $._p0),
-            builtin('config_dir',             $._p0),
-            builtin('config_directory',       $._p0),
-            builtin('config_local_dir',       $._p0),
-            builtin('config_local_directory', $._p0),
-            builtin('data_dir',               $._p0),
-            builtin('data_directory',         $._p0),
-            builtin('data_local_dir',         $._p0),
-            builtin('data_local_directory',   $._p0),
-            builtin('executable_dir',         $._p0),
-            builtin('executable_directory',   $._p0),
-            builtin('home_dir',               $._p0),
-            builtin('home_directory',         $._p0),
-        ),
-
-        _p0: $ => seq('(', ')'),
-        // Multiple params elements are only fully tested once the first time they're seen in
-        // `builtin_function_calls`, afterwards we'll just do the minimum, there is no need to
-        // test again the exact same expressions that already worked.
-        _p1: $ => seq('(', $.expression, optional(','), ')'),
-        _p2: $ => seq('(', $.expression, ',', $.expression, optional(','), ')'),
-        _p3: $ => seq('(', $.expression, ',', $.expression, ',', $.expression, optional(','), ')'),
-        _pN: $ => seq('(', $.function_parameters, ')'),
-
+        // <https://just.systems/man/en/chapter_32.html>
         function_call: $ => seq(fname($.identifier), '(', optional($.function_parameters), ')'),
 
         function_parameters: $ => seq($.expression, repeat(seq(',', $.expression)), optional(',')),

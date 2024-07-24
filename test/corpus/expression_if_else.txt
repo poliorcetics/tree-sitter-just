@@ -50,15 +50,18 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
             (string))
           (expression
             (value
-              (builtin_function_call))))
+              (function_call
+                (identifier)))))
         (expression
           (value
             (expression
               (value
-                (builtin_function_call))
+                (function_call
+                  (identifier)))
               (expression
                 (value
-                  (builtin_function_call
+                  (function_call
+                    (identifier)
                     (function_parameters
                       (expression
                         (value
@@ -77,7 +80,8 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
                             (string))))))))))))
       (expression
         (value
-          (builtin_function_call))
+          (function_call
+            (identifier)))
         (expression
           (condition
             (expression
@@ -85,31 +89,42 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
                 (string)))
             (expression
               (value
-                (builtin_function_call))))
+                (function_call
+                  (identifier)))))
           (expression
             (value
-              (builtin_function_call))
+              (function_call
+                (identifier)))
             (expression
               (value
-                (builtin_function_call))))
+                (function_call
+                  (identifier)))))
           (expression
             (value
-              (builtin_function_call
-                (expression
-                  (value
-                    (builtin_function_call
-                      (expression
-                        (value
-                          (string))))))
-                (expression
-                  (value
-                    (string))))))))
+              (function_call
+                (identifier)
+                (function_parameters
+                  (expression
+                    (value
+                      (function_call
+                        (identifier)
+                        (function_parameters
+                          (expression
+                            (value
+                              (string)))))))
+                  (expression
+                    (value
+                      (string)))))))))
       (expression
         (value
-          (builtin_function_call))
+          (function_call
+            (identifier)))
         (expression
           (value
-            (builtin_function_call
-              (expression
-                (value
-                  (builtin_function_call))))))))))
+            (function_call
+              (identifier)
+              (function_parameters
+                (expression
+                  (value
+                    (function_call
+                      (identifier))))))))))))

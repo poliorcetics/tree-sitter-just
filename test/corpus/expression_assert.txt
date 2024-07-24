@@ -41,16 +41,19 @@ a := assert(("a" / os()) == "true", arch() + shell("bash", "-c", "echo", "toto")
                 (string))
               (expression
                 (value
-                  (builtin_function_call))))))
+                  (function_call
+                    (identifier)))))))
         (expression
           (value
             (string))))
       (expression
         (value
-          (builtin_function_call))
+          (function_call
+            (identifier)))
         (expression
           (value
-            (builtin_function_call
+            (function_call
+              (identifier)
               (function_parameters
                 (expression
                   (value
@@ -108,16 +111,19 @@ a := assert(("a" / os()) != "true", arch() + shell("bash", "-c", "echo", "toto")
                 (string))
               (expression
                 (value
-                  (builtin_function_call))))))
+                  (function_call
+                    (identifier)))))))
         (expression
           (value
             (string))))
       (expression
         (value
-          (builtin_function_call))
+          (function_call
+            (identifier)))
         (expression
           (value
-            (builtin_function_call
+            (function_call
+              (identifier)
               (function_parameters
                 (expression
                   (value
@@ -175,16 +181,19 @@ a := assert(("a" / os()) =~ "true", arch() + shell("bash", "-c", "echo", "toto")
                 (string))
               (expression
                 (value
-                  (builtin_function_call))))))
+                  (function_call
+                    (identifier)))))))
         (expression
           (value
             (string))))
       (expression
         (value
-          (builtin_function_call))
+          (function_call
+            (identifier)))
         (expression
           (value
-            (builtin_function_call
+            (function_call
+              (identifier)
               (function_parameters
                 (expression
                   (value

@@ -27,7 +27,8 @@ a := `echo toto`
     (identifier)
     (expression
       (value
-        (builtin_function_call))))
+        (function_call
+          (identifier)))))
   (assignment
     (identifier)
     (expression
@@ -47,10 +48,12 @@ a := os() / arch()
     (identifier)
     (expression
       (value
-        (builtin_function_call))
+        (function_call
+          (identifier)))
       (expression
         (value
-          (builtin_function_call))))))
+          (function_call
+            (identifier)))))))
 
 ===
 Assignement: Plus join
@@ -65,10 +68,12 @@ a := os() + arch()
     (identifier)
     (expression
       (value
-        (builtin_function_call))
+        (function_call
+          (identifier)))
       (expression
         (value
-          (builtin_function_call))))))
+          (function_call
+            (identifier)))))))
 
 ===
 Assignement: assert
@@ -85,10 +90,12 @@ a := assert(os() != arch(), "is ok")
       (condition
         (expression
           (value
-            (builtin_function_call)))
+            (function_call
+              (identifier))))
         (expression
           (value
-            (builtin_function_call))))
+            (function_call
+              (identifier)))))
       (expression
         (value
           (string))))))
@@ -148,7 +155,8 @@ export a := `echo toto`
     (identifier)
     (expression
       (value
-        (builtin_function_call))))
+        (function_call
+          (identifier)))))
   (assignment
     (identifier)
     (expression
@@ -168,10 +176,12 @@ export a := os() / arch()
     (identifier)
     (expression
       (value
-        (builtin_function_call))
+        (function_call
+          (identifier)))
       (expression
         (value
-          (builtin_function_call))))))
+          (function_call
+            (identifier)))))))
 
 ===
 Exported assignement: Plus join
@@ -186,10 +196,12 @@ export a := os() + arch()
     (identifier)
     (expression
       (value
-        (builtin_function_call))
+        (function_call
+          (identifier)))
       (expression
         (value
-          (builtin_function_call))))))
+          (function_call
+            (identifier)))))))
 
 ===
 Exported assignement: assert
@@ -206,10 +218,12 @@ export a := assert(os() != arch(), "is ok")
       (condition
         (expression
           (value
-            (builtin_function_call)))
+            (function_call
+              (identifier))))
         (expression
           (value
-            (builtin_function_call))))
+            (function_call
+              (identifier)))))
       (expression
         (value
           (string))))))

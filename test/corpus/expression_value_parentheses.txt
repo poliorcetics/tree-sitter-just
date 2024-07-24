@@ -86,14 +86,16 @@ a := (
       (value
         (expression
           (value
-            (builtin_function_call))))))
+            (function_call
+              (identifier)))))))
   (assignment
     (identifier)
     (expression
       (value
         (expression
           (value
-            (builtin_function_call
+            (function_call
+              (identifier)
               (function_parameters
                 (expression
                   (value

@@ -23,27 +23,33 @@ a := env("HOME") / env("SUBPATH_CONFIG", 'default')
     (identifier)
     (expression
       (value
-        (builtin_function_call))
+        (function_call
+          (identifier)))
       (expression
         (value
-          (builtin_function_call)))))
+          (function_call
+            (identifier))))))
   (assignment
     (identifier)
     (expression
       (value
-        (builtin_function_call
-          (expression
-            (value
-              (string)))))
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (string))))))
       (expression
         (value
-          (builtin_function_call
-            (expression
-              (value
-                (string)))
-            (expression
-              (value
-                (string)))))))))
+          (function_call
+            (identifier)
+            (function_parameters
+              (expression
+                (value
+                  (string)))
+              (expression
+                (value
+                  (string))))))))))
 
 ===
 Expression: Plus join
@@ -70,24 +76,30 @@ a := env("HOME") + env("SUBPATH_CONFIG", 'default')
     (identifier)
     (expression
       (value
-        (builtin_function_call))
+        (function_call
+          (identifier)))
       (expression
         (value
-          (builtin_function_call)))))
+          (function_call
+            (identifier))))))
   (assignment
     (identifier)
     (expression
       (value
-        (builtin_function_call
-          (expression
-            (value
-              (string)))))
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (string))))))
       (expression
         (value
-          (builtin_function_call
-            (expression
-              (value
-                (string)))
-            (expression
-              (value
-                (string)))))))))
+          (function_call
+            (identifier)
+            (function_parameters
+              (expression
+                (value
+                  (string)))
+              (expression
+                (value
+                  (string))))))))))
