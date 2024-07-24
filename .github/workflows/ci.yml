@@ -42,8 +42,11 @@ jobs:
         uses: tree-sitter/parser-test-action@v2
         with:
           test-rust: ${{runner.os == 'Linux'}}
-      # TODO: add examples of real world justfiles
-      # - name: Parse examples
-      #   uses: tree-sitter/parse-action@v4
-      #   with:
-      #     files: examples/**/*.just
+      - name: Download examples
+        run: |
+          mkdir -p examples
+          curl https://raw.githubusercontent.com/actix/actix/master/justfile > examples/actix.just
+      - name: Parse examples
+        uses: tree-sitter/parse-action@v4
+        with:
+          files: examples/**/*.just
