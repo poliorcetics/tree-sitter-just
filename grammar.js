@@ -120,7 +120,21 @@ module.exports = grammar({
 
         _recipe_dependency: $ => field('dependency_name', $.identifier),
 
-        recipe_body: $ => repeat1($.recipe_line),
+        recipe_body: $ => choice(
+            seq(
+                $.shebang_line,
+                repeat($.recipe_line),
+            ),
+            repeat1($.recipe_line),
+        ),
+
+        shebang_line: $ => seq(
+            /( |\t)+/,
+            /(@|-|@-|-@)?#!(\/usr)?\/bin\/(\/env)?/,
+            field('shell_name', $.identifier),
+            repeat($._recipe_line_choice),
+            $._eol,
+        ),
 
         recipe_line: $ => seq(
             // This is not exactly correct in that the first line defines the indentation length
@@ -128,14 +142,16 @@ module.exports = grammar({
             // In practice, it's better to reset on every line for better highlighting of the rest,
             // It allows easy handling of backslash-continuated lines that may be indented more.
             /( |\t)+/,
-            optional(choice('@-', '-@', '@', '-')),
-            repeat1(choice(
-                field('recipe_content', '{{{{'),
-                $.interpolation,
-                // Same trick as the indented normal string
-                field('recipe_content', /.[^\{\r\n]?/),
-            )),
+            optional(choice('@', '-', '@-', '-@')),
+            repeat1($._recipe_line_choice),
             $._eol,
+        ),
+
+        _recipe_line_choice: $ => choice(
+            field('recipe_content', '{{{{'),
+            $.interpolation,
+            // Same trick as the indented normal string
+            field('recipe_content', /.[^\{\r\n]?/),
         ),
 
         interpolation: $ => seq(

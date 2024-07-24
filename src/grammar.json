@@ -459,11 +459,64 @@
       }
     },
     "recipe_body": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "SYMBOL",
-        "name": "recipe_line"
-      }
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "shebang_line"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "recipe_line"
+              }
+            }
+          ]
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "recipe_line"
+          }
+        }
+      ]
+    },
+    "shebang_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "( |\\t)+"
+        },
+        {
+          "type": "PATTERN",
+          "value": "(@|-|@-|-@)?#!(\\/usr)?\\/bin\\/(\\/env)?"
+        },
+        {
+          "type": "FIELD",
+          "name": "shell_name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_recipe_line_choice"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_eol"
+        }
+      ]
     },
     "recipe_line": {
       "type": "SEQ",
@@ -480,19 +533,19 @@
               "members": [
                 {
                   "type": "STRING",
-                  "value": "@-"
-                },
-                {
-                  "type": "STRING",
-                  "value": "-@"
-                },
-                {
-                  "type": "STRING",
                   "value": "@"
                 },
                 {
                   "type": "STRING",
                   "value": "-"
+                },
+                {
+                  "type": "STRING",
+                  "value": "@-"
+                },
+                {
+                  "type": "STRING",
+                  "value": "-@"
                 }
               ]
             },
@@ -504,34 +557,38 @@
         {
           "type": "REPEAT1",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "recipe_content",
-                "content": {
-                  "type": "STRING",
-                  "value": "{{{{"
-                }
-              },
-              {
-                "type": "SYMBOL",
-                "name": "interpolation"
-              },
-              {
-                "type": "FIELD",
-                "name": "recipe_content",
-                "content": {
-                  "type": "PATTERN",
-                  "value": ".[^\\{\\r\\n]?"
-                }
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "_recipe_line_choice"
           }
         },
         {
           "type": "SYMBOL",
           "name": "_eol"
+        }
+      ]
+    },
+    "_recipe_line_choice": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "recipe_content",
+          "content": {
+            "type": "STRING",
+            "value": "{{{{"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "interpolation"
+        },
+        {
+          "type": "FIELD",
+          "name": "recipe_content",
+          "content": {
+            "type": "PATTERN",
+            "value": ".[^\\{\\r\\n]?"
+          }
         }
       ]
     },

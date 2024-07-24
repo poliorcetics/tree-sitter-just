@@ -24,6 +24,7 @@ Recipes: everything at once
 [linux]
 [group("grouped recipe")]
 @quiet_recipe a $b c=value $d="value" *variadic_param="some default value": d1 (d2 "abc" os() + arch()) && (d3 "42" os()) d4
+  #!/usr/bin/env bash -c command {{ with + interpolation() }}
   @-echo line 1
   -@echo line 2
   @echo line 42
@@ -98,6 +99,16 @@ Recipes: everything at once
     (recipe_dependency
       (identifier))
     (recipe_body
+      (shebang_line
+        (identifier)
+        (interpolation
+          (expression
+            (value
+              (identifier))
+            (expression
+              (value
+                (function_call
+                  (identifier)))))))
       (recipe_line)
       (recipe_line)
       (recipe_line)

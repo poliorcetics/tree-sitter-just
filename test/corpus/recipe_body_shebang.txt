@@ -1,0 +1,111 @@
+===
+Recipes: Bodies: Shebang, simple
+===
+
+r:
+    #!/usr/bin/env bash
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (identifier)))))
+
+===
+Recipes: Bodies: Shebang, with args
+===
+
+r:
+    #!/usr/bin/bash -c command
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (identifier)))))
+
+===
+Recipes: Bodies: Shebang, with interpolation
+===
+
+r:
+    #!/bin/bash -c {{ command }}
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (identifier)
+        (interpolation
+          (expression
+            (value
+              (identifier))))))))
+
+===
+Recipes: Bodies: Shebang, with other lines
+===
+
+r:
+    #!/usr/bin/env bash
+    command
+    #!/usr/bin/env bash -c not a shebang line
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (identifier))
+      (recipe_line)
+      (recipe_line))))
+
+===
+Recipes: Bodies: Shebang, with quiet/ignore error
+===
+
+r:
+    @#!/usr/bin/env bash
+
+r:
+    -@#!/usr/bin/bash
+
+r:
+    -#!/bin/bash
+
+r:
+    @-#!/bin/bash -c command
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (identifier))))
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (identifier))))
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (identifier))))
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (identifier)))))

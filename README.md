@@ -14,7 +14,7 @@
   - [x] Attributes (`[doc]`)
   - [x] Optional (`mod?`)
   - [x] With path (`mod a "path"`)
-- [ ] Recipe
+- [x] Recipe
   - [x] Attributes (`[doc]`, `[confirm("prompt")]`)
   - [x] Quiet (`@r:`)
   - [x] Parameters
@@ -24,12 +24,12 @@
     - [x] Variadics (`r *p:`, `r +p:`)
   - [x] Before dependencies (`r: dep (dep expr)`)
   - [x] After dependencies (`r: && dep (dep expr)`)
-  - [ ] Body
+  - [x] Body
     - [x] Quiet lines (`@`)
     - [x] Errors ignored (`-`)
     - [x] Interpolation (`{{ expr }}`)
       - [x] Escape (`{{{{`)
-    - [ ] Shebang parsing
+    - [x] Shebang parsing (`#!/usr/bin/env <shell>`, `#!/usr/bin/<shell>`, `#!/bin/<shell>`)
 - [x] Settings (`set`)
   - [x] Boolean (`set a := true`, `set a := false`, `set a`)
   - [x] String (`set a := "string"`, `set a := 'raw string'`, all string types are supported)

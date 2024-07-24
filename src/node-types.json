@@ -367,6 +367,10 @@
         {
           "type": "recipe_line",
           "named": true
+        },
+        {
+          "type": "shebang_line",
+          "named": true
         }
       ]
     }
@@ -474,6 +478,42 @@
         },
         {
           "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "shebang_line",
+    "named": true,
+    "fields": {
+      "recipe_content": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "{{{{",
+            "named": false
+          }
+        ]
+      },
+      "shell_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "interpolation",
           "named": true
         }
       ]
