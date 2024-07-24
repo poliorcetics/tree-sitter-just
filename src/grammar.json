@@ -537,40 +537,35 @@
           "value": "set"
         },
         {
-          "type": "SEQ",
+          "type": "FIELD",
+          "name": "setting_name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "CHOICE",
           "members": [
-            {
-              "type": "FIELD",
-              "name": "setting_name",
-              "content": {
-                "type": "SYMBOL",
-                "name": "identifier"
-              }
-            },
             {
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "SYMBOL",
-                      "name": "_setting_boolean"
-                    },
-                    {
-                      "type": "BLANK"
-                    }
-                  ]
+                  "type": "SYMBOL",
+                  "name": "_setting_boolean"
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "_setting_string"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_setting_list"
+                  "type": "BLANK"
                 }
               ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_setting_string"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_setting_list"
             }
           ]
         },

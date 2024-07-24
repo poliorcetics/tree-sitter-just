@@ -91,7 +91,10 @@ module.exports = grammar({
         ),
 
         // <https://just.systems/man/en/chapter_34.html?highlight=attribute#recipe-attributes>
-        attribute: $ => seq(attr($.identifier), optional(seq('(', $.string, ')'))),
+        attribute: $ => seq(
+            field('attribute_name', $.identifier),
+            optional(seq('(', $.string, ')'))
+        ),
 
         recipe_parameter: $ => seq(
             optional('$'),
@@ -137,11 +140,12 @@ module.exports = grammar({
         // <https://just.systems/man/en/chapter_27.html?highlight=dotenv-filename#table-of-settings>
         setting: $ => seq(
             'set',
-            setting($.identifier, choice(
+            field('setting_name', $.identifier),
+            choice(
                 optional($._setting_boolean),
                 $._setting_string,
                 $._setting_list,
-            )),
+            ),
             $._ceol,
         ),
         _setting_boolean: $ => seq(':=', choice('true', 'false')),
@@ -174,7 +178,7 @@ module.exports = grammar({
         ),
 
         // <https://just.systems/man/en/chapter_32.html>
-        function_call: $ => seq(fname($.identifier), '(', optional($.function_parameters), ')'),
+        function_call: $ => seq(field('function_name', $.identifier), '(', optional($.function_parameters), ')'),
 
         function_parameters: $ => seq($.expression, repeat(seq(',', $.expression)), optional(',')),
 
@@ -259,19 +263,3 @@ module.exports = grammar({
         _ceol: $ => seq(optional($.comment), $._eol),
     }
 });
-
-function attr(name) {
-    return field('attribute_name', name);
-}
-
-function builtin(name, params) {
-    return seq(fname(name), params);
-}
-
-function fname(name) {
-    return field('function_name', name);
-}
-
-function setting(name, value) {
-    return seq(field('setting_name', name), value);
-}
