@@ -35,6 +35,7 @@ alias a := b
 
 (file
   (alias
-    (builtin_attribute)
+    (attribute
+      (identifier))
     (identifier)
     (identifier)))

@@ -84,38 +84,14 @@ module.exports = grammar({
 
         _attribute_list: $ => seq(
             '[',
-            $._attribute,
-            repeat(seq(',', $._attribute)),
+            $.attribute,
+            repeat(seq(',', $.attribute)),
             ']',
             $._ceol,
         ),
 
         // <https://just.systems/man/en/chapter_34.html?highlight=attribute#recipe-attributes>
-        _attribute: $ => choice(
-            $.builtin_attribute,
-            $.attribute,
-        ),
-
-        builtin_attribute: $ => choice(
-            seq(attr('confirm'),   optional($._a1)),
-            seq(attr('doc'),       optional($._a1)),
-            seq(attr('extension'),          $._a1),
-            seq(attr('group'),              $._a1),
-                attr('linux'),
-                attr('macos'),
-                attr('no-cd'),
-                attr('no-exit-message'),
-                attr('no-quiet'),
-                attr('positional-arguments'),
-                attr('private'),
-            seq(attr('script'),    optional($._a1)),
-                attr('unix'),
-                attr('windows'),
-        ),
-
-        attribute: $ => seq(attr($.identifier), optional($._a1)),
-
-        _a1: $ => seq('(', $.string, ')'),
+        attribute: $ => seq(attr($.identifier), optional(seq('(', $.string, ')'))),
 
         recipe_parameter: $ => seq(
             optional('$'),

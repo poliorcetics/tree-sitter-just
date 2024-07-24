@@ -86,14 +86,17 @@ mod a # comment
     (string)
     (comment))
   (mod
-    (builtin_attribute)
+    (attribute
+      (identifier))
     (comment)
     (identifier)
     (comment))
   (mod
-    (builtin_attribute)
+    (attribute
+      (identifier))
     (comment)
-    (builtin_attribute)
+    (attribute
+      (identifier))
     (comment)
     (identifier)
     (comment)))
@@ -119,7 +122,8 @@ r: dep (dep a) # comment
     (identifier)
     (comment))
   (recipe
-    (builtin_attribute)
+    (attribute
+      (identifier))
     (comment)
     (identifier)
     (comment))
@@ -134,7 +138,8 @@ r: dep (dep a) # comment
           (identifier))))
     (comment))
   (recipe
-    (builtin_attribute)
+    (attribute
+      (identifier))
     (comment)
     (identifier)
     (recipe_dependency

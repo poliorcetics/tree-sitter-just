@@ -48,8 +48,10 @@ Recipes: everything at once
     (attribute
       (identifier)
       (string))
-    (builtin_attribute)
-    (builtin_attribute
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
       (string))
     (identifier)
     (recipe_parameter

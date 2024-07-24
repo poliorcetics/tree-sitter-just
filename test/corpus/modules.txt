@@ -62,9 +62,11 @@ mod b
 
 (file
   (mod
-    (builtin_attribute)
+    (attribute
+      (identifier))
     (identifier))
   (mod
-    (builtin_attribute
+    (attribute
+      (identifier)
       (string))
     (identifier)))

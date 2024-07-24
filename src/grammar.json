@@ -259,7 +259,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_attribute"
+          "name": "attribute"
         },
         {
           "type": "REPEAT",
@@ -272,7 +272,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_attribute"
+                "name": "attribute"
               }
             ]
           }
@@ -284,205 +284,6 @@
         {
           "type": "SYMBOL",
           "name": "_ceol"
-        }
-      ]
-    },
-    "_attribute": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "builtin_attribute"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "attribute"
-        }
-      ]
-    },
-    "builtin_attribute": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "FIELD",
-              "name": "attribute_name",
-              "content": {
-                "type": "STRING",
-                "value": "confirm"
-              }
-            },
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "_a1"
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "FIELD",
-              "name": "attribute_name",
-              "content": {
-                "type": "STRING",
-                "value": "doc"
-              }
-            },
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "_a1"
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "FIELD",
-              "name": "attribute_name",
-              "content": {
-                "type": "STRING",
-                "value": "extension"
-              }
-            },
-            {
-              "type": "SYMBOL",
-              "name": "_a1"
-            }
-          ]
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "FIELD",
-              "name": "attribute_name",
-              "content": {
-                "type": "STRING",
-                "value": "group"
-              }
-            },
-            {
-              "type": "SYMBOL",
-              "name": "_a1"
-            }
-          ]
-        },
-        {
-          "type": "FIELD",
-          "name": "attribute_name",
-          "content": {
-            "type": "STRING",
-            "value": "linux"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "attribute_name",
-          "content": {
-            "type": "STRING",
-            "value": "macos"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "attribute_name",
-          "content": {
-            "type": "STRING",
-            "value": "no-cd"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "attribute_name",
-          "content": {
-            "type": "STRING",
-            "value": "no-exit-message"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "attribute_name",
-          "content": {
-            "type": "STRING",
-            "value": "no-quiet"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "attribute_name",
-          "content": {
-            "type": "STRING",
-            "value": "positional-arguments"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "attribute_name",
-          "content": {
-            "type": "STRING",
-            "value": "private"
-          }
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "FIELD",
-              "name": "attribute_name",
-              "content": {
-                "type": "STRING",
-                "value": "script"
-              }
-            },
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "_a1"
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "FIELD",
-          "name": "attribute_name",
-          "content": {
-            "type": "STRING",
-            "value": "unix"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "attribute_name",
-          "content": {
-            "type": "STRING",
-            "value": "windows"
-          }
         }
       ]
     },
@@ -501,30 +302,26 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_a1"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "string"
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                }
+              ]
             },
             {
               "type": "BLANK"
             }
           ]
-        }
-      ]
-    },
-    "_a1": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "SYMBOL",
-          "name": "string"
-        },
-        {
-          "type": "STRING",
-          "value": ")"
         }
       ]
     },

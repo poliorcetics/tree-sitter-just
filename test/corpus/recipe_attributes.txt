@@ -138,28 +138,45 @@ r:
 
 (file
   (recipe
-    (builtin_attribute)
-    (builtin_attribute
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
       (string))
-    (builtin_attribute)
-    (builtin_attribute
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
       (string))
-    (builtin_attribute
+    (attribute
+      (identifier)
       (string))
-    (builtin_attribute
+    (attribute
+      (identifier)
       (string))
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
       (string))
-    (builtin_attribute)
-    (builtin_attribute)
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
     (identifier)))
 
 ===
@@ -191,26 +208,43 @@ r:
 
 (file
   (recipe
-    (builtin_attribute)
-    (builtin_attribute
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
       (string))
-    (builtin_attribute)
-    (builtin_attribute
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
       (string))
-    (builtin_attribute
+    (attribute
+      (identifier)
       (string))
-    (builtin_attribute
+    (attribute
+      (identifier)
       (string))
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute)
-    (builtin_attribute
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
       (string))
-    (builtin_attribute)
-    (builtin_attribute)
+    (attribute
+      (identifier))
+    (attribute
+      (identifier))
     (identifier)))
