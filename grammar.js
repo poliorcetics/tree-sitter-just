@@ -80,6 +80,10 @@ module.exports = grammar({
             optional($.variadic_parameter),
             ':',
             repeat($.recipe_dependency),
+            optional(seq(
+                '&&',
+                repeat($.recipe_dependency),
+            )),
             $._ceol,
             optional($.recipe_body),
         ),

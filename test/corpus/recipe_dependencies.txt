@@ -107,3 +107,155 @@ r: (d if a == b { d } else { d } "some other param") (d2 os() shell(abc() + "de"
                 (expression
                   (value
                     (string)))))))))))
+
+===
+Recipes: Dependencies: Single, simple, after recipe
+===
+
+r: && dep
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier))))
+
+===
+Recipes: Dependencies: Multiple, simple, after recipe
+===
+
+r: && d1 d2
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier))
+    (recipe_dependency
+      (identifier))))
+
+===
+Recipes: Dependencies: Single, expressions, after recipe
+===
+
+r: && (d if a == b { d } else { d } "some other param")
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier)
+      (expression
+        (condition
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))
+      (expression
+        (value
+          (string))))))
+
+===
+Recipes: Dependencies: Multiple, expressions, after recipe
+===
+
+r: && (d if a == b { d } else { d } "some other param") (d2 os() shell(abc() + "de"))
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier)
+      (expression
+        (condition
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))
+      (expression
+        (value
+          (string))))
+    (recipe_dependency
+      (identifier)
+      (expression
+        (value
+          (function_call
+            (identifier))))
+      (expression
+        (value
+          (function_call
+            (identifier)
+            (function_parameters
+              (expression
+                (value
+                  (function_call
+                    (identifier)))
+                (expression
+                  (value
+                    (string)))))))))))
+
+===
+Recipes: Dependencies: Multiple, expressions, before and after
+===
+
+r: d1 (d2 a "bc" ) && (d3 os() shell(abc() + "de")) d4
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier))
+    (recipe_dependency
+      (identifier)
+      (expression
+        (value
+          (identifier)))
+      (expression
+        (value
+          (string))))
+    (recipe_dependency
+      (identifier)
+      (expression
+        (value
+          (function_call
+            (identifier))))
+      (expression
+        (value
+          (function_call
+            (identifier)
+            (function_parameters
+              (expression
+                (value
+                  (function_call
+                    (identifier)))
+                (expression
+                  (value
+                    (string)))))))))
+    (recipe_dependency
+      (identifier))))
