@@ -42,6 +42,7 @@ Expressions cannot be parsed at the top level but they're fully implemented too 
   - [x] Assertions (`assert(cond, expr)`)
   - [x] Conditions (`expr == expr`, `!=`, `=~`)
   - [x] Joined (`value / expr`, `value + expr`)
+  - [x] Absolute path (`/ expr`)
   - [x] Values
     - [x] Function calls (`fn_name()`, `name(expr, expr)`)
     - [x] Parenthesized (`( expr )`)

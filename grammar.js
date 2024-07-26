@@ -165,12 +165,13 @@ module.exports = grammar({
         // ========================================================================================
         // Expression
 
-        expression: $ => choice(
+        expression: $ => prec.right(choice(
             seq('if', $.condition, '{', $.expression, '}', 'else', '{', $.expression, '}'),
             seq('assert', '(', $.condition, ',', $.expression, ')'),
             seq($.value, choice('/', '+'), $.expression),
+            seq('/', $.expression),
             $.value,
-        ),
+        )),
 
         condition: $ => seq(
             $.expression,

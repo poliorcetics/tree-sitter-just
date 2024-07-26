@@ -1,0 +1,50 @@
+===
+Expressions: Absolute paths: simple
+===
+
+a := / "path"
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (string))))))
+
+===
+Expressions: Absolute paths: complex
+===
+
+a := / if b == (os() + arch()) { "string" } else { other_func() }
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (condition
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (expression
+                (value
+                  (function_call
+                    (identifier)))
+                (expression
+                  (value
+                    (function_call
+                      (identifier))))))))
+        (expression
+          (value
+            (string)))
+        (expression
+          (value
+            (function_call
+              (identifier))))))))
