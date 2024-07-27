@@ -55,6 +55,10 @@ Expressions cannot be parsed at the top level but they're fully implemented too 
         - [x] Escape sequences (`\n`, `\r`, `\t`, `\\`, `\"`)
       - [x] Raw string (`'abc'`)
       - [x] Indented raw string (`'''abc'''`)
+    - [x] Shell-Expanded string (strings prefixed by `x`)
+      - [x] Simple variable (`$HOME`)
+      - [x] Wrapped variable (`${HOME}`)
+      - [x] Wrapped variable with default (`${HOME:-default}`)
     - [x] Identifiers
 
 

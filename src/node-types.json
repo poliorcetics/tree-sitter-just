@@ -530,6 +530,14 @@
         {
           "type": "escape_sequence",
           "named": true
+        },
+        {
+          "type": "escape_variable_end",
+          "named": true
+        },
+        {
+          "type": "shell_variable_name",
+          "named": true
         }
       ]
     }
@@ -601,6 +609,10 @@
     "named": false
   },
   {
+    "type": "${",
+    "named": false
+  },
+  {
     "type": "&&",
     "named": false
   },
@@ -646,6 +658,10 @@
   },
   {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": ":-",
     "named": false
   },
   {
@@ -721,6 +737,10 @@
     "named": false
   },
   {
+    "type": "escape_variable_end",
+    "named": true
+  },
+  {
     "type": "export",
     "named": false
   },
@@ -741,7 +761,27 @@
     "named": false
   },
   {
+    "type": "shell_variable_name",
+    "named": true
+  },
+  {
     "type": "true",
+    "named": false
+  },
+  {
+    "type": "x\"",
+    "named": false
+  },
+  {
+    "type": "x\"\"\"",
+    "named": false
+  },
+  {
+    "type": "x'",
+    "named": false
+  },
+  {
+    "type": "x'''",
     "named": false
   },
   {

@@ -1,0 +1,125 @@
+===
+Strings: Shell-expanded: simple
+===
+
+a := x'''content of string with ' inside and \n as a test'''
+
+a := x"""content of string with " inside and \n as a test"""
+
+a := x'content of string with \n as a test'
+
+a := x"content of string with \n as a test"
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (escape_sequence)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (escape_sequence))))))
+
+===
+Strings: Shell-expanded: simple variable
+===
+
+a := x'''here $HOME and here ${HOME} and a $'''
+
+a := x"""here $HOME and here ${HOME} and a $"""
+
+a := x'here $HOME and here ${HOME} and a $'
+
+a := x"here $HOME and here ${HOME} and a $"
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (shell_variable_name)
+          (shell_variable_name)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (shell_variable_name)
+          (shell_variable_name)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (shell_variable_name)
+          (shell_variable_name)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (shell_variable_name)
+          (shell_variable_name))))))
+
+===
+Strings: Shell-expanded: with defaults
+===
+
+a := x'''here ${HOME:-default value} and here ${HOME:-$DEFAULT_0} and a $'''
+
+a := x"""here ${HOME:-default value} and here ${HOME:-$DEFAULT_0} and a $"""
+
+a := x'here ${HOME:-default value} and here ${HOME:-$DEFAULT_0} and a $'
+
+a := x"here ${HOME:-default value} and here ${HOME:-$DEFAULT_0} and a $"
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (shell_variable_name)
+          (shell_variable_name)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (shell_variable_name)
+          (shell_variable_name)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (shell_variable_name)
+          (shell_variable_name)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (shell_variable_name)
+          (shell_variable_name))))))

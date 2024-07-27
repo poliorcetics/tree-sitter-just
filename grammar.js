@@ -12,6 +12,10 @@ module.exports = grammar({
         $._normal_string,
         $._indented_raw_string,
         $._raw_string,
+        $._shell_expanded_indented_normal_string,
+        $._shell_expanded_normal_string,
+        $._shell_expanded_indented_raw_string,
+        $._shell_expanded_raw_string,
     ],
     // Recommended by tree-sitter's documentation to improve performances and compile times.
     word: $ => $.identifier,
@@ -233,6 +237,10 @@ module.exports = grammar({
             $._normal_string,
             $._indented_raw_string,
             $._raw_string,
+            $._shell_expanded_indented_normal_string,
+            $._shell_expanded_normal_string,
+            $._shell_expanded_indented_raw_string,
+            $._shell_expanded_raw_string,
         ),
 
         _indented_normal_string: $ => seq(
@@ -276,6 +284,71 @@ module.exports = grammar({
             '\\\\',
         ),
 
+        // Shell-expanded Strings
+
+        _shell_expanded_indented_normal_string: $ => seq(
+            'x"""',
+            repeat(choice(
+                shell_variable($, repeat(choice(
+                    $.escape_sequence,
+                    $.escape_variable_end,
+                    // Technically this could accept <""">, which would be invalid,
+                    // but I'm not willing to write a custom parser just for this.
+                    /[^}]/,
+                ))),
+                $.escape_sequence,
+                $.escape_variable_end,
+                '$',
+                /[^$][^$"]?/,
+            )),
+            '"""'
+        ),
+
+        _shell_expanded_normal_string: $ => seq(
+            'x"',
+            repeat(choice(
+                shell_variable($, repeat(choice(
+                    $.escape_sequence,
+                    $.escape_variable_end,
+                    /[^"}]/,
+                ))),
+                $.escape_sequence,
+                '$',
+                /[^$"]/,
+            )),
+            '"',
+        ),
+
+        _shell_expanded_indented_raw_string: $ => seq(
+            "x'''",
+            repeat(choice(
+                shell_variable($, repeat(choice(
+                    $.escape_variable_end,
+                    /[^}]/,
+                ))),
+                '$',
+                /[^$][^$']?/,
+            )),
+            "'''",
+        ),
+
+        _shell_expanded_raw_string: $ => seq(
+            "x'",
+            repeat(choice(
+                shell_variable($, repeat(choice(
+                    $.escape_variable_end,
+                    /[^'}]/,
+                ))),
+                '$',
+                /[^$']/,
+            )),
+            "'",
+        ),
+
+        shell_variable_name: $ => imm(/\w+/),
+
+        escape_variable_end: $ => '\\}',
+
         // ========================================================================================
         // Misc.
 
@@ -290,3 +363,15 @@ module.exports = grammar({
         _ceol: $ => seq(optional($.comment), $._eol),
     }
 });
+
+function shell_variable($, inside) {
+    return choice(
+        seq('$',  $.shell_variable_name),
+        seq('${', $.shell_variable_name, imm('}')),
+        seq('${', $.shell_variable_name, imm(':-'), prec.left(inside), '}'),
+    );
+}
+
+function imm(tok) {
+    return token.immediate(tok);
+}
