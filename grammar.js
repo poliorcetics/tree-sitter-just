@@ -178,9 +178,11 @@ module.exports = grammar({
             ),
             $._ceol,
         ),
-        _setting_boolean: $ => seq(':=', choice('true', 'false')),
+        _setting_boolean: $ => seq(':=', $.boolean),
         _setting_string: $ => seq(':=', $.string),
         _setting_list: $ => seq(':=', '[', $.string, repeat(seq(',', $.string)), optional(','), ']'),
+
+        boolean: $ => choice('true', 'false'),
 
         // ========================================================================================
         // Expression

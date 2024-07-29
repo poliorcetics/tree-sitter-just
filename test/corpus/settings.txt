@@ -12,9 +12,11 @@ set new-setting := false
   (setting
     (identifier))
   (setting
-    (identifier))
+    (identifier)
+    (boolean))
   (setting
-    (identifier)))
+    (identifier)
+    (boolean)))
 
 ===
 Setting: String

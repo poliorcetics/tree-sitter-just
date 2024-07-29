@@ -176,6 +176,7 @@ set a := [
     (comment))
   (setting
     (identifier)
+    (boolean)
     (comment))
   (setting
     (identifier)

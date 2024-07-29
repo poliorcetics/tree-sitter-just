@@ -95,6 +95,11 @@
     "fields": {}
   },
   {
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "comment",
     "named": true,
     "fields": {}
@@ -225,17 +230,24 @@
   {
     "type": "import",
     "named": true,
-    "fields": {},
+    "fields": {
+      "path": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "path",
           "named": true
         }
       ]
@@ -289,6 +301,16 @@
             "named": true
           }
         ]
+      },
+      "path": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -301,25 +323,6 @@
         },
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "path",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "path",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -487,6 +490,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
         {
           "type": "comment",
           "named": true
