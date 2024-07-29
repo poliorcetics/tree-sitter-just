@@ -17,24 +17,28 @@ a := x"content of string with \n as a test"
     (identifier)
     (expression
       (value
-        (string))))
+        (string
+          (shell_expanded_string)))))
   (assignment
     (identifier)
     (expression
       (value
         (string
-          (escape_sequence)))))
-  (assignment
-    (identifier)
-    (expression
-      (value
-        (string))))
+          (shell_expanded_string
+            (escape_sequence))))))
   (assignment
     (identifier)
     (expression
       (value
         (string
-          (escape_sequence))))))
+          (shell_expanded_string)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (shell_expanded_string
+            (escape_sequence)))))))
 
 ===
 Strings: Shell-expanded: simple variable
@@ -56,29 +60,45 @@ a := x"here $HOME and here ${HOME} and a $"
     (expression
       (value
         (string
-          (shell_variable_name)
-          (shell_variable_name)))))
+          (shell_expanded_string
+            (expansion_short_start)
+            (shell_variable_name)
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_end))))))
   (assignment
     (identifier)
     (expression
       (value
         (string
-          (shell_variable_name)
-          (shell_variable_name)))))
+          (shell_expanded_string
+            (expansion_short_start)
+            (shell_variable_name)
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_end))))))
   (assignment
     (identifier)
     (expression
       (value
         (string
-          (shell_variable_name)
-          (shell_variable_name)))))
+          (shell_expanded_string
+            (expansion_short_start)
+            (shell_variable_name)
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_end))))))
   (assignment
     (identifier)
     (expression
       (value
         (string
-          (shell_variable_name)
-          (shell_variable_name))))))
+          (shell_expanded_string
+            (expansion_short_start)
+            (shell_variable_name)
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_end)))))))
 
 ===
 Strings: Shell-expanded: with defaults
@@ -100,26 +120,75 @@ a := x"here ${HOME:-default value} and here ${HOME:-$DEFAULT_0} and a $"
     (expression
       (value
         (string
-          (shell_variable_name)
-          (shell_variable_name)))))
+          (shell_expanded_string
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_middle)
+            (expansion_long_end)
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_middle)
+            (expansion_long_end))))))
   (assignment
     (identifier)
     (expression
       (value
         (string
-          (shell_variable_name)
-          (shell_variable_name)))))
+          (shell_expanded_string
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_middle)
+            (expansion_long_end)
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_middle)
+            (expansion_long_end))))))
   (assignment
     (identifier)
     (expression
       (value
         (string
-          (shell_variable_name)
-          (shell_variable_name)))))
+          (shell_expanded_string
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_middle)
+            (expansion_long_end)
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_middle)
+            (expansion_long_end))))))
   (assignment
     (identifier)
     (expression
       (value
         (string
-          (shell_variable_name)
-          (shell_variable_name))))))
+          (shell_expanded_string
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_middle)
+            (expansion_long_end)
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_middle)
+            (expansion_long_end)))))))
+
+===
+Strings: Shell-expanded: with espace sequences
+===
+
+a := x"${ABC:-default\}with escape}"
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (shell_expanded_string
+            (expansion_long_start)
+            (shell_variable_name)
+            (expansion_long_middle)
+            (escape_variable_end)
+            (expansion_long_end)))))))

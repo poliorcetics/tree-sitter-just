@@ -125,6 +125,11 @@
     "fields": {}
   },
   {
+    "type": "expansion_short_start",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "expression",
     "named": true,
     "fields": {},
@@ -542,7 +547,7 @@
     }
   },
   {
-    "type": "string",
+    "type": "shell_expanded_string",
     "named": true,
     "fields": {},
     "children": {
@@ -558,7 +563,42 @@
           "named": true
         },
         {
+          "type": "expansion_long_end",
+          "named": true
+        },
+        {
+          "type": "expansion_long_middle",
+          "named": true
+        },
+        {
+          "type": "expansion_long_start",
+          "named": true
+        },
+        {
+          "type": "expansion_short_start",
+          "named": true
+        },
+        {
           "type": "shell_variable_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        },
+        {
+          "type": "shell_expanded_string",
           "named": true
         }
       ]
@@ -631,10 +671,6 @@
     "named": false
   },
   {
-    "type": "${",
-    "named": false
-  },
-  {
     "type": "&&",
     "named": false
   },
@@ -680,10 +716,6 @@
   },
   {
     "type": ":",
-    "named": false
-  },
-  {
-    "type": ":-",
     "named": false
   },
   {
@@ -760,6 +792,18 @@
   },
   {
     "type": "escape_variable_end",
+    "named": true
+  },
+  {
+    "type": "expansion_long_end",
+    "named": true
+  },
+  {
+    "type": "expansion_long_middle",
+    "named": true
+  },
+  {
+    "type": "expansion_long_start",
     "named": true
   },
   {

@@ -239,6 +239,10 @@ module.exports = grammar({
             $._normal_string,
             $._indented_raw_string,
             $._raw_string,
+            $.shell_expanded_string,
+        ),
+
+        shell_expanded_string: $ => choice(
             $._shell_expanded_indented_normal_string,
             $._shell_expanded_normal_string,
             $._shell_expanded_indented_raw_string,
@@ -292,14 +296,14 @@ module.exports = grammar({
             'x"""',
             repeat(choice(
                 shell_variable($, repeat(choice(
-                    $.escape_sequence,
                     $.escape_variable_end,
+                    $.escape_sequence,
                     // Technically this could accept <""">, which would be invalid,
                     // but I'm not willing to write a custom parser just for this.
                     /[^}]/,
                 ))),
-                $.escape_sequence,
                 $.escape_variable_end,
+                $.escape_sequence,
                 '$',
                 /[^$][^$"]?/,
             )),
@@ -310,8 +314,8 @@ module.exports = grammar({
             'x"',
             repeat(choice(
                 shell_variable($, repeat(choice(
-                    $.escape_sequence,
                     $.escape_variable_end,
+                    $.escape_sequence,
                     /[^"}]/,
                 ))),
                 $.escape_sequence,
@@ -351,6 +355,12 @@ module.exports = grammar({
 
         escape_variable_end: $ => '\\}',
 
+        expansion_short_start: $ => '$',
+
+        expansion_long_start: $ => '${',
+        expansion_long_middle: $ => imm(':-'),
+        expansion_long_end: $ => imm('}'),
+
         // ========================================================================================
         // Misc.
 
@@ -368,9 +378,9 @@ module.exports = grammar({
 
 function shell_variable($, inside) {
     return choice(
-        seq('$',  $.shell_variable_name),
-        seq('${', $.shell_variable_name, imm('}')),
-        seq('${', $.shell_variable_name, imm(':-'), prec.left(inside), '}'),
+        seq($.expansion_short_start, $.shell_variable_name),
+        seq($.expansion_long_start,  $.shell_variable_name, $.expansion_long_end),
+        seq($.expansion_long_start,  $.shell_variable_name, $.expansion_long_middle, prec.left(inside), $.expansion_long_end),
     );
 }
 
