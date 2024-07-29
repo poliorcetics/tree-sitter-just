@@ -502,16 +502,8 @@
           "value": "( |\\t)+"
         },
         {
-          "type": "PATTERN",
-          "value": "(@|-|@-|-@)?#!(\\/usr)?\\/bin\\/(\\/env)?"
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
-          }
+          "type": "SYMBOL",
+          "name": "shebang_shell"
         },
         {
           "type": "REPEAT",
@@ -525,6 +517,13 @@
           "name": "_eol"
         }
       ]
+    },
+    "shebang_shell": {
+      "type": "IMMEDIATE_TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "(@|-|@-|-@)?#!(\\/usr)?\\/bin\\/(env[ \\t]*)?\\w+"
+      }
     },
     "recipe_line": {
       "type": "SEQ",

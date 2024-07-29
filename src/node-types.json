@@ -514,16 +514,6 @@
     "type": "shebang_line",
     "named": true,
     "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
       "recipe_content": {
         "multiple": true,
         "required": false,
@@ -537,10 +527,14 @@
     },
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "interpolation",
+          "named": true
+        },
+        {
+          "type": "shebang_shell",
           "named": true
         }
       ]
@@ -825,6 +819,10 @@
   {
     "type": "set",
     "named": false
+  },
+  {
+    "type": "shebang_shell",
+    "named": true
   },
   {
     "type": "shell_variable_name",

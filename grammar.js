@@ -134,10 +134,13 @@ module.exports = grammar({
 
         shebang_line: $ => seq(
             /( |\t)+/,
-            /(@|-|@-|-@)?#!(\/usr)?\/bin\/(\/env)?/,
-            field('name', $.identifier),
+            $.shebang_shell,
             repeat($._recipe_line_choice),
             $._eol,
+        ),
+
+        shebang_shell: $ => imm(
+            /(@|-|@-|-@)?#!(\/usr)?\/bin\/(env[ \t]*)?\w+/,
         ),
 
         recipe_line: $ => seq(

@@ -12,7 +12,7 @@ r:
     (identifier)
     (recipe_body
       (shebang_line
-        (identifier)))))
+        (shebang_shell)))))
 
 ===
 Recipes: Bodies: Shebang, with args
@@ -28,7 +28,7 @@ r:
     (identifier)
     (recipe_body
       (shebang_line
-        (identifier)))))
+        (shebang_shell)))))
 
 ===
 Recipes: Bodies: Shebang, with interpolation
@@ -44,7 +44,7 @@ r:
     (identifier)
     (recipe_body
       (shebang_line
-        (identifier)
+        (shebang_shell)
         (interpolation
           (expression
             (value
@@ -66,7 +66,7 @@ r:
     (identifier)
     (recipe_body
       (shebang_line
-        (identifier))
+        (shebang_shell))
       (recipe_line)
       (recipe_line))))
 
@@ -93,19 +93,19 @@ r:
     (identifier)
     (recipe_body
       (shebang_line
-        (identifier))))
+        (shebang_shell))))
   (recipe
     (identifier)
     (recipe_body
       (shebang_line
-        (identifier))))
+        (shebang_shell))))
   (recipe
     (identifier)
     (recipe_body
       (shebang_line
-        (identifier))))
+        (shebang_shell))))
   (recipe
     (identifier)
     (recipe_body
       (shebang_line
-        (identifier)))))
+        (shebang_shell)))))

@@ -100,7 +100,7 @@ Recipes: everything at once
       (identifier))
     (recipe_body
       (shebang_line
-        (identifier)
+        (shebang_shell)
         (interpolation
           (expression
             (value
