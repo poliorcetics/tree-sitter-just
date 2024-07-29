@@ -59,17 +59,19 @@ module.exports = grammar({
         // Imports and modules
 
         import: $ => seq(
-            /import\??/,
-            field('path', $.string),
+            'import',
+            optional(imm('?')),
+            alias($.string, $.path),
             $._ceol,
         ),
 
         mod: $ => prec.right(seq(
             // Technically only `doc` is a valid attribute on modules at the moment but that's okay
             repeat($._attribute_list),
-            /mod\??/,
+            'mod',
+            optional(imm('?')),
             field('name', $.identifier),
-            optional(field('path', $.string)),
+            optional(alias($.string, $.path)),
             $._ceol,
         )),
 

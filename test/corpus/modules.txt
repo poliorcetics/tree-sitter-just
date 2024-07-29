@@ -33,7 +33,7 @@ mod a 'b/c.just'
 (file
   (mod
     (identifier)
-    (string)))
+    (path)))
 
 ===
 Module: name and path, optional
@@ -46,7 +46,7 @@ mod? a "b/c.just"
 (file
   (mod
     (identifier)
-    (string)))
+    (path)))
 
 ===
 Module: with doc attribute

@@ -12,11 +12,11 @@ import '~/just'
 
 (file
   (import
-    (string))
+    (path))
   (import
-    (string))
+    (path))
   (import
-    (string)))
+    (path)))
 
 ===
 Import: optional
@@ -32,8 +32,8 @@ import? '~/just'
 
 (file
   (import
-    (string))
+    (path))
   (import
-    (string))
+    (path))
   (import
-    (string)))
+    (path)))

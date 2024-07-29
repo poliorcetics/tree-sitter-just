@@ -57,7 +57,7 @@ import "a/b" # comment
 
 (file
   (import
-    (string)
+    (path)
     (comment)))
 
 ===
@@ -83,7 +83,7 @@ mod a # comment
     (comment))
   (mod
     (identifier)
-    (string)
+    (path)
     (comment))
   (mod
     (attribute
