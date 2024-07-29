@@ -3,7 +3,7 @@
     "type": "alias",
     "named": true,
     "fields": {
-      "alias_name": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -37,7 +37,7 @@
     "type": "assignment",
     "named": true,
     "fields": {
-      "variable_name": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -67,7 +67,7 @@
     "type": "attribute",
     "named": true,
     "fields": {
-      "attribute_name": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -185,7 +185,7 @@
     "type": "function_call",
     "named": true,
     "fields": {
-      "function_name": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -235,7 +235,7 @@
           "named": true
         },
         {
-          "type": "string",
+          "type": "path",
           "named": true
         }
       ]
@@ -280,7 +280,7 @@
     "type": "mod",
     "named": true,
     "fields": {
-      "mod_name": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -304,6 +304,21 @@
           "named": true
         },
         {
+          "type": "path",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "path",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
           "type": "string",
           "named": true
         }
@@ -314,7 +329,7 @@
     "type": "recipe",
     "named": true,
     "fields": {
-      "recipe_name": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -379,7 +394,7 @@
     "type": "recipe_dependency",
     "named": true,
     "fields": {
-      "dependency_name": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -431,7 +446,7 @@
     "type": "recipe_parameter",
     "named": true,
     "fields": {
-      "parameter_name": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -457,7 +472,7 @@
     "type": "setting",
     "named": true,
     "fields": {
-      "setting_name": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -487,6 +502,16 @@
     "type": "shebang_line",
     "named": true,
     "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
       "recipe_content": {
         "multiple": true,
         "required": false,
@@ -494,16 +519,6 @@
           {
             "type": "{{{{",
             "named": false
-          }
-        ]
-      },
-      "shell_name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
           }
         ]
       }

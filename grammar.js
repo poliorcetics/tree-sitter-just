@@ -38,7 +38,7 @@ module.exports = grammar({
             // the responsibility of Tree-Sitter
             repeat($._attribute_list),
             'alias',
-            field('alias_name', $.identifier),
+            field('name', $.identifier),
             ':=',
             $.identifier,
             $._ceol,
@@ -49,7 +49,7 @@ module.exports = grammar({
 
         assignment: $ => seq(
             optional('export'),
-            field('variable_name', $.identifier),
+            field('name', $.identifier),
             ':=',
             $.expression,
             $._ceol,
@@ -60,7 +60,7 @@ module.exports = grammar({
 
         import: $ => seq(
             /import\??/,
-            $.string,
+            field('path', $.string),
             $._ceol,
         ),
 
@@ -68,8 +68,8 @@ module.exports = grammar({
             // Technically only `doc` is a valid attribute on modules at the moment but that's okay
             repeat($._attribute_list),
             /mod\??/,
-            field('mod_name', $.identifier),
-            optional($.string),
+            field('name', $.identifier),
+            optional(field('path', $.string)),
             $._ceol,
         )),
 
@@ -79,7 +79,7 @@ module.exports = grammar({
         recipe: $ => seq(
             repeat($._attribute_list),
             optional('@'),
-            field('recipe_name', $.identifier),
+            field('name', $.identifier),
             repeat($.recipe_parameter),
             optional($.variadic_parameter),
             ':',
@@ -102,13 +102,13 @@ module.exports = grammar({
 
         // <https://just.systems/man/en/chapter_34.html?highlight=attribute#recipe-attributes>
         attribute: $ => seq(
-            field('attribute_name', $.identifier),
+            field('name', $.identifier),
             optional(seq('(', $.string, ')'))
         ),
 
         recipe_parameter: $ => seq(
             optional('$'),
-            field('parameter_name', $.identifier),
+            field('name', $.identifier),
             optional(seq('=', $.value)),
         ),
 
@@ -122,7 +122,7 @@ module.exports = grammar({
             seq('(', $._recipe_dependency, repeat($.expression), ')'),
         ),
 
-        _recipe_dependency: $ => field('dependency_name', $.identifier),
+        _recipe_dependency: $ => field('name', $.identifier),
 
         recipe_body: $ => choice(
             seq(
@@ -135,7 +135,7 @@ module.exports = grammar({
         shebang_line: $ => seq(
             /( |\t)+/,
             /(@|-|@-|-@)?#!(\/usr)?\/bin\/(\/env)?/,
-            field('shell_name', $.identifier),
+            field('name', $.identifier),
             repeat($._recipe_line_choice),
             $._eol,
         ),
@@ -170,7 +170,7 @@ module.exports = grammar({
         // <https://just.systems/man/en/chapter_27.html?highlight=dotenv-filename#table-of-settings>
         setting: $ => seq(
             'set',
-            field('setting_name', $.identifier),
+            field('name', $.identifier),
             choice(
                 optional($._setting_boolean),
                 $._setting_string,
@@ -209,7 +209,7 @@ module.exports = grammar({
         ),
 
         // <https://just.systems/man/en/chapter_32.html>
-        function_call: $ => seq(field('function_name', $.identifier), '(', optional($.function_parameters), ')'),
+        function_call: $ => seq(field('name', $.identifier), '(', optional($.function_parameters), ')'),
 
         function_parameters: $ => seq($.expression, repeat(seq(',', $.expression)), optional(',')),
 
