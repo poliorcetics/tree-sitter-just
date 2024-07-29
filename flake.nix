@@ -16,7 +16,11 @@
             darwinInclude = lib.optionalString stdenv.isDarwin ''- "-I${darwin.Libsystem}/include/"'';
           in
           mkShell {
-            packages = [ tree-sitter nodejs-slim_22 graphviz ];
+            packages = [
+              (tree-sitter.override { webUISupport = true; })
+              nodejs-slim_22
+              graphviz
+            ];
             shellHook = ''
               cat <<EOF > .clangd
               CompileFlags:
