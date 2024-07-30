@@ -239,14 +239,16 @@ module.exports = grammar({
 
         _backtick: $ => seq(
             "`",
-            /[^`]*/,
+            // Expose `content` to allow injection of other languages (bash)
+            alias(/[^`]*/, $.content),
             "`",
         ),
 
         _indented_backtick: $ => seq(
             "```",
             // See `indented_normal_string`.
-            repeat(/.[^`]?/),
+            // Expose `content` to allow injection of other languages (bash)
+            alias(repeat(/.[^`]?/), $.content),
             "```",
         ),
 
