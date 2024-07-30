@@ -44,14 +44,16 @@ a := (
       (value
         (expression
           (value
-            (external_command))))))
+            (external_command
+              (content)))))))
   (assignment
     (identifier)
     (expression
       (value
         (expression
           (value
-            (external_command))))))
+            (external_command
+              (content)))))))
   (assignment
     (identifier)
     (expression
@@ -99,7 +101,8 @@ a := (
               (function_parameters
                 (expression
                   (value
-                    (external_command))))))))))
+                    (external_command
+                      (content)))))))))))
   (assignment
     (identifier)
     (expression

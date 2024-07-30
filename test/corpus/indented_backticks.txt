@@ -26,7 +26,8 @@ a := ```raw string 🦀```
     (identifier)
     (expression
       (value
-        (external_command)))))
+        (external_command
+          (content))))))
 
 ===
 Indented backtick: with ` inside
@@ -41,7 +42,8 @@ a := ```raw string with ` inside```
     (identifier)
     (expression
       (value
-        (external_command)))))
+        (external_command
+          (content))))))
 
 ===
 Indented backtick: with line breaks
@@ -58,7 +60,8 @@ a := ```
     (identifier)
     (expression
       (value
-        (external_command)))))
+        (external_command
+          (content))))))
 
 ===
 Indented backtick: with escape sequences
@@ -73,4 +76,5 @@ a := ```raw \t \n \r \\ \" string```
     (identifier)
     (expression
       (value
-        (external_command)))))
+        (external_command
+          (content))))))

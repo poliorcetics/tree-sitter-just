@@ -33,7 +33,8 @@ a := `echo toto`
     (identifier)
     (expression
       (value
-        (external_command)))))
+        (external_command
+          (content))))))
 
 ===
 Assignement: Slash join
@@ -87,18 +88,19 @@ a := assert(os() != arch(), "is ok")
   (assignment
     (identifier)
     (expression
-      (condition
+      (assert_parameters
+        (condition
+          (expression
+            (value
+              (function_call
+                (identifier))))
+          (expression
+            (value
+              (function_call
+                (identifier)))))
         (expression
           (value
-            (function_call
-              (identifier))))
-        (expression
-          (value
-            (function_call
-              (identifier)))))
-      (expression
-        (value
-          (string))))))
+            (string)))))))
 
 ===
 Assignement: if-else
@@ -161,7 +163,8 @@ export a := `echo toto`
     (identifier)
     (expression
       (value
-        (external_command)))))
+        (external_command
+          (content))))))
 
 ===
 Exported assignement: Slash join
@@ -215,18 +218,19 @@ export a := assert(os() != arch(), "is ok")
   (assignment
     (identifier)
     (expression
-      (condition
+      (assert_parameters
+        (condition
+          (expression
+            (value
+              (function_call
+                (identifier))))
+          (expression
+            (value
+              (function_call
+                (identifier)))))
         (expression
           (value
-            (function_call
-              (identifier))))
-        (expression
-          (value
-            (function_call
-              (identifier)))))
-      (expression
-        (value
-          (string))))))
+            (string)))))))
 
 ===
 Exported assignement: if-else

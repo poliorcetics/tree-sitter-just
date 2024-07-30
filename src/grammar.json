@@ -243,33 +243,16 @@
           }
         },
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "recipe_parameter"
-                }
-              },
-              {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "variadic_parameter"
-                  },
-                  {
-                    "type": "BLANK"
-                  }
-                ]
-              }
-            ]
-          },
-          "named": true,
-          "value": "recipe_parameters"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "recipe_parameters"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -319,6 +302,31 @@
             },
             {
               "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "recipe_parameters": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "recipe_parameter"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "recipe_parameter"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "variadic_parameter"
             }
           ]
         }
@@ -515,8 +523,12 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "shebang_line"
+              "type": "FIELD",
+              "name": "shebang",
+              "content": {
+                "type": "SYMBOL",
+                "name": "shebang_line"
+              }
             },
             {
               "type": "REPEAT",
@@ -706,8 +718,17 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "shell"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            ]
           }
         },
         {
@@ -884,24 +905,8 @@
                 "value": "assert"
               },
               {
-                "type": "STRING",
-                "value": "("
-              },
-              {
                 "type": "SYMBOL",
-                "name": "condition"
-              },
-              {
-                "type": "STRING",
-                "value": ","
-              },
-              {
-                "type": "SYMBOL",
-                "name": "expression"
-              },
-              {
-                "type": "STRING",
-                "value": ")"
+                "name": "assert_parameters"
               }
             ]
           },
@@ -1001,6 +1006,31 @@
               "value": "regex"
             }
           ]
+        }
+      ]
+    },
+    "assert_parameters": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "condition"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "expression"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },
@@ -1141,8 +1171,13 @@
           "value": "`"
         },
         {
-          "type": "PATTERN",
-          "value": "[^`]*"
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "[^`]*"
+          },
+          "named": true,
+          "value": "content"
         },
         {
           "type": "STRING",
@@ -1158,11 +1193,16 @@
           "value": "```"
         },
         {
-          "type": "REPEAT",
+          "type": "ALIAS",
           "content": {
-            "type": "PATTERN",
-            "value": ".[^`]?"
-          }
+            "type": "REPEAT",
+            "content": {
+              "type": "PATTERN",
+              "value": ".[^`]?"
+            }
+          },
+          "named": true,
+          "value": "content"
         },
         {
           "type": "STRING",

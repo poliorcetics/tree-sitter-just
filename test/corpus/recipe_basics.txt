@@ -67,12 +67,12 @@ Recipes: everything at once
       (recipe_parameter
         (identifier)
         (value
-          (string))))
-    (recipe_parameters
-      (recipe_parameter
-        (identifier)
-        (value
-          (string))))
+          (string)))
+      (variadic_parameter
+        (recipe_parameter
+          (identifier)
+          (value
+            (string)))))
     (recipe_dependency
       (identifier))
     (recipe_dependency

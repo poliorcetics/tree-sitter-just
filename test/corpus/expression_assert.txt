@@ -10,16 +10,17 @@ a := assert("a" == "b", "c")
   (assignment
     (identifier)
     (expression
-      (condition
+      (assert_parameters
+        (condition
+          (expression
+            (value
+              (string)))
+          (expression
+            (value
+              (string))))
         (expression
           (value
-            (string)))
-        (expression
-          (value
-            (string))))
-      (expression
-        (value
-          (string))))))
+            (string)))))))
 
 ===
 Expression: Assert: Equal: nested
@@ -33,40 +34,41 @@ a := assert(("a" / os()) == "true", arch() + shell("bash", "-c", "echo", "toto")
   (assignment
     (identifier)
     (expression
-      (condition
-        (expression
-          (value
-            (expression
-              (value
-                (string))
+      (assert_parameters
+        (condition
+          (expression
+            (value
               (expression
                 (value
-                  (function_call
-                    (identifier)))))))
-        (expression
-          (value
-            (string))))
-      (expression
-        (value
-          (function_call
-            (identifier)))
+                  (string))
+                (expression
+                  (value
+                    (function_call
+                      (identifier)))))))
+          (expression
+            (value
+              (string))))
         (expression
           (value
             (function_call
-              (identifier)
-              (function_parameters
-                (expression
-                  (value
-                    (string)))
-                (expression
-                  (value
-                    (string)))
-                (expression
-                  (value
-                    (string)))
-                (expression
-                  (value
-                    (string)))))))))))
+              (identifier)))
+          (expression
+            (value
+              (function_call
+                (identifier)
+                (function_parameters
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (string))))))))))))
 
 ===
 Expression: Assert: Not equal: simple
@@ -80,16 +82,17 @@ a := assert("a" != "b", "c")
   (assignment
     (identifier)
     (expression
-      (condition
+      (assert_parameters
+        (condition
+          (expression
+            (value
+              (string)))
+          (expression
+            (value
+              (string))))
         (expression
           (value
-            (string)))
-        (expression
-          (value
-            (string))))
-      (expression
-        (value
-          (string))))))
+            (string)))))))
 
 ===
 Expression: Assert: Not equal: nested
@@ -103,40 +106,41 @@ a := assert(("a" / os()) != "true", arch() + shell("bash", "-c", "echo", "toto")
   (assignment
     (identifier)
     (expression
-      (condition
-        (expression
-          (value
-            (expression
-              (value
-                (string))
+      (assert_parameters
+        (condition
+          (expression
+            (value
               (expression
                 (value
-                  (function_call
-                    (identifier)))))))
-        (expression
-          (value
-            (string))))
-      (expression
-        (value
-          (function_call
-            (identifier)))
+                  (string))
+                (expression
+                  (value
+                    (function_call
+                      (identifier)))))))
+          (expression
+            (value
+              (string))))
         (expression
           (value
             (function_call
-              (identifier)
-              (function_parameters
-                (expression
-                  (value
-                    (string)))
-                (expression
-                  (value
-                    (string)))
-                (expression
-                  (value
-                    (string)))
-                (expression
-                  (value
-                    (string)))))))))))
+              (identifier)))
+          (expression
+            (value
+              (function_call
+                (identifier)
+                (function_parameters
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (string))))))))))))
 
 ===
 Expression: Assert: Not equal: simple
@@ -150,19 +154,20 @@ a := assert("a" =~ "b", "c")
   (assignment
     (identifier)
     (expression
-      (condition
+      (assert_parameters
+        (condition
+          (expression
+            (value
+              (string)))
+          (regex
+            (value
+              (string))))
         (expression
           (value
-            (string)))
-        (regex
-          (value
-            (string))))
-      (expression
-        (value
-          (string))))))
+            (string)))))))
 
 ===
-Expression: Assert: Not equal: nested
+Expression: Assert: Regex: nested
 ===
 
 a := assert(("a" / os()) =~ "true", arch() + shell("bash", "-c", "echo", "toto"))
@@ -173,37 +178,38 @@ a := assert(("a" / os()) =~ "true", arch() + shell("bash", "-c", "echo", "toto")
   (assignment
     (identifier)
     (expression
-      (condition
-        (expression
-          (value
-            (expression
-              (value
-                (string))
+      (assert_parameters
+        (condition
+          (expression
+            (value
               (expression
                 (value
-                  (function_call
-                    (identifier)))))))
-        (regex
-          (value
-            (string))))
-      (expression
-        (value
-          (function_call
-            (identifier)))
+                  (string))
+                (expression
+                  (value
+                    (function_call
+                      (identifier)))))))
+          (regex
+            (value
+              (string))))
         (expression
           (value
             (function_call
-              (identifier)
-              (function_parameters
-                (expression
-                  (value
-                    (string)))
-                (expression
-                  (value
-                    (string)))
-                (expression
-                  (value
-                    (string)))
-                (expression
-                  (value
-                    (string)))))))))))
+              (identifier)))
+          (expression
+            (value
+              (function_call
+                (identifier)
+                (function_parameters
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (string))))))))))))

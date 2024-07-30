@@ -216,48 +216,56 @@ r +$a=value:
   (recipe
     (identifier)
     (recipe_parameters
-      (recipe_parameter
-        (identifier))))
-  (recipe
-    (identifier)
-    (recipe_parameters
-      (recipe_parameter
-        (identifier))))
-  (recipe
-    (identifier)
-    (recipe_parameters
-      (recipe_parameter
-        (identifier))))
-  (recipe
-    (identifier)
-    (recipe_parameters
-      (recipe_parameter
-        (identifier))))
-  (recipe
-    (identifier)
-    (recipe_parameters
-      (recipe_parameter
-        (identifier)
-        (value
+      (variadic_parameter
+        (recipe_parameter
           (identifier)))))
   (recipe
     (identifier)
     (recipe_parameters
-      (recipe_parameter
-        (identifier)
-        (value
+      (variadic_parameter
+        (recipe_parameter
           (identifier)))))
   (recipe
     (identifier)
     (recipe_parameters
-      (recipe_parameter
-        (identifier)
-        (value
+      (variadic_parameter
+        (recipe_parameter
           (identifier)))))
   (recipe
     (identifier)
     (recipe_parameters
-      (recipe_parameter
-        (identifier)
-        (value
-          (identifier))))))
+      (variadic_parameter
+        (recipe_parameter
+          (identifier)))))
+  (recipe
+    (identifier)
+    (recipe_parameters
+      (variadic_parameter
+        (recipe_parameter
+          (identifier)
+          (value
+            (identifier))))))
+  (recipe
+    (identifier)
+    (recipe_parameters
+      (variadic_parameter
+        (recipe_parameter
+          (identifier)
+          (value
+            (identifier))))))
+  (recipe
+    (identifier)
+    (recipe_parameters
+      (variadic_parameter
+        (recipe_parameter
+          (identifier)
+          (value
+            (identifier))))))
+  (recipe
+    (identifier)
+    (recipe_parameters
+      (variadic_parameter
+        (recipe_parameter
+          (identifier)
+          (value
+            (identifier)))))))
