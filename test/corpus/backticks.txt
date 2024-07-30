@@ -11,7 +11,7 @@ a := ``
     (identifier)
     (expression
       (value
-        (backtick)))))
+        (external_command)))))
 
 ===
 Backtick: with basic content
@@ -26,7 +26,7 @@ a := `raw string 🦀`
     (identifier)
     (expression
       (value
-        (backtick)))))
+        (external_command)))))
 
 ===
 Backtick: with line breaks
@@ -43,7 +43,7 @@ a := `
     (identifier)
     (expression
       (value
-        (backtick)))))
+        (external_command)))))
 
 ===
 Backtick: with escape sequences
@@ -58,4 +58,4 @@ a := `raw \t \n \r \\ \" string`
     (identifier)
     (expression
       (value
-        (backtick)))))
+        (external_command)))))

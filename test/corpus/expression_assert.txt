@@ -154,7 +154,7 @@ a := assert("a" =~ "b", "c")
         (expression
           (value
             (string)))
-        (expression
+        (regex
           (value
             (string))))
       (expression
@@ -183,7 +183,7 @@ a := assert(("a" / os()) =~ "true", arch() + shell("bash", "-c", "echo", "toto")
                 (value
                   (function_call
                     (identifier)))))))
-        (expression
+        (regex
           (value
             (string))))
       (expression

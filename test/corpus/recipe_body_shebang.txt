@@ -19,7 +19,23 @@ Recipes: Bodies: Shebang, with args
 ===
 
 r:
-    #!/usr/bin/bash -c command
+    #!/usr/bin/env bash -c command
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (shebang_shell)))))
+
+===
+Recipes: Bodies: Shebang, with args to all
+===
+
+r:
+    #!/usr/bin/env -S bash -c command
 
 ---
 
@@ -35,7 +51,7 @@ Recipes: Bodies: Shebang, with interpolation
 ===
 
 r:
-    #!/bin/bash -c {{ command }}
+    #!/usr/bin/env -S bash -c {{ command }}
 
 ---
 
@@ -78,13 +94,13 @@ r:
     @#!/usr/bin/env bash
 
 r:
-    -@#!/usr/bin/bash
+    -#!/usr/bin/env bash
 
 r:
-    -#!/bin/bash
+    -@#!/usr/bin/env bash
 
 r:
-    @-#!/bin/bash -c command
+    @-#!/usr/bin/env bash
 
 ---
 
@@ -92,13 +108,11 @@ r:
   (recipe
     (identifier)
     (recipe_body
-      (shebang_line
-        (shebang_shell))))
+      (recipe_line)))
   (recipe
     (identifier)
     (recipe_body
-      (shebang_line
-        (shebang_shell))))
+      (recipe_line)))
   (recipe
     (identifier)
     (recipe_body

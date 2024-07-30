@@ -136,14 +136,17 @@ module.exports = grammar({
 
         shebang_line: $ => seq(
             /( |\t)+/,
+            // TODO: find a way to make this work for `@` and `-`
+            //       see `Recipes: Bodies: Shebang, with quiet/ignore error`, first two recipes
+            optional(choice('@-', '-@')),
+            '#!/usr/bin/env',
+            repeat(/-\w+/),
             $.shebang_shell,
             repeat($._recipe_line_choice),
             $._eol,
         ),
 
-        shebang_shell: $ => imm(
-            /(@|-|@-|-@)?#!(\/usr)?\/bin\/(env[ \t]*)?\w+/,
-        ),
+        shebang_shell: $ => /\w+/,
 
         recipe_line: $ => seq(
             // This is not exactly correct in that the first line defines the indentation length
@@ -200,19 +203,18 @@ module.exports = grammar({
             $.value,
         )),
 
-        condition: $ => seq(
-            $.expression,
-            choice('==', '!=', '=~'),
-            $.expression,
+        condition: $ => choice(
+            seq($.expression, choice('==', '!='), $.expression),
+            seq($.expression, '=~', alias($.expression, $.regex)),
         ),
 
         value: $ => choice(
             $.function_call,
             seq('(', $.expression, ')'),
-            $.backtick,
-            $.indented_backtick,
+            $.external_command,
             $.string,
             prec(-1, $.identifier),
+            $.numeric_error,
         ),
 
         // <https://just.systems/man/en/chapter_32.html>
@@ -223,13 +225,18 @@ module.exports = grammar({
         // ========================================================================================
         // Backticks
 
-        backtick: $ => seq(
+        external_command: $ => choice(
+            $._backtick,
+            $._indented_backtick,
+        ),
+
+        _backtick: $ => seq(
             "`",
             /[^`]*/,
             "`",
         ),
 
-        indented_backtick: $ => seq(
+        _indented_backtick: $ => seq(
             "```",
             // See `indented_normal_string`.
             repeat(/.[^`]?/),
@@ -378,6 +385,9 @@ module.exports = grammar({
 
         _eol: $ => /\r?\n/,
         _ceol: $ => seq(optional($.comment), $._eol),
+
+        // Numbers aren't allowed as values, but capturing them leads to better error recovery.
+        numeric_error: $ => /\d+(\.\d*)?/,
     }
 });
 

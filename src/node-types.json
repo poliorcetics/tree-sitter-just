@@ -90,11 +90,6 @@
     }
   },
   {
-    "type": "backtick",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "boolean",
     "named": true,
     "fields": {}
@@ -114,6 +109,10 @@
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "regex",
           "named": true
         }
       ]
@@ -151,6 +150,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "external_command",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "file",
@@ -250,11 +254,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "indented_backtick",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "interpolation",
@@ -483,6 +482,29 @@
     }
   },
   {
+    "type": "regex",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "condition",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "setting",
     "named": true,
     "fields": {
@@ -613,11 +635,11 @@
       "required": true,
       "types": [
         {
-          "type": "backtick",
+          "type": "expression",
           "named": true
         },
         {
-          "type": "expression",
+          "type": "external_command",
           "named": true
         },
         {
@@ -629,7 +651,7 @@
           "named": true
         },
         {
-          "type": "indented_backtick",
+          "type": "numeric_error",
           "named": true
         },
         {
@@ -664,6 +686,10 @@
   },
   {
     "type": "\"\"\"",
+    "named": false
+  },
+  {
+    "type": "#!/usr/bin/env",
     "named": false
   },
   {
@@ -833,6 +859,10 @@
   {
     "type": "mod",
     "named": false
+  },
+  {
+    "type": "numeric_error",
+    "named": true
   },
   {
     "type": "set",

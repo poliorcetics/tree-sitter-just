@@ -75,7 +75,7 @@ a := function_call(shell(`python3 --help`))
           (function_parameters
             (expression
               (value
-                (backtick))))))))
+                (external_command))))))))
   (assignment
     (identifier)
     (expression
@@ -85,7 +85,7 @@ a := function_call(shell(`python3 --help`))
           (function_parameters
             (expression
               (value
-                (indented_backtick))))))))
+                (external_command))))))))
   (assignment
     (identifier)
     (expression
@@ -151,7 +151,7 @@ a := function_call(shell(`python3 --help`))
                   (function_parameters
                     (expression
                       (value
-                        (backtick)))))))))))))
+                        (external_command)))))))))))))
 
 ===
 Expression: Value: Function Call: One param, trailing comma
@@ -171,7 +171,7 @@ a := function_call(`python3 --help`,)
           (function_parameters
             (expression
               (value
-                (backtick)))))))))
+                (external_command)))))))))
 
 ===
 Expression: Value: Function Call: Multiple params
@@ -191,7 +191,7 @@ a := function_call(`python3 --help`, (other_function_call_in_parentheses()))
           (function_parameters
             (expression
               (value
-                (backtick)))
+                (external_command)))
             (expression
               (value
                 (expression
@@ -220,7 +220,7 @@ a := function_call(
           (function_parameters
             (expression
               (value
-                (backtick)))
+                (external_command)))
             (expression
               (value
                 (string)))))))))

@@ -37,3 +37,43 @@ a := _Ident
     (expression
       (value
         (identifier)))))
+
+===
+Numbers
+===
+
+a := 23245
+
+a := 23283902.23672357265763
+
+a := fn(arg1, 2392973.2323, 2326546780)
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (numeric_error))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (numeric_error))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)
+          (function_parameters
+            (expression
+              (value
+                (identifier)))
+            (expression
+              (value
+                (numeric_error)))
+            (expression
+              (value
+                (numeric_error)))))))))

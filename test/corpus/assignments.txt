@@ -33,7 +33,7 @@ a := `echo toto`
     (identifier)
     (expression
       (value
-        (backtick)))))
+        (external_command)))))
 
 ===
 Assignement: Slash join
@@ -161,7 +161,7 @@ export a := `echo toto`
     (identifier)
     (expression
       (value
-        (backtick)))))
+        (external_command)))))
 
 ===
 Exported assignement: Slash join

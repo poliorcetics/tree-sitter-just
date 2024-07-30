@@ -44,14 +44,14 @@ a := (
       (value
         (expression
           (value
-            (backtick))))))
+            (external_command))))))
   (assignment
     (identifier)
     (expression
       (value
         (expression
           (value
-            (indented_backtick))))))
+            (external_command))))))
   (assignment
     (identifier)
     (expression
@@ -99,7 +99,7 @@ a := (
               (function_parameters
                 (expression
                   (value
-                    (backtick))))))))))
+                    (external_command))))))))))
   (assignment
     (identifier)
     (expression
