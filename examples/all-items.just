@@ -116,29 +116,29 @@ r6 *args:
 
 python:
   #!/usr/bin/env python3
-  print('Hello from python!')
+  print('Hello from python with {{ v1 + os() }}!')
 
 js:
   #!/usr/bin/env node
-  console.log('Greetings from JavaScript!')
+  console.log('Greetings from JavaScript with {{ v1 + os() }}!')
 
 perl:
   #!/usr/bin/env perl
-  print "Larry Wall says Hi!\n";
+  print "Larry Wall says Hi with {{ v1 + os() }}!\n";
 
 sh:
   #!/usr/bin/env sh
   hello='Yo'
-  echo "$hello from a shell script!"
+  echo "$hello from a shell script with {{ v1 + os() }}!"
 
 nu:
   #!/usr/bin/env nu
   let hello = 'Hola'
-  echo $"($hello) from a nushell script!"
+  echo $"($hello) from a nushell script with {{ v1 + os() }}!"
 
 ruby:
   #!/usr/bin/env ruby
-  puts "Hello from ruby!"
+  puts "Hello from ruby with {{ v1 + os() }}!"
 
 # =================================================================================================
 # Settings
