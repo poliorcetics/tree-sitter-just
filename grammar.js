@@ -132,7 +132,8 @@ module.exports = grammar({
 
         recipe_body: $ => choice(
             seq(
-                $.shebang_line,
+                // Fields can be used for negative matching in queries, which is not possible (I think) for nodes
+                field('shebang', $.shebang_line),
                 repeat($.recipe_line),
             ),
             repeat1($.recipe_line),
