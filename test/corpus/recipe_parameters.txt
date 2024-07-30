@@ -9,8 +9,9 @@ r param:
 (file
   (recipe
     (identifier)
-    (recipe_parameter
-      (identifier))))
+    (recipe_parameters
+      (recipe_parameter
+        (identifier)))))
 
 ===
 Recipes: Parameters: Single, with default
@@ -23,23 +24,24 @@ r param = (if a == b { c } else { d }):
 (file
   (recipe
     (identifier)
-    (recipe_parameter
-      (identifier)
-      (value
-        (expression
-          (condition
+    (recipe_parameters
+      (recipe_parameter
+        (identifier)
+        (value
+          (expression
+            (condition
+              (expression
+                (value
+                  (identifier)))
+              (expression
+                (value
+                  (identifier))))
             (expression
               (value
                 (identifier)))
             (expression
               (value
-                (identifier))))
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier))))))))
+                (identifier)))))))))
 
 ===
 Recipes: Parameters: Multiple
@@ -52,10 +54,11 @@ r a b:
 (file
   (recipe
     (identifier)
-    (recipe_parameter
-      (identifier))
-    (recipe_parameter
-      (identifier))))
+    (recipe_parameters
+      (recipe_parameter
+        (identifier))
+      (recipe_parameter
+        (identifier)))))
 
 ===
 Recipes: Parameters: Multiple, with default
@@ -68,27 +71,28 @@ r a = "some string" param = (if a == b { c } else { d }):
 (file
   (recipe
     (identifier)
-    (recipe_parameter
-      (identifier)
-      (value
-        (string)))
-    (recipe_parameter
-      (identifier)
-      (value
-        (expression
-          (condition
+    (recipe_parameters
+      (recipe_parameter
+        (identifier)
+        (value
+          (string)))
+      (recipe_parameter
+        (identifier)
+        (value
+          (expression
+            (condition
+              (expression
+                (value
+                  (identifier)))
+              (expression
+                (value
+                  (identifier))))
             (expression
               (value
                 (identifier)))
             (expression
               (value
-                (identifier))))
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier))))))))
+                (identifier)))))))))
 
 ===
 Recipes: Parameters: Single, with $
@@ -101,8 +105,9 @@ r $param:
 (file
   (recipe
     (identifier)
-    (recipe_parameter
-      (identifier))))
+    (recipe_parameters
+      (recipe_parameter
+        (identifier)))))
 
 ===
 Recipes: Parameters: Single, with defaulti, with $
@@ -115,23 +120,24 @@ r $param = (if a == b { c } else { d }):
 (file
   (recipe
     (identifier)
-    (recipe_parameter
-      (identifier)
-      (value
-        (expression
-          (condition
+    (recipe_parameters
+      (recipe_parameter
+        (identifier)
+        (value
+          (expression
+            (condition
+              (expression
+                (value
+                  (identifier)))
+              (expression
+                (value
+                  (identifier))))
             (expression
               (value
                 (identifier)))
             (expression
               (value
-                (identifier))))
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier))))))))
+                (identifier)))))))))
 
 ===
 Recipes: Parameters: Multiple, with $
@@ -144,10 +150,11 @@ r $a $b:
 (file
   (recipe
     (identifier)
-    (recipe_parameter
-      (identifier))
-    (recipe_parameter
-      (identifier))))
+    (recipe_parameters
+      (recipe_parameter
+        (identifier))
+      (recipe_parameter
+        (identifier)))))
 
 ===
 Recipes: Parameters: Multiple, with default
@@ -160,27 +167,28 @@ r $a = "some string" $param = (if a == b { c } else { d }):
 (file
   (recipe
     (identifier)
-    (recipe_parameter
-      (identifier)
-      (value
-        (string)))
-    (recipe_parameter
-      (identifier)
-      (value
-        (expression
-          (condition
+    (recipe_parameters
+      (recipe_parameter
+        (identifier)
+        (value
+          (string)))
+      (recipe_parameter
+        (identifier)
+        (value
+          (expression
+            (condition
+              (expression
+                (value
+                  (identifier)))
+              (expression
+                (value
+                  (identifier))))
             (expression
               (value
                 (identifier)))
             (expression
               (value
-                (identifier))))
-          (expression
-            (value
-              (identifier)))
-          (expression
-            (value
-              (identifier))))))))
+                (identifier)))))))))
 
 ===
 Recipes: Parameters: variadics
@@ -207,48 +215,48 @@ r +$a=value:
 (file
   (recipe
     (identifier)
-    (variadic_parameter
+    (recipe_parameters
       (recipe_parameter
         (identifier))))
   (recipe
     (identifier)
-    (variadic_parameter
+    (recipe_parameters
       (recipe_parameter
         (identifier))))
   (recipe
     (identifier)
-    (variadic_parameter
+    (recipe_parameters
       (recipe_parameter
         (identifier))))
   (recipe
     (identifier)
-    (variadic_parameter
+    (recipe_parameters
       (recipe_parameter
         (identifier))))
   (recipe
     (identifier)
-    (variadic_parameter
+    (recipe_parameters
       (recipe_parameter
         (identifier)
         (value
           (identifier)))))
   (recipe
     (identifier)
-    (variadic_parameter
+    (recipe_parameters
       (recipe_parameter
         (identifier)
         (value
           (identifier)))))
   (recipe
     (identifier)
-    (variadic_parameter
+    (recipe_parameters
       (recipe_parameter
         (identifier)
         (value
           (identifier)))))
   (recipe
     (identifier)
-    (variadic_parameter
+    (recipe_parameters
       (recipe_parameter
         (identifier)
         (value

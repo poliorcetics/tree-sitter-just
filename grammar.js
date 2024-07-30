@@ -82,8 +82,10 @@ module.exports = grammar({
             repeat($._attribute_list),
             optional('@'),
             field('name', $.identifier),
-            repeat($.recipe_parameter),
-            optional($.variadic_parameter),
+            alias(
+                seq(repeat($.recipe_parameter), optional($.variadic_parameter)),
+                $.recipe_parameters
+            ),
             ':',
             repeat($.recipe_dependency),
             optional(seq(

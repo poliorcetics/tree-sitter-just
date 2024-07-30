@@ -55,19 +55,20 @@ Recipes: everything at once
       (identifier)
       (string))
     (identifier)
-    (recipe_parameter
-      (identifier))
-    (recipe_parameter
-      (identifier))
-    (recipe_parameter
-      (identifier)
-      (value
-        (identifier)))
-    (recipe_parameter
-      (identifier)
-      (value
-        (string)))
-    (variadic_parameter
+    (recipe_parameters
+      (recipe_parameter
+        (identifier))
+      (recipe_parameter
+        (identifier))
+      (recipe_parameter
+        (identifier)
+        (value
+          (identifier)))
+      (recipe_parameter
+        (identifier)
+        (value
+          (string))))
+    (recipe_parameters
       (recipe_parameter
         (identifier)
         (value
