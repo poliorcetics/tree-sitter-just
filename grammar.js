@@ -82,10 +82,7 @@ module.exports = grammar({
             repeat($._attribute_list),
             optional('@'),
             field('name', $.identifier),
-            alias(
-                seq(repeat($.recipe_parameter), optional($.variadic_parameter)),
-                $.recipe_parameters
-            ),
+            optional($.recipe_parameters),
             ':',
             repeat($.recipe_dependency),
             optional(seq(
@@ -94,6 +91,11 @@ module.exports = grammar({
             )),
             $._ceol,
             optional($.recipe_body),
+        ),
+
+        recipe_parameters: $ => seq(
+            repeat($.recipe_parameter),
+            choice($.recipe_parameter, $.variadic_parameter),
         ),
 
         _attribute_list: $ => seq(
@@ -199,7 +201,7 @@ module.exports = grammar({
 
         expression: $ => prec.right(choice(
             seq('if', $.condition, '{', $.expression, '}', 'else', '{', $.expression, '}'),
-            seq('assert', '(', $.condition, ',', $.expression, ')'),
+            seq('assert', $.assert_parameters),
             seq($.value, choice('/', '+'), $.expression),
             seq('/', $.expression),
             $.value,
@@ -209,6 +211,8 @@ module.exports = grammar({
             seq($.expression, choice('==', '!='), $.expression),
             seq($.expression, '=~', alias($.expression, $.regex)),
         ),
+
+        assert_parameters: $ => seq('(', $.condition, ',', $.expression, ')'),
 
         value: $ => choice(
             $.function_call,
