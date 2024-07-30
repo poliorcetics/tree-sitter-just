@@ -37,8 +37,8 @@ jobs:
         with:
           test-rust: ${{runner.os == 'Linux'}}
       - name: Download examples
+        # TODO: find more real-life examples, especially if they are currently buggy
         run: |
-          mkdir -p examples
           curl https://raw.githubusercontent.com/actix/actix/master/justfile > examples/actix.just
       - name: Parse examples
         uses: tree-sitter/parse-action@v4
