@@ -183,7 +183,8 @@ module.exports = grammar({
         // <https://just.systems/man/en/chapter_27.html?highlight=dotenv-filename#table-of-settings>
         setting: $ => seq(
             'set',
-            field('name', $.identifier),
+            // Allows matching on the `shell` string in queries, used in helix to find the injection languague
+            field('name', choice('shell', $.identifier)),
             choice(
                 optional($._setting_boolean),
                 $._setting_string,
