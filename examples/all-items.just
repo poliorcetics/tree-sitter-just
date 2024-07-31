@@ -12,10 +12,10 @@ alias a1 := r1 # comment
 export v1 := "b" # comment
 
 # Comment
-export v2 := if / "os" + os() / ("abc" + v1) == `echo 2` {
+export v2 := if / "os" + os() / ("abc" + v1) == `echo -n 2` {
     assert(v1 != ("azer" / shell("bash", "-c", "echo", v1)), "message")
 } else {
-    ```echo "this is a "``` + "string"
+    ```echo -e "this is a "``` + "string"
 } # comment
 
 # Numeric errors
