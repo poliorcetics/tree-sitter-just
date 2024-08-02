@@ -130,6 +130,12 @@ module.exports = grammar({
 
         _recipe_dependency: $ => field('name', $.identifier),
 
+        // In practice, Just supports multiple shebang lines as long as they're all at the top of the
+        // recipe, but this is only for its own parsing: the first shebang lines interprets the second,
+        // which interprets the third, and so on until an actual recipe line happens.
+        // This situation is relevant almost only in Nix, where everything is bash anyway so let's not
+        // try to parse it more than this as long as there is no issue reported with it.
+        // NOTE: this was added in Just 1.34.0
         recipe_body: $ => choice(
             seq(
                 // Fields can be used for negative matching in queries, which is not possible (I think) for nodes
