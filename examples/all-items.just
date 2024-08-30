@@ -9,6 +9,7 @@ alias a1 := r1 # comment
 # Assignments
 
 # Comment
+[private]
 export v1 := "b" # comment
 
 # Comment
@@ -22,6 +23,7 @@ export v2 := if / "os" + os() / ("abc" + v1) == `echo -n 2` {
 
 e1 := 23245
 
+[private]
 e2 := 23283902.23672357265763
 
 e3 := fn(arg1, 2392973.2323, 2326546780)

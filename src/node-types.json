@@ -72,6 +72,10 @@
       "required": true,
       "types": [
         {
+          "type": "attribute",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },

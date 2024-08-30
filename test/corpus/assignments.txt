@@ -129,6 +129,24 @@ a := if a == b { c } else { d }
           (identifier))))))
 
 ===
+Assignement: with attribute
+===
+
+[private]
+a := "some value"
+
+---
+
+(file
+  (assignment
+    (attribute
+      (identifier))
+    (identifier)
+    (expression
+      (value
+        (string)))))
+
+===
 Exported assignement: value
 ===
 
@@ -257,3 +275,21 @@ export a := if a == b { c } else { d }
       (expression
         (value
           (identifier))))))
+
+===
+Exported assignement: with attribute
+===
+
+[private]
+export a := "some value"
+
+---
+
+(file
+  (assignment
+    (attribute
+      (identifier))
+    (identifier)
+    (expression
+      (value
+        (string)))))

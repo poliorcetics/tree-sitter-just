@@ -7,6 +7,8 @@
 - [x] Alias (`alias`)
   - [x] Attributes (`[doc]`)
 - [x] Assignment (`a := expr`)
+  - [x] Attributes (`[private]`)
+  - [x] Exported (`export a := expr`)
 - [x] Comment (`# ...`)
 - [x] Import (`import`)
   - [x] Optional (`import?`)
