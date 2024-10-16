@@ -33,24 +33,24 @@ e3 := fn(arg1, 2392973.2323, 2326546780)
 
 # Base strings
 v3 := "
-    escape \t \r sequences \n \" \\ inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
 " + """
-    escape \t \r sequences \n \" \\ inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
 """ + '
-    escape \t \r sequences \n \" \\ inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
 ' + '''
-    escape \t \r sequences \n \" \\ inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
 '''
 
 # Shell expanded strings
 v4 := x"
-    escape \t \r sequences \n \" \\ inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
 " + x"""
-    escape \t \r sequences \n \" \\ inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
 """ + x'
-    escape \t \r sequences \n \" \\ inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
 ' + x'''
-    escape \t \r sequences \n \" \\ inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
 '''
 
 # =================================================================================================

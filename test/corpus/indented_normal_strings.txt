@@ -66,7 +66,7 @@ a := """
 Indented normal string: with escape sequences
 ===
 
-a := """normal \t \n \r \\ \" string"""
+a := """normal \t \n \r \\ \" \u{a1F} string"""
 
 ---
 
@@ -76,6 +76,7 @@ a := """normal \t \n \r \\ \" string"""
     (expression
       (value
         (string
+          (escape_sequence)
           (escape_sequence)
           (escape_sequence)
           (escape_sequence)

@@ -1380,6 +1380,10 @@
         {
           "type": "STRING",
           "value": "\\\\"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\\\u\\{[a-fA-F0-9]{1,6}\\}"
         }
       ]
     },

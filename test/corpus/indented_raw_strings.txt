@@ -83,7 +83,7 @@ a := '''
 Indented raw string: with escape sequences
 ===
 
-a := '''raw \t \n \r \\ \" string'''
+a := '''raw \t \n \r \\ \" \u{a1F} string'''
 
 ---
 

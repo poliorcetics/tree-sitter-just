@@ -52,9 +52,9 @@ Expressions cannot be parsed at the top level but they're fully implemented too 
     - [x] Indented backticks
     - [x] String
       - [x] Normal string (`"abc"`)
-        - [x] Escape sequences (`\n`, `\r`, `\t`, `\\`, `\"`)
+        - [x] Escape sequences (`\n`, `\r`, `\t`, `\\`, `\"`, `\u{1F916}` (see note))
       - [x] Indented normal string (`"""abc"""`)
-        - [x] Escape sequences (`\n`, `\r`, `\t`, `\\`, `\"`)
+        - [x] Escape sequences (`\n`, `\r`, `\t`, `\\`, `\"`, `\u{1F916}` (see note))
       - [x] Raw string (`'abc'`)
       - [x] Indented raw string (`'''abc'''`)
     - [x] Shell-Expanded string (strings prefixed by `x`)
@@ -63,6 +63,7 @@ Expressions cannot be parsed at the top level but they're fully implemented too 
       - [x] Wrapped variable with default (`${HOME:-default}`)
     - [x] Identifiers
 
+Note: Unicode Codepoints escape sequences, added in Just 1.36.0, accept anything hex value containing one (1) to six (6) characters.
 
 ## There is already a well developed grammar
 

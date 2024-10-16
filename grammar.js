@@ -319,6 +319,8 @@ module.exports = grammar({
             '\\t',
             '\\"',
             '\\\\',
+            // Raw unicode codepoints
+            /\\u\{[a-fA-F0-9]{1,6}\}/,
         ),
 
         // Shell-expanded Strings
