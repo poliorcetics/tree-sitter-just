@@ -17,10 +17,23 @@
           with pkgs;
           let
             darwinInclude = lib.optionalString stdenv.isDarwin ''- "-I${darwin.Libsystem}/include/"'';
+            tree-sitter-custom = (tree-sitter.override { webUISupport = true; }).overrideAttrs (oldAttrs: {
+              # Patch is broken on nixpkgs for at the very least macOS
+              patches = [
+                (pkgs.substitute {
+                  src = ./emcc-name.patch;
+                  substitutions = [
+                    "--subst-var-by"
+                    "emcc"
+                    "${pkgs.emscripten}/bin/emcc"
+                  ];
+                })
+              ];
+            });
           in
           mkShell {
             packages = [
-              (tree-sitter.override { webUISupport = true; })
+              tree-sitter-custom
               nodejs-slim_22
               graphviz
             ];
