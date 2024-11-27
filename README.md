@@ -36,6 +36,7 @@
   - [x] Boolean (`set a := true`, `set a := false`, `set a`)
   - [x] String (`set a := "string"`, `set a := 'raw string'`, all string types are supported)
   - [x] List (`set a := ["string", 'string', """string""", '''string''']`)
+- [x] Unexport (`unexport ENV_VAR`)
 
 Expressions cannot be parsed at the top level but they're fully implemented too for where they can:
 

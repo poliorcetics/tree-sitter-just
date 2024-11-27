@@ -293,3 +293,23 @@ export a := "some value"
     (expression
       (value
         (string)))))
+
+===
+Unexport: value
+===
+
+unexport HOME
+
+unexport SOME_FOO
+
+unexport VALUE_123
+
+---
+
+(file
+  (unexport
+    (identifier))
+  (unexport
+    (identifier))
+  (unexport
+    (identifier)))

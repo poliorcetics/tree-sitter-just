@@ -34,6 +34,10 @@
           {
             "type": "SYMBOL",
             "name": "setting"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "unexport"
           }
         ]
       }
@@ -111,6 +115,27 @@
         {
           "type": "SYMBOL",
           "name": "expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ceol"
+        }
+      ]
+    },
+    "unexport": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "unexport"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
         },
         {
           "type": "SYMBOL",

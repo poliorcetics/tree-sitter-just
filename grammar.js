@@ -28,6 +28,7 @@ module.exports = grammar({
             $.mod,
             $.recipe,
             $.setting,
+            $.unexport,
         )),
 
         // ========================================================================================
@@ -55,6 +56,12 @@ module.exports = grammar({
             field('name', $.identifier),
             ':=',
             $.expression,
+            $._ceol,
+        ),
+
+        unexport: $ => seq(
+            'unexport',
+            field('name', $.identifier),
             $._ceol,
         ),
 

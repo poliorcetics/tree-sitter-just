@@ -233,6 +233,10 @@
         {
           "type": "setting",
           "named": true
+        },
+        {
+          "type": "unexport",
+          "named": true
         }
       ]
     }
@@ -699,6 +703,32 @@
     }
   },
   {
+    "type": "unexport",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "value",
     "named": true,
     "fields": {},
@@ -954,6 +984,10 @@
   },
   {
     "type": "true",
+    "named": false
+  },
+  {
+    "type": "unexport",
     "named": false
   },
   {
