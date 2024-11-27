@@ -94,6 +94,7 @@ r1 arg1 arg2="value" $arg3=(os() / arch()) +args: (r2 arg1 arg2 arg3) # comment
     echo {{ args }}
     echo some other text
 
+[doc: "comment"]
 r2 arg1 *args: r3 r4 && r5 (r6 "value" ("other " + "value"))
     -@echo "-@"
     -echo "-"

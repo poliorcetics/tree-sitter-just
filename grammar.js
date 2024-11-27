@@ -119,7 +119,10 @@ module.exports = grammar({
         // <https://just.systems/man/en/chapter_34.html?highlight=attribute#recipe-attributes>
         attribute: $ => seq(
             field('name', $.identifier),
-            optional(seq('(', $.string, ')'))
+            optional(choice(
+                seq(':', $.string),
+                seq('(', $.string, ')'),
+            )),
         ),
 
         recipe_parameter: $ => seq(

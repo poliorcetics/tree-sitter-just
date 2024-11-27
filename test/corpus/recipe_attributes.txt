@@ -54,7 +54,7 @@ r:
     (identifier)))
 
 ===
-Recipes: Attributes: Single one, with param
+Recipes: Attributes: Single one, with param, in parentheses
 ===
 
 [unknow_attr("param string")]
@@ -70,10 +70,46 @@ r:
     (identifier)))
 
 ===
-Recipes: Attributes: Comma separated, with param
+Recipes: Attributes: Single one, with param, with colon
+===
+
+[unknow_attr: "param string"]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier)
+      (string))
+    (identifier)))
+
+===
+Recipes: Attributes: Comma separated, with param, with parentheses
 ===
 
 [attr1, attr2('param string'), attr3]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier))
+    (attribute
+      (identifier)
+      (string))
+    (attribute
+      (identifier))
+    (identifier)))
+
+===
+Recipes: Attributes: Comma separated, with param, with colon
+===
+
+[attr1, attr2: 'param string', attr3]
 r:
 
 ---

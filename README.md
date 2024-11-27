@@ -5,19 +5,19 @@
 ## What's implemented and not
 
 - [x] Alias (`alias`)
-  - [x] Attributes (`[doc]`)
+  - [x] Attributes (see below)
 - [x] Assignment (`a := expr`)
-  - [x] Attributes (`[private]`)
+  - [x] Attributes (see below)
   - [x] Exported (`export a := expr`)
 - [x] Comment (`# ...`)
 - [x] Import (`import`)
   - [x] Optional (`import?`)
 - [x] Modules (`mod`)
-  - [x] Attributes (`[doc]`)
+  - [x] Attributes (see below)
   - [x] Optional (`mod?`)
   - [x] With path (`mod a "path"`)
 - [x] Recipe
-  - [x] Attributes (`[doc]`, `[confirm("prompt")]`)
+  - [x] Attributes (see below)
   - [x] Quiet (`@r:`)
   - [x] Parameters
     - [x] Required (`r p:`)
@@ -37,6 +37,18 @@
   - [x] String (`set a := "string"`, `set a := 'raw string'`, all string types are supported)
   - [x] List (`set a := ["string", 'string', """string""", '''string''']`)
 - [x] Unexport (`unexport ENV_VAR`)
+
+Attributes can have multiple forms:
+
+- [x] Single:
+  - [x] No param: `[doc]`
+  - [x] With param in parentheses `[doc("param")]`
+  - [x] With param after colon `[doc: "param"]`
+- [x] Multiple:
+  - [x] No param: `[doc, private]`
+  - [x] With param in parentheses `[doc("param"), private]`
+  - [x] With param after colon `[doc: "param", private]`
+  - [x] Chained: `[doc]\n[private]`
 
 Expressions cannot be parsed at the top level but they're fully implemented too for where they can:
 
