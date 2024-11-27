@@ -16,7 +16,7 @@ export v1 := "b" # comment
 export v2 := if / "os" + os() / ("abc" + v1) == `echo -n 2` {
     assert(v1 != ("azer" / shell("bash", "-c", "echo", v1)), "message")
 } else {
-    ```echo -e "this is a "``` + "string"
+    ```echo -e "this is a "``` + "string with MAYBE=" + (env("MAYBE") || "<???>") + "and OK=" + (v1 && env("HOME"))
 } # comment
 
 # Numeric errors

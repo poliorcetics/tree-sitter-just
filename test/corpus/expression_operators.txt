@@ -1,0 +1,149 @@
+===
+Expression: `&&` operator
+===
+
+a := "a" && "b"
+
+a := os() && arch()
+
+a := env("HOME") && env("SUBPATH_CONFIG", 'default')
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (string)))
+      (expression
+        (value
+          (string)))))
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (function_call
+            (identifier))))
+      (expression
+        (value
+          (function_call
+            (identifier))))))
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (function_call
+            (identifier)
+            (function_parameters
+              (expression
+                (value
+                  (string)))))))
+      (expression
+        (value
+          (function_call
+            (identifier)
+            (function_parameters
+              (expression
+                (value
+                  (string)))
+              (expression
+                (value
+                  (string))))))))))
+
+===
+Expression: `||` operator
+===
+
+a := "a" || "b"
+
+a := os() || arch()
+
+a := env("HOME") || env("SUBPATH_CONFIG", 'default')
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (string)))
+      (expression
+        (value
+          (string)))))
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (function_call
+            (identifier))))
+      (expression
+        (value
+          (function_call
+            (identifier))))))
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (function_call
+            (identifier)
+            (function_parameters
+              (expression
+                (value
+                  (string)))))))
+      (expression
+        (value
+          (function_call
+            (identifier)
+            (function_parameters
+              (expression
+                (value
+                  (string)))
+              (expression
+                (value
+                  (string))))))))))
+
+===
+Expression: `&&` and `||` operators
+===
+
+a := "a" && "b" || "c"
+
+a := "a" || "b" && "c"
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (string)))
+      (expression
+        (expression
+          (value
+            (string)))
+        (expression
+          (value
+            (string))))))
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (string)))
+      (expression
+        (expression
+          (value
+            (string)))
+        (expression
+          (value
+            (string)))))))

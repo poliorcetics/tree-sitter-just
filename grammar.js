@@ -222,6 +222,8 @@ module.exports = grammar({
             seq('assert', $.assert_parameters),
             seq($.value, choice('/', '+'), $.expression),
             seq('/', $.expression),
+            seq($.expression, '&&', $.expression),
+            seq($.expression, '||', $.expression),
             $.value,
         )),
 
