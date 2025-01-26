@@ -232,7 +232,7 @@ module.exports = grammar({
 
         condition: $ => choice(
             seq($.expression, choice('==', '!='), $.expression),
-            seq($.expression, '=~', alias($.expression, $.regex)),
+            seq($.expression, choice('=~', '!~'), alias($.expression, $.regex)),
         ),
 
         assert_parameters: $ => seq('(', $.condition, ',', $.expression, ')'),

@@ -55,7 +55,7 @@ Expressions cannot be parsed at the top level but they're fully implemented too 
 - [x] Expressions
   - [x] If-Else (`if cond { expr } else { expr }`)
   - [x] Assertions (`assert(cond, expr)`)
-  - [x] Conditions (`expr == expr`, `!=`, `=~`)
+  - [x] Conditions (`expr == expr`, `!=`, `=~`, `!~`)
   - [x] Joined (`value / expr`, `value + expr`)
   - [x] Absolute path (`/ expr`)
   - [x] Operators (`expr && expr`, `expr || expr`)

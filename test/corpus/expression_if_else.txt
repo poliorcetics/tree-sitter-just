@@ -25,6 +25,50 @@ a := if a == b { c } else { d }
           (identifier))))))
 
 ===
+Expression: If-Else: regex operators
+===
+
+a := if "abc" =~ "xyx" { "hello" } else { d }
+
+a := if "abc" !~ "xyx" { "hello" } else { d }
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (condition
+        (expression
+          (value
+            (string)))
+        (regex
+          (value
+            (string))))
+      (expression
+        (value
+          (string)))
+      (expression
+        (value
+          (identifier)))))
+  (assignment
+    (identifier)
+    (expression
+      (condition
+        (expression
+          (value
+            (string)))
+        (regex
+          (value
+            (string))))
+      (expression
+        (value
+          (string)))
+      (expression
+        (value
+          (identifier))))))
+
+===
 Expression: If-Else: nested
 ===
 
