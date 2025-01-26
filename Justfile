@@ -1,3 +1,6 @@
+alias t := test
+alias p := parse
+
 # Launch `tree-sitter test` after a rebuild
 test *args: regen
     tree-sitter test {{ args }}
