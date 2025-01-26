@@ -2,6 +2,8 @@
 
 [Tree Sitter](https://tree-sitter.github.io/tree-sitter/) grammar for [`just`](https://github.com/casey/just).
 
+Support is guaranteed up to Just 1.39.0, if you are missing a recent feature don't hesitate to open an issue or pull request.
+
 ## What's implemented and not
 
 - [x] Alias (`alias`)
@@ -83,14 +85,11 @@ Note: Unicode Codepoints escape sequences, added in Just 1.36.0, accept anything
 
 Yes, at [IndianBoy42/tree-sitter-just](https://github.com/IndianBoy42/tree-sitter-just).
 
-The grammar over there also includes query for several editors so it's way more mature than here.
-
-Mine was done as a discovery of writing a Tree Sitter grammar.
+The grammar over there also includes query for several editors so it's more mature on that point than here.
+On the other hand, it is also missing features and updated less often.
 
 ## Remarks
 
-Some quirks of `just` are voluntarily glossed over
-so as to allow better highlighting and error recovery in invalid trees.
+Some quirks of `just` are voluntarily glossed over so as to allow better highlighting and error recovery in invalid trees.
 
-Indentation within a recipe must start the same way for all lines of the recipe for example,
-but this grammar allows any indentation (as long as there is one) to better highlight the rest of the line.
+Indentation within a recipe must start the same way for all lines of the recipe for example, but this grammar allows any indentation (as long as there is one) to better highlight the rest of the line.
