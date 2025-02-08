@@ -33,7 +33,10 @@ Support is guaranteed up to Just 1.39.0, if you are missing a recent feature don
     - [x] Errors ignored (`-`)
     - [x] Interpolation (`{{ expr }}`)
       - [x] Escape (`{{{{`)
-    - [x] Shebang parsing (`#!/usr/bin/env <shell>`, `#!/usr/bin/<shell>`, `#!/bin/<shell>`)
+    - [x] Shebang parsing
+      - [x] `#!/usr/bin/env (-args)? <shell>( .+)?`
+      - [x] `#!/path/to/<shell>( .+)?`
+      - [x] `#!<shell>( .+)?`
 - [x] Settings (`set`)
   - [x] Boolean (`set a := true`, `set a := false`, `set a`)
   - [x] String (`set a := "string"`, `set a := 'raw string'`, all string types are supported)

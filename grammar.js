@@ -163,9 +163,19 @@ module.exports = grammar({
             // TODO: find a way to make this work for `@` and `-`
             //       see `Recipes: Bodies: Shebang, with quiet/ignore error`, first two recipes
             optional(choice('@-', '-@')),
-            '#!/usr/bin/env',
-            repeat(/-\w+/),
-            $.shebang_shell,
+            choice(
+                seq(
+                    '#!/usr/bin/env',
+                    repeat(/-\w+/),
+                    $.shebang_shell,
+                ),
+                // In case `#!/usr/bin/env` is not used, assume the name at the end of the path
+                // given to `#!` is the 'shell' to use
+                seq(
+                    /#!(\/([a-zA-Z0-9\-_]+\/)*)?/,
+                    $.shebang_shell,
+                ),
+            ),
             repeat($._recipe_line_choice),
             $._eol,
         ),

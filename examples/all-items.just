@@ -147,6 +147,28 @@ ruby:
   #!/usr/bin/env ruby
   puts "Hello from ruby with {{ v1 + os() }}!"
 
+# More complicated injections
+
+env-with-args:
+  #!/usr/bin/env -S python3
+  print('Hello from python with {{ v1 + os() }}!')
+
+no-path:
+  #!python3
+  print('Hello from python with {{ v1 + os() }}!')
+
+no-path-with-args:
+  #!python3 -P -v
+  print('Hello from python with {{ v1 + os() }}!')
+
+path:
+  #!/path/to/bin/python
+  print('Hello from python with {{ v1 + os() }}!')
+
+path-with-args:
+  #!/path/to/bin/python -P -v
+  print('Hello from python with {{ v1 + os() }}!')
+
 # =================================================================================================
 # Settings
 

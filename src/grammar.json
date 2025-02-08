@@ -628,19 +628,42 @@
           ]
         },
         {
-          "type": "STRING",
-          "value": "#!/usr/bin/env"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "PATTERN",
-            "value": "-\\w+"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "shebang_shell"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "#!/usr/bin/env"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "-\\w+"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "shebang_shell"
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "PATTERN",
+                  "value": "#!(\\/([a-zA-Z0-9\\-_]+\\/)*)?"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "shebang_shell"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "REPEAT",

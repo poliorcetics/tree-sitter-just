@@ -123,3 +123,51 @@ r:
     (recipe_body
       (shebang_line
         (shebang_shell)))))
+
+===
+Recipes: Bodies: Shebang, #!name <args>
+===
+
+r:
+    #!python
+
+r:
+    #!python with args
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (shebang_shell))))
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (shebang_shell)))))
+
+===
+Recipes: Bodies: Shebang, #!/path/to/name <args>
+===
+
+r:
+    #!/pAt09-h/t_o/python
+
+r:
+    #!/pAt09-h/t_o/python with args
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (shebang_shell))))
+  (recipe
+    (identifier)
+    (recipe_body
+      (shebang_line
+        (shebang_shell)))))
