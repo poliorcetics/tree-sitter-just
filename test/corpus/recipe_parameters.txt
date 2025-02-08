@@ -110,7 +110,7 @@ r $param:
         (identifier)))))
 
 ===
-Recipes: Parameters: Single, with defaulti, with $
+Recipes: Parameters: Single, with default, with $
 ===
 
 r $param = (if a == b { c } else { d }):
