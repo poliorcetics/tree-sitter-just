@@ -2051,5 +2051,6 @@
     "_shell_expanded_indented_raw_string",
     "_shell_expanded_raw_string"
   ],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }
