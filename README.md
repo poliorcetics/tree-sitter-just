@@ -8,6 +8,7 @@ Support is guaranteed up to Just 1.39.0, if you are missing a recent feature don
 
 - [x] Alias (`alias`)
   - [x] Attributes (see below)
+  - [ ] Aliases to path (`alias f := foo::bar`)
 - [x] Assignment (`a := expr`)
   - [x] Attributes (see below)
   - [x] Exported (`export a := expr`)
@@ -27,7 +28,9 @@ Support is guaranteed up to Just 1.39.0, if you are missing a recent feature don
     - [x] Exported (`r $p:`, `r $p=expr:`)
     - [x] Variadics (`r *p:`, `r +p:`)
   - [x] Before dependencies (`r: dep (dep expr)`)
+    - [ ] Dependencies to path (`r: foo::bar`)
   - [x] After dependencies (`r: && dep (dep expr)`)
+    - [ ] Dependencies to path (`r: && foo::bar`)
   - [x] Body
     - [x] Quiet lines (`@`)
     - [x] Errors ignored (`-`)
