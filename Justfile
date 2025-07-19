@@ -1,5 +1,6 @@
 alias t := test
 alias p := parse
+alias w := wasm
 
 # Launch `tree-sitter test` after a rebuild
 test *args: regen
@@ -8,6 +9,11 @@ test *args: regen
 # Launch `tree-sitter parse` after a rebuild
 parse *args="examples/all-items.just": regen
     tree-sitter parse {{ args }}
+
+# Launch a playground
+wasm *args:
+    tree-sitter build --wasm
+    tree-sitter playground
 
 [private]
 regen:
