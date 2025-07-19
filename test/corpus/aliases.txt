@@ -25,6 +25,23 @@ alias a := b
     (identifier)))
 
 ===
+Alias: to module recipe
+===
+
+alias a := m1::m2::b
+
+---
+
+(file
+  (alias
+    (identifier)
+    (module_path
+      (identifier))
+    (module_path
+      (identifier))
+    (identifier)))
+
+===
 Alias: with attribute
 ===
 

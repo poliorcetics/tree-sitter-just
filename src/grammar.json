@@ -71,7 +71,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "_identifier_path"
         },
         {
           "type": "SYMBOL",
@@ -531,7 +531,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_recipe_dependency"
+          "name": "_identifier_path"
         },
         {
           "type": "SEQ",
@@ -542,7 +542,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "_recipe_dependency"
+              "name": "_identifier_path"
             },
             {
               "type": "REPEAT",
@@ -558,14 +558,6 @@
           ]
         }
       ]
-    },
-    "_recipe_dependency": {
-      "type": "FIELD",
-      "name": "name",
-      "content": {
-        "type": "SYMBOL",
-        "name": "identifier"
-      }
     },
     "recipe_body": {
       "type": "CHOICE",
@@ -1973,6 +1965,43 @@
     "identifier": {
       "type": "PATTERN",
       "value": "[a-zA-Z_][a-zA-Z0-9_-]*"
+    },
+    "_identifier_path": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "module_path"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        }
+      ]
+    },
+    "module_path": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "::"
+        }
+      ]
     },
     "comment": {
       "type": "PREC",

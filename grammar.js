@@ -41,7 +41,7 @@ module.exports = grammar({
             'alias',
             field('name', $.identifier),
             ':=',
-            $.identifier,
+            $._identifier_path,
             $._ceol,
         ),
 
@@ -137,11 +137,9 @@ module.exports = grammar({
         ),
 
         recipe_dependency: $ => choice(
-            $._recipe_dependency,
-            seq('(', $._recipe_dependency, repeat($.expression), ')'),
+            $._identifier_path,
+            seq('(', $._identifier_path, repeat($.expression), ')'),
         ),
-
-        _recipe_dependency: $ => field('name', $.identifier),
 
         // In practice, Just supports multiple shebang lines as long as they're all at the top of the
         // recipe, but this is only for its own parsing: the first shebang lines interprets the second,
@@ -421,6 +419,14 @@ module.exports = grammar({
 
         // Identifiers in Just are always ASCII.
         identifier: $ => /[a-zA-Z_][a-zA-Z0-9_-]*/,
+
+        _identifier_path: $ => seq(
+          repeat($.module_path),
+          field('name', $.identifier),
+        ),
+
+        // Allows distinguish a module identifier from a item at the end of a path
+        module_path: $ => seq(field('name', $.identifier), '::'),
 
         // Comments must be the last rule to match, so that anything that also matches `#.*` in some
         // way comes first in the list.

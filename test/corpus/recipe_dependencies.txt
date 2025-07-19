@@ -13,6 +13,22 @@ r: dep
       (identifier))))
 
 ===
+Recipes: Dependencies: Single, simple, module
+===
+
+r: module::dep
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (module_path
+        (identifier))
+      (identifier))))
+
+===
 Recipes: Dependencies: Multiple, simple
 ===
 
@@ -26,6 +42,26 @@ r: d1 d2
     (recipe_dependency
       (identifier))
     (recipe_dependency
+      (identifier))))
+
+===
+Recipes: Dependencies: Multiple, simple, module
+===
+
+r: d1 module::module::d2
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier))
+    (recipe_dependency
+      (module_path
+        (identifier))
+      (module_path
+        (identifier))
       (identifier))))
 
 ===
@@ -55,6 +91,25 @@ r: (d if a == b { d } else { d } "some other param")
         (expression
           (value
             (identifier))))
+      (expression
+        (value
+          (string))))))
+
+===
+Recipes: Dependencies: Single, expressions, module
+===
+
+r: (module::d "param")
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (module_path
+        (identifier))
+      (identifier)
       (expression
         (value
           (string))))))
@@ -123,6 +178,22 @@ r: && dep
       (identifier))))
 
 ===
+Recipes: Dependencies: Single, simple, after recipe, module
+===
+
+r: && module::dep
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (module_path
+        (identifier))
+      (identifier))))
+
+===
 Recipes: Dependencies: Multiple, simple, after recipe
 ===
 
@@ -136,6 +207,26 @@ r: && d1 d2
     (recipe_dependency
       (identifier))
     (recipe_dependency
+      (identifier))))
+
+===
+Recipes: Dependencies: Multiple, simple, after recipe, module
+===
+
+r: && d1 module::module::d2
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier))
+    (recipe_dependency
+      (module_path
+        (identifier))
+      (module_path
+        (identifier))
       (identifier))))
 
 ===

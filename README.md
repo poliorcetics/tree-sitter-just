@@ -2,13 +2,13 @@
 
 [Tree Sitter](https://tree-sitter.github.io/tree-sitter/) grammar for [`just`](https://github.com/casey/just).
 
-Support is guaranteed up to Just 1.39.0, if you are missing a recent feature don't hesitate to open an issue or pull request.
+Support is guaranteed up to Just 1.43.3, if you are missing a recent feature don't hesitate to open an issue or pull request.
 
 ## What's implemented and not
 
 - [x] Alias (`alias`)
   - [x] Attributes (see below)
-  - [ ] Aliases to path (`alias f := foo::bar`)
+  - [x] Aliases to path (`alias f := foo::bar`)
 - [x] Assignment (`a := expr`)
   - [x] Attributes (see below)
   - [x] Exported (`export a := expr`)
@@ -28,9 +28,9 @@ Support is guaranteed up to Just 1.39.0, if you are missing a recent feature don
     - [x] Exported (`r $p:`, `r $p=expr:`)
     - [x] Variadics (`r *p:`, `r +p:`)
   - [x] Before dependencies (`r: dep (dep expr)`)
-    - [ ] Dependencies to path (`r: foo::bar`)
+    - [x] Dependencies to path (`r: foo::bar`)
   - [x] After dependencies (`r: && dep (dep expr)`)
-    - [ ] Dependencies to path (`r: && foo::bar`)
+    - [x] Dependencies to path (`r: && foo::bar`)
   - [x] Body
     - [x] Quiet lines (`@`)
     - [x] Errors ignored (`-`)

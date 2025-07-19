@@ -4,7 +4,7 @@
     "named": true,
     "fields": {
       "name": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
@@ -16,7 +16,7 @@
     },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "attribute",
@@ -27,7 +27,7 @@
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "module_path",
           "named": true
         }
       ]
@@ -367,6 +367,22 @@
     }
   },
   {
+    "type": "module_path",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "path",
     "named": true,
     "fields": {},
@@ -474,6 +490,10 @@
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "module_path",
           "named": true
         }
       ]
@@ -849,6 +869,10 @@
   },
   {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": "::",
     "named": false
   },
   {
