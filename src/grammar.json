@@ -59,7 +59,7 @@
         },
         {
           "type": "FIELD",
-          "name": "name",
+          "name": "alias_name",
           "content": {
             "type": "SYMBOL",
             "name": "identifier"

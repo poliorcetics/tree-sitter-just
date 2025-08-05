@@ -13,7 +13,7 @@
 #define ALIAS_COUNT 2
 #define TOKEN_COUNT 86
 #define EXTERNAL_TOKEN_COUNT 0
-#define FIELD_COUNT 4
+#define FIELD_COUNT 5
 #define MAX_ALIAS_SEQUENCE_LENGTH 10
 #define MAX_RESERVED_WORD_SET_SIZE 0
 #define PRODUCTION_ID_COUNT 26
@@ -1095,14 +1095,16 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
 };
 
 enum ts_field_identifiers {
-  field_interpolation_marker = 1,
-  field_name = 2,
-  field_recipe_content = 3,
-  field_shebang = 4,
+  field_alias_name = 1,
+  field_interpolation_marker = 2,
+  field_name = 3,
+  field_recipe_content = 4,
+  field_shebang = 5,
 };
 
 static const char * const ts_field_names[] = {
   [0] = NULL,
+  [field_alias_name] = "alias_name",
   [field_interpolation_marker] = "interpolation_marker",
   [field_name] = "name",
   [field_recipe_content] = "recipe_content",
@@ -1145,7 +1147,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
   [4] =
     {field_shebang, 0},
   [5] =
-    {field_name, 1},
+    {field_alias_name, 1},
     {field_name, 3, .inherited = true},
   [7] =
     {field_name, 1, .inherited = true},
@@ -1161,7 +1163,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_recipe_content, 0, .inherited = true},
     {field_recipe_content, 1, .inherited = true},
   [14] =
-    {field_name, 2},
+    {field_alias_name, 2},
     {field_name, 4, .inherited = true},
   [16] =
     {field_recipe_content, 2, .inherited = true},

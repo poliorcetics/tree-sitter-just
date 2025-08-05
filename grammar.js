@@ -39,7 +39,7 @@ module.exports = grammar({
             // the responsibility of Tree-Sitter
             repeat($._attribute_list),
             'alias',
-            field('name', $.identifier),
+            field('alias_name', $.identifier),
             ':=',
             $._identifier_path,
             $._ceol,

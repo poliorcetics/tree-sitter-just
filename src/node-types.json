@@ -3,8 +3,18 @@
     "type": "alias",
     "named": true,
     "fields": {
+      "alias_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
       "name": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
