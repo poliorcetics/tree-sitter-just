@@ -1,8 +1,8 @@
 {
-  "name": "tree-sitter-just",
-  "version": "0.0.1",
-  "description": "Just grammar for tree-sitter",
-  "repository": "github:tree-sitter/tree-sitter-just",
+  "name": "tree_sitter_just",
+  "version": "1.0.0+just-1.43.3",
+  "description": "Tree Sitter grammar for Just (https://github.com/casey/just)",
+  "repository": "https://github.com/poliorcetics/tree-sitter-just",
   "license": "MIT",
   "main": "bindings/node",
   "types": "bindings/node",
