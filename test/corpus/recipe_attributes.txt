@@ -217,6 +217,9 @@ Recipes: Attributes: Single one, parse well-known `env()` attribute
 [env("ENV", "value")]
 r:
 
+[env("IS" + "expr", os())]
+r:
+
 ---
 
 (file
@@ -229,6 +232,20 @@ r:
       (expression
         (value
           (string))))
+    (identifier))
+  (recipe
+    (attribute
+      (identifier)
+      (expression
+        (value
+          (string))
+        (expression
+          (value
+            (string))))
+      (expression
+        (value
+          (function_call
+            (identifier)))))
     (identifier)))
 
 ===
