@@ -150,8 +150,8 @@ r6 *args:
 
 r7: m1::r
 
-[arg(arg1, long, short = "a")]
-[cache(inputs = ["test.c"])]
+[arg(arg1, long, short = "a", pattern = "\d+")]
+[cache(inputs = ["test.c"], outputs = "test.o")]
 r8 arg1:
     echo {{ arg1 }}
 
