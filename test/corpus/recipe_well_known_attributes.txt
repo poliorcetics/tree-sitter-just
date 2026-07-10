@@ -20,6 +20,9 @@ r field:
 [arg("field", value="VALUE")]
 r field:
 
+[arg('FILES', min='2', max='4')]
+backup +FILES:
+
 ---
 
 (file
@@ -109,7 +112,28 @@ r field:
     (identifier)
     (recipe_parameters
       (recipe_parameter
-        (identifier)))))
+        (identifier))))
+  (recipe
+    (attribute
+      (identifier)
+      (expression
+        (value
+          (string)))
+      (attribute_named_parameter
+        (identifier)
+        (expression
+          (value
+            (string))))
+      (attribute_named_parameter
+        (identifier)
+        (expression
+          (value
+            (string)))))
+    (identifier)
+    (recipe_parameters
+      (variadic_parameter
+        (recipe_parameter
+          (identifier))))))
 
 ===
 Recipes: Attributes: Well-Known: env()
