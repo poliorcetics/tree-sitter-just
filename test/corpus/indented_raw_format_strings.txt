@@ -108,9 +108,11 @@ a := f'''{{variable_name}}'''
     (expression
       (value
         (string
+          (interpolation_start_marker)
           (expression
             (value
-              (identifier))))))))
+              (identifier)))
+          (interpolation_end_marker))))))
 
 ===
 Indented raw format string: with expression interpolation
@@ -126,6 +128,7 @@ a := f'''{{os() / arch()}}'''
     (expression
       (value
         (string
+          (interpolation_start_marker)
           (expression
             (value
               (function_call
@@ -133,7 +136,8 @@ a := f'''{{os() / arch()}}'''
             (expression
               (value
                 (function_call
-                  (identifier))))))))))
+                  (identifier)))))
+          (interpolation_end_marker))))))
 
 ===
 Indented raw format string: with escaped braces

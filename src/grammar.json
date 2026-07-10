@@ -1649,18 +1649,26 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "{{"
+          "type": "SYMBOL",
+          "name": "interpolation_start_marker"
         },
         {
           "type": "SYMBOL",
           "name": "expression"
         },
         {
-          "type": "STRING",
-          "value": "}}"
+          "type": "SYMBOL",
+          "name": "interpolation_end_marker"
         }
       ]
+    },
+    "interpolation_start_marker": {
+      "type": "STRING",
+      "value": "{{"
+    },
+    "interpolation_end_marker": {
+      "type": "STRING",
+      "value": "}}"
     },
     "_shell_expanded_indented_normal_string": {
       "type": "SEQ",

@@ -391,7 +391,9 @@ module.exports = grammar({
             /\\u\{[a-fA-F0-9]{1,6}\}/,
         ),
 
-        _interpolated_expression: $ => seq('{{', $.expression, '}}'),
+        _interpolated_expression: $ => seq($.interpolation_start_marker, $.expression, $.interpolation_end_marker),
+        interpolation_start_marker: $ => '{{',
+        interpolation_end_marker: $ => '}}',
 
         // Shell-expanded Strings
 
