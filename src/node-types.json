@@ -598,6 +598,10 @@
         {
           "type": "module_path",
           "named": true
+        },
+        {
+          "type": "value",
+          "named": true
         }
       ]
     }

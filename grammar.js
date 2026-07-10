@@ -182,7 +182,16 @@ module.exports = grammar({
 
         recipe_dependency: $ => choice(
             $._identifier_path,
-            seq('(', $._identifier_path, repeat($.expression), ')'),
+            seq(
+                optional('*'),
+                '(',
+                $._identifier_path,
+                repeat(choice(
+                    seq('*', $.value),
+                    $.expression,
+                )),
+                ')',
+            ),
         ),
 
         // In practice, Just supports multiple shebang lines as long as they're all at the top of the

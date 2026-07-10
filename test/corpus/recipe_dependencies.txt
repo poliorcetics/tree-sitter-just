@@ -45,6 +45,40 @@ r: d1 d2
       (identifier))))
 
 ===
+Recipes: Dependencies: Multiple, list expansion
+===
+
+r: d1 *(d2)
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier))
+    (recipe_dependency
+      (identifier))))
+
+===
+Recipes: Dependencies: Multiple, list expansion with expanded arguments
+===
+
+r: d1 *(d2 *item)
+
+---
+
+(file
+  (recipe
+    (identifier)
+    (recipe_dependency
+      (identifier))
+    (recipe_dependency
+      (identifier)
+      (value
+        (identifier)))))
+
+===
 Recipes: Dependencies: Multiple, simple, module
 ===
 
