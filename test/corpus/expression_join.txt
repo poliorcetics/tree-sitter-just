@@ -35,7 +35,7 @@ a := env("HOME") / env("SUBPATH_CONFIG", 'default')
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (string))))))
@@ -43,7 +43,7 @@ a := env("HOME") / env("SUBPATH_CONFIG", 'default')
         (value
           (function_call
             (identifier)
-            (function_parameters
+            (function_call_parameters
               (expression
                 (value
                   (string)))
@@ -88,7 +88,7 @@ a := env("HOME") + env("SUBPATH_CONFIG", 'default')
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (string))))))
@@ -96,7 +96,7 @@ a := env("HOME") + env("SUBPATH_CONFIG", 'default')
         (value
           (function_call
             (identifier)
-            (function_parameters
+            (function_call_parameters
               (expression
                 (value
                   (string)))

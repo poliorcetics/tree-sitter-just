@@ -154,7 +154,7 @@ r: (d if a == b { d } else { d } "some other param") (d2 os() shell(abc() + "de"
         (value
           (function_call
             (identifier)
-            (function_parameters
+            (function_call_parameters
               (expression
                 (value
                   (function_call
@@ -300,7 +300,7 @@ r: && (d if a == b { d } else { d } "some other param") (d2 os() shell(abc() + "
         (value
           (function_call
             (identifier)
-            (function_parameters
+            (function_call_parameters
               (expression
                 (value
                   (function_call
@@ -340,7 +340,7 @@ r: d1 (d2 a "bc" ) && (d3 os() shell(abc() + "de")) d4
         (value
           (function_call
             (identifier)
-            (function_parameters
+            (function_call_parameters
               (expression
                 (value
                   (function_call

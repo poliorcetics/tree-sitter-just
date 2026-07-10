@@ -62,7 +62,7 @@ a := function_call(shell(`python3 --help`))
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (identifier))))))))
@@ -72,7 +72,7 @@ a := function_call(shell(`python3 --help`))
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (external_command
@@ -83,7 +83,7 @@ a := function_call(shell(`python3 --help`))
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (external_command
@@ -94,7 +94,7 @@ a := function_call(shell(`python3 --help`))
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (string))))))))
@@ -104,7 +104,7 @@ a := function_call(shell(`python3 --help`))
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (string))))))))
@@ -114,7 +114,7 @@ a := function_call(shell(`python3 --help`))
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (string))))))))
@@ -124,7 +124,7 @@ a := function_call(shell(`python3 --help`))
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (string))))))))
@@ -134,7 +134,7 @@ a := function_call(shell(`python3 --help`))
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (function_call
@@ -145,12 +145,12 @@ a := function_call(shell(`python3 --help`))
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (function_call
                   (identifier)
-                  (function_parameters
+                  (function_call_parameters
                     (expression
                       (value
                         (external_command
@@ -171,7 +171,7 @@ a := function_call(`python3 --help`,)
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (external_command
@@ -192,7 +192,7 @@ a := function_call(`python3 --help`, (other_function_call_in_parentheses()))
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (external_command
@@ -222,7 +222,7 @@ a := function_call(
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (external_command

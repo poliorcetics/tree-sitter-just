@@ -56,7 +56,7 @@ a := assert(("a" / os()) == "true", arch() + shell("bash", "-c", "echo", "toto")
             (value
               (function_call
                 (identifier)
-                (function_parameters
+                (function_call_parameters
                   (expression
                     (value
                       (string)))
@@ -128,7 +128,7 @@ a := assert(("a" / os()) != "true", arch() + shell("bash", "-c", "echo", "toto")
             (value
               (function_call
                 (identifier)
-                (function_parameters
+                (function_call_parameters
                   (expression
                     (value
                       (string)))
@@ -200,7 +200,7 @@ a := assert(("a" / os()) =~ "true", arch() + shell("bash", "-c", "echo", "toto")
             (value
               (function_call
                 (identifier)
-                (function_parameters
+                (function_call_parameters
                   (expression
                     (value
                       (string)))

@@ -98,7 +98,7 @@ a := (
           (value
             (function_call
               (identifier)
-              (function_parameters
+              (function_call_parameters
                 (expression
                   (value
                     (external_command
@@ -111,7 +111,7 @@ a := (
           (value
             (function_call
               (identifier)
-              (function_parameters
+              (function_call_parameters
                 (expression
                   (value
                     (string)))

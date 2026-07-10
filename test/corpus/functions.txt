@@ -1,0 +1,115 @@
+===
+Function: no parameters
+===
+
+a() := "a"
+
+a() := b
+
+a() := os()
+
+a() := `echo toto`
+
+---
+
+(file
+  (function
+    (identifier)
+    (function_decl_parameters)
+    (expression
+      (value
+        (string))))
+  (function
+    (identifier)
+    (function_decl_parameters)
+    (expression
+      (value
+        (identifier))))
+  (function
+    (identifier)
+    (function_decl_parameters)
+    (expression
+      (value
+        (function_call
+          (identifier)))))
+  (function
+    (identifier)
+    (function_decl_parameters)
+    (expression
+      (value
+        (external_command
+          (content))))))
+
+===
+Function: one parameter
+===
+
+a(param) := os() / arch()
+
+---
+
+(file
+  (function
+    (identifier)
+    (function_decl_parameters
+      (identifier))
+    (expression
+      (value
+        (function_call
+          (identifier)))
+      (expression
+        (value
+          (function_call
+            (identifier)))))))
+
+===
+Function: several parameters
+===
+
+a(abc, def) := os() + arch()
+
+---
+
+(file
+  (function
+    (identifier)
+    (function_decl_parameters
+      (identifier)
+      (identifier))
+    (expression
+      (value
+        (function_call
+          (identifier)))
+      (expression
+        (value
+          (function_call
+            (identifier)))))))
+
+===
+Function: trailing comma in parameters
+===
+
+a(p1, p2,) := assert(os() != arch(), "is ok")
+
+---
+
+(file
+  (function
+    (identifier)
+    (function_decl_parameters
+      (identifier)
+      (identifier))
+    (expression
+      (assert_parameters
+        (condition
+          (expression
+            (value
+              (function_call
+                (identifier))))
+          (expression
+            (value
+              (function_call
+                (identifier)))))
+        (expression
+          (value
+            (string)))))))

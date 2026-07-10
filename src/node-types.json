@@ -274,6 +274,10 @@
           "named": true
         },
         {
+          "type": "function",
+          "named": true
+        },
+        {
           "type": "import",
           "named": true
         },
@@ -291,6 +295,40 @@
         },
         {
           "type": "unexport",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "function_decl_parameters",
           "named": true
         }
       ]
@@ -316,14 +354,14 @@
       "required": false,
       "types": [
         {
-          "type": "function_parameters",
+          "type": "function_call_parameters",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "function_parameters",
+    "type": "function_call_parameters",
     "named": true,
     "fields": {},
     "children": {
@@ -332,6 +370,21 @@
       "types": [
         {
           "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "function_decl_parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]

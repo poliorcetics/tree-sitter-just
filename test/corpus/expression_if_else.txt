@@ -106,7 +106,7 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
                 (value
                   (function_call
                     (identifier)
-                    (function_parameters
+                    (function_call_parameters
                       (expression
                         (value
                           (string)))
@@ -147,12 +147,12 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
             (value
               (function_call
                 (identifier)
-                (function_parameters
+                (function_call_parameters
                   (expression
                     (value
                       (function_call
                         (identifier)
-                        (function_parameters
+                        (function_call_parameters
                           (expression
                             (value
                               (string)))))))
@@ -167,7 +167,7 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
           (value
             (function_call
               (identifier)
-              (function_parameters
+              (function_call_parameters
                 (expression
                   (value
                     (function_call

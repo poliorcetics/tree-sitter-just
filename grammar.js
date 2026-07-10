@@ -22,6 +22,7 @@ module.exports = grammar({
     rules: {
         file: $ => repeat(choice(
             $.alias,
+            $.function,
             $.assignment,
             $.comment,
             $.import,
@@ -66,6 +67,27 @@ module.exports = grammar({
             'unexport',
             field('name', $.identifier),
             $._ceol,
+        ),
+
+        // ========================================================================================
+        // Functions (user-declared)
+
+        function: $ => seq(
+            field('name', $.identifier),
+            $.function_decl_parameters,
+            ':=',
+            $.expression,
+            $._ceol,
+        ),
+
+        function_decl_parameters: $ => seq(
+            '(',
+            optional(seq(
+              $.identifier,
+              repeat(seq(',', $.identifier)),
+              optional(','),
+            )),
+            ')',
         ),
 
         // ========================================================================================
@@ -287,9 +309,9 @@ module.exports = grammar({
         ),
 
         // <https://just.systems/man/en/chapter_32.html>
-        function_call: $ => seq(field('name', $.identifier), '(', optional($.function_parameters), ')'),
+        function_call: $ => seq(field('name', $.identifier), '(', optional($.function_call_parameters), ')'),
 
-        function_parameters: $ => seq($.expression, repeat(seq(',', $.expression)), optional(',')),
+        function_call_parameters: $ => seq($.expression, repeat(seq(',', $.expression)), optional(',')),
 
         // ========================================================================================
         // Backticks

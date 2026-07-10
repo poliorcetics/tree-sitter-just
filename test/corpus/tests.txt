@@ -67,7 +67,7 @@ a := fn(arg1, 2392973.2323, 2326546780)
       (value
         (function_call
           (identifier)
-          (function_parameters
+          (function_call_parameters
             (expression
               (value
                 (identifier)))
