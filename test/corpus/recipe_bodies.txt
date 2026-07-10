@@ -63,10 +63,21 @@ Recipes: prefixed
 ===
 
 r:
-    @echo
-    -echo
-    @-echo
+    -?@echo
+    -?echo
+    -@?echo
     -@echo
+    -echo
+    ?-@echo
+    ?-echo
+    ?@-echo
+    ?@echo
+    @-?echo
+    @-echo
+    @?-echo
+    @?echo
+    @echo
+
 
 ---
 
@@ -74,6 +85,16 @@ r:
   (recipe
     (identifier)
     (recipe_body
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
+      (recipe_line)
       (recipe_line)
       (recipe_line)
       (recipe_line)

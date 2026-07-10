@@ -199,7 +199,17 @@ module.exports = grammar({
             // In practice, it's better to reset on every line for better highlighting of the rest,
             // It allows easy handling of backslash-continuated lines that may be indented more.
             /( |\t)+/,
-            optional(choice('@', '-', '@-', '-@')),
+            optional(choice(
+              '-', '?', '@',
+
+              '-?', '-@',
+              '?-', '?@',
+              '@-', '@?',
+
+              '-?@', '-@?',
+              '?-@', '?@-',
+              '@-?', '@?-',
+            )),
             repeat1($._recipe_line_choice),
             $._eol,
         ),

@@ -270,6 +270,7 @@ Recipes: Attributes: Builtins, separated
 [doc("doc")]
 [extension('.ext')]
 [group('recipe group')]
+[lazy]
 [linux]
 [macos]
 [no-cd]
@@ -320,6 +321,8 @@ r:
     (attribute
       (identifier))
     (attribute
+      (identifier))
+    (attribute
       (identifier)
       (string))
     (attribute
@@ -339,6 +342,7 @@ Recipes: Attributes: Builtins, all at once
   doc("doc"),
   extension('.ext'),
   group('recipe group'),
+  lazy,
   linux,
   macos,
   no-cd,
@@ -373,6 +377,8 @@ r:
     (attribute
       (identifier)
       (string))
+    (attribute
+      (identifier))
     (attribute
       (identifier))
     (attribute
