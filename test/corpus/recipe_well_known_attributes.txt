@@ -200,3 +200,27 @@ r:
             (function_call
               (identifier))))))
     (identifier)))
+
+===
+Recipes: Attributes: Well-Known: cache()
+===
+
+[cache(extra = some + expression())]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier)
+      (attribute_named_parameter
+        (identifier)
+        (expression
+          (value
+            (identifier))
+          (expression
+            (value
+              (function_call
+                (identifier)))))))
+    (identifier)))

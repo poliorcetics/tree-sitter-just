@@ -148,7 +148,10 @@ module.exports = grammar({
                 seq(':', $.string),
                 seq(
                     '(',
-                    $.expression,
+                    choice(
+                        $.attribute_named_parameter,
+                        $.expression,
+                    ),
                     repeat(seq(
                         ',',
                         choice(
