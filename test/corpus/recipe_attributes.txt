@@ -82,8 +82,105 @@ r field:
   (recipe
     (attribute
       (identifier)
-      (string))
-    (identifier)))
+      (string)
+      (attribute_named_parameter
+        (identifier)
+        (string)))
+    (identifier)
+    (recipe_parameters
+      (recipe_parameter
+        (identifier)))))
+
+===
+Recipes: Attributes: Single one, parse well-known `arg()` attribute
+===
+
+[arg("field", pattern="\d+")]
+r field:
+
+[arg("field", help="help text")]
+r field:
+
+[arg("field", long="long")]
+r field:
+
+[arg("field", long)]
+r field:
+
+[arg("field", short="x")]
+r field:
+
+[arg("field", value="VALUE")]
+r field:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier)
+      (string)
+      (attribute_named_parameter
+        (identifier)
+        (string)))
+    (identifier)
+    (recipe_parameters
+      (recipe_parameter
+        (identifier))))
+  (recipe
+    (attribute
+      (identifier)
+      (string)
+      (attribute_named_parameter
+        (identifier)
+        (string)))
+    (identifier)
+    (recipe_parameters
+      (recipe_parameter
+        (identifier))))
+  (recipe
+    (attribute
+      (identifier)
+      (string)
+      (attribute_named_parameter
+        (identifier)
+        (string)))
+    (identifier)
+    (recipe_parameters
+      (recipe_parameter
+        (identifier))))
+  (recipe
+    (attribute
+      (identifier)
+      (string)
+      (attribute_named_parameter
+        (identifier)))
+    (identifier)
+    (recipe_parameters
+      (recipe_parameter
+        (identifier))))
+  (recipe
+    (attribute
+      (identifier)
+      (string)
+      (attribute_named_parameter
+        (identifier)
+        (string)))
+    (identifier)
+    (recipe_parameters
+      (recipe_parameter
+        (identifier))))
+  (recipe
+    (attribute
+      (identifier)
+      (string)
+      (attribute_named_parameter
+        (identifier)
+        (string)))
+    (identifier)
+    (recipe_parameters
+      (recipe_parameter
+        (identifier)))))
 
 ===
 Recipes: Attributes: Single one, with param, with colon

@@ -132,8 +132,10 @@ module.exports = grammar({
 
         attribute_named_parameter: $ => seq(
             field('name', $.identifier),
-            '=',
-            field('value', $.string),
+            optional(seq(
+                '=',
+                field('value', $.string),
+            )),
         ),
 
         recipe_parameter: $ => seq(
