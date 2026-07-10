@@ -78,7 +78,7 @@ a := f'raw \t \n \r \\ \" \u{a1F} string'
         (string)))))
 
 ===
-Format string: with simple interpolation
+Raw format string: with simple interpolation
 ===
 
 a := f'{{variable_name}}'

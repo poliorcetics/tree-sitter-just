@@ -1,5 +1,5 @@
 ===
-Indented raw string: empty
+Indented raw format string: empty
 ===
 
 a := f''''''
@@ -14,10 +14,10 @@ a := f''''''
         (string)))))
 
 ===
-Indented raw string: with basic content
+Indented raw format string: with basic content
 ===
 
-a := f'''raw string 🦀'''
+a := f'''raw format string 🦀'''
 
 ---
 
@@ -29,7 +29,7 @@ a := f'''raw string 🦀'''
         (string)))))
 
 ===
-Indented raw string: with line breaks
+Indented raw format string: with line breaks
 ===
 
 a := f'''
@@ -46,7 +46,7 @@ a := f'''
         (string)))))
 
 ===
-Indented raw string: with " inside
+Indented raw format string: with " inside
 ===
 
 a := f'''
@@ -63,7 +63,7 @@ a := f'''
         (string)))))
 
 ===
-Indented raw string: with ' inside
+Indented raw format string: with ' inside
 ===
 
 a := f'''
@@ -80,7 +80,7 @@ a := f'''
         (string)))))
 
 ===
-Indented raw string: with escape sequences
+Indented raw format string: with escape sequences
 ===
 
 a := f'''raw \t \n \r \\ \" \u{a1F} string'''
