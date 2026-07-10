@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -16,7 +16,7 @@
         devShells.default =
           with pkgs;
           let
-            darwinInclude = lib.optionalString stdenv.isDarwin ''- "-I${darwin.Libsystem}/include/"'';
+            darwinInclude = lib.optionalString stdenv.isDarwin ''- "-I${apple-sdk}/usr/include/"'';
           in
           mkShell {
             packages = [
