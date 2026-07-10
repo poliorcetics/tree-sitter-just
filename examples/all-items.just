@@ -34,6 +34,19 @@ e3 := fn(arg1, 2392973.2323, 2326546780)
 
 unexport ENV_VAR
 
+# Eager assignment
+
+eager e4 := value
+
+# =================================================================================================
+# Functions
+
+abc() := ["b"] # comment
+
+other(param) := os() + param + if arch() { "test" }
+
+last(p1, p2,) := [p1, p2] ++ ["test", os()]
+
 # =================================================================================================
 # Strings
 
@@ -57,6 +70,21 @@ v4 := x"
     escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
 ' + x'''
     escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
+'''
+
+# Format strings
+v5 := f"
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    {{ abc() }}
+" + f"""
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    {{ abc() }}
+""" + f'
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    {{ abc() }}
+' + f'''
+    escape \t \r sequences \n \" \\ \u{1F916} inside and $HOME and ${HOME} and ${NO_HOME:-default}
+    {{ abc() }}
 '''
 
 # =================================================================================================
@@ -121,6 +149,13 @@ r6 *args:
     echo {{ os() + arch() }}
 
 r7: m1::r
+
+[arg(arg1, long, short = "a")]
+[cache(inputs = ["test.c"])]
+r8 arg1:
+    echo {{ arg1 }}
+
+r9: *(r6 *abc())
 
 # =================================================================================================
 # Injections
