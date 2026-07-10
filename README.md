@@ -2,7 +2,7 @@
 
 [Tree Sitter](https://tree-sitter.github.io/tree-sitter/) grammar for [`just`](https://github.com/casey/just).
 
-Support is guaranteed up to Just 1.43.3, if you are missing a recent feature don't hesitate to open an issue or pull request.
+Support is guaranteed up to Just 1.56.0, if you are missing a recent feature don't hesitate to open an issue or pull request.
 
 ## What's implemented and not
 
@@ -11,6 +11,7 @@ Support is guaranteed up to Just 1.43.3, if you are missing a recent feature don
   - [x] Aliases to path (`alias f := foo::bar`)
 - [x] Assignment (`a := expr`)
   - [x] Attributes (see below)
+  - [x] Eager (`eager a := expr`)
   - [x] Exported (`export a := expr`)
 - [x] Comment (`# ...`)
 - [x] Import (`import`)
@@ -31,9 +32,11 @@ Support is guaranteed up to Just 1.43.3, if you are missing a recent feature don
     - [x] Dependencies to path (`r: foo::bar`)
   - [x] After dependencies (`r: && dep (dep expr)`)
     - [x] Dependencies to path (`r: && foo::bar`)
+  - [x] Dependencies expanded from lists (`r: *(dep *args)`)
   - [x] Body
     - [x] Quiet lines (`@`)
     - [x] Errors ignored (`-`)
+    - [x] Exit code checker (`?`)
     - [x] Interpolation (`{{ expr }}`)
       - [x] Escape (`{{{{`)
     - [x] Shebang parsing
@@ -50,10 +53,13 @@ Attributes can have multiple forms:
 
 - [x] Single:
   - [x] No param: `[doc]`
-  - [x] With param in parentheses `[doc("param")]`
+  - [x] With expression in parameters `[doc(function_call())]`
+  - [x] With named parameters `[cache(extra = function_call())]`
   - [x] With param after colon `[doc: "param"]`
+  - [x] With param in parentheses `[doc("param")]`
 - [x] Multiple:
   - [x] No param: `[doc, private]`
+  - [x] With named parameters in parentheses `[cache(extra = value, inputs = ["main.c"]), private]`
   - [x] With param in parentheses `[doc("param"), private]`
   - [x] With param after colon `[doc: "param", private]`
   - [x] Chained: `[doc]\n[private]`
@@ -61,12 +67,13 @@ Attributes can have multiple forms:
 Expressions cannot be parsed at the top level but they're fully implemented too for where they can:
 
 - [x] Expressions
-  - [x] If-Else (`if cond { expr } else { expr }`)
-  - [x] Assertions (`assert(cond, expr)`)
+  - [x] If (`if expr { expr }`)
+  - [x] If-Else (`if expr { expr } else { expr }`)
+  - [x] Assertions (`assert(expr, expr)`)
   - [x] Conditions (`expr == expr`, `!=`, `=~`, `!~`)
-  - [x] Joined (`value / expr`, `value + expr`)
+  - [x] Joined (`value / expr`, `value + expr`, `value ++ expr`)
   - [x] Absolute path (`/ expr`)
-  - [x] Operators (`expr && expr`, `expr || expr`)
+  - [x] Operators (`expr && expr`, `expr || expr`, `!expr`)
   - [x] Values
     - [x] Function calls (`fn_name()`, `name(expr, expr)`)
     - [x] Parenthesized (`( expr )`)
@@ -79,6 +86,7 @@ Expressions cannot be parsed at the top level but they're fully implemented too 
         - [x] Escape sequences (`\n`, `\r`, `\t`, `\\`, `\"`, `\u{1F916}` (see note))
       - [x] Raw string (`'abc'`)
       - [x] Indented raw string (`'''abc'''`)
+      - [x] Format string: prepend any string with `f` (`f"`, `f"""`, ...) and use `{{ interpolated }}` inside (`f'content {{ interpolated }} with escaped brackets: {{{{'`)
     - [x] Shell-Expanded string (strings prefixed by `x`)
       - [x] Simple variable (`$HOME`)
       - [x] Wrapped variable (`${HOME}`)
@@ -89,7 +97,7 @@ Note: Unicode Codepoints escape sequences, added in Just 1.36.0, accept anything
 
 ## There is already a well developed grammar
 
-Yes, at [IndianBoy42/tree-sitter-just](https://github.com/IndianBoy42/tree-sitter-just).
+Yes, at [casey/tree-sitter-just](https://github.com/casey/tree-sitter-just).
 
 The grammar over there also includes query for several editors so it's more mature on that point than here.
 On the other hand, it is also missing features and updated less often.
