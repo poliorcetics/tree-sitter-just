@@ -405,6 +405,10 @@
           "named": true
         },
         {
+          "type": "expression",
+          "named": true
+        },
+        {
           "type": "shell_expanded_string",
           "named": true
         }
@@ -727,6 +731,10 @@
           "named": true
         },
         {
+          "type": "expression",
+          "named": true
+        },
+        {
           "type": "shell_expanded_string",
           "named": true
         }
@@ -979,6 +987,10 @@
   },
   {
     "type": "export",
+    "named": false
+  },
+  {
+    "type": "f\"",
     "named": false
   },
   {

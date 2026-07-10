@@ -286,6 +286,7 @@ module.exports = grammar({
         // Strings
 
         string: $ => choice(
+            $._format_string,
             $._indented_normal_string,
             $._normal_string,
             $._indented_raw_string,
@@ -298,6 +299,17 @@ module.exports = grammar({
             $._shell_expanded_normal_string,
             $._shell_expanded_indented_raw_string,
             $._shell_expanded_raw_string,
+        ),
+
+        _format_string: $ => seq(
+            'f"',
+            repeat(choice(
+                '{{{{',
+                $._interpolated_expression,
+                $.escape_sequence,
+                /[^"]/,
+            )),
+            '"',
         ),
 
         _indented_normal_string: $ => seq(
@@ -342,6 +354,8 @@ module.exports = grammar({
             // Raw unicode codepoints
             /\\u\{[a-fA-F0-9]{1,6}\}/,
         ),
+
+        _interpolated_expression: $ => seq('{{', $.expression, '}}'),
 
         // Shell-expanded Strings
 
