@@ -295,6 +295,154 @@ export a := "some value"
         (string)))))
 
 ===
+Eager assignement: value
+===
+
+eager a := "a"
+
+eager a := b
+
+eager a := os()
+
+eager a := `echo toto`
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (identifier))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (external_command
+          (content))))))
+
+===
+Eager assignement: Slash join
+===
+
+eager a := os() / arch()
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)))
+      (expression
+        (value
+          (function_call
+            (identifier)))))))
+
+===
+Eager assignement: Plus join
+===
+
+eager a := os() + arch()
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)))
+      (expression
+        (value
+          (function_call
+            (identifier)))))))
+
+===
+Eager assignement: assert
+===
+
+eager a := assert(os() != arch(), "is ok")
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (assert_parameters
+        (condition
+          (expression
+            (value
+              (function_call
+                (identifier))))
+          (expression
+            (value
+              (function_call
+                (identifier)))))
+        (expression
+          (value
+            (string)))))))
+
+===
+Eager assignement: if-else
+===
+
+eager a := if a == b { c } else { d }
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (condition
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))
+      (expression
+        (value
+          (identifier)))
+      (expression
+        (value
+          (identifier))))))
+
+===
+Eager assignement: with attribute
+===
+
+[private]
+eager a := "some value"
+
+---
+
+(file
+  (assignment
+    (attribute
+      (identifier))
+    (identifier)
+    (expression
+      (value
+        (string)))))
+
+===
 Unexport: value
 ===
 

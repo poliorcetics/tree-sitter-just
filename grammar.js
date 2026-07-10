@@ -52,7 +52,10 @@ module.exports = grammar({
             // Not all builtin attributes are supported in practice for assignements but that's not
             // the responsibility of Tree-Sitter
             repeat($._attribute_list),
-            optional('export'),
+            optional(choice(
+              'eager',
+              'export',
+            )),
             field('name', $.identifier),
             ':=',
             $.expression,

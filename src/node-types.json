@@ -1046,6 +1046,10 @@
     "named": false
   },
   {
+    "type": "eager",
+    "named": false
+  },
+  {
     "type": "else",
     "named": false
   },

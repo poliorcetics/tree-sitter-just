@@ -93,8 +93,17 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "STRING",
-              "value": "export"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "eager"
+                },
+                {
+                  "type": "STRING",
+                  "value": "export"
+                }
+              ]
             },
             {
               "type": "BLANK"
