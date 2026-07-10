@@ -160,15 +160,7 @@
       "required": false,
       "types": [
         {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "interpolation_end_marker",
-          "named": true
-        },
-        {
-          "type": "interpolation_start_marker",
+          "type": "interpolation",
           "named": true
         }
       ]
@@ -361,16 +353,6 @@
     }
   },
   {
-    "type": "interpolation_end_marker",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "interpolation_start_marker",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "mod",
     "named": true,
     "fields": {
@@ -433,15 +415,7 @@
           "named": true
         },
         {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "interpolation_end_marker",
-          "named": true
-        },
-        {
-          "type": "interpolation_start_marker",
+          "type": "interpolation",
           "named": true
         },
         {
@@ -767,15 +741,7 @@
           "named": true
         },
         {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "interpolation_end_marker",
-          "named": true
-        },
-        {
-          "type": "interpolation_start_marker",
+          "type": "interpolation",
           "named": true
         },
         {

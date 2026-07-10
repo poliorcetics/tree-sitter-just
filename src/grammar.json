@@ -1300,7 +1300,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "_interpolated_expression"
+                  "name": "interpolation"
                 },
                 {
                   "type": "PATTERN",
@@ -1338,7 +1338,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "_interpolated_expression"
+                  "name": "interpolation"
                 },
                 {
                   "type": "PATTERN",
@@ -1483,7 +1483,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_interpolated_expression"
+                "name": "interpolation"
               },
               {
                 "type": "SYMBOL",
@@ -1520,7 +1520,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_interpolated_expression"
+                "name": "interpolation"
               },
               {
                 "type": "SYMBOL",
@@ -1615,7 +1615,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_interpolated_expression"
+                "name": "interpolation"
               },
               {
                 "type": "PATTERN",
@@ -1648,7 +1648,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_interpolated_expression"
+                "name": "interpolation"
               },
               {
                 "type": "PATTERN",
@@ -1728,31 +1728,6 @@
           "value": "\\\\u\\{[a-fA-F0-9]{1,6}\\}"
         }
       ]
-    },
-    "_interpolated_expression": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "interpolation_start_marker"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "interpolation_end_marker"
-        }
-      ]
-    },
-    "interpolation_start_marker": {
-      "type": "STRING",
-      "value": "{{"
-    },
-    "interpolation_end_marker": {
-      "type": "STRING",
-      "value": "}}"
     },
     "_shell_expanded_indented_normal_string": {
       "type": "SEQ",

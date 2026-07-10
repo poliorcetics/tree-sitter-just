@@ -274,7 +274,7 @@ module.exports = grammar({
             // Expose `content` to allow injection of other languages (bash)
             alias(repeat(choice(
                 '{{{{',
-                $._interpolated_expression,
+                $.interpolation,
                 /[^`]/,
             )), $.content),
             "`",
@@ -285,7 +285,7 @@ module.exports = grammar({
             // Expose `content` to allow injection of other languages (bash)
             alias(repeat(choice(
                 '{{{{',
-                $._interpolated_expression,
+                $.interpolation,
                 // See `indented_normal_string`.
                 /.[^`]?/,
             )), $.content),
@@ -333,7 +333,7 @@ module.exports = grammar({
             'f"""',
             repeat(choice(
                 '{{{{',
-                $._interpolated_expression,
+                $.interpolation,
                 $.escape_sequence,
                 // See `indented_normal_string`.
                 /.[^"]?/,
@@ -345,7 +345,7 @@ module.exports = grammar({
             'f"',
             repeat(choice(
                 '{{{{',
-                $._interpolated_expression,
+                $.interpolation,
                 $.escape_sequence,
                 /[^"]/,
             )),
@@ -376,7 +376,7 @@ module.exports = grammar({
             "f'''",
             repeat(choice(
                 '{{{{',
-                $._interpolated_expression,
+                $.interpolation,
                 // See `indented_normal_string`.
                 /.[^']?/,
             )),
@@ -387,7 +387,7 @@ module.exports = grammar({
             "f'",
             repeat(choice(
                 '{{{{',
-                $._interpolated_expression,
+                $.interpolation,
                 /[^']/,
             )),
             "'",
@@ -415,10 +415,6 @@ module.exports = grammar({
             // Raw unicode codepoints
             /\\u\{[a-fA-F0-9]{1,6}\}/,
         ),
-
-        _interpolated_expression: $ => seq($.interpolation_start_marker, $.expression, $.interpolation_end_marker),
-        interpolation_start_marker: $ => '{{',
-        interpolation_end_marker: $ => '}}',
 
         // Shell-expanded Strings
 
