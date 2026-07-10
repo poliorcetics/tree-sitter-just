@@ -200,6 +200,28 @@ r:
     (identifier)))
 
 ===
+Recipes: Attributes: Single one, parse well-known `metadata()` attribute
+===
+
+[metadata("metadata", "value")]
+[metadata("metadata-2", "value-2")]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier)
+      (string)
+      (string))
+    (attribute
+      (identifier)
+      (string)
+      (string))
+    (identifier)))
+
+===
 Recipes: Attributes: Single one, with param, with colon
 ===
 
