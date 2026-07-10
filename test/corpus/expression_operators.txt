@@ -177,3 +177,24 @@ a := os() && !arch()
           (value
             (function_call
               (identifier))))))))
+
+===
+Expression: `++` operator
+===
+
+a := os() ++ !arch()
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (function_call
+          (identifier)))
+      (expression
+        (value
+          (value
+            (function_call
+              (identifier))))))))

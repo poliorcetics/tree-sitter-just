@@ -297,7 +297,7 @@ module.exports = grammar({
         expression: $ => prec.right(choice(
             seq('if', $.expression, '{', $.expression, '}', optional(seq('else', '{', $.expression, '}'))),
             seq('assert', $.assert_parameters),
-            seq($.value, choice('/', '+'), $.expression),
+            seq($.value, choice('/', '+', '++'), $.expression),
             seq('/', $.expression),
             seq($.expression, '&&', $.expression),
             seq($.expression, '||', $.expression),
