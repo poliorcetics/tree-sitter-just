@@ -290,6 +290,8 @@ module.exports = grammar({
             $._format_string,
             $._indented_normal_string,
             $._normal_string,
+            $._indented_raw_format_string,
+            $._raw_format_string,
             $._indented_raw_string,
             $._raw_string,
             $.shell_expanded_string,
@@ -308,8 +310,7 @@ module.exports = grammar({
                 '{{{{',
                 $._interpolated_expression,
                 $.escape_sequence,
-                // Necessary to ensure escapes sequences are not eaten and that `<anything>"` does
-                // not eat the `"` when it could be part of the end of the string.
+                // See `indented_normal_string`.
                 /.[^"]?/,
             )),
             '"""',
@@ -344,6 +345,27 @@ module.exports = grammar({
                 /[^"]/,
             )),
             '"',
+        ),
+
+        _indented_raw_format_string: $ => seq(
+            "f'''",
+            repeat(choice(
+                '{{{{',
+                $._interpolated_expression,
+                // See `indented_normal_string`.
+                /.[^']?/,
+            )),
+            "'''",
+        ),
+
+        _raw_format_string: $ => seq(
+            "f'",
+            repeat(choice(
+                '{{{{',
+                $._interpolated_expression,
+                /[^']/,
+            )),
+            "'",
         ),
 
         _indented_raw_string: $ => seq(

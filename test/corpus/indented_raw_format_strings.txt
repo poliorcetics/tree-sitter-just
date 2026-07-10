@@ -1,0 +1,151 @@
+===
+Indented raw string: empty
+===
+
+a := f''''''
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string)))))
+
+===
+Indented raw string: with basic content
+===
+
+a := f'''raw string 🦀'''
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string)))))
+
+===
+Indented raw string: with line breaks
+===
+
+a := f'''
+  a line break
+  or more'''
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string)))))
+
+===
+Indented raw string: with " inside
+===
+
+a := f'''
+  a line "break"
+  or more'''
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string)))))
+
+===
+Indented raw string: with ' inside
+===
+
+a := f'''
+  a line 'break'
+  or more'''
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string)))))
+
+===
+Indented raw string: with escape sequences
+===
+
+a := f'''raw \t \n \r \\ \" \u{a1F} string'''
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string)))))
+
+===
+Indented raw format string: with simple interpolation
+===
+
+a := f'''{{variable_name}}'''
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (expression
+            (value
+              (identifier))))))))
+
+===
+Indented raw format string: with expression interpolation
+===
+
+a := f'''{{os() / arch()}}'''
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string
+          (expression
+            (value
+              (function_call
+                (identifier)))
+            (expression
+              (value
+                (function_call
+                  (identifier))))))))))
+
+===
+Indented raw format string: with escaped braces
+===
+
+a := f'''{{{{not an expression}}'''
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (string)))))
