@@ -208,6 +208,9 @@ Recipes: Attributes: Well-Known: cache()
 [cache(extra = some + expression())]
 r:
 
+[cache(inputs = ["lib.c", "main.c"])]
+r:
+
 ---
 
 (file
@@ -223,4 +226,19 @@ r:
             (value
               (function_call
                 (identifier)))))))
+    (identifier))
+  (recipe
+    (attribute
+      (identifier)
+      (attribute_named_parameter
+        (identifier)
+        (expression
+          (value
+            (list
+              (expression
+                (value
+                  (string)))
+              (expression
+                (value
+                  (string))))))))
     (identifier)))
