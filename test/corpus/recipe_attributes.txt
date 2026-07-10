@@ -70,6 +70,22 @@ r:
     (identifier)))
 
 ===
+Recipes: Attributes: Single one, with multiple parameters, in parentheses
+===
+
+[arg("field", pattern="\d+")]
+r field:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier)
+      (string))
+    (identifier)))
+
+===
 Recipes: Attributes: Single one, with param, with colon
 ===
 
