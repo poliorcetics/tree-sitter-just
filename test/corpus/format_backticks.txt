@@ -1,0 +1,127 @@
+===
+Format backtick: empty
+===
+
+a := f``
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (external_command)))))
+
+===
+Format backtick: with basic content
+===
+
+a := f`raw string 🦀`
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (external_command
+          (content))))))
+
+===
+Format backtick: with line breaks
+===
+
+a := f`
+  a line break
+  or more`
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (external_command
+          (content))))))
+
+===
+Format backtick: with escape sequences
+===
+
+a := f`raw \t \n \r \\ \" \u{a1F} string`
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (external_command
+          (content))))))
+
+===
+Format backtick: with simple interpolation
+===
+
+a := f`content {{variable_name}} content`
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (external_command
+          (content
+            (interpolation_start_marker)
+            (expression
+              (value
+                (identifier)))
+            (interpolation_end_marker)))))))
+
+===
+Format backtick: with expression interpolation
+===
+
+a := f`content {{os() / arch()}} content`
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (external_command
+          (content
+            (interpolation_start_marker)
+            (expression
+              (value
+                (function_call
+                  (identifier)))
+              (expression
+                (value
+                  (function_call
+                    (identifier)))))
+            (interpolation_end_marker)))))))
+
+===
+Format backtick: with escaped braces
+===
+
+a := f`content {{{{not an expression}}`
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (external_command
+          (content))))))

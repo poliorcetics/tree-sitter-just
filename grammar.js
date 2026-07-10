@@ -263,8 +263,33 @@ module.exports = grammar({
         // Backticks
 
         external_command: $ => choice(
-            $._backtick,
+            $._indented_format_backtick,
+            $._format_backtick,
             $._indented_backtick,
+            $._backtick,
+        ),
+
+        _format_backtick: $ => seq(
+            "f`",
+            // Expose `content` to allow injection of other languages (bash)
+            alias(repeat(choice(
+                '{{{{',
+                $._interpolated_expression,
+                /[^`]/,
+            )), $.content),
+            "`",
+        ),
+
+        _indented_format_backtick: $ => seq(
+            "f```",
+            // Expose `content` to allow injection of other languages (bash)
+            alias(repeat(choice(
+                '{{{{',
+                $._interpolated_expression,
+                // See `indented_normal_string`.
+                /.[^`]?/,
+            )), $.content),
+            "```",
         ),
 
         _backtick: $ => seq(
