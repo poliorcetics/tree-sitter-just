@@ -78,7 +78,7 @@ r: (d if a == b { d } else { d } "some other param")
     (recipe_dependency
       (identifier)
       (expression
-        (condition
+        (expression
           (expression
             (value
               (identifier)))
@@ -128,7 +128,7 @@ r: (d if a == b { d } else { d } "some other param") (d2 os() shell(abc() + "de"
     (recipe_dependency
       (identifier)
       (expression
-        (condition
+        (expression
           (expression
             (value
               (identifier)))
@@ -243,7 +243,7 @@ r: && (d if a == b { d } else { d } "some other param")
     (recipe_dependency
       (identifier)
       (expression
-        (condition
+        (expression
           (expression
             (value
               (identifier)))
@@ -274,7 +274,7 @@ r: && (d if a == b { d } else { d } "some other param") (d2 os() shell(abc() + "
     (recipe_dependency
       (identifier)
       (expression
-        (condition
+        (expression
           (expression
             (value
               (identifier)))

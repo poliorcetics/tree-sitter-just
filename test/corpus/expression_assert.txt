@@ -11,13 +11,34 @@ a := assert("a" == "b", "c")
     (identifier)
     (expression
       (assert_parameters
-        (condition
+        (expression
           (expression
             (value
               (string)))
           (expression
             (value
               (string))))
+        (expression
+          (value
+            (string)))))))
+
+===
+Expression: Assert: expression
+===
+
+a := assert(function_call_returning_bool(), "c")
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (assert_parameters
+        (expression
+          (value
+            (function_call
+              (identifier))))
         (expression
           (value
             (string)))))))
@@ -35,7 +56,7 @@ a := assert(("a" / os()) == "true", arch() + shell("bash", "-c", "echo", "toto")
     (identifier)
     (expression
       (assert_parameters
-        (condition
+        (expression
           (expression
             (value
               (expression
@@ -83,7 +104,7 @@ a := assert("a" != "b", "c")
     (identifier)
     (expression
       (assert_parameters
-        (condition
+        (expression
           (expression
             (value
               (string)))
@@ -107,7 +128,7 @@ a := assert(("a" / os()) != "true", arch() + shell("bash", "-c", "echo", "toto")
     (identifier)
     (expression
       (assert_parameters
-        (condition
+        (expression
           (expression
             (value
               (expression
@@ -155,7 +176,7 @@ a := assert("a" =~ "b", "c")
     (identifier)
     (expression
       (assert_parameters
-        (condition
+        (expression
           (expression
             (value
               (string)))
@@ -179,7 +200,7 @@ a := assert(("a" / os()) =~ "true", arch() + shell("bash", "-c", "echo", "toto")
     (identifier)
     (expression
       (assert_parameters
-        (condition
+        (expression
           (expression
             (value
               (expression

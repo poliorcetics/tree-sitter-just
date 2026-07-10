@@ -283,27 +283,26 @@ module.exports = grammar({
         // Expression
 
         expression: $ => prec.right(choice(
-            seq('if', $.condition, '{', $.expression, '}', 'else', '{', $.expression, '}'),
+            seq('if', $.expression, '{', $.expression, '}', optional(seq('else', '{', $.expression, '}'))),
             seq('assert', $.assert_parameters),
             seq($.value, choice('/', '+'), $.expression),
             seq('/', $.expression),
             seq($.expression, '&&', $.expression),
             seq($.expression, '||', $.expression),
+            seq($.expression, choice('==', '!='), $.expression),
+            seq($.expression, choice('=~', '!~'), alias($.expression, $.regex)),
             $.value,
         )),
 
-        condition: $ => choice(
-            seq($.expression, choice('==', '!='), $.expression),
-            seq($.expression, choice('=~', '!~'), alias($.expression, $.regex)),
-        ),
-
-        assert_parameters: $ => seq('(', $.condition, ',', $.expression, ')'),
+        assert_parameters: $ => seq('(', $.expression, ',', $.expression, ')'),
 
         value: $ => choice(
             $.function_call,
             seq('(', $.expression, ')'),
+            seq('!', $.value),
             $.external_command,
             $.string,
+            $.list,
             prec(-1, $.identifier),
             $.numeric_error,
         ),
@@ -311,7 +310,11 @@ module.exports = grammar({
         // <https://just.systems/man/en/chapter_32.html>
         function_call: $ => seq(field('name', $.identifier), '(', optional($.function_call_parameters), ')'),
 
-        function_call_parameters: $ => seq($.expression, repeat(seq(',', $.expression)), optional(',')),
+        function_call_parameters: $ => $._comma_separated_expressions,
+
+        list: $ => seq('[', $._comma_separated_expressions, ']'),
+
+        _comma_separated_expressions: $ => seq($.expression, repeat(seq(',', $.expression)), optional(',')),
 
         // ========================================================================================
         // Backticks

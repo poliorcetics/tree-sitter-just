@@ -29,7 +29,7 @@ r param = (if a == b { c } else { d }):
         (identifier)
         (value
           (expression
-            (condition
+            (expression
               (expression
                 (value
                   (identifier)))
@@ -80,7 +80,7 @@ r a = "some string" param = (if a == b { c } else { d }):
         (identifier)
         (value
           (expression
-            (condition
+            (expression
               (expression
                 (value
                   (identifier)))
@@ -125,7 +125,7 @@ r $param = (if a == b { c } else { d }):
         (identifier)
         (value
           (expression
-            (condition
+            (expression
               (expression
                 (value
                   (identifier)))
@@ -176,7 +176,7 @@ r $a = "some string" $param = (if a == b { c } else { d }):
         (identifier)
         (value
           (expression
-            (condition
+            (expression
               (expression
                 (value
                   (identifier)))

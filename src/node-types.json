@@ -52,10 +52,6 @@
       "required": true,
       "types": [
         {
-          "type": "condition",
-          "named": true
-        },
-        {
           "type": "expression",
           "named": true
         }
@@ -167,25 +163,6 @@
     "fields": {}
   },
   {
-    "type": "condition",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "regex",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "content",
     "named": true,
     "fields": {},
@@ -223,11 +200,11 @@
           "named": true
         },
         {
-          "type": "condition",
+          "type": "expression",
           "named": true
         },
         {
-          "type": "expression",
+          "type": "regex",
           "named": true
         },
         {
@@ -430,6 +407,21 @@
     },
     "children": {
       "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -694,11 +686,11 @@
           "named": true
         },
         {
-          "type": "condition",
+          "type": "expression",
           "named": true
         },
         {
-          "type": "expression",
+          "type": "regex",
           "named": true
         },
         {
@@ -889,11 +881,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "numeric_error",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "value",
           "named": true
         }
       ]
@@ -913,6 +913,10 @@
         }
       ]
     }
+  },
+  {
+    "type": "!",
+    "named": false
   },
   {
     "type": "!=",

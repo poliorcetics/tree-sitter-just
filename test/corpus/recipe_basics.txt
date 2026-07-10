@@ -135,7 +135,7 @@ Recipes: everything at once
               (value
                 (identifier))
               (expression
-                (condition
+                (expression
                   (expression
                     (value
                       (function_call

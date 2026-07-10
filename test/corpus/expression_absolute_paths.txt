@@ -27,7 +27,7 @@ a := / if b == (os() + arch()) { "string" } else { other_func() }
     (identifier)
     (expression
       (expression
-        (condition
+        (expression
           (expression
             (value
               (identifier)))

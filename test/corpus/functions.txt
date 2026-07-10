@@ -101,7 +101,7 @@ a(p1, p2,) := assert(os() != arch(), "is ok")
       (identifier))
     (expression
       (assert_parameters
-        (condition
+        (expression
           (expression
             (value
               (function_call

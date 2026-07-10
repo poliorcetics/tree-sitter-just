@@ -1,0 +1,239 @@
+===
+Expression: Lists
+===
+
+a := [ identifier ]
+
+a := [ `backtick` ]
+
+a := [ ```indented backtick``` ]
+
+a := [ 'raw string' ]
+
+a := [ '''indented raw string''' ]
+
+a := [ "normal string" ]
+
+a := [ """indented normal string""" ]
+
+a := [ arch() ]
+
+a := [ shell(`python3 --help`) ]
+
+a := [
+  function_call(
+    "some",
+    params,
+    'here',
+  )
+]
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (identifier)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (external_command
+                (content))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (external_command
+                (content))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (string)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (string)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (string)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (string)))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (function_call
+                (identifier))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (expression
+                    (value
+                      (external_command
+                        (content))))))))))))
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (identifier)))
+                  (expression
+                    (value
+                      (string))))))))))))
+
+===
+Expression: Lists, trailing comma
+===
+
+a := [ identifier, ]
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (identifier))))))))
+
+===
+Expression: Lists, multiple values
+===
+
+a := [
+  identifier,
+  `backtick`,
+  ```indented backtick```,
+  'raw string',
+  '''indented raw string''',
+  "normal string",
+  """indented normal string""",
+  f"some {{ interpolation }}",
+  arch(),
+  shell(`python3 --help`),
+  function_call(
+    "some",
+    params,
+    'here',
+  ),
+]
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (list
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (external_command
+                (content))))
+          (expression
+            (value
+              (external_command
+                (content))))
+          (expression
+            (value
+              (string)))
+          (expression
+            (value
+              (string)))
+          (expression
+            (value
+              (string)))
+          (expression
+            (value
+              (string)))
+          (expression
+            (value
+              (string
+                (interpolation
+                  (expression
+                    (value
+                      (identifier)))))))
+          (expression
+            (value
+              (function_call
+                (identifier))))
+          (expression
+            (value
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (expression
+                    (value
+                      (external_command
+                        (content))))))))
+          (expression
+            (value
+              (function_call
+                (identifier)
+                (function_call_parameters
+                  (expression
+                    (value
+                      (string)))
+                  (expression
+                    (value
+                      (identifier)))
+                  (expression
+                    (value
+                      (string))))))))))))

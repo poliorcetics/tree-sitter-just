@@ -1,4 +1,23 @@
 ===
+Expression: If-Else: if only
+===
+
+a := if some_expresssion { c }
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (identifier)))
+      (expression
+        (value
+          (identifier))))))
+
+===
 Expression: If-Else: simple
 ===
 
@@ -10,12 +29,35 @@ a := if a == b { c } else { d }
   (assignment
     (identifier)
     (expression
-      (condition
+      (expression
         (expression
           (value
             (identifier)))
         (expression
           (value
+            (identifier))))
+      (expression
+        (value
+          (identifier)))
+      (expression
+        (value
+          (identifier))))))
+
+===
+Expression: If-Else: expression in condition
+===
+
+a := if function_call() { c } else { d }
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (function_call
             (identifier))))
       (expression
         (value
@@ -38,7 +80,7 @@ a := if "abc" !~ "xyx" { "hello" } else { d }
   (assignment
     (identifier)
     (expression
-      (condition
+      (expression
         (expression
           (value
             (string)))
@@ -54,7 +96,7 @@ a := if "abc" !~ "xyx" { "hello" } else { d }
   (assignment
     (identifier)
     (expression
-      (condition
+      (expression
         (expression
           (value
             (string)))
@@ -88,46 +130,46 @@ a := if "a" + os() == (arch() / shell("bash", "-c", 'echo', "toto" + "titi")) {
   (assignment
     (identifier)
     (expression
-      (condition
+      (expression
+        (value
+          (string))
         (expression
-          (value
-            (string))
           (expression
             (value
               (function_call
-                (identifier)))))
-        (expression
-          (value
-            (expression
-              (value
-                (function_call
-                  (identifier)))
+                (identifier))))
+          (expression
+            (value
               (expression
                 (value
                   (function_call
-                    (identifier)
-                    (function_call_parameters
-                      (expression
-                        (value
-                          (string)))
-                      (expression
-                        (value
-                          (string)))
-                      (expression
-                        (value
-                          (string)))
-                      (expression
-                        (value
-                          (string))
+                    (identifier)))
+                (expression
+                  (value
+                    (function_call
+                      (identifier)
+                      (function_call_parameters
                         (expression
                           (value
-                            (string))))))))))))
+                            (string)))
+                        (expression
+                          (value
+                            (string)))
+                        (expression
+                          (value
+                            (string)))
+                        (expression
+                          (value
+                            (string))
+                          (expression
+                            (value
+                              (string)))))))))))))
       (expression
         (value
           (function_call
             (identifier)))
         (expression
-          (condition
+          (expression
             (expression
               (value
                 (string)))

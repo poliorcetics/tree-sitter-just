@@ -147,3 +147,33 @@ a := "a" || "b" && "c"
         (expression
           (value
             (string)))))))
+
+===
+Expression: `!` operator
+===
+
+a := !"a"
+
+a := os() && !arch()
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (value
+        (value
+          (string)))))
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (function_call
+            (identifier))))
+      (expression
+        (value
+          (value
+            (function_call
+              (identifier))))))))
