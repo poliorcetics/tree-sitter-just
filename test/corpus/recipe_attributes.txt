@@ -183,6 +183,23 @@ r field:
         (identifier)))))
 
 ===
+Recipes: Attributes: Single one, parse well-known `env()` attribute
+===
+
+[env("ENV", "value")]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier)
+      (string)
+      (string))
+    (identifier)))
+
+===
 Recipes: Attributes: Single one, with param, with colon
 ===
 

@@ -453,8 +453,17 @@
                             "value": ","
                           },
                           {
-                            "type": "SYMBOL",
-                            "name": "attribute_named_parameter"
+                            "type": "CHOICE",
+                            "members": [
+                              {
+                                "type": "SYMBOL",
+                                "name": "attribute_named_parameter"
+                              },
+                              {
+                                "type": "SYMBOL",
+                                "name": "string"
+                              }
+                            ]
                           }
                         ]
                       }

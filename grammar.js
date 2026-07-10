@@ -124,7 +124,13 @@ module.exports = grammar({
                 seq(
                     '(',
                     $.string,
-                    repeat(seq(',', $.attribute_named_parameter)),
+                    repeat(seq(
+                        ',',
+                        choice(
+                            $.attribute_named_parameter,
+                            $.string,
+                        ),
+                    )),
                     ')',
                 ),
             )),
