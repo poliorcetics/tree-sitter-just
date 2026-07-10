@@ -1324,6 +1324,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "_indented_format_string"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_format_string"
         },
         {
@@ -1366,6 +1370,43 @@
         {
           "type": "SYMBOL",
           "name": "_shell_expanded_raw_string"
+        }
+      ]
+    },
+    "_indented_format_string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "f\"\"\""
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "{{{{"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_interpolated_expression"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "escape_sequence"
+              },
+              {
+                "type": "PATTERN",
+                "value": ".[^\"]?"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "\"\"\""
         }
       ]
     },

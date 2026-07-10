@@ -286,6 +286,7 @@ module.exports = grammar({
         // Strings
 
         string: $ => choice(
+            $._indented_format_string,
             $._format_string,
             $._indented_normal_string,
             $._normal_string,
@@ -299,6 +300,19 @@ module.exports = grammar({
             $._shell_expanded_normal_string,
             $._shell_expanded_indented_raw_string,
             $._shell_expanded_raw_string,
+        ),
+
+        _indented_format_string: $ => seq(
+            'f"""',
+            repeat(choice(
+                '{{{{',
+                $._interpolated_expression,
+                $.escape_sequence,
+                // Necessary to ensure escapes sequences are not eaten and that `<anything>"` does
+                // not eat the `"` when it could be part of the end of the string.
+                /.[^"]?/,
+            )),
+            '"""',
         ),
 
         _format_string: $ => seq(
