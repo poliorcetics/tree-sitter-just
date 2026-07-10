@@ -126,12 +126,12 @@ module.exports = grammar({
                 seq(':', $.string),
                 seq(
                     '(',
-                    $.string,
+                    $.expression,
                     repeat(seq(
                         ',',
                         choice(
                             $.attribute_named_parameter,
-                            $.string,
+                            $.expression,
                         ),
                     )),
                     ')',
@@ -143,7 +143,7 @@ module.exports = grammar({
             field('name', $.identifier),
             optional(seq(
                 '=',
-                field('value', $.string),
+                field('value', $.expression),
             )),
         ),
 

@@ -120,6 +120,10 @@
           "named": true
         },
         {
+          "type": "expression",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         }
@@ -145,7 +149,7 @@
         "required": false,
         "types": [
           {
-            "type": "string",
+            "type": "expression",
             "named": true
           }
         ]

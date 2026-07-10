@@ -40,20 +40,28 @@ Recipes: everything at once
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (identifier)
     (recipe_parameters
       (recipe_parameter

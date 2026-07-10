@@ -68,5 +68,7 @@ mod b
   (mod
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (identifier)))

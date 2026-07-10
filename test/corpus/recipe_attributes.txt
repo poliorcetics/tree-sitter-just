@@ -66,7 +66,9 @@ r:
   (recipe
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (identifier)))
 
 ===
@@ -82,10 +84,14 @@ r field:
   (recipe
     (attribute
       (identifier)
-      (string)
+      (expression
+        (value
+          (string)))
       (attribute_named_parameter
         (identifier)
-        (string)))
+        (expression
+          (value
+            (string)))))
     (identifier)
     (recipe_parameters
       (recipe_parameter
@@ -119,10 +125,14 @@ r field:
   (recipe
     (attribute
       (identifier)
-      (string)
+      (expression
+        (value
+          (string)))
       (attribute_named_parameter
         (identifier)
-        (string)))
+        (expression
+          (value
+            (string)))))
     (identifier)
     (recipe_parameters
       (recipe_parameter
@@ -130,10 +140,14 @@ r field:
   (recipe
     (attribute
       (identifier)
-      (string)
+      (expression
+        (value
+          (string)))
       (attribute_named_parameter
         (identifier)
-        (string)))
+        (expression
+          (value
+            (string)))))
     (identifier)
     (recipe_parameters
       (recipe_parameter
@@ -141,10 +155,14 @@ r field:
   (recipe
     (attribute
       (identifier)
-      (string)
+      (expression
+        (value
+          (string)))
       (attribute_named_parameter
         (identifier)
-        (string)))
+        (expression
+          (value
+            (string)))))
     (identifier)
     (recipe_parameters
       (recipe_parameter
@@ -152,7 +170,9 @@ r field:
   (recipe
     (attribute
       (identifier)
-      (string)
+      (expression
+        (value
+          (string)))
       (attribute_named_parameter
         (identifier)))
     (identifier)
@@ -162,10 +182,14 @@ r field:
   (recipe
     (attribute
       (identifier)
-      (string)
+      (expression
+        (value
+          (string)))
       (attribute_named_parameter
         (identifier)
-        (string)))
+        (expression
+          (value
+            (string)))))
     (identifier)
     (recipe_parameters
       (recipe_parameter
@@ -173,10 +197,14 @@ r field:
   (recipe
     (attribute
       (identifier)
-      (string)
+      (expression
+        (value
+          (string)))
       (attribute_named_parameter
         (identifier)
-        (string)))
+        (expression
+          (value
+            (string)))))
     (identifier)
     (recipe_parameters
       (recipe_parameter
@@ -195,8 +223,12 @@ r:
   (recipe
     (attribute
       (identifier)
-      (string)
-      (string))
+      (expression
+        (value
+          (string)))
+      (expression
+        (value
+          (string))))
     (identifier)))
 
 ===
@@ -213,12 +245,42 @@ r:
   (recipe
     (attribute
       (identifier)
-      (string)
-      (string))
+      (expression
+        (value
+          (string)))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier)
-      (string)
-      (string))
+      (expression
+        (value
+          (string)))
+      (expression
+        (value
+          (string))))
+    (identifier)))
+
+===
+Recipes: Attributes: Single one, parse well-known `confirm()` attribute
+===
+
+[confirm("with os: " + os())]
+r:
+
+---
+
+(file
+  (recipe
+    (attribute
+      (identifier)
+      (expression
+        (value
+          (string))
+        (expression
+          (value
+            (function_call
+              (identifier))))))
     (identifier)))
 
 ===
@@ -252,7 +314,9 @@ r:
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier))
     (identifier)))
@@ -296,7 +360,9 @@ r:
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (identifier)))
 
 ===
@@ -331,18 +397,26 @@ r:
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier))
     (attribute
@@ -363,7 +437,9 @@ r:
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier))
     (attribute
@@ -404,18 +480,26 @@ r:
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier))
     (attribute
@@ -436,7 +520,9 @@ r:
       (identifier))
     (attribute
       (identifier)
-      (string))
+      (expression
+        (value
+          (string))))
     (attribute
       (identifier))
     (attribute
