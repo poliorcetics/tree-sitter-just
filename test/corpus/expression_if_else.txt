@@ -67,6 +67,43 @@ a := if function_call() { c } else { d }
           (identifier))))))
 
 ===
+Expression: If-Else: If expression after Else
+===
+
+a := if function_call() { c } else if other_call() { "abc" } else if final_call() { test } else { fail }
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (value
+          (function_call
+            (identifier))))
+      (expression
+        (value
+          (identifier)))
+      (expression
+        (value
+          (function_call
+            (identifier))))
+      (expression
+        (value
+          (string)))
+      (expression
+        (value
+          (function_call
+            (identifier))))
+      (expression
+        (value
+          (identifier)))
+      (expression
+        (value
+          (identifier))))))
+
+===
 Expression: If-Else: regex operators
 ===
 
