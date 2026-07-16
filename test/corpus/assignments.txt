@@ -129,6 +129,43 @@ a := if a == b { c } else { d }
           (identifier))))))
 
 ===
+Assignement: if-else-if-else
+===
+
+a := if a == b { c } else if d == e { f } else { g }
+
+---
+
+(file
+  (assignment
+    (identifier)
+    (expression
+      (expression
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier))))
+      (expression
+        (value
+          (identifier)))
+      (expression
+        (expression
+          (expression
+            (value
+              (identifier)))
+          (expression
+            (value
+              (identifier))))
+        (expression
+          (value
+            (identifier)))
+        (expression
+          (value
+            (identifier)))))))
+
+===
 Assignement: with attribute
 ===
 
