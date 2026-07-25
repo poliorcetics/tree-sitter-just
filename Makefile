@@ -1,4 +1,4 @@
-VERSION := 1.0.0+just-1.43.3
+VERSION := 1.0.0+just-1.57.0
 
 LANGUAGE_NAME := tree-sitter-just
 
