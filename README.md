@@ -2,7 +2,7 @@
 
 [Tree Sitter](https://tree-sitter.github.io/tree-sitter/) grammar for [`just`](https://github.com/casey/just).
 
-Support is guaranteed up to Just 1.56.0, if you are missing a recent feature don't hesitate to open an issue or pull request.
+Support is guaranteed up to Just 1.57.0, if you are missing a recent feature don't hesitate to open an issue or pull request.
 
 ## What's implemented and not
 
