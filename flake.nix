@@ -1,16 +1,17 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    tree-sitter.url = "github:tree-sitter/tree-sitter?ref=v0.26.11";
 
     flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
-    { nixpkgs, flake-utils, ... }:
+    { flake-utils, tree-sitter, ... }:
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        tree-sitter-cli = tree-sitter.packages.${system}.cli;
+        pkgs = import tree-sitter.inputs.nixpkgs { inherit system; };
       in
       {
         devShells.default =
@@ -20,7 +21,7 @@
           in
           mkShell {
             packages = [
-              tree-sitter
+              tree-sitter-cli
               nodejs-slim_22
               graphviz
             ];
